@@ -531,20 +531,20 @@ const MANUAL_PLACES: Place[] = [
 ];
 
 
-import hotelsData from '../../../../src/data/hotels.json';
-import restaurantsData from '../../../../src/data/restaurants.json';
-import pubsData from '../../../../src/data/pubs.json';
-import adventureData from '../../../../src/data/adventure.json';
-import templesData from '../../../../src/data/temples.json';
-import emergencyData from '../../../../src/data/emergency.json';
-import natureData from '../../../../src/data/nature.json';
+import hotelsData from '../../data/hotels.json';
+import restaurantsData from '../../data/restaurants.json';
+import pubsData from '../../data/pubs.json';
+import adventureData from '../../data/adventure.json';
+import templesData from '../../data/temples.json';
+import emergencyData from '../../data/emergency.json';
+import natureData from '../../data/nature.json';
 
-const mappedHotels: Place[] = (hotelsData as any[]).map(h => ({
-    id: h.id,
-    name: h.name,
+const mappedHotels: Place[] = (Array.isArray(hotelsData) ? hotelsData : []).map((h: any, i) => ({
+    id: h.id || `hotel-${i}`,
+    name: h.name || h['Hotel Name'] || h['Hotel'] || 'Unknown Hotel',
     category: 'hotels',
-    description: typeof h.description === 'string' ? h.description : (h.description?.specialFeatures || 'Comfortable stay'),
-    location: h.location || h.address || 'Puducherry',
+    description: h.description || h.specialFeatures || h.Notes || 'Comfortable stay',
+    location: h.location || h.address || h.Area || 'Puducherry',
     rating: h.rating || 4.2,
     image: h.image || (h.images && h.images[0]) || 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=60',
     tags: h.facilities?.slice(0, 3) || [],
@@ -555,98 +555,98 @@ const mappedHotels: Place[] = (hotelsData as any[]).map(h => ({
     gallery: h.images || []
 }));
 
-const mappedRestaurants: Place[] = (restaurantsData as any[]).map(r => ({
-    id: r.id,
-    name: r.name,
+const mappedRestaurants: Place[] = (Array.isArray(restaurantsData) ? restaurantsData : []).map((r: any, i) => ({
+    id: r.id || `rest-${i}`,
+    name: r.name || r['Restaurant Name'] || 'Unknown Restaurant',
     category: 'restaurants',
-    description: typeof r.description === 'string' ? r.description : 'Great place to eat in Puducherry.',
-    location: r.location || r.area || 'Puducherry',
-    rating: r.rating || 4.3,
+    description: r.description || r.Description || 'Great place to eat in Puducherry.',
+    location: r.location || r.area || r.Location || 'Puducherry',
+    rating: r.rating || r.Rating || 4.3,
     image: r.image || (r.images && r.images[0]) || 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=60',
-    tags: r.cuisine ? [r.cuisine, r.type || ''].filter(Boolean) : [],
+    tags: r.cuisine ? [r.cuisine, r.type || ''].filter(Boolean) : [r['Category'], r['Main Cuisine']].filter(Boolean),
     timeSlot: 'Evening',
     bestTime: 'Lunch/Dinner',
-    openTime: r.openTime ? `${r.openTime} - ${r.closeTime}` : 'Check for timings',
-    entryFee: r.priceRange || 'Varies',
+    openTime: r.openTime || r['Opening_Time'] ? `${r.openTime || r['Opening_Time']} - ${r.closeTime || r['Closing_Time']}` : 'Check for timings',
+    entryFee: r.priceRange || r['Price Range'] || 'Varies',
     gallery: r.images || []
 }));
 
-const mappedPubs: Place[] = (pubsData as any[]).map(p => ({
-    id: p.id,
-    name: p.name,
+const mappedPubs: Place[] = (Array.isArray(pubsData) ? pubsData : []).map((p: any, i) => ({
+    id: p.id || `pub-${i}`,
+    name: p.name || p['Pub Name'] || 'Unknown Pub',
     category: 'pubs',
-    description: typeof p.description === 'string' ? p.description : 'Popular nightlife spot.',
-    location: p.location || p.area || 'Puducherry',
+    description: p.description || p.Notes || 'Popular nightlife spot.',
+    location: p.location || p.area || p.Area || 'Puducherry',
     rating: p.rating || 4.4,
     image: p.image || (p.images && p.images[0]) || 'https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?w=800&auto=format&fit=crop&q=60',
-    tags: p.features?.slice(0, 3) || [],
+    tags: p.features?.slice(0, 3) || [p['Type']],
     timeSlot: 'Evening',
-    bestTime: 'Night',
-    openTime: p.openTime ? `${p.openTime} - ${p.closeTime}` : 'Evening onwards',
-    entryFee: p.entryFee || 'Varies',
+    bestTime: p['Best Days'] || 'Night',
+    openTime: p.openTime || p['Opening Time'] ? `${p.openTime || p['Opening Time']} - ${p.closeTime || p['Closing Time']}` : 'Evening onwards',
+    entryFee: p.entryFee || p['Entry Fee'] || 'Varies',
     gallery: p.images || []
 }));
 
-const mappedAdventure: Place[] = (adventureData as any[]).map(a => ({
-    id: a.id,
-    name: a.name,
+const mappedAdventure: Place[] = (Array.isArray(adventureData) ? adventureData : []).map((a: any, i) => ({
+    id: a.id || `adv-${i}`,
+    name: a.name || a['Activity Name'] || 'Unknown Activity',
     category: 'adventure',
-    description: typeof a.description === 'string' ? a.description : 'Adventure activity in Puducherry.',
-    location: a.location || 'Puducherry',
+    description: a.description || a.Notes || 'Adventure activity in Puducherry.',
+    location: a.location || a.Area || a['Route/Location'] || 'Puducherry',
     rating: a.rating || 4.5,
     image: a.image || (a.images && a.images[0]) || 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&auto=format&fit=crop&q=60',
-    tags: a.activities?.slice(0, 3) || [],
+    tags: a.activities?.slice(0, 3) || [a['Type']],
     timeSlot: 'Morning',
-    bestTime: 'Daytime',
-    openTime: a.timing || a.timings || 'Check availability',
-    entryFee: a.price || a.entryFee || 'Varies',
+    bestTime: a.bestTime || a['Best Time'] || 'Daytime',
+    openTime: a.timing || a.timings || a['Opening Time'] || 'Check availability',
+    entryFee: a.price || a.entryFee || a['Price Range'] || 'Varies',
     gallery: a.images || []
 }));
 
-const mappedTemples: Place[] = (templesData as any[]).map(t => ({
-    id: t.id,
-    name: t.name,
+const mappedTemples: Place[] = (Array.isArray(templesData) ? templesData : []).map((t: any, i) => ({
+    id: t.id || `temp-${i}`,
+    name: t.name || t['Temple Name'] || 'Unknown Temple',
     category: t.religion?.toLowerCase() === 'hindu' ? 'temples' : (t.religion?.toLowerCase() === 'christian' ? 'churches' : (t.religion?.toLowerCase() === 'muslim' ? 'mosques' : 'spiritual')),
-    description: typeof t.description === 'string' ? t.description : 'Religious place in Puducherry.',
-    location: t.location || 'Puducherry',
+    description: t.description || t.Notes || 'Religious place in Puducherry.',
+    location: t.location || t.Area || 'Puducherry',
     rating: t.rating || 4.7,
     image: t.image || (t.images && t.images[0]) || 'https://images.unsplash.com/photo-1582510003544-5243789972d0?w=800&auto=format&fit=crop&q=80',
     tags: t.religion ? [t.religion] : [],
     timeSlot: 'Morning',
-    bestTime: t.bestTime || 'Morning/Evening',
+    bestTime: t.bestTime || t['Best Time'] || 'Morning/Evening',
     openTime: t.timing || t.openingTimeWeekdays || 'Check timings',
     entryFee: t.price || t.entryFee || 'Free',
     gallery: t.images || []
 }));
 
-const mappedNature: Place[] = (natureData as any[]).map(n => ({
-    id: n.id,
-    name: n.name,
+const mappedNature: Place[] = (Array.isArray(natureData) ? natureData : []).map((n: any, i) => ({
+    id: n.id || `nat-${i}`,
+    name: n.name || n['Name'] || n['name'] || 'Unknown Nature Spot',
     category: n.category?.toLowerCase() === 'garden' || n.category?.toLowerCase() === 'city park' ? 'parks' : 'nature',
-    description: typeof n.description === 'string' ? n.description : (n.description?.specialFeatures || 'Beautiful nature spot.'),
+    description: n.description || n.specialFeatures || 'Beautiful nature spot.',
     location: n.location || 'Puducherry',
     rating: n.rating || 4.5,
     image: n.image || (n.images && n.images[0]) || 'https://images.unsplash.com/photo-1549643276-fbc2bd380d6b?w=800&auto=format&fit=crop&q=60',
-    tags: n.category ? [n.category] : [],
+    tags: n.category ? [n.category] : [n['type']].filter(Boolean),
     timeSlot: 'Afternoon',
-    bestTime: n.bestTime || 'Year-round',
-    openTime: n.openingTimeWeekdays ? `${n.openingTimeWeekdays} - ${n.closingTimeWeekdays}` : 'Daytime',
-    entryFee: n.entryFee || 'Free',
+    bestTime: n.bestTime || n.best_time || 'Year-round',
+    openTime: n.openingTimeWeekdays || n.timing_weekday ? `${n.openingTimeWeekdays || n.timing_weekday}` : 'Daytime',
+    entryFee: n.entryFee || n.entry_fee || 'Free',
     gallery: n.images || []
 }));
 
-const mappedHospitals: Place[] = (emergencyData.hospitals || []).map((h: any) => ({
-    id: h.id,
-    name: h.name,
+const mappedHospitals: Place[] = (Array.isArray(emergencyData) ? emergencyData : []).map((h: any, i) => ({
+    id: h.id || `hosp-${i}`,
+    name: h.name || h['Hospital Name'] || 'Unknown Hospital',
     category: 'emergency',
-    description: h.speciality || 'Hospital and emergency services.',
-    location: h.area || 'Puducherry',
+    description: h.speciality || h.Speciality || 'Hospital and emergency services.',
+    location: h.area || h.Area || 'Puducherry',
     rating: 4.0,
     image: 'https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=800&auto=format&fit=crop&q=60',
-    tags: ['Hospital', h.type || ''].filter(Boolean),
+    tags: ['Hospital', h.type || h['Hospital Type'] || ''].filter(Boolean),
     timeSlot: 'Morning',
     bestTime: '24x7',
-    openTime: h.timings || '24x7',
+    openTime: h.timings || h['Weekday Timings'] || '24x7',
     entryFee: 'Varies',
     gallery: []
 }));
