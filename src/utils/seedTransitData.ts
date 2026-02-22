@@ -367,24 +367,24 @@ export const SEED_DATA: TransitItem[] = [
     // --- LOCAL TOWN BUSES (PRTC / TNSTC) ---
     {
         id: 'b1', category: 'bus', subCategory: 'local', name: 'New Bus Stand - Gorimedu',
-        from: 'New Bus Stand', to: 'Gorimedu', via: ['Indira Gandhi Square', 'Reddiarpalayam'],
-        routeStops: ['New Bus Stand', 'Nellithope', 'Indira Gandhi Square', 'Reddiarpalayam', 'Jawahar Nagar', 'JIPMER', 'Gorimedu'],
+        from: 'New Bus Stand', to: 'Gorimedu', via: ['Rajiv Gandhi Signal', 'Kamaraj Nagar'],
+        routeStops: ['New Bus Stand', 'Nellithope', 'Indira Gandhi Square', 'Rajiv Gandhi Signal', 'Kamaraj Nagar', 'Gorimedu'],
         baseFare: 5, farePerStop: 2,
         frequency: '15 mins', duration: '25 mins',
         price: '₹10 - ₹15', availability: '5:00 AM - 10:30 PM', type: 'PRTC'
     },
     {
         id: 'b2', category: 'bus', subCategory: 'local', name: 'New Bus Stand - Lawspet',
-        from: 'New Bus Stand', to: 'Lawspet', via: ['100ft Road'],
-        routeStops: ['New Bus Stand', 'Nellithope', 'Indira Gandhi Square', '100ft Road', 'East Coast Road Junction', 'Lawspet'],
+        from: 'New Bus Stand', to: 'Lawspet', via: ['Rajiv Gandhi Signal', 'Ellaipillaichavady'],
+        routeStops: ['New Bus Stand', 'Nellithope', 'Indira Gandhi Square', 'Rajiv Gandhi Signal', 'Ellaipillaichavady', 'Lawspet'],
         baseFare: 5, farePerStop: 2,
         frequency: '12 mins', duration: '20 mins',
         price: '₹8 - ₹12', availability: '5:30 AM - 10:00 PM', type: 'PRTC'
     },
     {
         id: 'b3', category: 'bus', subCategory: 'local', name: 'New Bus Stand - Muthialpet',
-        from: 'New Bus Stand', to: 'Muthialpet', via: ['Anna Salai'],
-        routeStops: ['New Bus Stand', 'Raja Theatre', 'Ajantha Signal', 'Anna Salai', 'Ashram', 'Muthialpet'],
+        from: 'New Bus Stand', to: 'Muthialpet', via: ['Mission Street', 'MG Road'],
+        routeStops: ['New Bus Stand', 'Anthoniyar Kovil', 'Mission Street', 'MG Road', 'Muthialpet'],
         baseFare: 5, farePerStop: 2,
         frequency: '18 mins', duration: '22 mins',
         price: '₹10 - ₹15', availability: '6:00 AM - 9:30 PM', type: 'PRTC'
@@ -399,40 +399,40 @@ export const SEED_DATA: TransitItem[] = [
     },
     {
         id: 'b5', category: 'bus', subCategory: 'local', name: 'New Bus Stand - Villianur',
-        from: 'New Bus Stand', to: 'Villianur', via: ['Ozhukarai'],
-        routeStops: ['New Bus Stand', 'Indira Gandhi Square', 'Ozhukarai', 'Moolakulam', 'Arumparthapuram', 'Villianur'],
+        from: 'New Bus Stand', to: 'Villianur', via: ['Reddiarpalayam', 'Moolakulam'],
+        routeStops: ['New Bus Stand', 'Nellithope', 'Indira Gandhi Square', 'Reddiarpalayam', 'Moolakulam', 'Villianur'],
         baseFare: 5, farePerStop: 2,
         frequency: '20 mins', duration: '25 mins',
         price: '₹10 - ₹15', availability: '5:30 AM - 10:00 PM', type: 'TNSTC'
     },
     {
         id: 'b6', category: 'bus', subCategory: 'local', name: 'New Bus Stand - Bahour',
-        from: 'New Bus Stand', to: 'Bahour', via: ['Villianur', 'Katterikuppam'],
-        routeStops: ['New Bus Stand', 'Indira Gandhi Square', 'Villianur', 'Uruvaiyar', 'Katterikuppam', 'Thondamanatham', 'Bahour'],
+        from: 'New Bus Stand', to: 'Bahour', via: ['Moolakulam', 'Villianur'],
+        routeStops: ['New Bus Stand', 'Nellithope', 'Indira Gandhi Square', 'Reddiarpalayam', 'Moolakulam', 'Villianur', 'Bahour'],
         baseFare: 5, farePerStop: 3,
         frequency: '25 mins', duration: '35 mins',
         price: '₹15 - ₹20', availability: '6:00 AM - 8:30 PM', type: 'TNSTC'
     },
     {
         id: 'b7', category: 'bus', subCategory: 'local', name: 'Old Bus Stand - White Town Loop',
-        from: 'Old Bus Stand', to: 'White Town', via: ['Beach Road', 'Rue Dumas', 'Mission St'],
-        routeStops: ['Old Bus Stand', 'Mission St', 'Rue Bussy', 'Beach Road', 'Rue Dumas', 'Aurobindo Ashram', 'Old Bus Stand'],
+        from: 'Old Bus Stand', to: 'White Town', via: ['Mission Street', 'Beach Road'],
+        routeStops: ['Old Bus Stand', 'Mission Street', 'MG Road', 'Bharathi Park', 'White Town', 'Beach Road', 'Goubert Avenue', 'Old Bus Stand'],
         baseFare: 5, farePerStop: 1,
         frequency: '15 mins', duration: '20 mins',
         price: '₹8 - ₹12', availability: '6:00 AM - 10:00 PM', type: 'PRTC'
     },
     {
         id: 'b8', category: 'bus', subCategory: 'local', name: 'Muthialpet - Railway Station',
-        from: 'Muthialpet', to: 'Railway Station', via: ['Gandhi Beach', 'Botanical Garden'],
-        routeStops: ['Muthialpet', 'Ashram', 'Gandhi Beach', 'Bharathi Park', 'Botanical Garden', 'Railway Station'],
+        from: 'Muthialpet', to: 'Railway Station', via: ['Vaithikuppam', 'White Town'],
+        routeStops: ['Muthialpet', 'Kurusukuppam', 'Vaithikuppam', 'White Town', 'Railway Station'],
         baseFare: 5, farePerStop: 2,
         frequency: '20 mins', duration: '18 mins',
         price: '₹10 - ₹15', availability: '6:00 AM - 10:00 PM', type: 'PRTC'
     },
     {
         id: 'b9', category: 'bus', subCategory: 'local', name: 'Lawspet - Airport',
-        from: 'Lawspet', to: 'Airport', via: ['Airport Road'],
-        routeStops: ['Lawspet', 'Ponnagar', 'Airport Road Junction', 'Kurunji Nagar', 'Airport'],
+        from: 'Lawspet', to: 'Airport', via: ['Karuvadikuppam'],
+        routeStops: ['Lawspet', 'Karuvadikuppam', 'Airport'],
         baseFare: 5, farePerStop: 2,
         frequency: '25 mins', duration: '15 mins',
         price: '₹8 - ₹12', availability: '6:00 AM - 9:00 PM', type: 'PRTC'
