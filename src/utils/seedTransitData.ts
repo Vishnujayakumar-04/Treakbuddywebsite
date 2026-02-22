@@ -359,10 +359,13 @@ export const SEED_DATA: TransitItem[] = [
         tips: 'AC cabs available.',
         image: '🚕'
     },
-    // --- CABS (Operators) ---
-    { id: 'co1', category: 'cabs', type: 'operator', name: 'Pondy Cabs', contact: '+91 9876543210', specialty: 'Airport transfers' },
-    { id: 'co2', category: 'cabs', type: 'operator', name: 'French Town Autos', contact: '+91 9876543211', specialty: 'City tours' },
-    { id: 'co3', category: 'cabs', type: 'operator', name: 'Auroville Taxi Service', contact: '+91 9876543212', specialty: 'Auroville trips' },
+    // --- CABS & AUTO (Operators & Stands) ---
+    { id: 'co1', category: 'cabs', type: 'operator', name: 'AuroCabs Pondicherry', contact: '+91 94869 34444', specialty: 'Outstation trips & Airport transfers' },
+    { id: 'co2', category: 'cabs', type: 'operator', name: 'Fast Track Call Taxi', contact: '0413 2288000', specialty: 'City taxis & 24/7 service' },
+    { id: 'co3', category: 'cabs', type: 'operator', name: 'JIPMER Pre-paid Auto Stand', contact: '-', specialty: 'Regulated fares for JIPMER patients & hospital runs' },
+    { id: 'co4', category: 'cabs', type: 'operator', name: 'New Bus Stand Auto Taxis', contact: '-', specialty: '24/7 autos available outside bus station' },
+    { id: 'co5', category: 'cabs', type: 'operator', name: 'Auroville Taxi Service', contact: '+91 413 2622611', specialty: 'Authorized Auroville cabs & Matrimandir drops' },
+    { id: 'co6', category: 'cabs', type: 'operator', name: 'Pondy Drop Taxi', contact: '+91 95000 88225', specialty: 'Affordable one-way inter-city drop service' },
 
     // --- LOCAL TOWN BUSES (PRTC / TNSTC) ---
     {
