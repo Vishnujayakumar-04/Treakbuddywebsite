@@ -182,9 +182,9 @@ export default function BusPage({ embedded = false }: { embedded?: boolean }) {
                     <div className="hidden md:block w-px h-4 bg-slate-200 dark:bg-slate-700" />
 
                     <div className="flex items-center gap-2 overflow-hidden flex-1 min-w-0">
-                        <span className="font-medium shrink-0">Stops:</span>
+                        <span className="font-medium shrink-0">Main Stops:</span>
                         <div className="flex flex-wrap gap-2">
-                            {bus.via?.map((stop, i) => (
+                            {(bus.routeStops && bus.routeStops.length > 2 ? bus.routeStops.slice(1, -1) : bus.via)?.map((stop, i) => (
                                 <span key={i} className="px-2.5 py-0.5 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 whitespace-nowrap font-medium text-xs">
                                     {stop}
                                 </span>

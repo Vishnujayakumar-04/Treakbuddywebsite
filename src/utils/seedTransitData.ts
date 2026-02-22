@@ -390,12 +390,12 @@ export const SEED_DATA: TransitItem[] = [
         price: '₹10 - ₹15', availability: '6:00 AM - 9:30 PM', type: 'PRTC'
     },
     {
-        id: 'b4', category: 'bus', subCategory: 'local', name: 'New Bus Stand - Ariankuppam',
-        from: 'New Bus Stand', to: 'Ariankuppam', via: ['Anna Salai', 'Chunnambar'],
-        routeStops: ['New Bus Stand', 'Nellithope', 'Ajantha Signal', 'Anna Salai', 'Murungapakkam', 'Chunnambar', 'Ariankuppam'],
+        id: 'b4', category: 'bus', subCategory: 'local', name: 'New Bus Stand - Ariyankuppam',
+        from: 'New Bus Stand', to: 'Ariyankuppam', via: ['Mudaliarpet', 'Murungapakkam'],
+        routeStops: ['New Bus Stand', 'Anthoniyar Kovil', 'Mudaliarpet', 'Marapalam', 'Nainarmandapam', 'Murungapakkam', 'Ariyankuppam'],
         baseFare: 5, farePerStop: 2,
         frequency: '20 mins', duration: '30 mins',
-        price: '₹12 - ₹18', availability: '6:00 AM - 9:00 PM', type: 'PRTC'
+        price: '₹10', availability: '6:00 AM - 9:00 PM', type: 'PRTC'
     },
     {
         id: 'b5', category: 'bus', subCategory: 'local', name: 'New Bus Stand - Villianur',
@@ -438,9 +438,9 @@ export const SEED_DATA: TransitItem[] = [
         price: '₹8 - ₹12', availability: '6:00 AM - 9:00 PM', type: 'PRTC'
     },
     {
-        id: 'b10', category: 'bus', subCategory: 'local', name: 'Ariankuppam - Chinna Veerampattinam',
-        from: 'Ariankuppam', to: 'Chinna Veerampattinam', via: ['ECR'],
-        routeStops: ['Ariankuppam', 'Chunnambar Boat House', 'Nonankuppam', 'Chinna Veerampattinam'],
+        id: 'b10', category: 'bus', subCategory: 'local', name: 'Ariyankuppam - Chinna Veerampattinam',
+        from: 'Ariyankuppam', to: 'Chinna Veerampattinam', via: ['ECR'],
+        routeStops: ['Ariyankuppam', 'Chunnambar Boat House', 'Nonankuppam', 'Chinna Veerampattinam'],
         baseFare: 5, farePerStop: 2,
         frequency: '30 mins', duration: '20 mins',
         price: '₹10 - ₹15', availability: '7:00 AM - 8:00 PM', type: 'TNSTC'
