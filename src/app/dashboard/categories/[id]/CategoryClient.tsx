@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { getPlacesByCategory } from '@/services/data/places';
 import Image from 'next/image';
+import { PONDICHERRY_AREAS } from '@/constants/areas';
 
 const CATEGORY_HEROES: Record<string, string> = {
     beaches: "https://images.unsplash.com/photo-1582552938357-32b906df40cb?w=1600&auto=format&fit=crop&q=80",
@@ -74,29 +75,49 @@ export default function CategoryClient({ id }: CategoryClientProps) {
     }, [allPlaces, id]);
 
     const [activeFilter, setActiveFilter] = useState('All');
+    const [activeArea, setActiveArea] = useState('All');
+
+    const availableAreas = useMemo(() => {
+        const matching = PONDICHERRY_AREAS.filter(area =>
+            allPlaces.some(p => p.location.toLowerCase().includes(area.toLowerCase()))
+        );
+        return ['All', ...matching];
+    }, [allPlaces]);
 
     const filteredPlaces = useMemo(() => {
-        if (activeFilter === 'All') return allPlaces;
+        let result = allPlaces;
 
-        // Special filtering for spiritual category
-        if (id === 'spiritual') {
-            switch (activeFilter) {
-                case 'Hindu Temples':
-                    return allPlaces.filter(p => p.category === 'temples');
-                case 'Churches':
-                    return allPlaces.filter(p => p.category === 'churches');
-                case 'Mosques':
-                    return allPlaces.filter(p => p.category === 'mosques');
-                case 'Ashrams':
-                    return allPlaces.filter(p => p.category === 'spiritual');
-                default:
-                    return allPlaces;
+        // Base tag filtering
+        if (activeFilter !== 'All') {
+            if (id === 'spiritual') {
+                switch (activeFilter) {
+                    case 'Hindu Temples':
+                        result = result.filter(p => p.category === 'temples');
+                        break;
+                    case 'Churches':
+                        result = result.filter(p => p.category === 'churches');
+                        break;
+                    case 'Mosques':
+                        result = result.filter(p => p.category === 'mosques');
+                        break;
+                    case 'Ashrams':
+                        result = result.filter(p => p.category === 'spiritual');
+                        break;
+                }
+            } else {
+                result = result.filter(p => p.tags.includes(activeFilter));
             }
         }
 
-        // Regular tag filtering for other categories
-        return allPlaces.filter(p => p.tags.includes(activeFilter));
-    }, [allPlaces, activeFilter, id]);
+        // Area filtering
+        if (activeArea !== 'All') {
+            result = result.filter(p =>
+                p.location.toLowerCase().includes(activeArea.toLowerCase())
+            );
+        }
+
+        return result;
+    }, [allPlaces, activeFilter, activeArea, id]);
 
     return (
         <div className="min-h-screen pb-20">
@@ -201,23 +222,51 @@ export default function CategoryClient({ id }: CategoryClientProps) {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar"
+                    className="flex flex-col gap-4"
                 >
-                    {allTags.map((tag) => (
-                        <motion.button
-                            key={tag}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            onClick={() => setActiveFilter(tag)}
-                            className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap shadow-sm
-                                ${activeFilter === tag
-                                    ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-lg shadow-slate-900/15'
-                                    : 'bg-white dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-cyan-200 dark:hover:border-slate-600 hover:shadow-md'
-                                }`}
-                        >
-                            {tag}
-                        </motion.button>
-                    ))}
+                    <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
+                        <div className="text-slate-500 dark:text-slate-400 font-semibold text-sm whitespace-nowrap pl-1 pr-3 flex items-center gap-1">
+                            <Filter className="w-4 h-4" /> Type
+                        </div>
+                        {allTags.map((tag) => (
+                            <motion.button
+                                key={tag}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                onClick={() => setActiveFilter(tag)}
+                                className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap shadow-sm
+                                    ${activeFilter === tag
+                                        ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-lg shadow-slate-900/15'
+                                        : 'bg-white dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-cyan-200 dark:hover:border-slate-600 hover:shadow-md'
+                                    }`}
+                            >
+                                {tag}
+                            </motion.button>
+                        ))}
+                    </div>
+
+                    {availableAreas.length > 1 && (
+                        <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
+                            <div className="text-slate-500 dark:text-slate-400 font-semibold text-sm whitespace-nowrap pl-1 pr-3 flex items-center gap-1">
+                                <MapPin className="w-4 h-4" /> Area
+                            </div>
+                            {availableAreas.map((area) => (
+                                <motion.button
+                                    key={area}
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    onClick={() => setActiveArea(area)}
+                                    className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap shadow-sm
+                                        ${activeArea === area
+                                            ? 'bg-cyan-600 text-white shadow-lg shadow-cyan-600/20'
+                                            : 'bg-white dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-cyan-200 dark:hover:border-slate-600 hover:shadow-md'
+                                        }`}
+                                >
+                                    {area}
+                                </motion.button>
+                            ))}
+                        </div>
+                    )}
                 </motion.div>
 
                 {/* Places Grid — Immersive Cards */}
@@ -299,7 +348,7 @@ export default function CategoryClient({ id }: CategoryClientProps) {
                             >
                                 <Filter className="w-12 h-12 mx-auto text-slate-300 dark:text-slate-700 mb-4" />
                                 <p className="text-slate-500 text-lg font-medium">No places found for this filter.</p>
-                                <Button variant="link" onClick={() => setActiveFilter('All')} className="text-cyan-600 font-semibold mt-2">
+                                <Button variant="link" onClick={() => { setActiveFilter('All'); setActiveArea('All'); }} className="text-cyan-600 font-semibold mt-2">
                                     Clear Filters
                                 </Button>
                             </motion.div>
