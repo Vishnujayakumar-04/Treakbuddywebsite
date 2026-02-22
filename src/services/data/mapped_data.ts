@@ -1,6 +1,6 @@
-
 import puducherryData from '../../data/puducherry_data.json';
 import { Place } from './types';
+import { resolveLocalImage, resolveLocalGallery } from './localImages';
 
 // Helper to format Excel time (fraction of day) to string
 function formatExcelTime(time: string | number | undefined): string {
@@ -53,14 +53,16 @@ const importedPlaces: Place[] = [];
 if (puducherryData.AdventureActivities) {
     // @ts-ignore
     puducherryData.AdventureActivities.forEach((item: any, index: number) => {
+        const name = item['Activity Name'] || item['name'] || 'Unknown Activity';
         importedPlaces.push({
             id: `adv_imp_${index}`,
-            name: item['Activity Name'] || item['name'] || 'Unknown Activity',
+            name,
             category: 'adventure',
             description: item['Notes'] || item['description'] || `Exciting ${item['Type']} activity in ${item['Area']}.`,
             location: item['Area'] || 'Puducherry',
             rating: 4.5,
-            image: getRandomImage('adventure'),
+            image: resolveLocalImage(name, getRandomImage('adventure')),
+            gallery: resolveLocalGallery(name, [getRandomImage('adventure')]),
             tags: [item['Type'], 'Adventure', item['Best Time']].filter(Boolean),
             timeSlot: (item['Best Time'] && String(item['Best Time']).includes('Morning')) ? 'Morning' : 'Afternoon',
             bestTime: String(item['Best Time'] || 'Daytime'),
@@ -75,14 +77,16 @@ if (puducherryData.AdventureActivities) {
 if (puducherryData.Nature) {
     // @ts-ignore
     puducherryData.Nature.forEach((item: any, index: number) => {
+        const name = item['name'] || 'Unknown Spot';
         importedPlaces.push({
             id: `nature_imp_${index}`,
-            name: item['name'] || 'Unknown Spot',
+            name,
             category: 'nature',
             description: item['description'] || 'A beautiful nature spot.',
             location: item['location'] || 'Puducherry',
             rating: 4.4,
-            image: getRandomImage('nature'),
+            image: resolveLocalImage(name, getRandomImage('nature')),
+            gallery: resolveLocalGallery(name, [getRandomImage('nature')]),
             tags: [item['type'], item['activities']].filter(Boolean),
             timeSlot: item['best_time'] === 'Morning' ? 'Morning' : 'Evening',
             bestTime: item['best_time'],
@@ -97,14 +101,16 @@ if (puducherryData.Nature) {
 if (puducherryData['Pubs & Bars']) {
     // @ts-ignore
     puducherryData['Pubs & Bars'].forEach((item: any, index: number) => {
+        const name = item['Pub Name'] || 'Unknown Pub';
         importedPlaces.push({
             id: `pub_imp_${index}`,
-            name: item['Pub Name'] || 'Unknown Pub',
+            name,
             category: 'nightlife',
             description: item['Notes'] || `Popular nightlife spot with ${item['Music Type']}.`,
             location: item['Area'] || 'Puducherry',
             rating: 4.3,
-            image: getRandomImage('nightlife'),
+            image: resolveLocalImage(name, getRandomImage('nightlife')),
+            gallery: resolveLocalGallery(name, [getRandomImage('nightlife')]),
             tags: ['Pub', 'Nightlife', item['Music Type']].filter(Boolean),
             timeSlot: 'Evening',
             bestTime: item['Best Days'] || 'Weekend',
@@ -119,14 +125,16 @@ if (puducherryData['Pubs & Bars']) {
 if (puducherryData.Restraunts) {
     // @ts-ignore
     puducherryData.Restraunts.forEach((item: any, index: number) => {
+        const name = item['Restaurant Name'] || 'Unknown Restaurant';
         importedPlaces.push({
             id: `rest_imp_${index}`,
-            name: item['Restaurant Name'] || 'Unknown Restaurant',
+            name,
             category: 'restaurants',
             description: item['Description'] || `Serving delicious ${item['Main Cuisine']}.`,
             location: item['Location'] || 'Puducherry',
             rating: parseFloat(item['Rating']) || 4.0,
-            image: getRandomImage('restaurants'),
+            image: resolveLocalImage(name, getRandomImage('restaurants')),
+            gallery: resolveLocalGallery(name, [getRandomImage('restaurants')]),
             tags: (item['Tags (Select multiple)'] || '').split(',').map((t: string) => t.trim()).filter(Boolean),
             timeSlot: 'Evening',
             bestTime: 'Evening',
@@ -141,14 +149,16 @@ if (puducherryData.Restraunts) {
 if (puducherryData.Sos) {
     // @ts-ignore
     puducherryData.Sos.forEach((item: any, index: number) => {
+        const name = item['Hospital Name'] || 'Unknown Hospital';
         importedPlaces.push({
             id: `sos_imp_${index}`,
-            name: item['Hospital Name'] || 'Unknown Hospital',
+            name,
             category: 'emergency',
             description: item['Notes'] || `Specializing in ${item['Speciality']}.`,
             location: item['Area'] || 'Puducherry',
             rating: 4.0,
-            image: getRandomImage('emergency'),
+            image: resolveLocalImage(name, getRandomImage('emergency')),
+            gallery: resolveLocalGallery(name, [getRandomImage('emergency')]),
             tags: ['Hospital', item['Hospital Type'], 'Medical'].filter(Boolean),
             timeSlot: 'Morning',
             bestTime: '24x7',
