@@ -180,14 +180,8 @@ export default function TripPlannerPage() {
                                     New Trip
                                 </Button>
                             </DialogTrigger>
-                            <DialogContent className="sm:max-w-2xl bg-white dark:bg-slate-900 border-none shadow-2xl p-6 rounded-3xl">
-                                <DialogHeader>
-                                    <DialogTitle className="text-2xl font-bold">Plan Your Adventure</DialogTitle>
-                                    <DialogDescription className="text-slate-500 text-base">
-                                        Tell us your preferences, and we'll craft the perfect itinerary.
-                                    </DialogDescription>
-                                </DialogHeader>
-                                <div className="mt-4 h-[600px] w-full">
+                            <DialogContent className="sm:max-w-2xl bg-white dark:bg-slate-900 border-none shadow-2xl p-0 overflow-hidden rounded-3xl">
+                                <div className="h-[650px] w-full">
                                     <TripWizard onCancel={() => setIsCreateOpen(false)} />
                                 </div>
                             </DialogContent>

@@ -11,21 +11,21 @@ import { useAuth } from '@/hooks/useAuth';
 
 // --- Image Assets (Verified Unsplash — Pondicherry-themed) ---
 const COLUMN_1 = [
-    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80", // Tropical Beach (Promenade)
-    "https://images.unsplash.com/photo-1582510003544-5243789972d0?w=800&auto=format&fit=crop&q=80", // Indian Temple
-    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop&q=80", // Colonial Villa
+    "/assets/beaches/promenade beach.jpg",
+    "/assets/spot/white town walks.jfif",
+    "/assets/stay/villa shanti.webp",
 ];
 
 const COLUMN_2 = [
-    "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&auto=format&fit=crop&q=80", // Rocky Beach Coast
-    "https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&auto=format&fit=crop&q=80", // Meditation/Yoga
-    "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&auto=format&fit=crop&q=80", // Paradise Beach Aerial
+    "/assets/beaches/serenity beach.jpg",
+    "/assets/stay/hotel atithi.jfif",
+    "/assets/beaches/paradise beach.jpeg",
 ];
 
 const COLUMN_3 = [
-    "https://images.unsplash.com/photo-1548625361-987747e70e3c?w=800&auto=format&fit=crop&q=80", // Gothic Church
-    "https://images.unsplash.com/photo-1623083984360-15bd8434cc85?w=800&auto=format&fit=crop&q=80", // Golden Dome (Matrimandir)
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80", // Colonial Street
+    "/assets/spot/aayi mandapam.jfif",
+    "/assets/beaches/auroville beach.jpg",
+    "/assets/stay/accord.jfif",
 ];
 
 
@@ -180,6 +180,7 @@ function ParallaxColumn({ images, yPercent, duration, reverse = false }: { image
                         src={src}
                         alt="Puducherry scenery"
                         fill
+                        unoptimized
                         className="object-cover hover:scale-110 transition-transform duration-700"
                         sizes="(max-width: 768px) 100vw, 33vw"
                     />

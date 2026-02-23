@@ -5,7 +5,7 @@ import AuthGuard from '@/components/auth/AuthGuard';
 export default function DashboardLayout({ children }: { children: ReactNode }) {
     return (
         <AuthGuard>
-            <div className="relative min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-300 pt-16">
+            <div className="relative min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-300 pt-20">
                 {/* Background Elements */}
                 <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
                     <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-cyan-500/10 blur-3xl" />

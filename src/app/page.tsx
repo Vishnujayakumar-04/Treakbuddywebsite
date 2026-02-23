@@ -23,11 +23,11 @@ import { Footer } from '@/components/layout/Footer';
 /* ─────────── DATA ─────────── */
 
 const CATEGORIES = [
-  { id: 'beaches', title: 'Beaches', image: 'https://images.unsplash.com/photo-1543362906-ac1b4526c1d0?q=80&w=800', icon: Waves, count: '5 Spots', color: 'from-cyan-400 to-blue-500' },
-  { id: 'heritage', title: 'Heritage', image: 'https://images.unsplash.com/photo-1582552938357-32b906df40cb?w=800&q=60', icon: Landmark, count: '12 Sites', color: 'from-amber-400 to-orange-500' },
-  { id: 'food', title: 'Food & Dining', image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80', icon: Utensils, count: '20+ Cafes', color: 'from-rose-400 to-pink-500' },
-  { id: 'spiritual', title: 'Spiritual', image: 'https://images.unsplash.com/photo-1598890777032-bde835ba27c2?w=800&q=80', icon: Flower2, count: '4 Centers', color: 'from-violet-400 to-purple-500' },
-  { id: 'nature', title: 'Nature', image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80', icon: Umbrella, count: '8 Parks', color: 'from-emerald-400 to-teal-500' },
+  { id: 'beaches', title: 'Beaches', image: '/assets/beaches/promenade beach.jpg', icon: Waves, count: '5 Spots', color: 'from-cyan-400 to-blue-500' },
+  { id: 'heritage', title: 'Heritage', image: '/assets/spot/white town walks.jfif', icon: Landmark, count: '12 Sites', color: 'from-amber-400 to-orange-500' },
+  { id: 'food', title: 'Food & Dining', image: '/assets/activity/mangrove kayaking 2.jfif', icon: Utensils, count: '20+ Cafes', color: 'from-rose-400 to-pink-500' },
+  { id: 'spiritual', title: 'Spiritual', image: '/assets/spot/aayi mandapam.jfif', icon: Flower2, count: '4 Centers', color: 'from-violet-400 to-purple-500' },
+  { id: 'nature', title: 'Nature', image: '/assets/activity/mangrove kayaking.jfif', icon: Umbrella, count: '8 Parks', color: 'from-emerald-400 to-teal-500' },
 ];
 
 const STATS = [

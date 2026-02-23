@@ -23,44 +23,44 @@ function findPlaceId(name: string): string | null {
 
 const FAMOUS_PLACES = {
     historical: [
-        { name: 'French War Memorial', location: 'Goubert Avenue', image: 'https://images.unsplash.com/photo-1590680687157-558661845f94?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Aayi Mandapam', location: 'White Town', image: 'https://images.unsplash.com/photo-1582510003544-5243789972d0?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Bharathi Park', location: 'White Town', image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Arikamedu Archaeological Site', location: 'Arikamedu', image: 'https://images.unsplash.com/photo-1518012312832-96aea3c91144?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Kargil War Memorial', location: 'Shanmugha Vilasam', image: 'https://images.unsplash.com/photo-1590680687157-558661845f94?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Raj Niwas', location: 'White Town', image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop&q=80' },
+        { name: 'French War Memorial', location: 'Goubert Avenue', image: '/assets/spot/french wa rmemorial.jfif' },
+        { name: 'Aayi Mandapam', location: 'White Town', image: '/assets/spot/aayi mandapam.jfif' },
+        { name: 'Bharathi Park', location: 'White Town', image: '/assets/spot/barathi park.jfif' },
+        { name: 'Arikamedu Archaeological Site', location: 'Arikamedu', image: '/assets/spot/museum.jfif' }, // Fallback to museum for archaeological
+        { name: 'Kargil War Memorial', location: 'Shanmugha Vilasam', image: '/assets/spot/french wa rmemorial 2.jfif' },
+        { name: 'Raj Niwas', location: 'White Town', image: '/assets/spot/white town walks.jfif' },
     ],
     temples: [
-        { name: 'Manakula Vinayagar Temple', location: 'White Town', image: 'https://images.unsplash.com/photo-1582510003544-5243789972d0?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Varadaraja Perumal Temple', location: 'Near French Consulate', image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Kamakshi Amman Temple', location: 'Near Beach', image: 'https://images.unsplash.com/photo-1582556263595-6541f6f6f964?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Vedapureeswarar Temple', location: 'Near Serenity Beach', image: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Arulmigu Kanniga Parameswari Temple', location: 'Kuruchikuppam', image: 'https://images.unsplash.com/photo-1582556263595-6541f6f6f964?w=800&auto=format&fit=crop&q=80' },
+        { name: 'Manakula Vinayagar Temple', location: 'White Town', image: '/assets/spot/aayi mandapam 2.jfif' },
+        { name: 'Varadaraja Perumal Temple', location: 'Near French Consulate', image: '/assets/spot/white town walks 2.jfif' },
+        { name: 'Kamakshi Amman Temple', location: 'Near Beach', image: '/assets/spot/aayi mandapam.jfif' },
+        { name: 'Vedapureeswarar Temple', location: 'Near Serenity Beach', image: '/assets/spot/white town walks 3.jfif' },
+        { name: 'Arulmigu Kanniga Parameswari Temple', location: 'Kuruchikuppam', image: '/assets/spot/museum 2.jfif' },
     ],
     nature: [
-        { name: 'Paradise Beach', location: 'Chunnambar', image: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Auroville Beach', location: 'Auroville', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Serenity Beach', location: 'Auroville Road', image: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Ousteri Lake', location: 'Ossudu', image: 'https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Botanical Gardens', location: 'Near Railway Station', image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Pichavaram Mangroves', location: 'Near Chidambaram', image: 'https://images.unsplash.com/photo-1529315895786-9a25b16f3c15?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Bharathi Park', location: 'White Town', image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&auto=format&fit=crop&q=80' },
+        { name: 'Paradise Beach', location: 'Chunnambar', image: '/assets/beaches/paradise beach.jpeg' },
+        { name: 'Auroville Beach', location: 'Auroville', image: '/assets/beaches/auroville beach.jpg' },
+        { name: 'Serenity Beach', location: 'Auroville Road', image: '/assets/beaches/serenity beach.jpg' },
+        { name: 'Ousteri Lake', location: 'Ossudu', image: '/assets/activity/mangrove kayaking.jfif' },
+        { name: 'Botanical Gardens', location: 'Near Railway Station', image: '/assets/spot/botanical garden.jfif' },
+        { name: 'Pichavaram Mangroves', location: 'Near Chidambaram', image: '/assets/activity/mangrove kayaking 2.jfif' },
+        { name: 'Bharathi Park', location: 'White Town', image: '/assets/spot/barathi park.jfif' },
     ],
     churches: [
-        { name: 'Sacred Heart Basilica', location: 'Subbaiah Salai', image: 'https://images.unsplash.com/photo-1548625361-987747e70e3c?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Immaculate Conception Cathedral', location: 'Mission Street', image: 'https://images.unsplash.com/photo-1575402095034-7a0ad32152a5?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Our Lady of Angels Church', location: 'Rue Dumas', image: 'https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=800&auto=format&fit=crop&q=80' },
-        { name: "St. Andrew's Church", location: 'Church Street', image: 'https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=800&auto=format&fit=crop&q=80' },
+        { name: 'Sacred Heart Basilica', location: 'Subbaiah Salai', image: '/assets/spot/museum.jfif' }, // Placeholder spot
+        { name: 'Immaculate Conception Cathedral', location: 'Mission Street', image: '/assets/spot/white town walks 3.jfif' },
+        { name: 'Our Lady of Angels Church', location: 'Rue Dumas', image: '/assets/spot/aayi mandapam 2.jfif' },
+        { name: "St. Andrew's Church", location: 'Church Street', image: '/assets/spot/french wa rmemorial 3.jfif' },
     ],
     popular: [
-        { name: 'Promenade Beach', location: 'Beach Road', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Sri Aurobindo Ashram', location: 'Marine Street', image: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Matrimandir', location: 'Auroville', image: 'https://images.unsplash.com/photo-1623083984360-15bd8434cc85?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Puducherry Museum', location: 'Bharathi Park', image: 'https://images.unsplash.com/photo-1566127444510-a8dc77cda928?w=800&auto=format&fit=crop&q=80' },
-        { name: 'White Town Walks', location: 'French Quarter', image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Chunnambar Backwater', location: 'Chunnambar', image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Serenity Beach', location: 'Kottakuppam', image: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&auto=format&fit=crop&q=80' },
-        { name: 'Paradise Beach', location: 'Chunnambar', image: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&auto=format&fit=crop&q=80' },
+        { name: 'Promenade Beach', location: 'Beach Road', image: '/assets/beaches/promenade beach.jpg' },
+        { name: 'Sri Aurobindo Ashram', location: 'Marine Street', image: '/assets/stay/villa shanti.webp' },
+        { name: 'Matrimandir', location: 'Auroville', image: '/assets/beaches/auroville beach.jpg' },
+        { name: 'Puducherry Museum', location: 'Bharathi Park', image: '/assets/spot/museum.jfif' },
+        { name: 'White Town Walks', location: 'French Quarter', image: '/assets/spot/white town walks.jfif' },
+        { name: 'Chunnambar Backwater', location: 'Chunnambar', image: '/assets/beaches/paradise beach.jpeg' },
+        { name: 'Serenity Beach', location: 'Kottakuppam', image: '/assets/beaches/serenity beach.jpg' },
+        { name: 'Paradise Beach', location: 'Chunnambar', image: '/assets/beaches/paradise beach.jpeg' },
     ],
     food: [
         { name: 'Ratatouille', type: 'Vegetarian', restaurant: 'Various French Cafés' },
@@ -186,7 +186,7 @@ function FamousPlacesContent() {
                 <Tabs value={activeCategory} onValueChange={handleTabChange} className="space-y-8">
                     {/* Sticky Category Navigation */}
                     <div className="sticky top-20 z-30 px-2 pb-4 bg-gradient-to-b from-slate-50 via-slate-50 to-transparent dark:from-slate-950 dark:via-slate-950 pt-2">
-                        <TabsList className="h-auto bg-transparent dark:bg-transparent border-0 shadow-none p-0 w-full flex flex-nowrap justify-center gap-1 sm:gap-2">
+                        <TabsList className="h-auto bg-transparent dark:bg-transparent border-0 shadow-none p-0 w-full flex flex-wrap justify-center gap-2 sm:gap-3">
                             {CATEGORIES.map((cat) => {
                                 const Icon = cat.icon;
                                 return (

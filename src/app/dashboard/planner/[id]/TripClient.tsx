@@ -62,11 +62,8 @@ export default function TripClient({ id }: TripClientProps) {
                 title={trip.name}
                 subtitle={`${trip.itinerary?.length || 0} Days • ${trip.travelers} Travelers • ${trip.type}`}
                 showHome={false}
-            >
-                <Button onClick={() => router.push('/dashboard/planner')} variant="outline" className="gap-2">
-                    <ArrowLeft className="w-4 h-4" /> Back
-                </Button>
-            </DashboardHeader>
+                backHref="/dashboard/planner"
+            />
 
             <div className="container px-4 md:px-6 max-w-4xl mx-auto space-y-8 mt-4">
                 {/* Trip Overview Card */}

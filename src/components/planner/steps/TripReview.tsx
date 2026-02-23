@@ -18,13 +18,7 @@ interface StepProps {
 
 export function TripReview({ draft, isGenerating, onGenerate, onEditStep }: StepProps) {
     return (
-        <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="text-center space-y-2">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Ready to plan?</h3>
-                <p className="text-slate-500 dark:text-slate-400">
-                    Review your details below. Our AI guide will generate a custom itinerary for you.
-                </p>
-            </div>
+        <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Basic Info */}

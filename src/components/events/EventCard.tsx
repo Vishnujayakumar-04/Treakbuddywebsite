@@ -39,11 +39,11 @@ export function EventCard({ title, date, location, interested, imageSrc }: Event
             </p>
             <div className="flex items-center gap-1.5 mt-2">
                 <div className="flex -space-x-1.5">
-                    <div className="w-5 h-5 rounded-full border border-white dark:border-slate-950 overflow-hidden bg-gray-400">
-                        <Image src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" width={20} height={20} unoptimized alt="user" />
+                    <div className="w-5 h-5 rounded-full border border-white dark:border-slate-950 overflow-hidden bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-[8px] font-bold text-blue-600 dark:text-blue-300">
+                        U1
                     </div>
-                    <div className="w-5 h-5 rounded-full border border-white dark:border-slate-950 overflow-hidden bg-gray-500">
-                        <Image src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" width={20} height={20} unoptimized alt="user" />
+                    <div className="w-5 h-5 rounded-full border border-white dark:border-slate-950 overflow-hidden bg-amber-100 dark:bg-amber-900 flex items-center justify-center text-[8px] font-bold text-amber-600 dark:text-amber-300">
+                        U2
                     </div>
                 </div>
                 <p className="text-gray-500 dark:text-gray-400 text-xs font-medium">

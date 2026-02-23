@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Botanical Garden",
+    "type": "Public Garden",
+    "location": "Orleanpet",
+    "Google maps": "https://maps.google.com/?q=Botanical+Garden+Puducherry",
+    "timing_weekday": "9 AM – 6 PM",
+    "timing_weekend": "9 AM – 6 PM",
+    "entry_fee": "₹10",
+    "facilities": "Restrooms, Seating",
+    "best_time": "Morning",
+    "description": "Historic botanical garden",
+    "activities": "Walking, Photography",
+    "contact number": "91 413 2339497",
+    "authority": "Tourism Department",
+    "restrictions": "No littering",
+    "image url": "https://share.google/M54GVcnKDv113YqjR",
+    "crowd": "High",
+    "nearby": "Museum"
+  },
+  {
+    "name": "Bharathi Park",
+    "type": "City Park",
+    "location": "White Town",
+    "Google maps": "https://maps.google.com/?q=Bharathi+Park+Puducherry",
+    "timing_weekday": "6 AM – 8 PM",
+    "timing_weekend": "6 AM – 8 PM",
+    "entry_fee": "Free",
+    "facilities": "Seating, Lighting",
+    "best_time": "Evening",
+    "description": "French-era landscaped park",
+    "activities": "Jogging, Relaxation",
+    "contact number": "0413 233 9497",
+    "authority": "Municipality",
+    "restrictions": "No pets",
+    "image url": "https://share.google/aHt2oqvucZBzPd3ZK",
+    "crowd": "Medium",
+    "nearby": "Aayi Mandapam"
+  }
+]

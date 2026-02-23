@@ -11,20 +11,20 @@ import Image from 'next/image';
 import { PONDICHERRY_AREAS } from '@/constants/areas';
 
 const CATEGORY_HEROES: Record<string, string> = {
-    beaches: "https://images.unsplash.com/photo-1582552938357-32b906df40cb?w=1600&auto=format&fit=crop&q=80",
-    heritage: "https://images.unsplash.com/photo-1596711684365-1779956bd448?w=1600&auto=format&fit=crop&q=80",
-    museums: "https://images.unsplash.com/photo-1588523315024-f7b5bc608933?w=1600&auto=format&fit=crop&q=80",
-    spiritual: "https://images.unsplash.com/photo-1623835606828-09553e77c8e3?w=1600&auto=format&fit=crop&q=80",
-    temples: "https://images.unsplash.com/photo-1582510003544-5243789972d0?w=1600&auto=format&fit=crop&q=80",
-    churches: "https://images.unsplash.com/photo-1548625361-987747e70e3c?w=1600&auto=format&fit=crop&q=80",
-    mosques: "https://images.unsplash.com/photo-1564121211835-e88c852648ab?w=1600&auto=format&fit=crop&q=80",
-    hotels: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&auto=format&fit=crop&q=80",
-    restaurants: "https://images.unsplash.com/photo-1555507036-ab1f40388085?w=1600&auto=format&fit=crop&q=80",
-    nature: "https://images.unsplash.com/photo-1596707328604-faed4c53574c?w=1600&auto=format&fit=crop&q=80",
-    parks: "https://images.unsplash.com/photo-1596707328604-faed4c53574c?w=1600&auto=format&fit=crop&q=80",
-    adventure: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1600&auto=format&fit=crop&q=80",
-    shopping: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&auto=format&fit=crop&q=80",
-    default: "https://images.unsplash.com/photo-1621517720977-ce9d53da3657?w=1600&auto=format&fit=crop&q=80"
+    beaches: "/assets/beaches/promenade beach.jpg",
+    heritage: "/assets/spot/white town walks.jfif",
+    museums: "/assets/spot/museum.jfif",
+    spiritual: "/assets/spot/aayi mandapam.jfif",
+    temples: "/assets/spot/aayi mandapam 2.jfif",
+    churches: "/assets/spot/white town walks 3.jfif",
+    mosques: "/assets/spot/white town walks 2.jfif",
+    hotels: "/assets/stay/villa shanti.webp",
+    restaurants: "/assets/stay/hotel atithi.jfif",
+    nature: "/assets/activity/mangrove kayaking.jfif",
+    parks: "/assets/spot/botanical garden.jfif",
+    adventure: "/assets/activity/mangrove kayaking 2.jfif",
+    shopping: "/assets/spot/sunday market.jfif",
+    default: "/assets/beaches/promenade beach.jpg"
 };
 
 const CATEGORY_DESCRIPTIONS: Record<string, string> = {
@@ -224,47 +224,53 @@ export default function CategoryClient({ id }: CategoryClientProps) {
                     transition={{ delay: 0.3 }}
                     className="flex flex-col gap-4"
                 >
-                    <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
-                        <div className="text-slate-500 dark:text-slate-400 font-semibold text-sm whitespace-nowrap pl-1 pr-3 flex items-center gap-1">
-                            <Filter className="w-4 h-4" /> Type
+                    <div className="flex flex-wrap items-start gap-y-3 pl-1">
+                        <div className="flex items-center gap-2 w-20 shrink-0 pt-2.5">
+                            <Filter className="w-4 h-4 text-slate-500" />
+                            <span className="text-slate-500 dark:text-slate-400 font-bold text-sm uppercase tracking-tight">Type</span>
                         </div>
-                        {allTags.map((tag) => (
-                            <motion.button
-                                key={tag}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                onClick={() => setActiveFilter(tag)}
-                                className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap shadow-sm
-                                    ${activeFilter === tag
-                                        ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-lg shadow-slate-900/15'
-                                        : 'bg-white dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-cyan-200 dark:hover:border-slate-600 hover:shadow-md'
-                                    }`}
-                            >
-                                {tag}
-                            </motion.button>
-                        ))}
-                    </div>
-
-                    {availableAreas.length > 1 && (
-                        <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
-                            <div className="text-slate-500 dark:text-slate-400 font-semibold text-sm whitespace-nowrap pl-1 pr-3 flex items-center gap-1">
-                                <MapPin className="w-4 h-4" /> Area
-                            </div>
-                            {availableAreas.map((area) => (
+                        <div className="flex flex-wrap items-center gap-2 flex-1">
+                            {allTags.map((tag) => (
                                 <motion.button
-                                    key={area}
+                                    key={tag}
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
-                                    onClick={() => setActiveArea(area)}
+                                    onClick={() => setActiveFilter(tag)}
                                     className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap shadow-sm
-                                        ${activeArea === area
-                                            ? 'bg-cyan-600 text-white shadow-lg shadow-cyan-600/20'
+                                    ${activeFilter === tag
+                                            ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-lg shadow-slate-900/15'
                                             : 'bg-white dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-cyan-200 dark:hover:border-slate-600 hover:shadow-md'
                                         }`}
                                 >
-                                    {area}
+                                    {tag}
                                 </motion.button>
                             ))}
+                        </div>
+                    </div>
+
+                    {availableAreas.length > 1 && (
+                        <div className="flex flex-wrap items-start gap-y-3 pl-1">
+                            <div className="flex items-center gap-2 w-20 shrink-0 pt-2.5">
+                                <MapPin className="w-4 h-4 text-slate-500" />
+                                <span className="text-slate-500 dark:text-slate-400 font-bold text-sm uppercase tracking-tight">Area</span>
+                            </div>
+                            <div className="flex flex-wrap items-center gap-2 flex-1">
+                                {availableAreas.map((area) => (
+                                    <motion.button
+                                        key={area}
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        onClick={() => setActiveArea(area)}
+                                        className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap shadow-sm
+                                        ${activeArea === area
+                                                ? 'bg-cyan-600 text-white shadow-lg shadow-cyan-600/20'
+                                                : 'bg-white dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-cyan-200 dark:hover:border-slate-600 hover:shadow-md'
+                                            }`}
+                                    >
+                                        {area}
+                                    </motion.button>
+                                ))}
+                            </div>
                         </div>
                     )}
                 </motion.div>

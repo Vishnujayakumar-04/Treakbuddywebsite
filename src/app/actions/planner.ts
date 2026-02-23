@@ -6,8 +6,6 @@ import { groqService } from '@/lib/groq';
 
 export async function generateItinerary(draft: TripDraft): Promise<DailyItinerary[]> {
     try {
-        console.log('[Planner] Starting itinerary generation (Groq)...');
-
         const startDate = new Date(draft.startDate);
         const endDate = new Date(draft.endDate);
         const diffTime = Math.abs(endDate.getTime() - startDate.getTime());
@@ -67,11 +65,8 @@ export async function generateItinerary(draft: TripDraft): Promise<DailyItinerar
         `;
 
         // Use Groq Service
-        console.log('[Planner] Calling Groq API (Enhanced JSON Mode)...');
         // We use generateJSON which forces the model to output valid JSON
         const text = await groqService.generateJSON(prompt, "You are a helpful travel assistant. You MUST output a valid JSON object only. No markdown ticking block, no preamble.");
-
-        console.log('[Planner] Groq API response received, length:', text.length);
 
         // Clean up markdown code blocks if present
         const jsonString = extractJson(text);
@@ -90,7 +85,6 @@ export async function generateItinerary(draft: TripDraft): Promise<DailyItinerar
                 }
             }
 
-            console.log('[Planner] Successfully generated itinerary with', itinerary.length, 'days');
             return itinerary;
         } catch (error: any) {
             console.error("[Planner] JSON Parse Error:", error);

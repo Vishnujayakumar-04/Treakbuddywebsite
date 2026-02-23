@@ -62,7 +62,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             if (docSnap.exists()) {
                 setUserProfile(docSnap.data() as UserProfile);
             } else {
-                console.log("Profile document does not exist yet (might be creating).");
                 setUserProfile(null);
             }
             setLoading(false);

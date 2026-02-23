@@ -14,27 +14,27 @@ import {
 } from 'lucide-react';
 
 const CATEGORY_IMAGES: Record<string, string> = {
-    beaches: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80', // Tropical beach
-    heritage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop&q=80', // Colonial building
-    temples: 'https://images.unsplash.com/photo-1582510003544-5243789972d0?w=800&auto=format&fit=crop&q=80', // Indian temple
-    churches: 'https://images.unsplash.com/photo-1548625361-987747e70e3c?w=800&auto=format&fit=crop&q=80', // Gothic church
-    mosques: 'https://images.unsplash.com/photo-1564121211835-e88c852648ab?w=800&auto=format&fit=crop&q=80', // Mosque
-    spiritual: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&auto=format&fit=crop&q=80', // Meditation/Ashram
-    restaurants: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80', // Restaurant interior
-    nature: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&auto=format&fit=crop&q=80', // Lush green nature
-    adventure: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&auto=format&fit=crop&q=80', // Underwater scuba
-    shopping: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&auto=format&fit=crop&q=80', // Market shopping
-    hotels: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=80', // Hotel pool
-    nightlife: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&auto=format&fit=crop&q=80', // Bar/nightlife
+    beaches: '/assets/beaches/promenade beach.jpg',
+    heritage: '/assets/spot/white town walks.jfif',
+    temples: '/assets/spot/aayi mandapam.jfif',
+    churches: '/assets/spot/museum.jfif', // Fallback to museum for now as it's a heritage site
+    mosques: '/assets/spot/white town walks.jfif',
+    spiritual: '/assets/spot/casablanca.jfif',
+    restaurants: '/assets/stay/villa shanti.webp',
+    nature: '/assets/spot/botanical garden.jfif',
+    adventure: '/assets/activity/mangrove kayaking.jfif',
+    shopping: '/assets/spot/sunday market.jfif',
+    hotels: '/assets/stay/accord.jfif',
+    nightlife: '/assets/stay/accord.jfif',
 };
 
 const MARQUEE_IMAGES = [
-    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80', // Promenade Beach
-    'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop&q=80', // French Colony
-    'https://images.unsplash.com/photo-1582510003544-5243789972d0?w=800&auto=format&fit=crop&q=80', // Temple
-    'https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&auto=format&fit=crop&q=80', // Ashram
-    'https://images.unsplash.com/photo-1623083984360-15bd8434cc85?w=800&auto=format&fit=crop&q=80', // Matrimandir
-    'https://images.unsplash.com/photo-1548625361-987747e70e3c?w=800&auto=format&fit=crop&q=80', // Basilica
+    '/assets/beaches/promenade beach.jpg',
+    '/assets/stay/villa shanti.webp',
+    '/assets/spot/aayi mandapam.jfif',
+    '/assets/spot/museum.jfif',
+    '/assets/beaches/paradise beach.jpeg',
+    '/assets/activity/mangrove kayaking.jfif',
 ];
 
 

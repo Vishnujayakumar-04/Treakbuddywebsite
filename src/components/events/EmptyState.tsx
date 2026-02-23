@@ -5,11 +5,11 @@ export function EmptyState() {
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 py-12 md:py-16">
             <div className="w-[150px] md:w-[200px] grayscale opacity-80">
                 <Image
-                    src="https://images.unsplash.com/photo-1588600878108-578307a3cc9d?w=400&fit=crop&q=60"
+                    src="/assets/activity/cycling pondicherry.jfif"
                     alt="No events"
                     width={200}
                     height={200}
-                    className="object-contain mix-blend-multiply dark:mix-blend-screen"
+                    className="object-contain grayscale opacity-40 mix-blend-multiply dark:mix-blend-screen"
                     unoptimized
                 />
             </div>

@@ -2,11 +2,8 @@ import Groq from 'groq-sdk';
 
 const getGroqClient = () => {
     const key = process.env.NEXT_PUBLIC_GROQ_API_KEY || process.env.GROQ_API_KEY || '';
-    console.log("[GroqService] Full ENV keys available:", Object.keys(process.env).filter(k => k.includes('GROQ')));
-    if (!key) {
-        console.warn("[GroqService] Warning: Groq API Key is not set in process.env!");
-    } else {
-        console.log(`[GroqService] Loaded API Key: ${key.substring(0, 8)}...${key.substring(key.length - 4)} (Length: ${key.length})`);
+    if (!key && process.env.NODE_ENV !== 'production') {
+        console.warn("[GroqService] Warning: Groq API Key is not set!");
     }
     return new Groq({
         apiKey: key,

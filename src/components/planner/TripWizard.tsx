@@ -132,23 +132,28 @@ export function TripWizard({ onCancel }: { onCancel: () => void }) {
     return (
         <div className="flex flex-col h-full max-h-[85vh]">
             {/* Header */}
-            <div className="flex-none bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 p-6 flex justify-between items-center">
+            <div className="flex-none bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 p-5 flex justify-between items-center">
                 <div>
-                    <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
                         {step === 3 ? "Review & Generate" : "Plan Your Adventure"}
                     </h2>
-                    <p className="text-sm text-slate-500 mt-1">
+                    <p className="text-xs text-slate-500 mt-0.5">
                         {isGenerating ? (
-                            <span className="flex items-center gap-2 text-amber-600 animate-pulse">
+                            <span className="flex items-center gap-2 text-amber-600 animate-pulse font-medium">
                                 <Sparkles className="w-3 h-3" />
-                                AI is thinking (High traffic, please wait)...
+                                AI is thinking...
                             </span>
                         ) : (
                             `Step ${step + 1} of 4 • ${step === 0 ? "Basics" : step === 1 ? "Dates" : step === 2 ? "Preferences" : "Review"}`
                         )}
                     </p>
                 </div>
-                {/* On mobile, close button might be useful */}
+                <button
+                    onClick={onCancel}
+                    className="p-2 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                >
+                    <X className="w-5 h-5" />
+                </button>
             </div>
 
             {/* Progress Bar */}
@@ -162,7 +167,7 @@ export function TripWizard({ onCancel }: { onCancel: () => void }) {
             </div>
 
             {/* Content Area */}
-            <div className="flex-1 overflow-y-auto p-6 md:p-8">
+            <div className="flex-1 overflow-y-auto p-5 md:p-6 lg:p-8">
                 <AnimatePresence mode="wait">
                     {step === 0 && (
                         <motion.div key="step0" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.2 }}>

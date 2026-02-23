@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "TrekBuddy",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1582510003544-5243789972d0?w=1200",
+        url: "/assets/beaches/promenade beach.jpg",
         width: 1200,
         height: 630,
         alt: "TrekBuddy Puducherry Guide",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TrekBuddy - Puducherry Travel Guide",
     description: "Plan your Pondicherry trip with AI. Routes, food, and culture.",
-    images: ["https://images.unsplash.com/photo-1582510003544-5243789972d0?w=1200"],
+    images: ["/assets/beaches/promenade beach.jpg"],
   },
 };
 

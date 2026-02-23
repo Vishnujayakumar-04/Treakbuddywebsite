@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Famous Places in Puducherry | TrekBuddy',
         description: 'Explore historical sites, temples, nature spots, churches, and restaurants in Puducherry.',
-        images: [{ url: 'https://images.unsplash.com/photo-1582510003544-5243789972d0?w=1200', width: 1200, height: 630, alt: 'Famous Places in Puducherry' }],
+        images: [{ url: '/assets/spot/aayi mandapam.jfif', width: 1200, height: 630, alt: 'Famous Places in Puducherry' }],
     },
 };
 

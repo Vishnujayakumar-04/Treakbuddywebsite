@@ -1,0 +1,36 @@
+[
+  {
+    "Pub Name": "Heist Nightlife",
+    "Type": "Pub",
+    "Music Type": "EDM / Bollywood",
+    "Area": "Lawspet",
+    "Google Maps Link": "https://maps.google.com/?q=Heist+Puducherry",
+    "Phone Number": 8098985050,
+    "Opening Time": 0.75,
+    "Closing Time": 0,
+    "Happy Hours": "6–8 PM",
+    "Entry Fee": 500,
+    "Age Restriction": "21+",
+    "Dress Code": "Smart Casual",
+    "Crowd Level": "High",
+    "Best Days": "Fri–Sat",
+    "Notes": "Popular nightlife spot"
+  },
+  {
+    "Pub Name": "L’Aqua Resto Pub",
+    "Type": "Pub",
+    "Music Type": "Soft Music / Lounge",
+    "Area": "White Town",
+    "Google Maps Link": "https://maps.google.com/?q=LAqua+Puducherry",
+    "Phone Number": 4132349032,
+    "Opening Time": 0.4583333333333333,
+    "Closing Time": 0.9583333333333334,
+    "Happy Hours": "3–6 PM",
+    "Entry Fee": "No",
+    "Age Restriction": "21+",
+    "Dress Code": "Casual",
+    "Crowd Level": "Medium",
+    "Best Days": "Sat–Sun",
+    "Notes": "Near rock beach"
+  }
+]

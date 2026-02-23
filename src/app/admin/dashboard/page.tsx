@@ -6,10 +6,11 @@ import { StatsCard } from '@/components/admin/StatsCard';
 import { useAdminAuth } from '@/hooks/useAdminAuth';
 import { getDashboardStats } from '@/lib/admin/firestore';
 import { DashboardStats } from '@/types/admin';
-import { MapPin, FolderOpen, Star, Clock, Loader2 } from 'lucide-react';
+import { MapPin, FolderOpen, Star, Clock, Loader2, Calendar, Bus, Plus, List, ArrowUpRight, Database } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
+import { AdminSeeder } from '@/components/admin/AdminSeeder';
 
 function SkeletonCard() {
     return <div className="h-32 rounded-2xl bg-slate-200 dark:bg-slate-800 animate-pulse" />;
@@ -46,10 +47,12 @@ export default function AdminDashboardPage() {
                         [1, 2, 3, 4].map(i => <SkeletonCard key={i} />)
                     ) : (
                         <>
-                            <StatsCard title="Total Places" value={stats?.totalPlaces ?? 0} icon={MapPin} color="cyan" description="Across all categories" />
-                            <StatsCard title="Categories" value={stats?.totalCategories ?? 0} icon={FolderOpen} color="violet" description="Active categories" />
-                            <StatsCard title="Featured" value={stats?.featuredPlaces ?? 0} icon={Star} color="amber" description="Highlighted on website" />
-                            <StatsCard title="Recently Added" value={stats?.recentPlaces.length ?? 0} icon={Clock} color="emerald" description="This week" />
+                            <>
+                                <StatsCard title="Total Places" value={stats?.totalPlaces ?? 0} icon={MapPin} color="cyan" description="All locations" />
+                                <StatsCard title="Events" value={stats?.totalEvents ?? 0} icon={Calendar} color="violet" description="Music, Festivals, etc" />
+                                <StatsCard title="Transit" value={stats?.totalTransit ?? 0} icon={Bus} color="emerald" description="Rentals & Transport" />
+                                <StatsCard title="Featured" value={stats?.featuredPlaces ?? 0} icon={Star} color="amber" description="Home page spotlights" />
+                            </>
                         </>
                     )}
                 </div>
@@ -101,20 +104,57 @@ export default function AdminDashboardPage() {
 
                 {/* Quick Actions */}
                 <div>
-                    <h2 className="font-black text-slate-900 dark:text-white mb-4">Quick Actions</h2>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <h2 className="font-black text-slate-900 dark:text-white mb-4">Quick Management</h2>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                         {[
-                            { label: 'Add New Place', href: '/admin/add-place', color: 'bg-cyan-600 hover:bg-cyan-700 text-white' },
-                            { label: 'Manage Categories', href: '/admin/categories', color: 'bg-violet-600 hover:bg-violet-700 text-white' },
-                            { label: 'View All Places', href: '/admin/places', color: 'bg-slate-800 hover:bg-slate-700 text-white' },
-                        ].map(({ label, href, color }) => (
+                            { label: 'Manage Places', href: '/admin/places', icon: MapPin, color: 'bg-cyan-600 hover:bg-cyan-700' },
+                            { label: 'Manage Events', href: '/admin/events', icon: Calendar, color: 'bg-violet-600 hover:bg-violet-700' },
+                            { label: 'Manage Transit', href: '/admin/transit', icon: Bus, color: 'bg-emerald-600 hover:bg-emerald-700' },
+                            { label: 'Categories', href: '/admin/categories', icon: FolderOpen, color: 'bg-slate-800 hover:bg-slate-700' },
+                        ].map(({ label, href, color, icon: Icon }) => (
                             <Link key={href} href={href}
-                                className={`${color} rounded-xl p-4 text-center font-bold text-sm transition-all shadow hover:shadow-lg`}>
-                                {label}
+                                className={`${color} rounded-2xl p-6 text-white transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 group`}>
+                                <div className="flex flex-col items-center gap-3 text-center">
+                                    <div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform">
+                                        <Icon className="w-6 h-6" />
+                                    </div>
+                                    <span className="font-black text-sm uppercase tracking-wider">{label}</span>
+                                </div>
                             </Link>
                         ))}
                     </div>
                 </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <Link href="/admin/add-place" className="flex items-center justify-between p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-cyan-500 transition-all group">
+                        <div className="flex items-center gap-4">
+                            <div className="p-3 bg-cyan-50 dark:bg-cyan-900/20 text-cyan-600 rounded-xl group-hover:rotate-12 transition-transform">
+                                <Plus className="w-6 h-6" />
+                            </div>
+                            <div>
+                                <h3 className="font-bold text-slate-900 dark:text-white">Add New Place</h3>
+                                <p className="text-sm text-slate-500">Create a new location entry</p>
+                            </div>
+                        </div>
+                        <ArrowUpRight className="w-5 h-5 text-slate-300 group-hover:text-cyan-500" />
+                    </Link>
+
+                    <Link href="/admin/places" className="flex items-center justify-between p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-violet-500 transition-all group">
+                        <div className="flex items-center gap-4">
+                            <div className="p-3 bg-violet-50 dark:bg-violet-900/20 text-violet-600 rounded-xl group-hover:rotate-12 transition-transform">
+                                <List className="w-6 h-6" />
+                            </div>
+                            <div>
+                                <h3 className="font-bold text-slate-900 dark:text-white">View Inventory</h3>
+                                <p className="text-sm text-slate-500">Manage all existing data</p>
+                            </div>
+                        </div>
+                        <ArrowUpRight className="w-5 h-5 text-slate-300 group-hover:text-violet-500" />
+                    </Link>
+                </div>
+
+                {/* Database Seeder Utility */}
+                <AdminSeeder />
             </main>
         </div>
     );

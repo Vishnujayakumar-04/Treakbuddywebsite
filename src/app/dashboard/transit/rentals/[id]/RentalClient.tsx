@@ -127,14 +127,9 @@ export default function RentalClient({ id }: RentalClientProps) {
                             className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-lg border border-slate-200 dark:border-slate-800"
                         >
                             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">About This Shop</h2>
-                            <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                                {rental.description}
-                            </p>
-                            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Experience the best {rental.subCategory?.toLowerCase() || 'vehicle'} rental service in Pondicherry.
-                                Whether you're exploring White Town, beach hopping, or planning trips to Auroville,
-                                we provide well-maintained vehicles with excellent customer service.
-                            </p>
+                            <div className="text-slate-600 dark:text-slate-400 leading-relaxed whitespace-pre-line">
+                                {rental.about || rental.description || `Experience the best ${rental.subCategory?.toLowerCase() || 'vehicle'} rental service in Pondicherry. Whether you're exploring White Town, beach hopping, or planning trips to Auroville, we provide well-maintained vehicles with excellent customer service.`}
+                            </div>
                         </motion.div>
 
                         {/* Available Vehicles */}
@@ -146,7 +141,14 @@ export default function RentalClient({ id }: RentalClientProps) {
                         >
                             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Available Vehicles</h2>
                             <div className="grid sm:grid-cols-2 gap-4">
-                                {rental.subCategory === 'Bike' ? (
+                                {rental.vehicles && rental.vehicles.length > 0 ? (
+                                    rental.vehicles.map((v, idx) => (
+                                        <div key={idx} className="bg-slate-50 dark:bg-slate-800 rounded-xl p-4">
+                                            <h3 className="font-bold text-slate-900 dark:text-white mb-2">{v.category}</h3>
+                                            <p className="text-sm text-slate-600 dark:text-slate-400">{v.models}</p>
+                                        </div>
+                                    ))
+                                ) : rental.subCategory === 'Bike' ? (
                                     <>
                                         <div className="bg-slate-50 dark:bg-slate-800 rounded-xl p-4">
                                             <h3 className="font-bold text-slate-900 dark:text-white mb-2">Royal Enfield</h3>
@@ -196,6 +198,7 @@ export default function RentalClient({ id }: RentalClientProps) {
                                         </div>
                                     </>
                                 )}
+
                             </div>
                         </motion.div>
 
@@ -208,26 +211,41 @@ export default function RentalClient({ id }: RentalClientProps) {
                         >
                             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Required Documents</h2>
                             <div className="space-y-3">
-                                <div className="flex items-start gap-3 p-3 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
-                                    <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                                    <div>
-                                        <h3 className="font-semibold text-slate-900 dark:text-white">Valid Driving License</h3>
-                                        <p className="text-sm text-slate-600 dark:text-slate-400">Original DL for two-wheelers (non-gear or with gear based on vehicle)</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                                    <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                                    <div>
-                                        <h3 className="font-semibold text-slate-900 dark:text-white">Government ID Proof</h3>
-                                        <p className="text-sm text-slate-600 dark:text-slate-400">Aadhar Card, Passport, or Voter ID (original + photocopy)</p>
-                                    </div>
-                                </div>
+                                {rental.documents && rental.documents.length > 0 ? (
+                                    rental.documents.map((doc, idx) => (
+                                        <div key={idx} className={`flex items-start gap-3 p-3 rounded-lg border ${idx % 2 === 0 ? 'bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-800' : 'bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800'}`}>
+                                            <CheckCircle2 className={`w-5 h-5 ${idx % 2 === 0 ? 'text-amber-600' : 'text-blue-600'} flex-shrink-0 mt-0.5`} />
+                                            <div>
+                                                <h3 className="font-semibold text-slate-900 dark:text-white">{doc.name}</h3>
+                                                <p className="text-sm text-slate-600 dark:text-slate-400">{doc.desc}</p>
+                                            </div>
+                                        </div>
+                                    ))
+                                ) : (
+                                    <>
+                                        <div className="flex items-start gap-3 p-3 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+                                            <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                                            <div>
+                                                <h3 className="font-semibold text-slate-900 dark:text-white">Valid Driving License</h3>
+                                                <p className="text-sm text-slate-600 dark:text-slate-400">Original DL for two-wheelers (non-gear or with gear based on vehicle)</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-start gap-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                                            <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                                            <div>
+                                                <h3 className="font-semibold text-slate-900 dark:text-white">Government ID Proof</h3>
+                                                <p className="text-sm text-slate-600 dark:text-slate-400">Aadhar Card, Passport, or Voter ID (original + photocopy)</p>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
+
                                 <div className="flex items-start gap-3 p-3 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border border-emerald-200 dark:border-emerald-800">
                                     <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
                                     <div>
                                         <h3 className="font-semibold text-slate-900 dark:text-white">Security Deposit</h3>
                                         <p className="text-sm text-slate-600 dark:text-slate-400">
-                                            {rental.subCategory === 'Car' ? '₹3,000 - ₹8,000' : '₹500 - ₹2,000'} (refundable upon return)
+                                            {rental.securityDeposit || (rental.subCategory === 'Car' ? '₹3,000 - ₹8,000' : '₹500 - ₹2,000')} (refundable upon return)
                                         </p>
                                     </div>
                                 </div>
@@ -235,7 +253,7 @@ export default function RentalClient({ id }: RentalClientProps) {
                                     <CheckCircle2 className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                                     <div>
                                         <h3 className="font-semibold text-slate-900 dark:text-white">Contact Information</h3>
-                                        <p className="text-sm text-slate-600 dark:text-slate-400">Local contact number and emergency contact</p>
+                                        <p className="text-sm text-slate-600 dark:text-slate-400">Local contact number and emergency contact provided at booking</p>
                                     </div>
                                 </div>
                             </div>
@@ -250,78 +268,69 @@ export default function RentalClient({ id }: RentalClientProps) {
                         >
                             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Rental Terms & Conditions</h2>
                             <div className="space-y-4">
-                                <div>
-                                    <h3 className="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-                                        <div className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 text-sm">1</div>
-                                        Fuel Policy
-                                    </h3>
-                                    <p className="text-sm text-slate-600 dark:text-slate-400 ml-8">
-                                        Vehicle is provided with minimal fuel. You pay for the fuel you use. Return with same fuel level to avoid charges.
-                                    </p>
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-                                        <div className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 text-sm">2</div>
-                                        Rental Duration
-                                    </h3>
-                                    <p className="text-sm text-slate-600 dark:text-slate-400 ml-8">
-                                        Minimum 1 day (24 hours). Extra hours charged proportionally. Weekly/monthly packages available at discounted rates.
-                                    </p>
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-                                        <div className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 text-sm">3</div>
-                                        Helmet & Safety
-                                    </h3>
-                                    <p className="text-sm text-slate-600 dark:text-slate-400 ml-8">
-                                        Helmet(s) provided free of charge. Mandatory to wear while riding. Follow all traffic rules.
-                                    </p>
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-                                        <div className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 text-sm">4</div>
-                                        Damage & Theft
-                                    </h3>
-                                    <p className="text-sm text-slate-600 dark:text-slate-400 ml-8">
-                                        Customer responsible for any damage or loss. Report to police immediately in case of theft. Insurance covers major accidents (terms apply).
-                                    </p>
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-                                        <div className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 text-sm">5</div>
-                                        Cancellation Policy
-                                    </h3>
-                                    <p className="text-sm text-slate-600 dark:text-slate-400 ml-8">
-                                        Free cancellation up to 24 hours before pickup. 50% refund within 12 hours. No refund after pickup.
-                                    </p>
-                                </div>
+                                {rental.terms && rental.terms.length > 0 ? (
+                                    rental.terms.map((term, idx) => (
+                                        <div key={idx}>
+                                            <h3 className="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                                                <div className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 text-sm">{idx + 1}</div>
+                                                {term.title}
+                                            </h3>
+                                            <p className="text-sm text-slate-600 dark:text-slate-400 ml-8">
+                                                {term.desc}
+                                            </p>
+                                        </div>
+                                    ))
+                                ) : (
+                                    <>
+                                        <div>
+                                            <h3 className="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                                                <div className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 text-sm">1</div>
+                                                Fuel Policy
+                                            </h3>
+                                            <p className="text-sm text-slate-600 dark:text-slate-400 ml-8">
+                                                Vehicle is provided with minimal fuel. Return with same fuel level to avoid charges.
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <h3 className="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                                                <div className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 text-sm">2</div>
+                                                Rental Duration
+                                            </h3>
+                                            <p className="text-sm text-slate-600 dark:text-slate-400 ml-8">
+                                                Minimum 1 day (24 hours). Extra hours charged proportionally.
+                                            </p>
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         </motion.div>
 
                         {/* Similar Rentals */}
-                        {similarRentals.length > 0 && (
+                        {((rental.similarShops && rental.similarShops.length > 0) || similarRentals.length > 0) && (
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.2 }}
+                                transition={{ delay: 0.25 }}
                                 className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-lg border border-slate-200 dark:border-slate-800"
                             >
                                 <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Similar Shops</h2>
                                 <div className="grid sm:grid-cols-3 gap-4">
-                                    {similarRentals.map((similar) => (
-                                        <button
-                                            key={similar.id}
-                                            onClick={() => router.push(`/dashboard/transit/rentals/${similar.id}`)}
-                                            className="text-left bg-slate-50 dark:bg-slate-800 rounded-xl p-4 hover:shadow-md transition-all"
-                                        >
-                                            <h3 className="font-bold text-slate-900 dark:text-white mb-2 line-clamp-1">{similar.name}</h3>
-                                            <div className="flex items-center gap-1 text-sm text-amber-600 mb-2">
-                                                <Star className="w-4 h-4 fill-amber-400" />
-                                                <span>{similar.rating}</span>
-                                            </div>
-                                            <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">{similar.location}</p>
-                                        </button>
-                                    ))}
+                                    {(rental.similarShops && rental.similarShops.length > 0
+                                        ? rental.similarShops
+                                        : similarRentals).map((similar) => (
+                                            <button
+                                                key={similar.id}
+                                                onClick={() => router.push(`/dashboard/transit/rentals/${similar.id}`)}
+                                                className="text-left bg-slate-50 dark:bg-slate-800 rounded-xl p-4 hover:shadow-md transition-all"
+                                            >
+                                                <h3 className="font-bold text-slate-900 dark:text-white mb-2 line-clamp-1">{similar.name}</h3>
+                                                <div className="flex items-center gap-1 text-sm text-amber-600 mb-2">
+                                                    <Star className="w-4 h-4 fill-amber-400" />
+                                                    <span>{similar.rating}</span>
+                                                </div>
+                                                <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">{similar.location}</p>
+                                            </button>
+                                        ))}
                                 </div>
                             </motion.div>
                         )}
@@ -414,6 +423,6 @@ export default function RentalClient({ id }: RentalClientProps) {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }

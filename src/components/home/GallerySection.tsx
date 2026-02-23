@@ -8,42 +8,42 @@ import { Camera } from 'lucide-react';
 const GALLERY_ITEMS = [
     {
         id: 1,
-        src: 'https://images.unsplash.com/photo-1582510003544-5243789972d0?w=800&auto=format&fit=crop&q=80', // Indian Temple
-        alt: 'Manakula Vinayagar Temple',
+        src: '/assets/spot/aayi mandapam.jfif',
+        alt: 'Aayi Mandapam',
         className: 'md:col-span-1 md:row-span-2',
         location: 'White Town'
     },
     {
         id: 2,
-        src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop&q=80', // Colonial Villa
+        src: '/assets/spot/white town walks.jfif',
         alt: 'French Quarter Streets',
         className: 'md:col-span-1 md:row-span-1',
         location: 'Rue Romain Rolland'
     },
     {
         id: 3,
-        src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80', // White Colonial Building
+        src: '/assets/spot/french wa rmemorial.jfif',
         alt: 'Colonial Architecture',
         className: 'md:col-span-1 md:row-span-1',
         location: 'French Colony'
     },
     {
         id: 4,
-        src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80', // Tropical Beach
+        src: '/assets/beaches/paradise beach.jpeg',
         alt: 'Paradise Beach Sunrise',
         className: 'md:col-span-2 md:row-span-1',
         location: 'Paradise Beach'
     },
     {
         id: 5,
-        src: 'https://images.unsplash.com/photo-1548625361-987747e70e3c?w=800&auto=format&fit=crop&q=80', // Gothic Church
+        src: '/assets/spot/museum.jfif',
         alt: 'Sacred Heart Basilica',
         className: 'md:col-span-1 md:row-span-2',
         location: 'Subbaiah Salai'
     },
     {
         id: 6,
-        src: 'https://images.unsplash.com/photo-1623083984360-15bd8434cc85?w=800&auto=format&fit=crop&q=80', // Golden Dome
+        src: '/assets/beaches/auroville beach.jpg',
         alt: 'Matrimandir Auroville',
         className: 'md:col-span-1 md:row-span-1',
         location: 'Auroville'
@@ -63,6 +63,7 @@ function GalleryCard({ item, index }: { item: typeof GALLERY_ITEMS[0], index: nu
                 alt={item.alt}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
+                unoptimized
                 sizes="(max-width: 768px) 100vw, 320px"
             />
             {/* Overlay */}

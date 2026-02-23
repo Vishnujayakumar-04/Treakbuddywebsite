@@ -4,8 +4,9 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { MapPin, Navigation, ArrowRight, Loader2, IndianRupee, Route, Clock, TrendingUp } from 'lucide-react';
+import { MapPin, Navigation, ArrowRight, Loader2, IndianRupee, Route, Clock, TrendingUp, X } from 'lucide-react';
 import { DashboardHeader } from '@/components/layout/DashboardHeader';
+import { PLACES_DATA, Place } from '@/services/data/places';
 
 interface RouteResult {
     transportType: string;
@@ -23,53 +24,18 @@ export default function RoutePlannerPage() {
     const [detectingLocation, setDetectingLocation] = useState(false);
     const [analyzing, setAnalyzing] = useState(false);
     const [results, setResults] = useState<RouteResult[]>([]);
-    const [fromSuggestions, setFromSuggestions] = useState<string[]>([]);
-    const [toSuggestions, setToSuggestions] = useState<string[]>([]);
+    const [fromSuggestions, setFromSuggestions] = useState<Place[]>([]);
+    const [toSuggestions, setToSuggestions] = useState<Place[]>([]);
     const [showFromSuggestions, setShowFromSuggestions] = useState(false);
     const [showToSuggestions, setShowToSuggestions] = useState(false);
 
-    // Popular places in Pondicherry
-    const popularPlaces = [
-        'White Town',
-        'Rock Beach',
-        'Paradise Beach',
-        'Promenade Beach',
-        'Auroville',
-        'Auroville Matrimandir',
-        'Serenity Beach',
-        'Auroville Beach',
-        'Aurobindo Ashram',
-        'Pondicherry Railway Station',
-        'Pondicherry Bus Stand',
-        'Goubert Avenue',
-        'Bharathi Park',
-        'Botanical Garden',
-        'French War Memorial',
-        'Sacred Heart Basilica',
-        'Immaculate Conception Cathedral',
-        'Manakula Vinayagar Temple',
-        'Ousteri Lake',
-        'Chunnambar Boat House',
-        'Pichavaram Mangrove Forest',
-        'ECR Road',
-        'Mission Street',
-        'Beach Road',
-        'Nehru Street',
-        'Lawspet',
-        'Mudaliarpet',
-        'Kargil War Memorial',
-        'Raj Niwas',
-        'Le Cafe',
-        'Heritage Town',
-        'Gingy Nagar',
-        'New Bus Stand'
-    ];
-
     const filterPlaces = (query: string) => {
-        if (!query || query.length < 2) return [];
-        return popularPlaces.filter(place =>
-            place.toLowerCase().includes(query.toLowerCase())
-        ).slice(0, 6);
+        if (!query || query.length < 1) return [];
+        const lowerQuery = query.toLowerCase();
+        return PLACES_DATA.filter(place =>
+            place.name.toLowerCase().includes(lowerQuery) ||
+            place.location.toLowerCase().includes(lowerQuery)
+        ).slice(0, 8);
     };
 
     const handleFromChange = (value: string) => {
@@ -217,14 +183,25 @@ export default function RoutePlannerPage() {
                                         animate={{ opacity: 1, y: 0 }}
                                         className="absolute z-50 w-full mt-2 bg-white dark:bg-slate-800 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden"
                                     >
-                                        {fromSuggestions.map((place, index) => (
+                                        <div className="flex justify-between items-center px-4 py-2 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
+                                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Suggestions</span>
+                                            <button onClick={() => setShowFromSuggestions(false)} className="text-slate-400 hover:text-slate-600">
+                                                <X className="w-3 h-3" />
+                                            </button>
+                                        </div>
+                                        {fromSuggestions.map((place) => (
                                             <button
-                                                key={index}
-                                                onClick={() => selectFromSuggestion(place)}
+                                                key={place.id}
+                                                onClick={() => selectFromSuggestion(place.name)}
                                                 className="w-full px-4 py-3 text-left hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors flex items-center gap-3 border-b border-slate-100 dark:border-slate-700 last:border-0"
                                             >
-                                                <MapPin className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                                                <span className="text-slate-900 dark:text-white font-medium">{place}</span>
+                                                <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center shrink-0">
+                                                    <MapPin className="w-4 h-4 text-emerald-600" />
+                                                </div>
+                                                <div>
+                                                    <p className="text-slate-900 dark:text-white font-bold text-sm">{place.name}</p>
+                                                    <p className="text-slate-500 text-xs">{place.location}</p>
+                                                </div>
                                             </button>
                                         ))}
                                     </motion.div>
@@ -275,14 +252,25 @@ export default function RoutePlannerPage() {
                                     animate={{ opacity: 1, y: 0 }}
                                     className="absolute z-50 w-full mt-2 bg-white dark:bg-slate-800 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden"
                                 >
-                                    {toSuggestions.map((place, index) => (
+                                    <div className="flex justify-between items-center px-4 py-2 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
+                                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Suggestions</span>
+                                        <button onClick={() => setShowToSuggestions(false)} className="text-slate-400 hover:text-slate-600">
+                                            <X className="w-3 h-3" />
+                                        </button>
+                                    </div>
+                                    {toSuggestions.map((place) => (
                                         <button
-                                            key={index}
-                                            onClick={() => selectToSuggestion(place)}
+                                            key={place.id}
+                                            onClick={() => selectToSuggestion(place.name)}
                                             className="w-full px-4 py-3 text-left hover:bg-orange-50 dark:hover:bg-orange-900/20 transition-colors flex items-center gap-3 border-b border-slate-100 dark:border-slate-700 last:border-0"
                                         >
-                                            <MapPin className="w-4 h-4 text-orange-600 flex-shrink-0" />
-                                            <span className="text-slate-900 dark:text-white font-medium">{place}</span>
+                                            <div className="w-8 h-8 rounded-lg bg-orange-100 dark:bg-orange-900/40 flex items-center justify-center shrink-0">
+                                                <MapPin className="w-4 h-4 text-orange-600" />
+                                            </div>
+                                            <div>
+                                                <p className="text-slate-900 dark:text-white font-bold text-sm">{place.name}</p>
+                                                <p className="text-slate-500 text-xs">{place.location}</p>
+                                            </div>
                                         </button>
                                     ))}
                                 </motion.div>

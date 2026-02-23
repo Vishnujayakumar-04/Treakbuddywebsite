@@ -21,7 +21,7 @@ export function EventsHero() {
                 <div className="absolute right-0 bottom-0 h-full w-full md:w-[60%] z-10 opacity-90 mix-blend-luminosity pointer-events-none">
                     {/* We use a relevant generic travel vector or monument image here as placeholder for the India Monuments. */}
                     <Image
-                        src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1200&auto=format&fit=crop&q=80"
+                        src="/assets/spot/french wa rmemorial.jfif"
                         alt="Indian Monuments Silhouette"
                         fill
                         className="object-cover object-bottom opacity-30 mask-image:linear-gradient(to_left,white,transparent)"

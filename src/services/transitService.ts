@@ -5,6 +5,14 @@ import { TransitItem } from '@/utils/seedTransitData';
 // Simple in-memory cache to prevent redundant Firestore reads
 const CACHE: Record<string, TransitItem[]> = {};
 
+export function clearTransitCache(category?: string) {
+    if (category) {
+        delete CACHE[category];
+    } else {
+        Object.keys(CACHE).forEach(k => delete CACHE[k]);
+    }
+}
+
 export async function getTransitItems(category: string): Promise<TransitItem[]> {
     // Return cached data immediately if available
     if (CACHE[category]) {
@@ -32,3 +40,4 @@ export async function getTransitItems(category: string): Promise<TransitItem[]> 
 }
 
 export { seedTransitData } from '@/utils/seedTransitData';
+

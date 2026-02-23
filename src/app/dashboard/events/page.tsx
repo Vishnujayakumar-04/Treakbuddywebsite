@@ -10,7 +10,7 @@ const MOST_LOVED = [
         title: 'Music',
         bgColor: 'bg-[#e5f0ff] dark:bg-blue-950',
         textColor: 'text-[#1e3a8a] dark:text-blue-100',
-        imageSrc: 'https://images.unsplash.com/photo-1549834125-82d3c48159a3?w=400&auto=format&fit=crop&q=60',
+        imageSrc: '/assets/spot/white town walks.jfif',
         href: '/dashboard/events/music'
     },
     {
@@ -18,7 +18,7 @@ const MOST_LOVED = [
         title: 'Concerts',
         bgColor: 'bg-[#f3e8ff] dark:bg-purple-950',
         textColor: 'text-[#581c87] dark:text-purple-100',
-        imageSrc: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&auto=format&fit=crop&q=60',
+        imageSrc: '/assets/spot/aayi mandapam.jfif',
         href: '/dashboard/events/concerts'
     },
     {
@@ -26,7 +26,7 @@ const MOST_LOVED = [
         title: 'Festivals',
         bgColor: 'bg-[#fce7f3] dark:bg-pink-950',
         textColor: 'text-[#831843] dark:text-pink-100',
-        imageSrc: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?w=400&auto=format&fit=crop&q=60',
+        imageSrc: '/assets/beaches/paradise beach.jpeg',
         href: '/dashboard/events/festivals'
     },
     {
@@ -34,7 +34,7 @@ const MOST_LOVED = [
         title: 'Dance',
         bgColor: 'bg-[#ffe4e6] dark:bg-rose-950',
         textColor: 'text-[#881337] dark:text-rose-100',
-        imageSrc: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=400&auto=format&fit=crop&q=60',
+        imageSrc: '/assets/beaches/serenity beach.jpg',
         href: '/dashboard/events/dance'
     },
     {
@@ -42,7 +42,7 @@ const MOST_LOVED = [
         title: 'Health & Wellness',
         bgColor: 'bg-[#dcfce7] dark:bg-emerald-950',
         textColor: 'text-[#14532d] dark:text-emerald-100',
-        imageSrc: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&auto=format&fit=crop&q=60',
+        imageSrc: '/assets/spot/botanical garden.jfif',
         href: '/dashboard/events/health-wellness'
     },
     {
@@ -50,7 +50,7 @@ const MOST_LOVED = [
         title: 'Theatre',
         bgColor: 'bg-[#ffedd5] dark:bg-orange-950',
         textColor: 'text-[#7c2d12] dark:text-orange-100',
-        imageSrc: 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=400&auto=format&fit=crop&q=60',
+        imageSrc: '/assets/spot/museum.jfif',
         href: '/dashboard/events/theatre'
     },
     {
@@ -58,7 +58,7 @@ const MOST_LOVED = [
         title: 'Adventure',
         bgColor: 'bg-[#e0e7ff] dark:bg-indigo-950',
         textColor: 'text-[#312e81] dark:text-indigo-100',
-        imageSrc: 'https://images.unsplash.com/photo-1522199755839-a2bacb67c546?w=400&auto=format&fit=crop&q=60',
+        imageSrc: '/assets/beaches/auroville beach.jpg',
         href: '/dashboard/events/adventure'
     },
 ];

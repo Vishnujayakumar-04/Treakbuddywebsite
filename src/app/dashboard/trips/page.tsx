@@ -15,7 +15,7 @@ const MOCK_TRIPS = [
         dates: "Oct 12 - Oct 14, 2024",
         status: "Completed",
         places: 8,
-        image: "https://images.unsplash.com/photo-1582510003544-5243789972d0?q=80&w=400&fit=crop"
+        image: "/assets/spot/white town walks.jfif"
     },
     {
         id: 2,
@@ -23,7 +23,7 @@ const MOCK_TRIPS = [
         dates: "Nov 05 - Nov 08, 2024",
         status: "Upcoming",
         places: 12,
-        image: "https://images.unsplash.com/photo-1543362906-ac1b4526c1d0?q=80&w=400&fit=crop"
+        image: "/assets/beaches/promenade beach.jpg"
     }
 ];
 

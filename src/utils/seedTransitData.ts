@@ -1,4 +1,4 @@
-import { collection, doc, writeBatch } from 'firebase/firestore';
+import { collection, doc, writeBatch, getDocs, query, where, deleteDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 
 export interface TransitItem {
@@ -43,283 +43,187 @@ export interface TransitItem {
     // Rental specific
     mapUrl?: string;
     openHours?: string;
+    about?: string;
+    vehicles?: { category: string; models: string }[];
+    documents?: { name: string; desc: string }[];
+    securityDeposit?: string;
+    terms?: { title: string; desc: string }[];
+    similarShops?: { id: string; name: string; rating: number; location: string }[];
 }
 
 export const SEED_DATA: TransitItem[] = [
     // --- RENTALS (SELF-DRIVE VEHICLES) ---
-    // 🚲 Bike / Scooter Rental (Most Popular)
     {
-        id: 'r1', category: 'rentals', subCategory: 'Bike', name: 'HAPPY RIDE BIKE RENTAL',
-        rating: 4.8, price: '₹300-750/day',
+        id: 'r1', category: 'rentals', subCategory: 'Bike', name: 'Happy Ride Bike Rental',
+        rating: 4.6, price: '₹300 - ₹800/day',
         image: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800',
-        contact: '+91 96776 87007', location: '152, South Boulevard, near Railway Station',
+        contact: '+91 96776 87007', location: 'South Boulevard, near Railway Station',
         mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9266421,79.8253956',
-        openHours: 'Open 24 hours',
-        description: 'Popular choice near Railway Station. Well-maintained bikes and scooters. Helmet provided.'
+        openHours: '6:30 AM - 9:30 PM',
+        description: 'Budget-friendly rental service located close to the railway station.',
+        about: 'One of the most trusted bike rental services in Pondicherry. Ideal for tourists arriving by train or bus. Offers budget scooters and premium bikes for exploring White Town, beach routes, and long rides to Auroville and ECR.\n\nExperience hassle-free rentals with well-maintained vehicles, transparent pricing, and flexible pickup and drop options. Popular among solo travelers, couples, and weekend visitors.',
+        vehicles: [
+            { category: 'Scooters', models: 'Activa, Jupiter, Access' },
+            { category: 'Premium Bikes', models: 'Royal Enfield Classic, Hunter' },
+            { category: 'Bikes', models: 'Pulsar, Royal Enfield' }
+        ],
+        documents: [
+            { name: 'Valid Driving License', desc: 'Original license required. Gear and non-gear categories checked.' },
+            { name: 'Government ID Proof', desc: 'Aadhar, Passport, or Voter ID (original + photocopy).' }
+        ],
+        securityDeposit: '₹1,000 – ₹3,000 (refundable within 24 hours after vehicle return).',
+        terms: [
+            { title: 'Fuel Policy', desc: 'Vehicle is provided with limited fuel. Customer must refill and return at the same level.' },
+            { title: 'Rental Duration', desc: 'Minimum 24 hours. Extra hours charged hourly. Weekly and monthly discounts available.' },
+            { title: 'Helmet & Safety', desc: 'Helmet provided free. Additional helmets available on request.' },
+            { title: 'Damage & Theft', desc: 'Customer responsible for damage. Insurance available for major accidents.' },
+            { title: 'Cancellation Policy', desc: 'Free cancellation up to 24 hours before pickup. Partial refund for late cancellations.' }
+        ],
+        similarShops: [
+            { id: 'r3', name: 'Golden Bikes Rental', rating: 4.5, location: 'Airport Road' },
+            { id: 'r4', name: 'JPS Bike Rental', rating: 4.2, location: 'Lawspet' }
+        ]
     },
     {
-        id: 'r2', category: 'rentals', subCategory: 'Bike', name: 'Bike Rental Pondy MANI',
-        rating: 4.9, price: '₹350-800/day',
+        id: 'r2', category: 'rentals', subCategory: 'Cycle', name: 'Heritage Cycles',
+        rating: 4.5, price: '₹80/hour',
+        image: 'https://images.unsplash.com/photo-1485965120184-e224f7a1dbfe?w=800',
+        contact: '+91 98423 11223', location: 'White Town Promenade',
+        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9360,79.8350',
+        openHours: '6:00 AM - 7:00 PM',
+        description: 'Perfect for exploring White Town and the beach stretch.',
+        about: 'Perfect for exploring White Town and the beach stretch. Heritage Cycles offers comfortable, lightweight bicycles ideal for slow scenic rides along the Promenade and early morning beach tours.\n\nWell-maintained cycles, affordable hourly pricing, and friendly service make this a favorite among backpackers and foreign tourists.',
+        vehicles: [
+            { category: 'Standard Cycles', models: 'Single-speed city bikes' },
+            { category: 'Premium Cycles', models: 'Geared bicycles for long-distance rides' }
+        ],
+        documents: [
+            { name: 'Government ID Proof', desc: 'Aadhar, Passport, or Voter ID (original required).' }
+        ],
+        securityDeposit: '₹500 – ₹1,500 (refundable upon return).',
+        terms: [
+            { title: 'Fuel Policy', desc: 'Not applicable for cycles.' },
+            { title: 'Rental Duration', desc: 'Minimum 1 hour. Daily packages available at discounted rates.' },
+            { title: 'Safety', desc: 'Basic safety instructions provided. Reflectors and lights included.' },
+            { title: 'Damage Policy', desc: 'Customer responsible for visible damage beyond normal wear.' },
+            { title: 'Cancellation Policy', desc: 'Free cancellation before pickup time.' }
+        ],
+        similarShops: [
+            { id: 'r5', name: 'Auroville Eco Cycles', rating: 4.6, location: 'Near Auroville Visitors Centre' }
+        ]
+    },
+    {
+        id: 'r3', category: 'rentals', subCategory: 'Bike', name: 'Golden Bikes Rental',
+        rating: 4.5, price: '₹400 – ₹900/day',
         image: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=800',
-        contact: '+91 94869 63681', location: 'Sardar Vallabbhai Patel Salai, White Town',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9390,79.8361',
-        openHours: '7:00 AM - 10:00 PM',
-        description: 'Located in the heart of White Town. Wide range of geared and non-geared bikes.'
+        contact: '+91 90030 98765', location: 'Airport Road',
+        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9600,79.8100',
+        openHours: '7:00 AM - 9:00 PM',
+        description: 'Premium two-wheeler rental service offering high-quality scooters and Royal Enfield bikes.',
+        about: 'Premium two-wheeler rental service offering high-quality scooters and Royal Enfield bikes. Popular among long-distance riders heading towards ECR and Mahabalipuram.\n\nKnown for clean vehicles and fast processing.',
+        vehicles: [
+            { category: 'Scooters', models: 'Activa, Access, Jupiter' },
+            { category: 'Premium Bikes', models: 'Royal Enfield Classic 350, Hunter' }
+        ],
+        documents: [
+            { name: 'Valid Driving License', desc: 'Original required.' },
+            { name: 'Government ID', desc: 'Aadhar/Passport/Voter ID' }
+        ],
+        securityDeposit: '₹1,500 – ₹3,000',
+        terms: [
+            { title: 'Fuel', desc: 'Fuel provided minimal. Return at same level.' },
+            { title: 'Duration', desc: 'Minimum 24-hour rental.' },
+            { title: 'Helmet', desc: 'Helmet included.' },
+            { title: 'Damage', desc: 'Customer liable for damage.' },
+            { title: 'Cancellation', desc: '24-hour free cancellation.' }
+        ],
+        similarShops: [
+            { id: 'r1', name: 'Happy Ride Bike Rental', rating: 4.6, location: 'Near Railway Station' }
+        ]
     },
     {
-        id: 'r3', category: 'rentals', subCategory: 'Scooty', name: 'Mariyal Bike Rental',
-        rating: 4.9, price: '₹350-700/day',
-        image: 'https://images.unsplash.com/photo-1599819177477-0c1c63a8f5e1?w=800',
-        contact: '+91 75399 76025', location: '12, Hyder Ali Street, South Boulevard, opposite Water Tank',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9416,79.8083',
-        openHours: 'Open 24 hours',
-        description: 'Reliable service opposite Water Tank. Good condition scooters available.'
-    },
-    {
-        id: 'r4', category: 'rentals', subCategory: 'Bike', name: 'Bombay Bike Rental',
-        rating: 4.8, price: '₹400-750/day',
-        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800',
-        contact: '+91 98940 12345', location: 'Rue Milad Street, MG Road area',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9350,79.8300',
-        openHours: '8:00 AM - 9:00 PM',
-        description: 'Central location near MG Road. Good for city exploring.'
-    },
-    {
-        id: 'r5', category: 'rentals', subCategory: 'Bike', name: 'Les Pondy Two wheeler Bike Rent',
-        rating: 4.7, price: '₹300-600/day',
-        image: 'https://images.unsplash.com/photo-1591635566278-10dca0ca76ee?w=800',
-        contact: '+91 99440 54321', location: 'Mission St, Heritage Town',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9333,79.8320',
-        openHours: '7:30 AM - 9:30 PM',
-        description: 'Convenient location in Heritage Town. Budget-friendly options.'
-    },
-    {
-        id: 'r6', category: 'rentals', subCategory: 'Scooty', name: 'Joy ride\'s bike rental',
-        rating: 4.6, price: '₹300-650/day',
-        image: 'https://images.unsplash.com/photo-1525160354320-545e39edee96?w=800',
-        contact: '+91 90030 98765', location: 'Karunanidhi St, Govindasalai',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9300,79.8200',
-        openHours: '8:00 AM - 10:00 PM',
-        description: 'Known for well-maintained scooters and friendly service.'
-    },
-    {
-        id: 'r7', category: 'rentals', subCategory: 'Bike', name: 'PY Two Wheeler Rent',
-        rating: 4.8, price: '₹350-700/day',
+        id: 'r4', category: 'rentals', subCategory: 'Scooty', name: 'JPS Bike Rental',
+        rating: 4.2, price: '₹350 – ₹750/day',
         image: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=800',
-        contact: '+91 98423 11223', location: 'Near Pondicherry Bus Stand (Market St)',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9400,79.8060',
-        openHours: 'Open 24 hours',
-        description: 'Very closer to main bus stand. Convenient for travelers arriving by bus.'
+        contact: '+91 96290 55444', location: 'Lawspet',
+        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9550,79.8150',
+        openHours: '6:00 AM - 9:00 PM',
+        description: 'Convenient for airport and hospital visitors. Affordable scooters.',
+        about: 'Convenient for airport and hospital visitors. Affordable scooters and flexible hourly plans available.',
+        vehicles: [
+            { category: 'Scooters', models: 'Activa, Jupiter' },
+            { category: 'Bikes', models: 'Pulsar' }
+        ],
+        documents: [
+            { name: 'Valid Driving License', desc: 'Original required.' },
+            { name: 'Government ID', desc: 'Original required.' }
+        ],
+        securityDeposit: '₹1,000 – ₹2,000',
+        terms: [
+            { title: 'Duration', desc: 'Minimum 1-day rental.' },
+            { title: 'Fuel', desc: 'Fuel not included.' },
+            { title: 'Helmet', desc: 'Helmet included.' },
+            { title: 'Damage', desc: 'Customer responsible for damages.' },
+            { title: 'Cancellation', desc: 'Limited free cancellation window.' }
+        ],
+        similarShops: [
+            { id: 'r1', name: 'Happy Ride Bike Rental', rating: 4.6, location: 'South Boulevard' }
+        ]
     },
     {
-        id: 'r8', category: 'rentals', subCategory: 'Bike', name: 'Rishi Bike rentals',
-        rating: 4.9, price: '₹300-600/day',
-        image: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800',
-        contact: '+91 77082 23700', location: 'Market St, Nellithope',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9350,79.8250',
-        openHours: 'Open 24 hours',
-        description: 'Top rated. Excellent customer service and quick process.'
+        id: 'r5', category: 'rentals', subCategory: 'Cycle', name: 'Auroville Eco Cycles',
+        rating: 4.6, price: '₹100/hour',
+        image: 'https://images.unsplash.com/photo-1571333250630-f0230c320b6d?w=800',
+        contact: '+91 98765 43219', location: 'Near Auroville Visitors Centre',
+        mapUrl: 'https://www.google.com/maps/search/?api=1&query=12.0070,79.8100',
+        openHours: '8:00 AM - 6:00 PM',
+        description: 'Eco-friendly cycle rentals near Auroville. Best for slow travel.',
+        about: 'Eco-friendly cycle rentals near Auroville. Best for slow travel and forest routes. Popular among international tourists.',
+        vehicles: [
+            { category: 'City Cycles', models: 'Standard' },
+            { category: 'Mountain Cycles', models: 'Geared' }
+        ],
+        documents: [
+            { name: 'Government ID', desc: 'Passport preferred for foreigners.' }
+        ],
+        securityDeposit: '₹500 – ₹1,000',
+        terms: [
+            { title: 'Plans', desc: 'Hourly and daily plans available.' },
+            { title: 'Safety', desc: 'Safety briefing provided.' },
+            { title: 'Damage', desc: 'Damage policy applies.' },
+            { title: 'Deposit', desc: 'Refundable deposit required.' },
+            { title: 'Cancellation', desc: 'Free cancellation before pickup.' }
+        ],
+        similarShops: [
+            { id: 'r2', name: 'Heritage Cycles', rating: 4.5, location: 'White Town Promenade' }
+        ]
     },
-    {
-        id: 'r9', category: 'rentals', subCategory: 'Scooty', name: 'Sowmmya Bike Rent',
-        rating: 4.7, price: '₹350-650/day',
-        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800',
-        contact: '+91 96290 55444', location: 'Thennanjalai Rd (Subaiya Nagar)',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9280,79.8220',
-        openHours: '7:00 AM - 10:00 PM',
-        description: 'Good variety of scooters available at reasonable rates.'
-    },
-    {
-        id: 'r10', category: 'rentals', subCategory: 'Bike', name: 'Arunachalam Bike Rent',
-        rating: 4.8, price: '₹350-800/day',
-        image: 'https://images.unsplash.com/photo-1599819177477-0c1c63a8f5e1?w=800',
-        contact: '+91 73392 55722', location: 'Pavazha Nagar',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9320,79.8150',
-        openHours: 'Open 24 hours',
-        description: 'Reliable service with transparent pricing.'
-    },
-    {
-        id: 'r11', category: 'rentals', subCategory: 'Bike', name: 'Golden Bikes Rental',
-        rating: 4.9, price: '₹400-800/day',
-        image: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=800',
-        contact: '+91 90924 44222', location: 'Opposite Le Royal Park Hotel',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9360,79.8310',
-        openHours: 'Open 24 hours',
-        description: 'Premium bikes available. Located opposite Le Royal Park.'
-    },
-    {
-        id: 'r12', category: 'rentals', subCategory: 'Bike', name: 'Sai two wheeler rent',
-        rating: 4.6, price: '₹300-600/day',
-        image: 'https://images.unsplash.com/photo-1591635566278-10dca0ca76ee?w=800',
-        contact: '+91 97890 23456', location: 'Mission St, Heritage Town',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9333,79.8320',
-        openHours: '8:00 AM - 9:00 PM',
-        description: 'Heritage town location. Easy pick up and drop.'
-    },
-    {
-        id: 'r13', category: 'rentals', subCategory: 'Bike', name: 'DIVAKAR BIKE RENT',
-        rating: 5.0, price: '₹300-550/day',
-        image: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800',
-        contact: '+91 99528 96808', location: 'Near New Bus Stand',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9410,79.8090',
-        openHours: 'Open 24 hours',
-        description: 'Highly rated. Best for travelers arriving at new bus stand.'
-    },
-    {
-        id: 'r14', category: 'rentals', subCategory: 'Bike', name: 'Shri Vaasan Bike Rental',
-        rating: 4.7, price: '₹350-700/day',
-        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800',
-        contact: '+91 98941 67890', location: 'Kamaraj Salai, Naveena Garden',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9380,79.8280',
-        openHours: '7:00 AM - 10:00 PM',
-        description: 'Good condition vehicles and friendly staff.'
-    },
-    {
-        id: 'r15', category: 'rentals', subCategory: 'Bike', name: 'Anthuvan Bike Rental',
-        rating: 4.8, price: '₹300-650/day',
-        image: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=800',
-        contact: '+91 81223 45678', location: 'Milad St, MG Road area',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9350,79.8300',
-        openHours: '8:00 AM - 9:00 PM',
-        description: 'Central location. Hassle-free rental process.'
-    },
-
-    // 🚗 Car Self-Drive Rental
     {
         id: 'rc1', category: 'rentals', subCategory: 'Car', name: 'RIDE EASY CARS',
-        rating: 4.8, price: '₹2000-4000/day',
+        rating: 4.8, price: '₹2000 - ₹4000/day',
         image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800',
         contact: '+91 63802 22267', location: 'Police Quarters Lane, Venkata Nagar',
         mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9380,79.8280',
         openHours: 'Open 24 hours',
-        description: 'Self Drive Car Rental. Verified cars. Easy documentation.'
-    },
-    {
-        id: 'rc2', category: 'rentals', subCategory: 'Car', name: 'My Trip Cars',
-        rating: 4.7, price: '₹1800-3500/day',
-        image: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=800',
-        contact: '+91 78712 02798', location: 'Govindasalai',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9370,79.8250',
-        openHours: '8:00 AM - 10:00 PM',
-        description: 'Self Drive Car Rental. Hatchbacks and Sedans available.'
-    },
-    {
-        id: 'rc3', category: 'rentals', subCategory: 'Car', name: 'PondyCar',
-        rating: 4.5, price: '₹2000-4500/day',
-        image: 'https://images.unsplash.com/photo-1550355291-bbee04a92027?w=800',
-        contact: '+91 99445 67890', location: 'Near New Bus Stand',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9420,79.8080',
-        openHours: 'Open 24 hours',
-        description: 'Wide range of self-drive cars near bus stand.'
-    },
-    {
-        id: 'rc4', category: 'rentals', subCategory: 'Car', name: 'SAN CARS',
-        rating: 4.6, price: '₹2200-4000/day',
-        image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=800',
-        contact: '+91 88701 23456', location: 'Ilango Nagar',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9450,79.8100',
-        openHours: '7:00 AM - 11:00 PM',
-        description: 'Self Drive Car Rental. Clean and well-maintained cars.'
-    },
-    {
-        id: 'rc5', category: 'rentals', subCategory: 'Car', name: 'RISHI CARS',
-        rating: 4.8, price: '₹2500-5000/day',
-        image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800',
-        contact: '+91 77082 23700', location: 'MG Road Area',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9350,79.8300',
-        openHours: 'Open 24 hours',
-        description: 'Top rated car rental. SUVs and luxury cars also available.'
-    },
-    {
-        id: 'rc6', category: 'rentals', subCategory: 'Car', name: 'City Car Rental PY',
-        rating: 4.5, price: '₹2000-3500/day',
-        image: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=800',
-        contact: '+91 90031 54321', location: 'Oulgaret Area',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9430,79.8050',
-        openHours: '8:00 AM - 9:00 PM',
-        description: 'Affordable self-drive cars in Oulgaret area.'
-    },
-    {
-        id: 'rc7', category: 'rentals', subCategory: 'Car', name: 'OVA CARS',
-        rating: 4.7, price: '₹2000-4000/day',
-        image: 'https://images.unsplash.com/photo-1550355291-bbee04a92027?w=800',
-        contact: '+91 96002 98765', location: 'Near Jipmer Campus',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9560,79.7990',
-        openHours: 'Open 24 hours',
-        description: 'Convenient for JIPMER visitors. Reliable service.'
-    },
-    {
-        id: 'rc8', category: 'rentals', subCategory: 'Car', name: 'Alex Self driving cars',
-        rating: 4.6, price: '₹1800-3800/day',
-        image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=800',
-        contact: '+91 98405 67890', location: 'Nellithope',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9350,79.8250',
-        openHours: '7:30 AM - 10:00 PM',
-        description: 'Budget friendly car rental in Nellithope.'
-    },
-    {
-        id: 'rc9', category: 'rentals', subCategory: 'Car', name: 'PY01 self drive car',
-        rating: 4.8, price: '₹2500-4500/day',
-        image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800',
-        contact: '+91 99441 23456', location: 'White Town',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9390,79.8361',
-        openHours: 'Open 24 hours',
-        description: 'Located in White Town. Premium cars for self drive.'
-    },
-    {
-        id: 'rc10', category: 'rentals', subCategory: 'Car', name: 'ASH Self Drive Cars',
-        rating: 4.7, price: '₹2200-4000/day',
-        image: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=800',
-        contact: '+91 88705 67890', location: 'Lawspet',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9500,79.8100',
-        openHours: '8:00 AM - 9:00 PM',
-        description: 'Reliable car rental service in Lawspet area.'
-    },
-    {
-        id: 'rc11', category: 'rentals', subCategory: 'Car', name: 'AKN CARS',
-        rating: 4.6, price: '₹2000-3800/day',
-        image: 'https://images.unsplash.com/photo-1550355291-bbee04a92027?w=800',
-        contact: '+91 96006 54321', location: 'Lawspet',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9510,79.8120',
-        openHours: '7:00 AM - 10:00 PM',
-        description: 'Self Drive Car Rental. Good options in Lawspet.'
-    },
-    {
-        id: 'rc12', category: 'rentals', subCategory: 'Car', name: 'AUTO CARS',
-        rating: 4.8, price: '₹2500-4500/day',
-        image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=800',
-        contact: '+91 98408 12345', location: 'White Town',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9390,79.8361',
-        openHours: 'Open 24 hours',
-        description: 'Premium self drive cars in White Town area.'
-    },
-    // 🚲 Cycle Rental
-    {
-        id: 'cy1', category: 'rentals', subCategory: 'Cycle', name: 'Heritage Cycles',
-        rating: 4.5, price: '₹80/hour',
-        image: 'https://images.unsplash.com/photo-1485965120184-e224f7a1dbfe?w=800',
-        contact: '+91 98765 43217', location: 'White Town Promenade',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9360,79.8350',
-        openHours: '6:00 AM - 7:00 PM',
-        description: 'Perfect for White Town exploration. ₹400/day. Easy rides along beach.'
-    },
-    {
-        id: 'cy2', category: 'rentals', subCategory: 'Cycle', name: 'Beach Cruiser Hub',
-        rating: 4.4, price: '₹60/hour',
-        image: 'https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=800',
-        contact: '+91 98765 43218', location: 'Rock Beach',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9360,79.8350',
-        openHours: '6:00 AM - 8:00 PM',
-        description: 'Comfortable cruisers. ₹300/day. Great for promenade rides.'
-    },
-    {
-        id: 'cy3', category: 'rentals', subCategory: 'Cycle', name: 'Auroville Eco Cycles',
-        rating: 4.6, price: '₹100/hour',
-        image: 'https://images.unsplash.com/photo-1571333250630-f0230c320b6d?w=800',
-        contact: '+91 98765 43219', location: 'Auroville Visitors Center',
-        mapUrl: 'https://www.google.com/maps/search/?api=1&query=12.0070,79.8100',
-        openHours: '9:00 AM - 5:00 PM',
-        description: 'Eco-friendly bikes. ₹500/day. Well-maintained cycles for Auroville.'
+        description: 'Self-drive car rental offering verified cars with easy documentation.',
+        about: 'Premium self-drive car rental located in Venkata Nagar. We focus on providing fully verified and thoroughly maintained hatchbacks, sedans, and SUVs. We offer hassle-free bookings, fast documentation, and door-step delivery on request.\n\nPerfect for families, group trips out to Mahabalipuram, or corporate travel around Pondy.',
+        vehicles: [
+            { category: 'Hatchbacks', models: 'Swift, i10, Baleno' },
+            { category: 'Sedans', models: 'Dzire, Honda City' },
+            { category: 'SUVs', models: 'Innova, Ertiga, Creta' }
+        ],
+        documents: [
+            { name: 'Valid Card Driving License', desc: 'Original LMV card license required.' },
+            { name: 'Government ID Proof', desc: 'Aadhar or Passport.' }
+        ],
+        securityDeposit: '₹3,000 – ₹5,000 (Refundable upon safe return).',
+        terms: [
+            { title: 'Fuel Policy', desc: 'Cars are provided with limited fuel. You must return it with the same level.' },
+            { title: 'Kms Limit', desc: 'Packages have daily kilometer bounds. Excess distances are charged per-km.' },
+            { title: 'Damage Liability', desc: 'Renter is liable to pay repair costs up to the security deposit limit for minor damages.' },
+            { title: 'Age Limit', desc: 'Minimum age to rent a car is 21 years old.' }
+        ],
+        similarShops: []
     },
 
 
@@ -759,10 +663,17 @@ export const SEED_DATA: TransitItem[] = [
 export async function seedTransitData(): Promise<void> {
     try {
         const transitRef = collection(db, 'transit');
-        // Always seed to ensure updates
         console.log('Seeding transit data...');
 
-        // Chunk logic for batch limits (though SEED_DATA is small, robust code handles >500)
+        // Step 1: Delete ALL existing rental documents so stale shops are removed
+        console.log('Clearing old rental documents...');
+        const rentalsQuery = query(transitRef, where('category', '==', 'rentals'));
+        const existingRentals = await getDocs(rentalsQuery);
+        const deletePromises = existingRentals.docs.map(d => deleteDoc(d.ref));
+        await Promise.all(deletePromises);
+        console.log(`Deleted ${existingRentals.size} old rental documents.`);
+
+        // Step 2: Insert the full SEED_DATA (only 6 rentals + cabs/bus/train)
         const CHUNK_SIZE = 450;
         for (let i = 0; i < SEED_DATA.length; i += CHUNK_SIZE) {
             const chunk = SEED_DATA.slice(i, i + CHUNK_SIZE);

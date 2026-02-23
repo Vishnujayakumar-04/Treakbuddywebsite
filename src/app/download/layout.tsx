@@ -8,7 +8,7 @@ export const metadata: Metadata = {
         description: 'AI-powered itineraries, offline maps, bus routes and emergency tools. Free to download.',
         type: 'website',
         url: 'https://trekbuddy.app/download',
-        images: [{ url: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200', width: 1200, height: 630, alt: 'TrekBuddy App Download' }],
+        images: [{ url: '/assets/activity/cycling pondicherry.jfif', width: 1200, height: 630, alt: 'TrekBuddy App Download' }],
     },
 };
 

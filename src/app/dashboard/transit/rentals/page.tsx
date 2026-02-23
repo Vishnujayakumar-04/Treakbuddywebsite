@@ -7,8 +7,9 @@ import { Badge } from '@/components/ui/badge';
 import { Phone, MapPin, Loader2, Star, ArrowUpRight, Filter, Sparkles, Car, Bike, Zap, LayoutGrid } from 'lucide-react';
 import Image from 'next/image';
 import { DashboardHeader } from '@/components/layout/DashboardHeader';
-import { getTransitItems } from '@/services/transitService';
-import { TransitItem } from '@/utils/seedTransitData';
+import { getTransitItems, clearTransitCache } from '@/services/transitService';
+import { seedTransitData, TransitItem } from '@/utils/seedTransitData';
+
 
 const VEHICLE_CATEGORIES = [
     { id: 'All', label: 'All Vehicles', icon: LayoutGrid },
@@ -37,22 +38,40 @@ export default function RentalsPage({ embedded = false }: { embedded?: boolean }
     const [error, setError] = useState<string | null>(null);
     const [filter, setFilter] = useState('All');
 
-    useEffect(() => {
-        async function loadData() {
-            setLoading(true);
-            try {
-                const data = await getTransitItems('rentals');
-                setProviders(data);
-                setError(null);
-            } catch (err: unknown) {
-                console.error("Failed to load rentals:", err);
-                setError("Failed to load rentals. Please try again later.");
-            } finally {
-                setLoading(false);
-            }
+    const [seeding, setSeeding] = useState(false);
+
+    const VALID_RENTAL_IDS = ['r1', 'r2', 'r3', 'r4', 'r5', 'rc1'];
+
+    async function loadData() {
+        setLoading(true);
+        try {
+            const data = await getTransitItems('rentals');
+            setProviders(data);
+            setError(null);
+        } catch (err: unknown) {
+            console.error("Failed to load rentals:", err);
+            setError("Failed to load rentals. Please try again later.");
+        } finally {
+            setLoading(false);
         }
+    }
+
+    useEffect(() => {
         loadData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    const handleManualRefresh = async () => {
+        setSeeding(true);
+        try {
+            await seedTransitData();
+            // Clear local cache by reloading
+            window.location.reload();
+        } catch {
+            alert('Failed to refresh. Please try again.');
+            setSeeding(false);
+        }
+    };
 
     const filteredProviders = filter === 'All'
         ? providers
@@ -89,24 +108,35 @@ export default function RentalsPage({ embedded = false }: { embedded?: boolean }
                 </div>
             </div>
 
-            {/* Category Filter Pills */}
-            <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+            {/* Category Filter - Clean & Icon-focused */}
+            <div className="flex flex-wrap justify-center gap-3 py-4">
                 {VEHICLE_CATEGORIES.map((type) => {
                     const Icon = type.icon;
+                    const isActive = filter === type.id;
                     return (
                         <motion.button
                             key={type.id}
                             onClick={() => setFilter(type.id)}
-                            whileHover={{ scale: 1.05 }}
+                            whileHover={{ scale: 1.05, y: -2 }}
                             whileTap={{ scale: 0.95 }}
-                            className={`relative px-4 py-2 rounded-lg text-sm font-semibold transition-all whitespace-nowrap flex items-center gap-2 border
-                                ${filter === type.id
-                                    ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 border-slate-900 dark:border-white shadow-md'
-                                    : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-slate-300 dark:hover:border-slate-700'
+                            className={`relative group h-20 min-w-[120px] flex-1 max-w-[160px] rounded-2xl border-2 transition-all duration-300
+                                ${isActive
+                                    ? 'bg-emerald-600 border-emerald-500 shadow-lg shadow-emerald-500/20'
+                                    : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-emerald-400 hover:shadow-md'
                                 }`}
                         >
-                            <Icon className="w-4 h-4" />
-                            {type.label}
+                            <div className="flex flex-col items-center justify-center gap-2 h-full px-2">
+                                <div className={`p-2 rounded-xl transition-all duration-300 ${isActive
+                                    ? 'bg-white/20 text-white'
+                                    : 'bg-emerald-50 dark:bg-emerald-900/10 text-emerald-600 group-hover:scale-110'
+                                    }`}>
+                                    <Icon className="w-6 h-6" />
+                                </div>
+                                <span className={`text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${isActive ? 'text-white' : 'text-slate-600 dark:text-slate-400 group-hover:text-emerald-600'
+                                    }`}>
+                                    {type.label}
+                                </span>
+                            </div>
                         </motion.button>
                     );
                 })}
