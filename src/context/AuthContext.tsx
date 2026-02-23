@@ -79,6 +79,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             await firebaseSignOut(auth);
             setUser(null);
             setUserProfile(null);
+            // Clear admin session marker so middleware redirects correctly
+            document.cookie = 'admin_session=; path=/; max-age=0';
         }
     };
 

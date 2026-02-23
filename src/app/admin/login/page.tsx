@@ -26,10 +26,15 @@ export default function AdminLoginPage() {
             const role = userDoc.data()?.role;
             if (role !== 'admin' && role !== 'superadmin') {
                 await auth!.signOut();
+                // Clear session marker on rejection
+                document.cookie = 'admin_session=; path=/; max-age=0';
                 setError('Access denied. You do not have admin privileges.');
                 return;
             }
-            router.push('/admin/dashboard');
+            // Set session marker cookie (7-day expiry)
+            document.cookie = `admin_session=1; path=/; max-age=${60 * 60 * 24 * 7}; SameSite=Lax`;
+            const redirectTo = new URLSearchParams(window.location.search).get('redirect') || '/admin/dashboard';
+            router.push(redirectTo);
         } catch (err: any) {
             if (err.code === 'auth/invalid-credential' || err.code === 'auth/user-not-found') {
                 setError('Invalid email or password.');

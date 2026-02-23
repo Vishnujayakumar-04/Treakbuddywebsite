@@ -6,6 +6,7 @@ import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { AdminEvent } from '@/types/admin';
 import { addAdminEvent, updateAdminEvent } from '@/lib/admin/firestore';
+import { clearEventCache } from '@/services/eventService';
 import { Calendar, MapPin, Info, LayoutGrid, Star, Users, Clock } from 'lucide-react';
 
 interface EventFormProps {
@@ -58,6 +59,8 @@ export function EventForm({ initialData, eventId, mode }: EventFormProps) {
                 await addAdminEvent(form as any);
                 toast.success('Event added successfully!');
             }
+            // Invalidate the cache so the frontend shows fresh event data
+            clearEventCache(form.category);
             router.push('/admin/events');
         } catch (err: any) {
             toast.error(err.message || 'Operation failed');
@@ -128,8 +131,8 @@ export function EventForm({ initialData, eventId, mode }: EventFormProps) {
                                     key={id} type="button"
                                     onClick={() => set('type', id)}
                                     className={`flex-1 py-2 px-3 rounded-xl text-xs font-bold uppercase transition-all border-2 ${form.type === id
-                                            ? `border-slate-900 dark:border-white ${color} text-white`
-                                            : 'border-transparent bg-slate-100 dark:bg-slate-800 text-slate-400'
+                                        ? `border-slate-900 dark:border-white ${color} text-white`
+                                        : 'border-transparent bg-slate-100 dark:bg-slate-800 text-slate-400'
                                         }`}
                                 >
                                     {label}

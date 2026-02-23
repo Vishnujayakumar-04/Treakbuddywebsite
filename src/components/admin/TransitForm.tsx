@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { AdminTransit } from '@/types/admin';
 import { addAdminTransit, updateAdminTransit } from '@/lib/admin/firestore';
+import { clearTransitCache } from '@/services/transitService';
 import { Plus, Trash2, MapPin, Clock, Phone, Info, Car, Bike, Bus, Train, LayoutGrid } from 'lucide-react';
 
 interface TransitFormProps {
@@ -91,6 +92,8 @@ export function TransitForm({ initialData, transitId, mode }: TransitFormProps) 
                 await addAdminTransit(data);
                 toast.success('Transit item added!');
             }
+            // Invalidate the cache for this category so the frontend serves fresh data
+            clearTransitCache(form.category);
             router.push('/admin/transit');
         } catch (err: any) {
             toast.error(err.message || 'Operation failed');
