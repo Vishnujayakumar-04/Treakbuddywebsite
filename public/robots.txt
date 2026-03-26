@@ -1,12 +1,9 @@
+# *
 User-agent: *
 Allow: /
-Disallow: /dashboard/
-Disallow: /api/
-Disallow: /login
-Disallow: /signup
 
-# Sitemap location
+# Host
+Host: https://trekbuddy.app
+
+# Sitemaps
 Sitemap: https://trekbuddy.app/sitemap.xml
-
-# Crawl delay for bots
-Crawl-delay: 10
