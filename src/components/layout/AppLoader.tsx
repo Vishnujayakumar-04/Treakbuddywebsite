@@ -33,7 +33,7 @@ export function AppLoader({ children }: { children: React.ReactNode }) {
                 )}
             </AnimatePresence>
 
-            <div className={`transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+            <div className={`transition-opacity duration-200 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
                 {children}
             </div>
         </>

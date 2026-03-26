@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "Restaurant Name": "Manakula Vinayagar Temple",
+    "Category": "Temple",
+    "Location": "White Town",
+    "Google Maps Link": "https://maps.google.com/?q=Manakula+Vinayagar+Temple",
+    "Opening_Time": "5:45 AM",
+    "Closing_Time": "9:00 PM",
+    "Rating": "4.8",
+    "Description": "Highly revered Hindu temple dedicated to Lord Ganesha, older than the French occupation.",
+    "Tags (Select multiple)": "Spiritual, Heritage",
+    "Parking Available": "No",
+    "Kids Friendly": "Yes"
+  },
+  {
+    "Restaurant Name": "Vedapureeswarar Temple",
+    "Category": "Temple",
+    "Location": "Heritage Town",
+    "Google Maps Link": "https://maps.google.com/?q=Vedapureeswarar+Temple",
+    "Opening_Time": "6:00 AM",
+    "Closing_Time": "8:30 PM",
+    "Rating": "4.6",
+    "Description": "An ancient temple dedicated to Lord Shiva featuring beautiful Dravidian architecture.",
+    "Tags (Select multiple)": "Spiritual, Architecture",
+    "Parking Available": "Yes",
+    "Kids Friendly": "Yes"
+  }
+]

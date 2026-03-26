@@ -1,8 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
-import { useRouter } from 'next/navigation';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Sparkles, MapPin } from 'lucide-react';
@@ -31,15 +29,10 @@ const COLUMN_3 = [
 
 
 export function CinematicHero() {
-    const router = useRouter();
     const { user } = useAuth();
 
-    const handleNavigation = (path: string) => {
-        if (user) {
-            router.push(path);
-        } else {
-            router.push(`/login?redirect=${encodeURIComponent(path)}`);
-        }
+    const getHref = (path: string) => {
+        return user ? path : `/login?redirect=${encodeURIComponent(path)}`;
     };
 
     return (
@@ -107,23 +100,25 @@ export function CinematicHero() {
                         transition={{ duration: 0.8, delay: 0.5 }}
                         className="flex flex-col sm:flex-row gap-4"
                     >
-                        <Button
-                            onClick={() => handleNavigation('/dashboard/categories')}
-                            size="lg"
-                            className="h-14 px-8 rounded-full bg-cyan-600 hover:bg-cyan-500 text-white font-medium text-lg shadow-xl shadow-cyan-900/20 group transition-all duration-300"
-                        >
-                            Start Exploring
-                            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </Button>
-                        <Button
-                            onClick={() => handleNavigation('/dashboard/planner')}
-                            size="lg"
-                            variant="outline"
-                            className="h-14 px-8 rounded-full bg-transparent border-white/30 text-white hover:bg-white/10 font-medium text-lg backdrop-blur-md transition-all duration-300"
-                        >
-                            <MapPin className="mr-2 w-5 h-5 text-cyan-400" />
-                            Plan Your Trip
-                        </Button>
+                        <Link href={getHref('/dashboard/categories')} prefetch>
+                            <Button
+                                size="lg"
+                                className="h-14 px-8 rounded-full bg-cyan-600 hover:bg-cyan-500 text-white font-medium text-lg shadow-xl shadow-cyan-900/20 group transition-all duration-300"
+                            >
+                                Start Exploring
+                                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                        </Link>
+                        <Link href={getHref('/dashboard/planner')} prefetch>
+                            <Button
+                                size="lg"
+                                variant="outline"
+                                className="h-14 px-8 rounded-full bg-transparent border-white/30 text-white hover:bg-white/10 font-medium text-lg backdrop-blur-md transition-all duration-300"
+                            >
+                                <MapPin className="mr-2 w-5 h-5 text-cyan-400" />
+                                Plan Your Trip
+                            </Button>
+                        </Link>
                     </motion.div>
 
                     {/* Stats or Social Proof (Optional) */}
@@ -158,21 +153,15 @@ export function CinematicHero() {
     );
 }
 
-function ParallaxColumn({ images, yPercent, duration, reverse = false }: { images: string[], yPercent: number, duration: number, reverse?: boolean }) {
+function ParallaxColumn({ images, duration, reverse = false }: { images: string[], yPercent?: number, duration: number, reverse?: boolean }) {
     // Duplicate images for seamless loop
     const displayImages = [...images, ...images];
 
     return (
-        <motion.div
-            initial={{ y: reverse ? yPercent + "%" : "0%" }}
-            animate={{ y: reverse ? "0%" : yPercent + "%" }}
-            transition={{
-                duration: duration,
-                ease: "linear",
-                repeat: Infinity,
-                repeatType: "loop"
-            }}
-            className="flex flex-col gap-6 will-change-transform"
+        <div
+            className={`flex flex-col gap-6 will-change-transform ${reverse ? 'animate-parallax-reverse' : 'animate-parallax'
+                }`}
+            style={{ animationDuration: `${duration}s` }}
         >
             {displayImages.map((src, i) => (
                 <div key={i} className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
@@ -180,13 +169,14 @@ function ParallaxColumn({ images, yPercent, duration, reverse = false }: { image
                         src={src}
                         alt="Puducherry scenery"
                         fill
-                        unoptimized
+                        priority={i === 0}
+                        loading={i === 0 ? undefined : 'lazy'}
                         className="object-cover hover:scale-110 transition-transform duration-700"
                         sizes="(max-width: 768px) 100vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
                 </div>
             ))}
-        </motion.div>
+        </div>
     );
 }

@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "Restaurant Name": "Promenade Beach",
+    "Category": "Beach",
+    "Location": "White Town",
+    "Google Maps Link": "https://maps.google.com/?q=Promenade+Beach+Puducherry",
+    "Opening_Time": "5:00 AM",
+    "Closing_Time": "11:00 PM",
+    "Rating": "4.6",
+    "Description": "Famous rocky beach known for its beautiful sunrise and evening strolls.",
+    "Tags (Select multiple)": "Beach, Sunrise, Walk",
+    "Parking Available": "Yes",
+    "Kids Friendly": "Yes"
+  },
+  {
+    "Restaurant Name": "Paradise Beach",
+    "Category": "Beach",
+    "Location": "Chunnambar",
+    "Google Maps Link": "https://maps.google.com/?q=Paradise+Beach+Puducherry",
+    "Opening_Time": "9:00 AM",
+    "Closing_Time": "5:00 PM",
+    "Rating": "4.5",
+    "Description": "Pristine sandy beach accessible via a short boat ride from the Chunnambar Boat House.",
+    "Tags (Select multiple)": "Beach, Boat Ride",
+    "Parking Available": "Yes",
+    "Kids Friendly": "Yes"
+  }
+]

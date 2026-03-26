@@ -1,7 +1,7 @@
 import Groq from 'groq-sdk';
 
 const getGroqClient = () => {
-    const key = process.env.GROQ_API_KEY || process.env.NEXT_PUBLIC_GROQ_API_KEY || '';
+    const key = process.env.GROQ_API_KEY || '';
     if (!key) {
         console.warn("[GroqService] Warning: Groq API Key is not set!");
     }
@@ -21,7 +21,7 @@ export class GroqService {
 
     private getClient() {
         // Force refresh the client if the key wasn't loaded previously
-        if (!process.env.NEXT_PUBLIC_GROQ_API_KEY) {
+        if (!process.env.GROQ_API_KEY) {
             return getGroqClient();
         }
         return this.client;

@@ -8,7 +8,7 @@ import { NextRequest, NextResponse } from 'next/server';
  * cookie that we set on login. The full role-based check still runs client-side
  * via useAdminAuth (defence in depth).
  */
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
     // Allow the login page through unconditionally

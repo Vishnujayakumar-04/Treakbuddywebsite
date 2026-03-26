@@ -2,6 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import Groq from 'groq-sdk';
 import { PLACES_DATA } from '@/services/data/places';
 
+// Basic in-memory IP Rate Limiter
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+const RATE_LIMIT_MAX = 10;
+const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
+
+
 // Server-side Groq client — key stays on the server, never sent to browser
 const groq = new Groq({
     apiKey: process.env.GROQ_API_KEY || process.env.NEXT_PUBLIC_GROQ_API_KEY || '',
@@ -38,6 +44,27 @@ const QUICK_REPLIES: Record<string, string> = {
 
 export async function POST(req: NextRequest) {
     try {
+        // --- Rate Limit Check ---
+        const ip = req.headers.get('x-forwarded-for') ?? 'unknown-ip';
+        const now = Date.now();
+        const rateData = rateLimitMap.get(ip) ?? { count: 0, resetTime: now + RATE_LIMIT_WINDOW_MS };
+
+        if (now > rateData.resetTime) {
+            rateData.count = 1;
+            rateData.resetTime = now + RATE_LIMIT_WINDOW_MS;
+        } else {
+            rateData.count++;
+        }
+        rateLimitMap.set(ip, rateData);
+
+        if (rateData.count > RATE_LIMIT_MAX) {
+            return NextResponse.json(
+                { error: 'Rate limit exceeded. Try again in a minute.' },
+                { status: 429 }
+            );
+        }
+        // ------------------------
+
         const { message } = await req.json();
 
         if (!message || typeof message !== 'string') {

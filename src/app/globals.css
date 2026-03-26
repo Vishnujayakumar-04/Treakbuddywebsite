@@ -238,4 +238,29 @@
   .animate-marquee-vertical-reverse:hover {
     animation-play-state: paused;
   }
+
+  /* Hero parallax column animations — GPU-accelerated CSS instead of JS */
+  @keyframes parallax-up {
+    from { transform: translateY(0); }
+    to { transform: translateY(-50%); }
+  }
+
+  @keyframes parallax-down {
+    from { transform: translateY(-50%); }
+    to { transform: translateY(0); }
+  }
+
+  .animate-parallax {
+    animation: parallax-up linear infinite;
+  }
+
+  .animate-parallax-reverse {
+    animation: parallax-down linear infinite;
+  }
+
+  /* Vertical fade mask for hero image columns */
+  .mask-vertical-fade {
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  }
 }

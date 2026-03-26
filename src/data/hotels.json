@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "Restaurant Name": "Le Dupleix",
+    "Category": "Hotel",
+    "Location": "White Town",
+    "Google Maps Link": "https://maps.google.com/?q=Le+Dupleix+Puducherry",
+    "Rating": "4.4",
+    "Description": "A charming heritage hotel located in an 18th-century French colonial villa.",
+    "Price Range": "5000-8000",
+    "Tags (Select multiple)": "Heritage, Luxury",
+    "Parking Available": "Yes",
+    "Air Conditioned": "Yes",
+    "Kids Friendly": "Yes"
+  },
+  {
+    "Restaurant Name": "The Promenade",
+    "Category": "Hotel",
+    "Location": "White Town",
+    "Google Maps Link": "https://maps.google.com/?q=The+Promenade+Puducherry",
+    "Rating": "4.3",
+    "Description": "Upscale hotel offering rooms with sea views and a beautiful rooftop restaurant.",
+    "Price Range": "6000-10000",
+    "Tags (Select multiple)": "Sea View, Luxury",
+    "Parking Available": "Yes",
+    "Air Conditioned": "Yes",
+    "Kids Friendly": "Yes"
+  }
+]

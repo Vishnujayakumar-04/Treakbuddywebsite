@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
 import { useAuthContext } from '@/context/AuthContext';
 import { Button } from '@/components/ui/button';
 import {
@@ -12,29 +12,22 @@ import {
   Star, Sparkles, Zap
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { BestTimeSection } from '@/components/home/BestTimeSection';
 import { CinematicHero } from '@/components/home/CinematicHero';
-import { GallerySection } from '@/components/home/GallerySection';
 
-// ... (existing imports)
-
-import { Footer } from '@/components/layout/Footer';
+// Lazy-load below-fold components for faster initial page load
+const BestTimeSection = dynamic(() => import('@/components/home/BestTimeSection').then(m => ({ default: m.BestTimeSection })));
+const GallerySection = dynamic(() => import('@/components/home/GallerySection').then(m => ({ default: m.GallerySection })));
+const Footer = dynamic(() => import('@/components/layout/Footer').then(m => ({ default: m.Footer })));
 
 /* ─────────── DATA ─────────── */
 
-const CATEGORIES = [
-  { id: 'beaches', title: 'Beaches', image: '/assets/beaches/promenade beach.jpg', icon: Waves, count: '5 Spots', color: 'from-cyan-400 to-blue-500' },
-  { id: 'heritage', title: 'Heritage', image: '/assets/spot/white town walks.jfif', icon: Landmark, count: '12 Sites', color: 'from-amber-400 to-orange-500' },
-  { id: 'food', title: 'Food & Dining', image: '/assets/activity/mangrove kayaking 2.jfif', icon: Utensils, count: '20+ Cafes', color: 'from-rose-400 to-pink-500' },
-  { id: 'spiritual', title: 'Spiritual', image: '/assets/spot/aayi mandapam.jfif', icon: Flower2, count: '4 Centers', color: 'from-violet-400 to-purple-500' },
-  { id: 'nature', title: 'Nature', image: '/assets/activity/mangrove kayaking.jfif', icon: Umbrella, count: '8 Parks', color: 'from-emerald-400 to-teal-500' },
-];
 
-const STATS = [
-  { label: 'Places to Explore', value: 50, suffix: '+' },
-  { label: 'AI Itineraries', value: 1200, suffix: '+' },
-  { label: 'Happy Travelers', value: 3400, suffix: '+' },
-  { label: 'Local Insights', value: 100, suffix: '%' },
+
+const DEFAULT_STATS = [
+  { id: 'places', label: 'Places to Explore', value: 50, suffix: '+' },
+  { id: 'itineraries', label: 'AI Itineraries', value: 1200, suffix: '+' },
+  { id: 'travelers', label: 'Happy Travelers', value: 3400, suffix: '+' },
+  { id: 'insights', label: 'Local Insights', value: 100, suffix: '%' },
 ];
 
 const TESTIMONIALS = [
@@ -74,7 +67,7 @@ function useCounter(target: number, duration = 2000) {
 
 
 
-const StatCard = ({ stat, index }: { stat: typeof STATS[0], index: number }) => {
+const StatCard = ({ stat, index }: { stat: typeof DEFAULT_STATS[0], index: number }) => {
   const { count, ref } = useCounter(stat.value);
 
   return (
@@ -96,14 +89,42 @@ const StatCard = ({ stat, index }: { stat: typeof STATS[0], index: number }) => 
 
 /* ─────────── MAIN PAGE ─────────── */
 export default function HomePage() {
-  const router = useRouter();
   const { user, loading } = useAuthContext();
-  const [hoveredCat, setHoveredCat] = useState<string | null>(null);
+  const [stats, setStats] = useState(DEFAULT_STATS);
 
-  const handleStartPlanning = () => {
-    if (loading) return;
-    router.push(user ? '/dashboard/planner' : '/login?redirect=/dashboard/planner');
-  };
+  useEffect(() => {
+    async function fetchDynamicStats() {
+      try {
+        const { collection, getCountFromServer } = await import('firebase/firestore');
+        const { db } = await import('@/lib/firebase');
+        
+        let placesCount = DEFAULT_STATS[0].value;
+        let usersCount = DEFAULT_STATS[2].value;
+
+        try {
+            const placesSnap = await getCountFromServer(collection(db, 'places'));
+            placesCount = placesSnap.data().count;
+        } catch(e) { /* silent fail on rules */ }
+
+        try {
+            const usersSnap = await getCountFromServer(collection(db, 'users'));
+            if(usersSnap.data().count > 0) usersCount = usersSnap.data().count;
+        } catch(e) { /* silent fail on rules */ }
+
+        setStats([
+          { id: 'places', label: 'Places to Explore', value: Math.max(placesCount, 50), suffix: '+' },
+          { id: 'itineraries', label: 'AI Itineraries', value: Math.floor(usersCount * 2.5) + 1200, suffix: '+' },
+          { id: 'travelers', label: 'Happy Travelers', value: Math.max(usersCount, 3400), suffix: '+' },
+          { id: 'insights', label: 'Local Insights', value: 100, suffix: '%' },
+        ]);
+      } catch (error) {
+        console.error("Failed to load generic stats", error);
+      }
+    }
+    fetchDynamicStats();
+  }, []);
+
+  const plannerHref = user ? '/dashboard/planner' : '/login?redirect=/dashboard/planner';
 
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-slate-950 overflow-x-hidden">
@@ -120,8 +141,8 @@ export default function HomePage() {
 
         <div className="container mx-auto px-4 md:px-6 max-w-5xl relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {STATS.map((stat, i) => (
-              <StatCard key={stat.label} stat={stat} index={i} />
+            {stats.map((stat, i) => (
+              <StatCard key={stat.id} stat={stat} index={i} />
             ))}
           </div>
         </div>
@@ -232,14 +253,15 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-              <Button
-                size="lg"
-                onClick={handleStartPlanning}
-                className="group rounded-full px-10 h-16 text-lg font-bold bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700 shadow-2xl shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all duration-500 hover:scale-105"
-              >
-                <Zap className="w-5 h-5 mr-2" />
-                Plan Your Trip with AI
-              </Button>
+              <Link href={plannerHref} prefetch>
+                <Button
+                  size="lg"
+                  className="group rounded-full px-10 h-16 text-lg font-bold bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700 shadow-2xl shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all duration-500 hover:scale-105"
+                >
+                  <Zap className="w-5 h-5 mr-2" />
+                  Plan Your Trip with AI
+                </Button>
+              </Link>
               <Link href="/dashboard/chat">
                 <Button
                   variant="outline"

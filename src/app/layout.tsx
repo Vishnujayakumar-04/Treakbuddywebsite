@@ -70,10 +70,13 @@ export const viewport: Viewport = {
 };
 
 import { Navbar } from "@/components/layout/Navbar";
-import { AIWidget } from "@/components/layout/AIWidget";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AppLoader } from "@/components/layout/AppLoader";
-import { MobileAppBanner } from "@/components/layout/MobileAppBanner";
+import dynamic from "next/dynamic";
+
+// Lazy-load client-only floating widgets — deferred bundle loading
+const AIWidget = dynamic(() => import("@/components/layout/AIWidget").then(m => ({ default: m.AIWidget })));
+const MobileAppBanner = dynamic(() => import("@/components/layout/MobileAppBanner").then(m => ({ default: m.MobileAppBanner })));
 
 // JSON-LD structured data for the site
 const SITE_SCHEMA = {

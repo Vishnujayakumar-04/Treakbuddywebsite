@@ -50,10 +50,10 @@ const GALLERY_ITEMS = [
     },
 ];
 
-// Parallax Columns
-const COLUMN_1 = [...GALLERY_ITEMS, ...GALLERY_ITEMS, ...GALLERY_ITEMS];
-const COLUMN_2 = [...GALLERY_ITEMS.slice().reverse(), ...GALLERY_ITEMS.slice().reverse(), ...GALLERY_ITEMS.slice().reverse()];
-const COLUMN_3 = [...GALLERY_ITEMS, ...GALLERY_ITEMS, ...GALLERY_ITEMS];
+// Parallax Columns — doubled (not tripled) for seamless loop with fewer DOM nodes
+const COLUMN_1 = [...GALLERY_ITEMS, ...GALLERY_ITEMS];
+const COLUMN_2 = [...GALLERY_ITEMS.slice().reverse(), ...GALLERY_ITEMS.slice().reverse()];
+const COLUMN_3 = [...GALLERY_ITEMS, ...GALLERY_ITEMS];
 
 function GalleryCard({ item, index }: { item: typeof GALLERY_ITEMS[0], index: number }) {
     return (
@@ -62,8 +62,8 @@ function GalleryCard({ item, index }: { item: typeof GALLERY_ITEMS[0], index: nu
                 src={item.src}
                 alt={item.alt}
                 fill
+                loading="lazy"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
-                unoptimized
                 sizes="(max-width: 768px) 100vw, 320px"
             />
             {/* Overlay */}
@@ -129,21 +129,21 @@ export function GallerySection() {
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-6 transform rotate-[-6deg] scale-110 -translate-y-24 md:-mx-12 opacity-90 hover:opacity-100 transition-opacity duration-500">
 
                     {/* Column 1: Upward Scroll */}
-                    <div className="flex flex-col gap-6 animate-marquee-vertical">
+                    <div className="flex flex-col gap-6 animate-marquee-vertical will-change-transform">
                         {COLUMN_1.map((item, i) => (
                             <GalleryCard key={`c1-${i}`} item={item} index={i} />
                         ))}
                     </div>
 
                     {/* Column 2: Downward Scroll (Offset) */}
-                    <div className="flex flex-col gap-6 animate-marquee-vertical-reverse pt-24">
+                    <div className="flex flex-col gap-6 animate-marquee-vertical-reverse will-change-transform pt-24">
                         {COLUMN_2.map((item, i) => (
                             <GalleryCard key={`c2-${i}`} item={item} index={i} />
                         ))}
                     </div>
 
                     {/* Column 3: Upward Scroll (Hidden on Mobile) */}
-                    <div className="hidden md:flex flex-col gap-6 animate-marquee-vertical pt-12">
+                    <div className="hidden md:flex flex-col gap-6 animate-marquee-vertical will-change-transform pt-12">
                         {COLUMN_3.map((item, i) => (
                             <GalleryCard key={`c3-${i}`} item={item} index={i} />
                         ))}
