@@ -122,9 +122,9 @@ export default function SettingsPage() {
                                 <SelectValue placeholder="Select language" />
                             </SelectTrigger>
                             <SelectContent className="rounded-xl">
-                                <SelectItem value="en">🇬🇧 English</SelectItem>
-                                <SelectItem value="fr">🇫🇷 French (Français)</SelectItem>
-                                <SelectItem value="ta">🇮🇳 Tamil (தமிழ்)</SelectItem>
+                                <SelectItem value="en"> English</SelectItem>
+                                <SelectItem value="fr"> French (Français)</SelectItem>
+                                <SelectItem value="ta"> Tamil (தமிழ்)</SelectItem>
                             </SelectContent>
                         </Select>
                     </div>

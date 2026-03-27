@@ -238,7 +238,7 @@ export const SEED_DATA: TransitItem[] = [
             { name: 'Rapido', url: 'https://www.rapido.bike/Home' }
         ],
         tips: 'Negotiate fare before starting.',
-        image: '🛺'
+        image: ''
     },
     {
         id: 'c2', category: 'cabs', type: 'service', name: 'Bike Taxi',
@@ -249,7 +249,7 @@ export const SEED_DATA: TransitItem[] = [
             { name: 'Rapido', url: 'https://www.rapido.bike/Home' }
         ],
         tips: 'Helmets provided.',
-        image: '🏍️'
+        image: ''
     },
     {
         id: 'c3', category: 'cabs', type: 'service', name: 'City Taxi / Cab',
@@ -261,7 +261,7 @@ export const SEED_DATA: TransitItem[] = [
             { name: 'Rapido', url: 'https://www.rapido.bike/Home' }
         ],
         tips: 'AC cabs available.',
-        image: '🚕'
+        image: ''
     },
     // --- CABS & AUTO (Operators & Stands) ---
     { id: 'co1', category: 'cabs', type: 'operator', name: 'Pondy Cabs', contact: '0413 222 2222', specialty: 'Airport pickup, outstation, local rides' },

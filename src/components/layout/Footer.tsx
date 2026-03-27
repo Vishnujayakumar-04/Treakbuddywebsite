@@ -25,7 +25,7 @@ export function Footer() {
                         </Link>
                         <p className="text-xs leading-relaxed max-w-xs text-slate-500 dark:text-slate-400 opacity-90">
                             Your intelligent companion for exploring the French Riviera of the East.
-                            Crafted with ❤️ for Puducherry tourism.
+                            Crafted with  for Puducherry tourism.
                         </p>
                     </div>
 

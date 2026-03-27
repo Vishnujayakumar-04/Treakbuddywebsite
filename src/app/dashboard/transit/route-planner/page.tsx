@@ -102,7 +102,7 @@ export default function RoutePlannerPage() {
                 distance: `${distance} km`,
                 duration: `${baseTime - 5} mins`,
                 route: `${fromLocation} → ${toLocation}`,
-                icon: '🛺',
+                icon: '',
                 color: 'from-yellow-500 to-orange-500'
             },
             {
@@ -111,7 +111,7 @@ export default function RoutePlannerPage() {
                 distance: `${distance} km`,
                 duration: `${baseTime - 10} mins`,
                 route: `${fromLocation} → ${toLocation}`,
-                icon: '🏍️',
+                icon: '',
                 color: 'from-blue-500 to-cyan-500'
             },
             {
@@ -120,7 +120,7 @@ export default function RoutePlannerPage() {
                 distance: `${distance} km`,
                 duration: `${baseTime} mins`,
                 route: `${fromLocation} → ${toLocation}`,
-                icon: '🚕',
+                icon: '',
                 color: 'from-emerald-500 to-teal-500'
             },
             {
@@ -129,7 +129,7 @@ export default function RoutePlannerPage() {
                 distance: `${distance} km`,
                 duration: `${baseTime + 15} mins`,
                 route: `${fromLocation} → ${toLocation}`,
-                icon: '🚌',
+                icon: '',
                 color: 'from-purple-500 to-pink-500'
             }
         ];
@@ -330,7 +330,7 @@ export default function RoutePlannerPage() {
                                         <h3 className="text-lg font-bold text-slate-900 dark:text-white">{result.transportType}</h3>
                                         {index === 0 && (
                                             <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200 mt-1">
-                                                💰 Cheapest
+                                                 Cheapest
                                             </Badge>
                                         )}
                                     </div>
@@ -369,7 +369,7 @@ export default function RoutePlannerPage() {
 
                             <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
                                 <p className="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                                    <span className="text-emerald-600 dark:text-emerald-400">●</span>
+                                    <span className="text-emerald-600 dark:text-emerald-400"></span>
                                     {result.route}
                                 </p>
                             </div>

@@ -11,7 +11,7 @@ import { storage } from '@/lib/firebase';
 import { ImageSearchResponse } from '@/types/admin';
 import { searchImages } from '@/lib/admin/imageSearchShared';
 
-// ─── Search: delegates to shared module (server-proxy mode) ───────────────────
+//  Search: delegates to shared module (server-proxy mode) 
 // → hits /api/admin/images/search which calls Wikimedia (primary) + Pexels (fallback)
 export async function searchPlaceImages(
     name: string,
@@ -25,7 +25,7 @@ export async function searchPlaceImages(
     return result as unknown as ImageSearchResponse;
 }
 
-// ─── Canvas Compression ────────────────────────────────────────────────────────
+//  Canvas Compression 
 export async function compressImageBlob(
     blob: Blob,
     maxWidth = 1200,
@@ -56,14 +56,14 @@ export async function compressImageBlob(
     });
 }
 
-// ─── Fetch external image URL → Blob (via server CORS proxy) ─────────────────
+//  Fetch external image URL → Blob (via server CORS proxy) 
 async function urlToBlob(url: string): Promise<Blob> {
     const res = await fetch(`/api/admin/images/proxy?url=${encodeURIComponent(url)}`);
     if (!res.ok) throw new Error(`Proxy fetch failed: ${res.status}`);
     return res.blob();
 }
 
-// ─── Upload from external URL → Firebase Storage ──────────────────────────────
+//  Upload from external URL → Firebase Storage 
 export async function uploadFromUrl(
     placeId: string,
     imageUrl: string,
@@ -89,7 +89,7 @@ export async function uploadFromUrl(
     return downloadUrl;
 }
 
-// ─── Upload from File → Firebase Storage (with compression) ──────────────────
+//  Upload from File → Firebase Storage (with compression) 
 export async function uploadFromFile(
     placeId: string,
     file: File,
@@ -113,7 +113,7 @@ export async function uploadFromFile(
     return url;
 }
 
-// ─── Generate blur placeholder (canvas gradient) ─────────────────────────────
+//  Generate blur placeholder (canvas gradient) 
 export function generateBlurDataUrl(width = 40, height = 30): string {
     if (typeof document === 'undefined') return '';
     const canvas = document.createElement('canvas');

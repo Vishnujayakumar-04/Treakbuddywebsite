@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
-/* ─────────── DATA FROM COLLECTION ─────────── */
+/*  DATA FROM COLLECTION  */
 const HOSPITALS = [
     {
         name: "JIPMER Hospital",
@@ -215,7 +215,7 @@ export default function EmergencyPage() {
     );
 }
 
-// ─────────── COMPONENTS ───────────
+//  COMPONENTS 
 
 function QuickDialCard({ label, number, icon: Icon, color, textColor }: any) {
     return (

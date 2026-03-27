@@ -280,7 +280,7 @@ function FamousPlacesContent() {
                                                 {restaurant.location}
                                             </p>
                                             <Badge className="bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-400 border-amber-200">
-                                                ⭐ {restaurant.rating}
+                                                 {restaurant.rating}
                                             </Badge>
                                         </div>
                                     </motion.div>

@@ -175,7 +175,7 @@ export default function ProfilePage() {
                             <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">{user.email}</p>
 
                             <Badge className="bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800 px-3 py-1 text-xs font-bold rounded-full mb-5">
-                                ✨ Active Explorer
+                                 Active Explorer
                             </Badge>
 
                             <Button
@@ -261,7 +261,7 @@ export default function ProfilePage() {
                                                             <div className="flex justify-between items-start">
                                                                 <h4 className="font-bold text-slate-900 dark:text-white mb-1 line-clamp-1">{place.name}</h4>
                                                                 <div className="flex items-center text-orange-500 text-xs font-bold gap-0.5 bg-orange-50 dark:bg-orange-900/20 px-1.5 py-0.5 rounded-md">
-                                                                    <span className="text-[10px]">★</span> {place.rating}
+                                                                    <span className="text-[10px]"></span> {place.rating}
                                                                 </div>
                                                             </div>
                                                             <div className="flex items-center text-xs text-slate-500 dark:text-slate-400 mt-1">

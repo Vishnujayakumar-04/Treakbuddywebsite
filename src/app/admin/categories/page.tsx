@@ -9,7 +9,7 @@ import { Plus, Pencil, Trash2, Loader2, FolderOpen, X, Check } from 'lucide-reac
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 
-const ICON_OPTIONS = ['🏖️', '🏛️', '🛕', '⛪', '🕌', '🧘', '🍽️', '🏨', '🌿', '🏄', '🛍️', '🗺️', '🌊', '🎭', '🏥'];
+const ICON_OPTIONS = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', ''];
 
 function CategoryRow({
     cat, onEdit, onDelete, saving
@@ -55,7 +55,7 @@ interface CategoryFormData {
     order: number;
 }
 
-const EMPTY_FORM: CategoryFormData = { name: '', slug: '', icon: '🗺️', description: '', order: 0 };
+const EMPTY_FORM: CategoryFormData = { name: '', slug: '', icon: '', description: '', order: 0 };
 
 export default function CategoriesPage() {
     const { isAdmin, isLoading: authLoading } = useAdminAuth();

@@ -16,7 +16,7 @@ import {
     DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Menu, User, LogOut, Map, Heart, Compass, Settings, MessageCircle, X, Star } from 'lucide-react';
+import { Menu, User, LogOut, Map, Heart, Compass, Settings, MessageCircle, X, Star, CircleDollarSign } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 
@@ -27,6 +27,7 @@ const NAV_LINKS = [
     { label: 'Planner', href: '/dashboard/planner' },
     { label: 'Events', href: '/dashboard/events' },
     { label: 'Transit', href: '/dashboard/transit' },
+    { label: 'Currency', href: '/dashboard/currency' },
     { label: 'Emergency', href: '/dashboard/emergency' },
     { label: 'My Trips', href: '/dashboard/trips', variant: 'highlight' },
 ];
@@ -37,6 +38,7 @@ const MOBILE_LINKS = [
     { label: 'Explore', href: '/dashboard/categories', icon: Map },
     { label: 'Trip Planner', href: '/dashboard/planner', icon: Map },
     { label: 'AI Guide', href: '/dashboard/chat', icon: MessageCircle },
+    { label: 'Currency', href: '/dashboard/currency', icon: CircleDollarSign },
 ];
 
 export function Navbar() {

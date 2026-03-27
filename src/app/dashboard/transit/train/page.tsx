@@ -327,7 +327,7 @@ export default function TrainPage({ embedded = false }: { embedded?: boolean }) 
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center py-20 bg-gradient-to-br from-slate-50 to-purple-50/30 dark:from-slate-900 dark:to-purple-950/20 rounded-2xl border border-dashed border-slate-200 dark:border-slate-800"
                 >
-                    <div className="text-4xl mb-4">🚆</div>
+                    <div className="text-4xl mb-4"></div>
                     <p className="text-slate-500 font-medium text-lg">Transit data under preparation</p>
                     <p className="text-slate-400 text-sm mt-2">Check back soon for updates</p>
                 </motion.div>

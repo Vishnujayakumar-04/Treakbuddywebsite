@@ -47,7 +47,7 @@ export default function AboutPage() {
     return (
         <div className="flex flex-col min-h-screen bg-white dark:bg-slate-950 overflow-x-hidden">
 
-            {/* ═══════════════ HERO ═══════════════ */}
+            {/*  HERO  */}
             <section ref={heroRef} className="relative h-[85vh] flex items-center justify-center overflow-hidden">
                 <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
                     <div className="absolute inset-0 bg-slate-900" />
@@ -82,7 +82,7 @@ export default function AboutPage() {
                 </motion.div>
             </section>
 
-            {/* ═══════════════ QUICK FACTS (Overlapping) ═══════════════ */}
+            {/*  QUICK FACTS (Overlapping)  */}
             <section className="relative z-20 -mt-20 pb-24">
                 <div className="container mx-auto px-4 md:px-6 max-w-5xl">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -106,7 +106,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* ═══════════════ TIMELINE ═══════════════ */}
+            {/*  TIMELINE  */}
             <section className="py-24 bg-slate-50 dark:bg-slate-900 relative overflow-hidden">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:40px_40px]" />
 
@@ -166,7 +166,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* ═══════════════ CULTURE GRID ═══════════════ */}
+            {/*  CULTURE GRID  */}
             <section className="py-24 bg-white dark:bg-slate-950">
                 <div className="container mx-auto px-4 md:px-6 max-w-7xl">
                     <motion.div
@@ -217,7 +217,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* ═══════════════ FOOD ═══════════════ */}
+            {/*  FOOD  */}
             <section className="py-24 bg-slate-50 dark:bg-slate-900">
                 <div className="container mx-auto px-4 md:px-6 max-w-5xl">
                     <motion.div
@@ -260,7 +260,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* ═══════════════ CTA ═══════════════ */}
+            {/*  CTA  */}
             <section className="relative py-32 overflow-hidden">
                 <div className="absolute inset-0 bg-slate-950" />
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-950/50 via-slate-950 to-violet-950/50" />

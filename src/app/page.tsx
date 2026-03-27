@@ -19,7 +19,7 @@ const BestTimeSection = dynamic(() => import('@/components/home/BestTimeSection'
 const GallerySection = dynamic(() => import('@/components/home/GallerySection').then(m => ({ default: m.GallerySection })));
 const Footer = dynamic(() => import('@/components/layout/Footer').then(m => ({ default: m.Footer })));
 
-/* ─────────── DATA ─────────── */
+/*  DATA  */
 
 
 
@@ -31,12 +31,12 @@ const DEFAULT_STATS = [
 ];
 
 const TESTIMONIALS = [
-  { name: 'Aditi Sharma', role: 'Solo Traveler', text: 'TrekBuddy helped me discover hidden gems I would have never found. The AI planner created a perfect 3-day itinerary!', avatar: '🧳' },
-  { name: 'Rahul Menon', role: 'Family Trip', text: 'We used the transit feature to navigate the entire city by local buses. Saved us so much time and money!', avatar: '👨‍👩‍👧' },
-  { name: 'Sophie Laurent', role: 'Heritage Enthusiast', text: 'As a French history lover, the heritage trails recommended by the AI were absolutely insightful.', avatar: '🏛️' },
+  { name: 'Aditi Sharma', role: 'Solo Traveler', text: 'TrekBuddy helped me discover hidden gems I would have never found. The AI planner created a perfect 3-day itinerary!', avatar: '' },
+  { name: 'Rahul Menon', role: 'Family Trip', text: 'We used the transit feature to navigate the entire city by local buses. Saved us so much time and money!', avatar: '‍‍' },
+  { name: 'Sophie Laurent', role: 'Heritage Enthusiast', text: 'As a French history lover, the heritage trails recommended by the AI were absolutely insightful.', avatar: '' },
 ];
 
-/* ─────────── COUNTER HOOK ─────────── */
+/*  COUNTER HOOK  */
 function useCounter(target: number, duration = 2000) {
   const [count, setCount] = useState(0);
   const [started, setStarted] = useState(false);
@@ -87,7 +87,7 @@ const StatCard = ({ stat, index }: { stat: typeof DEFAULT_STATS[0], index: numbe
   );
 };
 
-/* ─────────── MAIN PAGE ─────────── */
+/*  MAIN PAGE  */
 export default function HomePage() {
   const { user, loading } = useAuthContext();
   const [stats, setStats] = useState(DEFAULT_STATS);
@@ -132,7 +132,7 @@ export default function HomePage() {
       <CinematicHero />
 
 
-      {/* ═══════════════ 3. ANIMATED STATS BAR ═══════════════ */}
+      {/*  3. ANIMATED STATS BAR  */}
       <section className="py-20 bg-slate-950 dark:bg-slate-900 relative overflow-hidden">
         {/* Animated bg */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:48px_48px]" />
@@ -150,13 +150,13 @@ export default function HomePage() {
 
 
 
-      {/* ═══════════════ 5. BEST TIME TO VISIT ═══════════════ */}
+      {/*  5. BEST TIME TO VISIT  */}
       <BestTimeSection />
 
-      {/* ═══════════════ GALERY SECTION ═══════════════ */}
+      {/*  GALERY SECTION  */}
       <GallerySection />
 
-      {/* ═══════════════ 5. TESTIMONIALS ═══════════════ */}
+      {/*  5. TESTIMONIALS  */}
       <section className="py-24 bg-white dark:bg-slate-900 relative overflow-hidden">
         <div className="absolute top-20 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-[120px]" />
 
@@ -212,7 +212,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════════ 6. CINEMATIC CTA ═══════════════ */}
+      {/*  6. CINEMATIC CTA  */}
       <section className="relative py-32 overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-slate-950" />

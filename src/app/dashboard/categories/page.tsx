@@ -43,16 +43,16 @@ export default function CategoriesPage() {
     const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
     const categories = [
-        { id: 'beaches', name: 'Beaches', icon: Umbrella, desc: 'Sun-kissed shores & sunrise walks', emoji: '🏖️', count: '8 spots' },
-        { id: 'heritage', name: 'Heritage', icon: '🏰', desc: 'French Quarter & colonial charm', emoji: '🏛️', count: '12 spots' },
-        { id: 'spiritual', name: 'Temples & Spiritual', icon: '🛕', desc: 'Hindu temples, churches, mosques & ashrams', emoji: '🕉️', count: '17 places' },
-        { id: 'hotels', name: 'Hotels & Stays', icon: '🏨', desc: 'Boutique hotels, resorts & PG accommodations', emoji: '🏨', count: '15 places' },
-        { id: 'restaurants', name: 'Food & Dining', icon: Utensils, desc: 'Cafes, French cuisine & street food', emoji: '🍽️', count: '15 spots' },
-        { id: 'nature', name: 'Nature', icon: TreePine, desc: 'Mangroves, lakes & botanical gardens', emoji: '🌿', count: '5 spots' },
-        { id: 'theatre', name: 'Theatre & Performing Arts', icon: '🎭', desc: 'Local plays, shows & classical dance', emoji: '🎭', count: '4 spots' },
-        { id: 'adventure', name: 'Adventure', icon: MapPin, desc: 'Scuba, surfing & kayaking', emoji: '🏄', count: '7 spots' },
-        { id: 'shopping', name: 'Shopping', icon: ShoppingBag, desc: 'Boutiques, handicrafts & markets', emoji: '🛍️', count: '9 spots' },
-        { id: 'nightlife', name: 'Nightlife & Pubs', icon: '🍸', desc: 'Vibrant clubs & seaside lounges', emoji: '🥂', count: '5+ spots' },
+        { id: 'beaches', name: 'Beaches', icon: Umbrella, desc: 'Sun-kissed shores & sunrise walks', emoji: '', count: '8 spots' },
+        { id: 'heritage', name: 'Heritage', icon: '', desc: 'French Quarter & colonial charm', emoji: '', count: '12 spots' },
+        { id: 'spiritual', name: 'Temples & Spiritual', icon: '', desc: 'Hindu temples, churches, mosques & ashrams', emoji: '', count: '17 places' },
+        { id: 'hotels', name: 'Hotels & Stays', icon: '', desc: 'Boutique hotels, resorts & PG accommodations', emoji: '', count: '15 places' },
+        { id: 'restaurants', name: 'Food & Dining', icon: Utensils, desc: 'Cafes, French cuisine & street food', emoji: '', count: '15 spots' },
+        { id: 'nature', name: 'Nature', icon: TreePine, desc: 'Mangroves, lakes & botanical gardens', emoji: '', count: '5 spots' },
+        { id: 'theatre', name: 'Theatre & Performing Arts', icon: '', desc: 'Local plays, shows & classical dance', emoji: '', count: '4 spots' },
+        { id: 'adventure', name: 'Adventure', icon: MapPin, desc: 'Scuba, surfing & kayaking', emoji: '', count: '7 spots' },
+        { id: 'shopping', name: 'Shopping', icon: ShoppingBag, desc: 'Boutiques, handicrafts & markets', emoji: '', count: '9 spots' },
+        { id: 'nightlife', name: 'Nightlife & Pubs', icon: '', desc: 'Vibrant clubs & seaside lounges', emoji: '', count: '5+ spots' },
     ];
 
     const filteredCategories = categories.filter(cat =>
@@ -228,7 +228,7 @@ export default function CategoriesPage() {
                         animate={{ opacity: 1 }}
                         className="text-center py-24"
                     >
-                        <div className="text-6xl mb-6">🔍</div>
+                        <div className="text-6xl mb-6"></div>
                         <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">No results found</h3>
                         <p className="text-slate-500 mb-6">We couldn&apos;t find any categories matching &quot;{searchQuery}&quot;</p>
                         <Button

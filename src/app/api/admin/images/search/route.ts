@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { ImageResult, ImageSearchResponse, ImageSource } from '@/types/admin';
 import { searchWikimediaMulti, WikimediaImage } from '@/lib/admin/wikimediaApi';
 
-// ─── In-memory server-side cache ──────────────────────────────────────────────
+//  In-memory server-side cache 
 // Survives across requests in the same worker, resets on cold start / deploy.
 const searchCache = new Map<string, { data: ImageSearchResponse; ts: number }>();
 const CACHE_TTL_MS = 2 * 60 * 60 * 1000; // 2 hours (Wikimedia images are stable)
@@ -22,7 +22,7 @@ function setCache(key: string, data: ImageSearchResponse): void {
     searchCache.set(key, { data, ts: Date.now() });
 }
 
-// ─── Source 1: Wikimedia Commons (Primary — free, no key, CORS-open) ─────────
+//  Source 1: Wikimedia Commons (Primary — free, no key, CORS-open) 
 async function fetchWikimediaImages(
     placeName: string,
     location: string
@@ -49,7 +49,7 @@ async function fetchWikimediaImages(
     }
 }
 
-// ─── Source 2: Pexels API (Fallback — requires key) ───────────────────────────
+//  Source 2: Pexels API (Fallback — requires key) 
 async function fetchPexelsImages(query: string): Promise<ImageResult[]> {
     const key = process.env.PEXELS_API_KEY;
     if (!key || key === 'your_pexels_api_key_here') return [];
@@ -78,7 +78,7 @@ async function fetchPexelsImages(query: string): Promise<ImageResult[]> {
     }
 }
 
-// ─── Source 3: Google Places (Bonus — if key configured) ─────────────────────
+//  Source 3: Google Places (Bonus — if key configured) 
 async function fetchGoogleImages(query: string): Promise<ImageResult[]> {
     const key = process.env.GOOGLE_PLACES_API_KEY;
     if (!key || key === 'your_google_places_api_key_here') return [];
@@ -123,7 +123,7 @@ async function fetchGoogleImages(query: string): Promise<ImageResult[]> {
     }
 }
 
-// ─── Route Handler ─────────────────────────────────────────────────────────────
+//  Route Handler 
 export async function GET(req: NextRequest) {
     const { searchParams } = req.nextUrl;
     const placeName = searchParams.get('name')?.trim() || '';
@@ -142,7 +142,7 @@ export async function GET(req: NextRequest) {
         });
     }
 
-    // ── Fetch strategy ────────────────────────────────────────────────────────
+    //  Fetch strategy 
     // Priority: Wikimedia (primary, free) → Google Places → Pexels (fill gaps)
     const pexelsQuery = `${placeName} ${location} tourism`;
     const googleQuery = `${placeName} ${location}`;

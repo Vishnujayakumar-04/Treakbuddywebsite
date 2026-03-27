@@ -95,7 +95,7 @@ export function PlaceForm({ initialData, placeId, mode }: PlaceFormProps) {
     return (
         <form onSubmit={handleSubmit} className="space-y-8">
 
-            {/* ── Basic Information ───────────────────────────────────────────── */}
+            {/*  Basic Information  */}
             <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
                 <h2 className="text-base font-black text-slate-900 dark:text-white mb-5">Basic Information</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -142,7 +142,7 @@ export function PlaceForm({ initialData, placeId, mode }: PlaceFormProps) {
                 </div>
             </div>
 
-            {/* ── Smart Image Picker ──────────────────────────────────────────── */}
+            {/*  Smart Image Picker  */}
             {/* 
         Renders AFTER name+location so SearchImagePicker can read them.
         Placement matters: re-renders as name/location change, enabling live search. 
@@ -167,12 +167,12 @@ export function PlaceForm({ initialData, placeId, mode }: PlaceFormProps) {
                         <div className="flex items-center gap-3 text-xs text-slate-500">
                             {resolvedCover && (
                                 <span className="flex items-center gap-1 text-amber-600 font-semibold">
-                                    ✅ Cover image ready
+                                     Cover image ready
                                 </span>
                             )}
                             {resolvedGallery.length > 0 && (
                                 <span className="flex items-center gap-1 text-cyan-600 font-semibold">
-                                    ✅ {resolvedGallery.length} gallery image{resolvedGallery.length > 1 ? 's' : ''} ready
+                                     {resolvedGallery.length} gallery image{resolvedGallery.length > 1 ? 's' : ''} ready
                                 </span>
                             )}
                         </div>
@@ -180,7 +180,7 @@ export function PlaceForm({ initialData, placeId, mode }: PlaceFormProps) {
                 )}
             </div>
 
-            {/* ── Details ─────────────────────────────────────────────────────── */}
+            {/*  Details  */}
             <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
                 <h2 className="text-base font-black text-slate-900 dark:text-white mb-5">Details</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -245,10 +245,10 @@ export function PlaceForm({ initialData, placeId, mode }: PlaceFormProps) {
                 </div>
             </div>
 
-            {/* ── Form Actions ─────────────────────────────────────────────────── */}
+            {/*  Form Actions  */}
             <div className="flex items-center justify-between gap-4">
                 <p className="text-xs text-slate-400">
-                    {resolvedCover ? '✅ Images ready' : '⚠️ No cover image selected — you can still save'}
+                    {resolvedCover ? ' Images ready' : ' No cover image selected — you can still save'}
                 </p>
                 <div className="flex gap-4">
                     <Button type="button" variant="outline" onClick={() => router.push('/admin/places')} className="rounded-xl px-6">

@@ -28,7 +28,7 @@ export default function AIChatPage() {
     const [messages, setMessages] = useState<Message[]>([
         {
             id: '1',
-            text: "Namaste! 🙏 I'm your TrekBuddy AI guide. I know everything about Pondicherry – from the best sunrise spots at Promenade Beach to hidden French cafés in White Town. How can I help you plan your perfect trip today?",
+            text: "Namaste!  I'm your TrekBuddy AI guide. I know everything about Pondicherry – from the best sunrise spots at Promenade Beach to hidden French cafés in White Town. How can I help you plan your perfect trip today?",
             sender: 'bot',
             timestamp: new Date()
         }

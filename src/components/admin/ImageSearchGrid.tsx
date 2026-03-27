@@ -134,7 +134,7 @@ export function ImageSearchGrid({
                         {/* Photographer credit */}
                         {img.photographer && hoveredId === img.id && (
                             <div className="absolute bottom-2 left-2 right-10 text-[9px] text-white/80 truncate">
-                                📷 {img.photographer}
+                                 {img.photographer}
                             </div>
                         )}
 
@@ -162,7 +162,7 @@ export function ImageSearchGrid({
     );
 }
 
-// ─── Skeleton Loading Grid ─────────────────────────────────────────────────────
+//  Skeleton Loading Grid 
 export function ImageSearchGridSkeleton({ count = 8 }: { count?: number }) {
     return (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">

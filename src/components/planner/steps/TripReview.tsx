@@ -112,7 +112,7 @@ export function TripReview({ draft, isGenerating, onGenerate, onEditStep }: Step
                     )}
                 </Button>
                 <p className="text-center text-xs text-slate-400 mt-3">
-                    Powered by Groq AI • Blazing Fast ⚡
+                    Powered by Groq AI • Blazing Fast 
                 </p>
             </div>
         </div>

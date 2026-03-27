@@ -1,12 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 /**
- * Edge Middleware — guards /admin/* routes before any page JavaScript runs.
- * 
- * Since we use client-side Firebase Auth (not server sessions/cookies), this
- * middleware does a lightweight guard: it checks for a custom session marker
- * cookie that we set on login. The full role-based check still runs client-side
- * via useAdminAuth (defence in depth).
+ * NOTE (SECURITY):
+ * This file is NOT a production-grade security boundary.
+ *
+ * Admin authorization is enforced server-side inside `/api/admin/*` route handlers
+ * by verifying the Firebase ID token and checking `users/{uid}.role` in Firestore.
+ *
+ * This cookie-based redirect is only a UX guard (and may not run unless wired as
+ * Next.js middleware). Do not treat it as security.
  */
 export function proxy(request: NextRequest) {
     const { pathname } = request.nextUrl;

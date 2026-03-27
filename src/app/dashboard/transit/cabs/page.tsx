@@ -62,7 +62,7 @@ export default function CabsPage({ embedded = false }: { embedded?: boolean }) {
                 {/* Icon */}
                 <div className="relative">
                     <div className="text-5xl flex items-center justify-center w-20 h-20 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-2xl shrink-0 group-hover:scale-105 transition-transform duration-500 shadow-inner">
-                        {cab.image || '🚕'}
+                        {cab.image || ''}
                     </div>
                     <div className="absolute -inset-2 bg-amber-400/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
@@ -201,7 +201,7 @@ export default function CabsPage({ embedded = false }: { embedded?: boolean }) {
                                 >
                                     <div className="flex items-center gap-4 mb-4">
                                         <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
-                                            🚖
+                                            
                                         </div>
                                         <div>
                                             <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors">{operator.name}</h3>

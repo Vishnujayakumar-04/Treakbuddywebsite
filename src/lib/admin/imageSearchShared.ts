@@ -1,9 +1,9 @@
 /**
  * imageSearchShared.ts
- * ─────────────────────────────────────────────────────────────────────────────
+ * 
  * UNIVERSAL image search module — runs identically on:
- *   ✅  Next.js website (client-side & server-side)
- *   ✅  React Native Expo app
+ *     Next.js website (client-side & server-side)
+ *     React Native Expo app
  *
  * No Next.js imports. No Node.js builtins. Pure fetch + async/await.
  *
@@ -15,10 +15,10 @@
  *   import { searchImages } from '../lib/imageSearchShared';  // copy to RN lib/
  *   const result = await searchImages({ placeName: 'Promenade Beach', location: 'Puducherry' });
  *
- * ─────────────────────────────────────────────────────────────────────────────
+ * 
  */
 
-// ─── Shared Types (framework-agnostic) ────────────────────────────────────────
+//  Shared Types (framework-agnostic) 
 
 export type ImageSourceType = 'wikimedia' | 'pexels' | 'google' | 'manual';
 
@@ -59,7 +59,7 @@ export interface SearchOptions {
     serverProxyUrl?: string;  // custom Next.js API base URL if needed
 }
 
-// ─── In-memory cache (works in both environments) ────────────────────────────
+//  In-memory cache (works in both environments) 
 interface CacheEntry { data: SharedSearchResult; ts: number }
 const memCache = new Map<string, CacheEntry>();
 const MEM_TTL = 30 * 60 * 1000; // 30 min
@@ -78,7 +78,7 @@ function memSet(key: string, data: SharedSearchResult): void {
     memCache.set(key, { data, ts: Date.now() });
 }
 
-// ─── Async Storage cache (React Native only — opt-in) ────────────────────────
+//  Async Storage cache (React Native only — opt-in) 
 // Call `setAsyncStorageAdapter(AsyncStorage)` once in your RN app entry point.
 type AsyncStorageLike = {
     getItem(key: string): Promise<string | null>;
@@ -110,7 +110,7 @@ async function asyncSet(key: string, data: SharedSearchResult): Promise<void> {
     } catch { /* storage full */ }
 }
 
-// ─── Wikimedia Commons (Direct — no API key, CORS-open) ──────────────────────
+//  Wikimedia Commons (Direct — no API key, CORS-open) 
 const WIKI_API = 'https://commons.wikimedia.org/w/api.php';
 const ALLOWED_MIME = new Set(['image/jpeg', 'image/png', 'image/webp']);
 
@@ -196,7 +196,7 @@ async function wikimediaSearch(
     return out;
 }
 
-// ─── Pexels API (Direct — needs API key, for React Native) ────────────────────
+//  Pexels API (Direct — needs API key, for React Native) 
 async function pexelsSearch(
     query: string,
     apiKey: string,
@@ -228,7 +228,7 @@ async function pexelsSearch(
     }
 }
 
-// ─── Next.js server proxy (delegates to /api/admin/images/search) ─────────────
+//  Next.js server proxy (delegates to /api/admin/images/search) 
 async function serverProxySearch(
     placeName: string,
     location: string,
@@ -250,7 +250,7 @@ async function serverProxySearch(
     };
 }
 
-// ─── Main export: searchImages ────────────────────────────────────────────────
+//  Main export: searchImages 
 /**
  * Universal search function.
  *
@@ -289,14 +289,14 @@ export async function searchImages(opts: SearchOptions): Promise<SharedSearchRes
     let result: SharedSearchResult;
 
     if (useServerProxy) {
-        // ── Next.js mode: delegate to secure server API route ────────────────────
+        //  Next.js mode: delegate to secure server API route 
         try {
             result = await serverProxySearch(placeName, location, serverProxyUrl);
         } catch (err: any) {
             result = { images: [], source: 'manual', cached: false, query: placeName, error: err.message };
         }
     } else {
-        // ── React Native mode: call APIs directly ─────────────────────────────────
+        //  React Native mode: call APIs directly 
         const pexelsQuery = `${placeName} ${location} tourism`;
 
         const [wikiImgs, pexelsImgs] = await Promise.all([
@@ -330,5 +330,5 @@ export async function searchImages(opts: SearchOptions): Promise<SharedSearchRes
     return result;
 }
 
-// ─── Export Wikimedia client directly for advanced usage ─────────────────────
+//  Export Wikimedia client directly for advanced usage 
 export { wikimediaSearch };

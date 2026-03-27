@@ -1,6 +1,6 @@
 /**
  * Wikimedia Commons API Client
- * ─────────────────────────────────────────────────────────────────────────────
+ * 
  * Universal: works in Node.js (Next.js server), browser, and React Native Expo.
  * No API key required. Free, public domain & Creative Commons licensed images.
  *
@@ -37,7 +37,7 @@ const ALLOWED_MIME = ['image/jpeg', 'image/png', 'image/webp'];
 const MIN_WIDTH = 500;
 const MIN_HEIGHT = 350;
 
-// ─── Request rate-limiting (max 1 req / 200ms) ────────────────────────────────
+//  Request rate-limiting (max 1 req / 200ms) 
 let lastRequestTime = 0;
 async function throttle(): Promise<void> {
     const now = Date.now();
@@ -46,7 +46,7 @@ async function throttle(): Promise<void> {
     lastRequestTime = Date.now();
 }
 
-// ─── Build fetch headers (cross-platform) ────────────────────────────────────
+//  Build fetch headers (cross-platform) 
 function buildHeaders(): HeadersInit {
     // In React Native, 'User-Agent' can't always be set in fetch headers.
     // We still include it for Node.js / Next.js server-side calls.
@@ -56,12 +56,12 @@ function buildHeaders(): HeadersInit {
     };
 }
 
-// ─── Strip HTML tags from description text ────────────────────────────────────
+//  Strip HTML tags from description text 
 function stripHtml(html: string): string {
     return html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 }
 
-// ─── Main search function ─────────────────────────────────────────────────────
+//  Main search function 
 export async function searchWikimediaImages(
     query: string,
     limit = 10,
@@ -99,13 +99,13 @@ export async function searchWikimediaImages(
             const info = page.imageinfo?.[0];
             if (!info) continue;
 
-            // ── Quality filters ───────────────────────────────────────────────────
+            //  Quality filters 
             const mime: string = info.mime ?? '';
             if (!ALLOWED_MIME.includes(mime)) continue;        // skip SVG, PDF, etc.
             if ((info.width ?? 0) < MIN_WIDTH) continue;      // skip tiny images
             if ((info.height ?? 0) < MIN_HEIGHT) continue;
 
-            // ── Metadata extraction ───────────────────────────────────────────────
+            //  Metadata extraction 
             const meta = info.extmetadata ?? {};
 
             const rawDesc = meta.ImageDescription?.value
@@ -129,7 +129,7 @@ export async function searchWikimediaImages(
                 .replace(/\.[^.]+$/, '') // remove extension
                 .trim();
 
-            // ── Build thumbnail URLs ──────────────────────────────────────────────
+            //  Build thumbnail URLs 
             // Wikimedia thumb pattern:
             //   https://upload.wikimedia.org/wikipedia/commons/thumb/a/b/File.jpg/{width}px-File.jpg
             const fullUrl: string = info.url ?? '';
@@ -162,7 +162,7 @@ export async function searchWikimediaImages(
     }
 }
 
-// ─── Multi-query search (tries multiple variations for best coverage) ─────────
+//  Multi-query search (tries multiple variations for best coverage) 
 export async function searchWikimediaMulti(
     placeName: string,
     location = 'Puducherry',

@@ -46,7 +46,7 @@ export interface DashboardStats {
     recentPlaces: AdminPlace[];
 }
 
-// ─── TRANSIT ───────────────────────────────────────────────────────────────
+//  TRANSIT 
 export interface AdminTransit {
     id: string;
     category: 'rentals' | 'cabs' | 'bus' | 'train';
@@ -88,7 +88,7 @@ export interface AdminTransit {
     updatedAt?: Timestamp;
 }
 
-// ─── EVENTS ────────────────────────────────────────────────────────────────
+//  EVENTS 
 export interface AdminEvent {
     id: string;
     title: string;
@@ -104,7 +104,7 @@ export interface AdminEvent {
     updatedAt: Timestamp;
 }
 
-// ─── Image Search System ────────────────────────────────────────────────────────────
+//  Image Search System 
 export type ImageSource = 'google' | 'pexels' | 'wikimedia' | 'manual';
 
 export interface ImageResult {

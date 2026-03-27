@@ -69,7 +69,7 @@ export function SmartImagePicker({
                 setSearchError('No images found. Try the manual upload tab.');
                 setTab('upload');
             } else if (result.cached) {
-                toast.success(`${result.images.length} images loaded (cached)`, { icon: '⚡' });
+                toast.success(`${result.images.length} images loaded (cached)`, { icon: '' });
             } else {
                 toast.success(`${result.images.length} images found from ${result.source}`);
             }
@@ -129,7 +129,7 @@ export function SmartImagePicker({
             onCoverReady(coverUrl);
             onGalleryReady(galleryUrls);
             setUploadStatus('done');
-            toast.success('Images uploaded to Firebase Storage! ✅');
+            toast.success('Images uploaded to Firebase Storage! ');
         } catch (err: any) {
             setUploadStatus('error');
             toast.error(`Upload failed: ${err.message}`);
@@ -170,7 +170,7 @@ export function SmartImagePicker({
             onCoverReady(coverUrl);
             onGalleryReady(galleryUrls);
             setUploadStatus('done');
-            toast.success('Images compressed & uploaded! ✅');
+            toast.success('Images compressed & uploaded! ');
         } catch (err: any) {
             setUploadStatus('error');
             toast.error(`Upload failed: ${err.message}`);
@@ -212,7 +212,7 @@ export function SmartImagePicker({
                 ))}
             </div>
 
-            {/* ── AUTO SEARCH TAB ── */}
+            {/*  AUTO SEARCH TAB  */}
             {tab === 'search' && (
                 <div className="space-y-5">
                     {/* Search trigger */}
@@ -276,7 +276,7 @@ export function SmartImagePicker({
                                     )}>
                                         {searchResult.source}
                                     </span>
-                                    {searchResult.cached && <span className="text-violet-500 font-semibold">⚡ cached</span>}
+                                    {searchResult.cached && <span className="text-violet-500 font-semibold"> cached</span>}
                                 </div>
                                 <button
                                     type="button"
@@ -360,7 +360,7 @@ export function SmartImagePicker({
                 </div>
             )}
 
-            {/* ── MANUAL UPLOAD TAB ── */}
+            {/*  MANUAL UPLOAD TAB  */}
             {tab === 'upload' && (
                 <div className="space-y-5">
                     <ImageUploader
