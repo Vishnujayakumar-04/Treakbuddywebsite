@@ -8,42 +8,42 @@ import { Camera } from 'lucide-react';
 const GALLERY_ITEMS = [
     {
         id: 1,
-        src: '/assets/spot/aayi mandapam.jfif',
+        src: '/assets/heritage/aayi-mandapam/photo-1.jpg',
         alt: 'Aayi Mandapam',
         className: 'md:col-span-1 md:row-span-2',
         location: 'White Town'
     },
     {
         id: 2,
-        src: '/assets/spot/white town walks.jfif',
+        src: '/assets/heritage/white-town-tales/photo-1.jpg',
         alt: 'French Quarter Streets',
         className: 'md:col-span-1 md:row-span-1',
         location: 'Rue Romain Rolland'
     },
     {
         id: 3,
-        src: '/assets/spot/french wa rmemorial.jfif',
+        src: '/assets/heritage/french-war-memorial/photo-1.jpg',
         alt: 'Colonial Architecture',
         className: 'md:col-span-1 md:row-span-1',
         location: 'French Colony'
     },
     {
         id: 4,
-        src: '/assets/beaches/paradise beach.jpeg',
+        src: '/assets/beaches/paradise-beach/photo-1.jpg',
         alt: 'Paradise Beach Sunrise',
         className: 'md:col-span-2 md:row-span-1',
         location: 'Paradise Beach'
     },
     {
         id: 5,
-        src: '/assets/spot/museum.jfif',
+        src: '/assets/heritage/puducherry-museum/photo-1.jpg',
         alt: 'Sacred Heart Basilica',
         className: 'md:col-span-1 md:row-span-2',
         location: 'Subbaiah Salai'
     },
     {
         id: 6,
-        src: '/assets/beaches/auroville beach.jpg',
+        src: '/assets/beaches/auroville-beach/photo-1.jpg',
         alt: 'Matrimandir Auroville',
         className: 'md:col-span-1 md:row-span-1',
         location: 'Auroville'

@@ -62,8 +62,8 @@ export function EventForm({ initialData, eventId, mode }: EventFormProps) {
             // Invalidate the cache so the frontend shows fresh event data
             clearEventCache(form.category);
             router.push('/admin/events');
-        } catch (err: any) {
-            toast.error(err.message || 'Operation failed');
+        } catch (err) {
+            toast.error((err as Error).message || 'Operation failed');
         } finally {
             setSaving(false);
         }

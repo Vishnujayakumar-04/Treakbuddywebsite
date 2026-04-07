@@ -8,7 +8,7 @@ export const metadata: Metadata = {
         description: 'AI-powered itineraries, offline maps, bus routes and emergency tools. Free to download.',
         type: 'website',
         url: 'https://trekbuddy.app/download',
-        images: [{ url: '/assets/activity/cycling pondicherry.jfif', width: 1200, height: 630, alt: 'TrekBuddy App Download' }],
+        images: [{ url: '/assets/heritage/aayi-mandapam/photo-1.jpg', width: 1200, height: 630, alt: 'TrekBuddy App Download' }],
     },
 };
 

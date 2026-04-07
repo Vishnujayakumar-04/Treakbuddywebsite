@@ -95,8 +95,8 @@ export function TransitForm({ initialData, transitId, mode }: TransitFormProps) 
             // Invalidate the cache for this category so the frontend serves fresh data
             clearTransitCache(form.category);
             router.push('/admin/transit');
-        } catch (err: any) {
-            toast.error(err.message || 'Operation failed');
+        } catch (err) {
+            toast.error((err as Error).message || 'Operation failed');
         } finally {
             setSaving(false);
         }

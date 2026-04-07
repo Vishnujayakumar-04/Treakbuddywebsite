@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { NextResponse } from 'next/server';
 import { groqService } from '@/lib/groq';
 
@@ -16,9 +17,9 @@ export async function GET() {
         let groqError = null;
         try {
             groqConnected = await groqService.checkConnection();
-        } catch (e: any) {
+        } catch (e) {
             groqError = {
-                message: e.message,
+                message: (e as Error).message,
                 name: e.name,
                 status: e.status
             };
@@ -32,10 +33,10 @@ export async function GET() {
             groqConnected,
             groqError
         });
-    } catch (error: any) {
+    } catch (error) {
         return NextResponse.json({
             status: 'error',
-            message: error.message,
+            message: (error as Error).message,
             stack: error.stack
         }, { status: 500 });
     }

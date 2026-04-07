@@ -16,6 +16,7 @@ import { AuthProvider } from "@/context/AuthContext";
 import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('http://localhost:3000'),
   title: {
     default: "TrekBuddy - Your Ultimate Guide to Puducherry Tourism",
     template: "%s | TrekBuddy Puducherry"
@@ -41,25 +42,25 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_IN",
+    locale: "en_US",
     url: "https://trekbuddy.app",
     title: "TrekBuddy - Explore Puducherry Like Never Before",
     description: "AI-powered travel companion for Puducherry. Discover hidden gems, plan trips, and navigate with ease.",
     siteName: "TrekBuddy",
     images: [
       {
-        url: "/assets/beaches/promenade beach.jpg",
+        url: "/assets/beaches/promenade-beach/photo-1.jpg",
         width: 1200,
         height: 630,
-        alt: "TrekBuddy Puducherry Guide",
+        alt: "TrekBuddy Dashboard Preview",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "TrekBuddy - Puducherry Travel Guide",
-    description: "Plan your Pondicherry trip with AI. Routes, food, and culture.",
-    images: ["/assets/beaches/promenade beach.jpg"],
+    title: "TrekBuddy | Pondicherry Travel Planner",
+    description: "The ultimate AI-driven travel companion strictly curated for exploring Pondicherry, India.",
+    images: ["/assets/beaches/promenade-beach/photo-1.jpg"],
   },
 };
 
@@ -72,11 +73,7 @@ export const viewport: Viewport = {
 import { Navbar } from "@/components/layout/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AppLoader } from "@/components/layout/AppLoader";
-import dynamic from "next/dynamic";
-
-// Lazy-load client-only floating widgets — deferred bundle loading
-const AIWidget = dynamic(() => import("@/components/layout/AIWidget").then(m => ({ default: m.AIWidget })));
-const MobileAppBanner = dynamic(() => import("@/components/layout/MobileAppBanner").then(m => ({ default: m.MobileAppBanner })));
+import { ClientWidgets } from "@/components/layout/ClientWidgets";
 
 // JSON-LD structured data for the site
 const SITE_SCHEMA = {
@@ -120,8 +117,7 @@ export default function RootLayout({
               <main className="flex-1">
                 {children}
               </main>
-              <AIWidget />
-              <MobileAppBanner />
+              <ClientWidgets />
             </AppLoader>
             <Toaster />
           </AuthProvider>

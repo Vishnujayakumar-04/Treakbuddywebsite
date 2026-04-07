@@ -22,8 +22,8 @@ export function AdminSeeder() {
             ]);
             setSuccess(true);
             toast.success('Database seeded successfully!');
-        } catch (err: any) {
-            toast.error(`Seeding failed: ${err.message}`);
+        } catch (err) {
+            toast.error(`Seeding failed: ${(err as Error).message}`);
         } finally {
             setSeeding(false);
         }

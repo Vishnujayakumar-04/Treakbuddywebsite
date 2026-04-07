@@ -82,8 +82,8 @@ export function PlaceForm({ initialData, placeId, mode }: PlaceFormProps) {
             }
 
             router.push('/admin/places');
-        } catch (err: any) {
-            toast.error(err.message || 'An error occurred');
+        } catch (err) {
+            toast.error((err as Error).message || 'An error occurred');
         } finally {
             setSaving(false);
         }

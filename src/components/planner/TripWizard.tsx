@@ -120,9 +120,9 @@ export function TripWizard({ onCancel }: { onCancel: () => void }) {
             // 5. Stay on list page (don't redirect)
             // router.push(`/dashboard/planner/${docRef.id}`);
 
-        } catch (err: any) {
+        } catch (err) {
             console.error(err);
-            setError(err.message || "Something went wrong. Please try again.");
+            setError((err as Error).message || "Something went wrong. Please try again.");
             toast.error("Failed to generate itinerary.");
         } finally {
             setIsGenerating(false);

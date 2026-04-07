@@ -16,7 +16,7 @@ import {
     DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Menu, User, LogOut, Map, Heart, Compass, Settings, MessageCircle, X, Star, CircleDollarSign } from 'lucide-react';
+import { Menu, User, LogOut, Map, Heart, Compass, Settings, MessageCircle, X, Star, CircleDollarSign, Film } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 

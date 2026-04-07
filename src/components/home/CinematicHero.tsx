@@ -9,21 +9,21 @@ import { useAuth } from '@/hooks/useAuth';
 
 // --- Image Assets (Verified Unsplash — Pondicherry-themed) ---
 const COLUMN_1 = [
-    "/assets/beaches/promenade beach.jpg",
-    "/assets/spot/white town walks.jfif",
-    "/assets/stay/villa shanti.webp",
+    "/assets/beaches/promenade-beach/photo-1.jpg",
+    "/assets/heritage/white-town-tales/photo-1.jpg",
+    "/assets/nature/botanical-gardens/photo-1.jpg",
 ];
 
 const COLUMN_2 = [
-    "/assets/beaches/serenity beach.jpg",
-    "/assets/stay/hotel atithi.jfif",
-    "/assets/beaches/paradise beach.jpeg",
+    "/assets/beaches/serenity-beach/photo-1.jpg",
+    "/assets/heritage/aayi-mandapam/photo-1.jpg",
+    "/assets/beaches/paradise-beach/photo-1.jpg",
 ];
 
 const COLUMN_3 = [
-    "/assets/spot/aayi mandapam.jfif",
-    "/assets/beaches/auroville beach.jpg",
-    "/assets/stay/accord.jfif",
+    "/assets/heritage/puducherry-museum/photo-1.jpg",
+    "/assets/beaches/auroville-beach/photo-1.jpg",
+    "/assets/beaches/auroville-beach/photo-2.jpg",
 ];
 
 

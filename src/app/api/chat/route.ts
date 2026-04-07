@@ -1,6 +1,8 @@
+export const dynamic = 'force-dynamic';
 import { NextRequest, NextResponse } from 'next/server';
 import Groq from 'groq-sdk';
 import { PLACES_DATA } from '@/services/data/places';
+import { MASTER_SYSTEM_PROMPT } from '@/lib/prompts';
 
 // Basic in-memory IP Rate Limiter
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
@@ -18,19 +20,10 @@ const PLACES_CONTEXT = PLACES_DATA
     .map(p => `- ${p.name} (${p.category} in ${p.location}): ${p.description}. Best time: ${p.bestTime}.`)
     .join('\n');
 
-const SYSTEM_INSTRUCTION = `
-You are TrekBuddy AI, an expert local guide for Puducherry (Pondicherry), India.
-Your goal is to help tourists plan trips, find places to eat, and understand the culture.
+const SYSTEM_INSTRUCTION = `${MASTER_SYSTEM_PROMPT}
 
-CONTEXT DATA:
+### CONTEXT DATA (curated examples; not exhaustive)
 ${PLACES_CONTEXT}
-
-RULES:
-1. Be friendly, concise, and helpful.
-2. If asked about Puducherry, use the context data or your general knowledge.
-3. If asked about General Knowledge (e.g., "Who is the CM of Telangana?"), answer accurately. Do not refuse.
-4. Keep answers under 3-4 sentences unless asked for a detailed list.
-5. Formatting: Use **bold** for place names.
 `;
 
 // Quick replies to avoid hitting the API for common queries
@@ -85,13 +78,12 @@ export async function POST(req: NextRequest) {
                 { role: 'system', content: SYSTEM_INSTRUCTION },
                 { role: 'user', content: message },
             ],
-            model: 'llama-3.3-70b-versatile',
+            model: 'llama-3.1-8b-instant',
             temperature: 0.7,
             max_tokens: 1024,
             stream: true,
         });
 
-        // Return a streaming response
         const encoder = new TextEncoder();
         const readable = new ReadableStream({
             async start(controller) {
@@ -115,10 +107,10 @@ export async function POST(req: NextRequest) {
                 'Cache-Control': 'no-cache',
             },
         });
-    } catch (error: any) {
+    } catch (error) {
         console.error('[/api/chat] Error:', error);
         return NextResponse.json(
-            { error: 'Failed to get AI response', details: error.message },
+            { error: 'Failed to get AI response', details: (error as Error).message },
             { status: 500 }
         );
     }

@@ -32,12 +32,23 @@ export async function getEventsByCategory(category: string): Promise<AdminEvent[
 
         CACHE[category] = data;
         return data;
-    } catch (error) {
+    } catch (error: any) {
         console.error(`Error fetching events for [${category}]:`, error);
-        // If it fails (maybe index missing), try without order
-        const q = query(collection(db, 'events'), where('category', '==', category.toLowerCase()));
-        const snapshot = await getDocs(q);
-        return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as AdminEvent));
+        
+        // If the error is specifically due to a missing compound index, retry without ordering
+        if (error.code === 'failed-precondition') {
+            try {
+                const retryQ = query(collection(db, 'events'), where('category', '==', category.toLowerCase()));
+                const retrySnapshot = await getDocs(retryQ);
+                return retrySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as AdminEvent));
+            } catch (retryError) {
+                console.error(`Secondary error fetching events for [${category}]:`, retryError);
+                return [];
+            }
+        }
+        
+        // Otherwise (like permission-denied), return an empty array safely so the UI doesn't crash
+        return [];
     }
 }
 

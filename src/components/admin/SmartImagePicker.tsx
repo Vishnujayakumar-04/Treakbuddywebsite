@@ -73,8 +73,8 @@ export function SmartImagePicker({
             } else {
                 toast.success(`${result.images.length} images found from ${result.source}`);
             }
-        } catch (err: any) {
-            setSearchError(err.message || 'Search failed');
+        } catch (err) {
+            setSearchError((err as Error).message || 'Search failed');
             setTab('upload');
         } finally {
             setSearching(false);
@@ -130,9 +130,9 @@ export function SmartImagePicker({
             onGalleryReady(galleryUrls);
             setUploadStatus('done');
             toast.success('Images uploaded to Firebase Storage! ');
-        } catch (err: any) {
+        } catch (err) {
             setUploadStatus('error');
-            toast.error(`Upload failed: ${err.message}`);
+            toast.error(`Upload failed: ${(err as Error).message}`);
         } finally {
             setIsUploading(false);
         }
@@ -171,9 +171,9 @@ export function SmartImagePicker({
             onGalleryReady(galleryUrls);
             setUploadStatus('done');
             toast.success('Images compressed & uploaded! ');
-        } catch (err: any) {
+        } catch (err) {
             setUploadStatus('error');
-            toast.error(`Upload failed: ${err.message}`);
+            toast.error(`Upload failed: ${(err as Error).message}`);
         } finally {
             setIsUploading(false);
         }

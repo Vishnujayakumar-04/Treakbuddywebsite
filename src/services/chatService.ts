@@ -51,9 +51,9 @@ export async function getAIResponse(userMessage: string): Promise<string> {
 
         // Read streamed text fully
         return await res.text();
-    } catch (error: any) {
+    } catch (error) {
         console.error('Chat API Error:', error);
-        return `I'm having trouble connecting right now. Try visiting **White Town** for a beautiful evening walk! (${error.message})`;
+        return `I'm having trouble connecting right now. Try visiting **White Town** for a beautiful evening walk! (${(error as Error).message})`;
     }
 }
 
@@ -84,8 +84,8 @@ export async function* getAIResponseStream(userMessage: string): AsyncGenerator<
             const chunk = decoder.decode(value, { stream: true });
             if (chunk) yield chunk;
         }
-    } catch (error: any) {
+    } catch (error) {
         console.error('Chat Streaming Error:', error);
-        yield `I'm having trouble connecting right now. Try visiting **White Town** for a beautiful evening walk! (${error.message})`;
+        yield `I'm having trouble connecting right now. Try visiting **White Town** for a beautiful evening walk! (${(error as Error).message})`;
     }
 }

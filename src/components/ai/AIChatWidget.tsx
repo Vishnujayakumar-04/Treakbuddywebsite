@@ -133,7 +133,7 @@ export function AIChatWidget() {
                     console.error('AI response error:', error);
 
                     let fallbackText = "I'm having trouble connecting to Groq AI.";
-                    const errorStr = (error instanceof Error) ? error.message : String(error);
+                    const errorStr = (error instanceof Error) ? (error as Error).message : String(error);
 
                     if (errorStr?.includes('fetch') || errorStr?.includes('Failed') || errorStr?.includes('API_KEY')) {
                         fallbackText = "I can't reach Groq AI. Please check your API key configuration.\n\nTry asking about:\n• Popular Beaches\n• Heritage Sites\n• Best Cafes";

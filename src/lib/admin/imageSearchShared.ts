@@ -149,7 +149,7 @@ async function wikimediaSearch(
             });
             if (!res.ok) continue;
             const data = await res.json();
-            const pages: Record<string, any> = data?.query?.pages ?? {};
+            const pages: Record<string, unknown> = data?.query?.pages ?? {};
 
             for (const page of Object.values(pages)) {
                 if (out.length >= limit) break;
@@ -292,8 +292,8 @@ export async function searchImages(opts: SearchOptions): Promise<SharedSearchRes
         //  Next.js mode: delegate to secure server API route 
         try {
             result = await serverProxySearch(placeName, location, serverProxyUrl);
-        } catch (err: any) {
-            result = { images: [], source: 'manual', cached: false, query: placeName, error: err.message };
+        } catch (err) {
+            result = { images: [], source: 'manual', cached: false, query: placeName, error: (err as Error).message };
         }
     } else {
         //  React Native mode: call APIs directly 

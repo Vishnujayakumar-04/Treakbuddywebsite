@@ -11,8 +11,12 @@ export async function generateItinerary(draft: TripDraft): Promise<DailyItinerar
         const diffTime = Math.abs(endDate.getTime() - startDate.getTime());
         const days = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
 
-        // Context: Available Places
-        const placesContext = PLACES_DATA.map(p => `- ${p.name} (${p.category}): ${p.description}`).join('\n');
+        // Context: Available Places (Truncated)
+        const placesContext = PLACES_DATA.map(p => {
+            const desc = p.description || '';
+            const truncatedDesc = desc.length > 80 ? desc.substring(0, 80) + '...' : desc;
+            return `- ${p.name} (${p.category}): ${truncatedDesc}`;
+        }).join('\n');
 
         const prompt = `
         You are an expert travel planner for Puducherry, India.
@@ -86,15 +90,15 @@ export async function generateItinerary(draft: TripDraft): Promise<DailyItinerar
             }
 
             return itinerary;
-        } catch (error: any) {
+        } catch (error) {
             console.error("[Planner] JSON Parse Error:", error);
             console.error("[Planner] Raw Text:", text);
             throw new Error("AI returned invalid data format. Please try again.");
         }
 
-    } catch (error: any) {
+    } catch (error) {
         console.error("[Planner] AI Generation Error:", error);
-        throw new Error(error.message || "Failed to generate itinerary. Please try again.");
+        throw new Error((error as Error).message || "Failed to generate itinerary. Please try again.");
     }
 }
 

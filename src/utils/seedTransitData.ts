@@ -87,7 +87,7 @@ export const SEED_DATA: TransitItem[] = [
     {
         id: 'r2', category: 'rentals', subCategory: 'Cycle', name: 'Heritage Cycles',
         rating: 4.5, price: '₹80/hour',
-        image: 'https://images.unsplash.com/photo-1485965120184-e224f7a1dbfe?w=800',
+        image: 'https://images.unsplash.com/photo-1511994298241-608e28f14fde?q=80&w=800&fit=crop',
         contact: '+91 98423 11223', location: 'White Town Promenade',
         mapUrl: 'https://www.google.com/maps/search/?api=1&query=11.9360,79.8350',
         openHours: '6:00 AM - 7:00 PM',

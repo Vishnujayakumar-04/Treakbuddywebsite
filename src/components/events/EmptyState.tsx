@@ -5,7 +5,7 @@ export function EmptyState() {
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 py-12 md:py-16">
             <div className="w-[150px] md:w-[200px] grayscale opacity-80">
                 <Image
-                    src="/assets/activity/cycling pondicherry.jfif"
+                    src="/assets/heritage/aayi-mandapam/photo-1.jpg"
                     alt="No events"
                     width={200}
                     height={200}

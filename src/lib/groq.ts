@@ -14,7 +14,7 @@ export class GroqService {
     private model: string;
     private client: Groq;
 
-    constructor(modelName: string = 'llama-3.3-70b-versatile') {
+    constructor(modelName: string = 'llama-3.1-8b-instant') {
         this.model = modelName;
         this.client = groq;
     }

@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { NextResponse } from "next/server";
 import { getAdminDb } from "@/lib/server/firebaseAdmin";
 import { requireAdmin } from "@/lib/server/adminGuard";
@@ -11,7 +12,7 @@ export async function PUT(req: Request, ctx: { params: Promise<{ id: string }> }
     const body = await req.json();
     await getAdminDb().collection(COL).doc(id).set({ ...body }, { merge: true });
     return NextResponse.json({ ok: true });
-  } catch (e: any) {
+  } catch (e) {
     const msg = String(e?.message || e);
     const status =
       msg.toLowerCase().includes("missing authorization") ? 401 :
@@ -26,7 +27,7 @@ export async function DELETE(_req: Request, ctx: { params: Promise<{ id: string 
     const { id } = await ctx.params;
     await getAdminDb().collection(COL).doc(id).delete();
     return NextResponse.json({ ok: true });
-  } catch (e: any) {
+  } catch (e) {
     const msg = String(e?.message || e);
     const status =
       msg.toLowerCase().includes("missing authorization") ? 401 :

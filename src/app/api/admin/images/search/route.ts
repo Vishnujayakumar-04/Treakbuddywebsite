@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { NextRequest, NextResponse } from 'next/server';
 import { ImageResult, ImageSearchResponse, ImageSource } from '@/types/admin';
 import { searchWikimediaMulti, WikimediaImage } from '@/lib/admin/wikimediaApi';
@@ -98,7 +99,7 @@ async function fetchGoogleImages(query: string): Promise<ImageResult[]> {
         const place = searchData.places?.[0];
         if (!place?.photos?.length) return [];
 
-        const photoPromises = place.photos.slice(0, 5).map(async (photo: any, i: number) => {
+        const photoPromises = place.photos.slice(0, 5).map(async (photo: Record<string, unknown>, i: number) => {
             try {
                 const mediaRes = await fetch(
                     `https://places.googleapis.com/v1/${photo.name}/media?maxWidthPx=1200&maxHeightPx=900&key=${key}&skipHttpRedirect=true`

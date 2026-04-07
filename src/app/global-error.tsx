@@ -13,7 +13,7 @@ export default function GlobalError({
         <div className="text-center max-w-lg">
           <h1 className="text-4xl font-black mb-4 tracking-tight">System Error</h1>
           <p className="text-slate-400 mb-8 border border-slate-800 bg-slate-900/50 p-4 rounded-xl text-sm font-mono break-words">
-            {error.message || 'A catastrophic global layout block occurred.'}
+            {(error as Error).message || 'A catastrophic global layout block occurred.'}
           </p>
           <button
             onClick={() => reset()}

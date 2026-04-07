@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { NextResponse } from "next/server";
 import { getAdminDb } from "@/lib/server/firebaseAdmin";
 import { requireAdmin } from "@/lib/server/adminGuard";
@@ -10,7 +11,7 @@ export async function GET(req: Request) {
     const snap = await getAdminDb().collection(COL).orderBy("createdAt", "desc").get();
     const data = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
     return NextResponse.json(data);
-  } catch (e: any) {
+  } catch (e) {
     const msg = String(e?.message || e);
     const status = msg.toLowerCase().includes("forbidden") ? 403 : 401;
     return NextResponse.json({ error: msg }, { status });
@@ -35,7 +36,7 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ id: ref.id }, { status: 201 });
-  } catch (e: any) {
+  } catch (e) {
     const msg = String(e?.message || e);
     const status =
       msg.toLowerCase().includes("missing authorization") ? 401 :

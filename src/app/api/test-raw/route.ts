@@ -24,7 +24,7 @@ export async function GET() {
             workingKey: apiKey ? `${apiKey.substring(0, 8)}...${apiKey.substring(apiKey.length - 4)}` : null,
             data
         });
-    } catch (e: any) {
-        return NextResponse.json({ error: e.message }, { status: 500 });
+    } catch (e) {
+        return NextResponse.json({ error: (e as Error).message }, { status: 500 });
     }
 }

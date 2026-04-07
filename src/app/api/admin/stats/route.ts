@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { NextResponse } from "next/server";
 import { getAdminDb } from "@/lib/server/firebaseAdmin";
 import { requireAdmin } from "@/lib/server/adminGuard";
@@ -31,7 +32,7 @@ export async function GET(req: Request) {
       featuredPlaces: featuredSnap.size,
       recentPlaces,
     });
-  } catch (e: any) {
+  } catch (e) {
     const msg = String(e?.message || e);
     const status = msg.toLowerCase().includes("forbidden") ? 403 : 401;
     return NextResponse.json({ error: msg }, { status });
