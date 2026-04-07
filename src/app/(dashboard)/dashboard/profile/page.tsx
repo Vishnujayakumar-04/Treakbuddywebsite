@@ -248,12 +248,12 @@ export default function ProfilePage() {
                                         </div>
                                     ) : (
                                         <div className="p-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                            {favorites.map((place) => (
-                                                <Link href={`/dashboard/places/${place.id}`} key={place.id} className="block group">
+                                            {favorites.map((place, index) => (
+                                                <Link href={`/dashboard/places/${place.id || 'unknown'}`} key={place.id || `fav-${index}`} className="block group">
                                                     <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 transition-all hover:border-cyan-500 hover:shadow-md">
-                                                        <div className="relative h-40 w-full">
-                                                            <Image src={place.image} alt={place.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                                                            <div className="absolute top-2 right-2 bg-white/90 dark:bg-slate-900/90 p-1.5 rounded-full shadow-sm">
+                                                        <div className="relative h-40 w-full bg-slate-200 dark:bg-slate-800">
+                                                            <img src={place.image} alt={place.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                                            <div className="absolute top-2 right-2 bg-white/90 dark:bg-slate-900/90 p-1.5 rounded-full shadow-sm z-10">
                                                                 <Heart className="w-4 h-4 text-rose-500 fill-rose-500" />
                                                             </div>
                                                         </div>

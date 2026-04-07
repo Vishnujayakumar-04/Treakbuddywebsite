@@ -66,6 +66,20 @@ export default function TripClient({ id }: TripClientProps) {
         return found || null;
     }, [selectedActivity]);
 
+    // Resolve the first destination image for the Hero background
+    const heroBackgroundImage = useMemo(() => {
+        if (!trip || !trip.itinerary || !trip.itinerary[0]?.activities) return 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1600&q=80';
+        
+        // Find the first valid activity placeName
+        const firstPlace = trip.itinerary[0].activities[0]?.placeName.toLowerCase().trim();
+        const found = PLACES_DATA.find(p => {
+            const n = p.name.toLowerCase().trim();
+            return n === firstPlace || firstPlace.includes(n);
+        });
+        
+        return found?.image || trip.image || 'https://images.unsplash.com/photo-1580519542036-ed47f3ae3c9d?w=1600&q=80';
+    }, [trip]);
+
     if (loading) {
         return <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950">
             <div className="w-8 h-8 rounded-full border-4 border-slate-200 border-t-cyan-500 animate-spin"></div>
@@ -93,19 +107,22 @@ export default function TripClient({ id }: TripClientProps) {
             <div className="container px-4 md:px-6 max-w-4xl mx-auto space-y-8 mt-4">
                 {/* Trip Overview Card */}
                 <Card className="border-none shadow-sm bg-white dark:bg-slate-900 overflow-hidden">
-                    <div className="h-48 bg-slate-900 relative">
-                        {/* Placeholder for dynamic image */}
-                        <div className="absolute inset-0 flex items-center justify-center text-white/10 text-8xl md:text-9xl font-black select-none">
-                            TRIP
-                        </div>
-                        <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
-                            <Badge className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border-none">
+                    <div className="h-48 md:h-64 bg-slate-900 relative">
+                        {/* Dynamic Image Header instead of TRIP text */}
+                        <div 
+                           className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 scale-105"
+                           style={{ backgroundImage: `url(${heroBackgroundImage})` }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/40 to-transparent" />
+                        
+                        <div className="absolute bottom-4 left-4 flex flex-wrap gap-2 z-10">
+                            <Badge className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border-none shadow-sm">
                                 <Calendar className="w-3 h-3 mr-1" /> {trip.startDate?.split('T')[0]} - {trip.endDate?.split('T')[0]}
                             </Badge>
-                            <Badge className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border-none">
+                            <Badge className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border-none shadow-sm">
                                 <Wallet className="w-3 h-3 mr-1" /> ₹{trip.budgetAmount} Budget
                             </Badge>
-                            <Badge className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border-none">
+                            <Badge className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border-none shadow-sm">
                                 <MapPin className="w-3 h-3 mr-1" /> {trip.stayArea} Stay
                             </Badge>
                         </div>
@@ -125,21 +142,24 @@ export default function TripClient({ id }: TripClientProps) {
                             {/* Day Header */}
                             <div className="bg-slate-50 dark:bg-slate-950/50 p-4 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
                                 <div>
-                                    <h3 className="font-bold text-lg text-slate-900 dark:text-white">Day {day.dayNumber}</h3>
-                                    <p className="text-sm text-slate-500">{day.date}</p>
+                                    <h3 className="font-bold text-lg text-slate-900 dark:text-white flex items-center gap-2">
+                                        Day {day.dayNumber} 
+                                        <span className="bg-slate-200/50 dark:bg-slate-800 text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded text-slate-500">Plan</span>
+                                    </h3>
+                                    <p className="text-sm text-slate-500 font-medium">Mapped on {day.date}</p>
                                 </div>
-                                <div className="text-xs font-medium px-3 py-1 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300">
-                                    {day.totalTravelTime} travel
+                                <div className="text-xs font-bold px-3 py-1.5 bg-white dark:bg-slate-800 shadow-sm rounded-full border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">
+                                    {day.totalTravelTime} Estimated Commute
                                 </div>
                             </div>
 
                             {/* Activities Timeline */}
-                            <div className="p-6">
-                                <ol className="relative border-l border-slate-200 dark:border-slate-800 ml-3 space-y-10">
+                            <div className="p-4 sm:p-6 ml-2 sm:ml-4">
+                                <ol className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-3 space-y-10 py-2">
                                     {(day.activities || []).map((activity, i) => (
-                                        <li key={i} className="mb-4 ml-6 group relative">
+                                        <li key={i} className="mb-4 ml-8 group relative">
                                             <span className={cn(
-                                                "absolute flex items-center justify-center w-8 h-8 rounded-full -left-[19px] ring-4 ring-white dark:ring-slate-900 border",
+                                                "absolute flex items-center justify-center w-8 h-8 rounded-full -left-[45px] ring-4 ring-white dark:ring-slate-900 border z-10",
                                                 activity.timeSlot === 'Morning' ? "bg-amber-100 border-amber-500 text-amber-600" :
                                                     activity.timeSlot === 'Afternoon' ? "bg-orange-100 border-orange-500 text-orange-600" :
                                                         "bg-indigo-100 border-indigo-500 text-indigo-600"
@@ -149,10 +169,10 @@ export default function TripClient({ id }: TripClientProps) {
                                                         <Moon className="w-4 h-4" />}
                                             </span>
 
-                                            {/* Interactive Activity Card */}
+                                            {/* Interactive Activity Card with fixed margins */}
                                             <div 
                                               onClick={() => handleActivityClick(activity)}
-                                              className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2 cursor-pointer bg-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 p-3 -mx-3 rounded-xl transition-colors border border-transparent hover:border-slate-100 dark:hover:border-slate-800"
+                                              className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-4 cursor-pointer bg-white dark:bg-slate-950 hover:bg-slate-50 dark:hover:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 hover:border-cyan-200 dark:hover:border-cyan-900/50 transition-all duration-300 block -mt-1"
                                             >
                                                 <div className="flex-1 min-w-0 pr-4">
                                                     <h3 className="flex items-center mb-1 text-lg font-semibold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
