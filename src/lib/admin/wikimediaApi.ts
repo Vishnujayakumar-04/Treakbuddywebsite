@@ -90,7 +90,7 @@ export async function searchWikimediaImages(
         if (!res.ok) throw new Error(`Wikimedia HTTP ${res.status}`);
         const data = await res.json();
 
-        const pages: Record<string, unknown> = data?.query?.pages ?? {};
+        const pages: Record<string, any> = data?.query?.pages ?? {};
         const results: WikimediaImage[] = [];
 
         for (const page of Object.values(pages)) {

@@ -10,7 +10,14 @@ import { getEventsByCategory } from '@/services/eventService';
 import { AdminEvent } from '@/types/admin';
 import { Loader2 } from 'lucide-react';
 
-const CATEGORY_META: Record<string, unknown> = {
+interface CategoryMeta {
+    title: string;
+    description: string;
+    heroImage: string;
+    followers: string;
+}
+
+const CATEGORY_META: Record<string, CategoryMeta> = {
     'music': {
         title: 'Music Events',
         description: 'Music signifies the vibrant energy of the place! Such music events in Pondicherry make the city alive throughout the year.',

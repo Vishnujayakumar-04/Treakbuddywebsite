@@ -149,7 +149,7 @@ async function wikimediaSearch(
             });
             if (!res.ok) continue;
             const data = await res.json();
-            const pages: Record<string, unknown> = data?.query?.pages ?? {};
+            const pages: Record<string, any> = data?.query?.pages ?? {};
 
             for (const page of Object.values(pages)) {
                 if (out.length >= limit) break;
