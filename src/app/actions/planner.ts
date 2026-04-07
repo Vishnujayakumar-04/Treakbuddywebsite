@@ -11,61 +11,40 @@ export async function generateItinerary(draft: TripDraft): Promise<DailyItinerar
         const diffTime = Math.abs(endDate.getTime() - startDate.getTime());
         const days = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
 
-        // Context: Available Places (Truncated)
-        const placesContext = PLACES_DATA.map(p => {
-            const desc = p.description || '';
-            const truncatedDesc = desc.length > 80 ? desc.substring(0, 80) + '...' : desc;
-            return `- ${p.name} (${p.category}): ${truncatedDesc}`;
+        // Context: Filter places to user interests & limit to 25 to stay under token limits
+        const interestCategories = draft.interests.map(i => i.toLowerCase());
+        const relevantPlaces = PLACES_DATA
+            .filter(p => {
+                const cat = (p.category || '').toLowerCase();
+                return interestCategories.some(ic => cat.includes(ic) || ic.includes(cat));
+            })
+            .slice(0, 20);
+        // Add a few more top-rated ones if we have room
+        const extraPlaces = PLACES_DATA
+            .filter(p => !relevantPlaces.find(r => r.name === p.name))
+            .sort((a, b) => (b.rating || 0) - (a.rating || 0))
+            .slice(0, 5);
+        const selectedPlaces = [...relevantPlaces, ...extraPlaces];
+
+        const placesContext = selectedPlaces.map(p => {
+            const desc = (p.description || '').substring(0, 40);
+            return `- ${p.name} (${p.category})`;
         }).join('\n');
 
         const prompt = `
-        You are an expert travel planner for Puducherry, India.
-        Create a detailed ${days}-day itinerary for a ${draft.type} trip.
-        
-        TRIP DETAILS:
-        - Duration: ${days} days (${draft.startDate} to ${draft.endDate})
-        - Travelers: ${draft.travelers}
-        - Budget: ${draft.budgetType} ${draft.budgetAmount} INR
-        - Pace: ${draft.pace}
-        - Interests: ${draft.interests.join(', ')}
-        - Transport: ${draft.transport}
-        - Stay Area: ${draft.stayArea}
-        
-        CONSTRAINTS:
-        - Mobility Issues: ${draft.mobilityDetails ? 'Yes' : 'No'}
-        - Traveling with Kids: ${draft.travelingWithKids ? 'Yes' : 'No'}
-        - Traveling with Elderly: ${draft.travelingWithElderly ? 'Yes' : 'No'}
-        - Preferred Start Time: ${draft.preferredStartTime || 'Morning'}
-        
-        AVAILABLE PLACES (Prioritize these but you can suggest others if highly relevant):
-        ${placesContext}
+You are an expert Puducherry travel planner. Create a ${days}-day itinerary.
 
-        INSTRUCTIONS:
-        1. Generate a valid JSON array of DailyItinerary objects.
-        2. Strict JSON format only. No markdown code blocks or extra text.
-        3. Allocate activities to Morning, Afternoon, and Evening slots.
-        4. Consider travel time between places.
-        5. Add specific tips based on constraints (e.g., 'Wheelchair accessible', 'Kid-friendly').
+TRIP: ${draft.type}, ${draft.travelers} travelers, ₹${draft.budgetAmount} ${draft.budgetType}, ${draft.pace} pace
+DATES: ${draft.startDate} to ${draft.endDate}
+INTERESTS: ${draft.interests.join(', ')}
+TRANSPORT: ${draft.transport} | STAY: ${draft.stayArea}
+KIDS: ${draft.travelingWithKids ? 'Yes' : 'No'} | ELDERLY: ${draft.travelingWithElderly ? 'Yes' : 'No'}
 
-        OUTPUT SCHEMA (ONLY OUTPUT THIS JSON, NOTHING ELSE):
-        [
-            {
-                "dayNumber": 1,
-                "date": "YYYY-MM-DD",
-                "activities": [
-                    {
-                        "timeSlot": "Morning",
-                        "timeRange": "10:00 AM - 01:00 PM",
-                        "placeName": "Name of Place",
-                        "description": "Short activity description",
-                        "travelTime": "15 mins",
-                        "tips": "Optional tip"
-                    }
-                ],
-                "totalTravelTime": "1 hour",
-                "notes": "Day summary"
-            }
-        ]
+AVAILABLE PLACES:
+${placesContext}
+
+OUTPUT: Valid JSON array only. No markdown. Schema:
+[{"dayNumber":1,"date":"YYYY-MM-DD","activities":[{"timeSlot":"Morning","timeRange":"06:00 AM - 08:00 AM","placeName":"Name","description":"Short desc","travelTime":"10 mins","tips":"Tip"}],"totalTravelTime":"1 hour","notes":"Summary"}]
         `;
 
         // Use Groq Service
