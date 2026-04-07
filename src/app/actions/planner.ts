@@ -43,8 +43,8 @@ KIDS: ${draft.travelingWithKids ? 'Yes' : 'No'} | ELDERLY: ${draft.travelingWith
 AVAILABLE PLACES:
 ${placesContext}
 
-OUTPUT: Valid JSON array only. No markdown. Schema:
-[{"dayNumber":1,"date":"YYYY-MM-DD","activities":[{"timeSlot":"Morning","timeRange":"06:00 AM - 08:00 AM","placeName":"Name","description":"Short desc","travelTime":"10 mins","tips":"Tip"}],"totalTravelTime":"1 hour","notes":"Summary"}]
+OUTPUT: Valid JSON object only. No markdown. The output MUST be a JSON object containing a single key "itinerary" which is an array of days. Schema:
+{"itinerary": [{"dayNumber":1,"date":"YYYY-MM-DD","activities":[{"timeSlot":"Morning","timeRange":"06:00 AM - 08:00 AM","placeName":"Name","description":"Short desc","travelTime":"10 mins","tips":"Tip"}],"totalTravelTime":"1 hour","notes":"Summary"}]}
         `;
 
         // Use Groq Service
@@ -55,10 +55,11 @@ OUTPUT: Valid JSON array only. No markdown. Schema:
         const jsonString = extractJson(text);
 
         try {
-            const itinerary: DailyItinerary[] = JSON.parse(jsonString);
+            const rawParsed = JSON.parse(jsonString);
+            const itinerary: DailyItinerary[] = rawParsed.itinerary || rawParsed;
 
             if (!Array.isArray(itinerary)) {
-                throw new Error("AI returned invalid structure (not an array)");
+                throw new Error("AI returned invalid structure (not an array inside 'itinerary' key)");
             }
 
             // Validate each day has required fields
