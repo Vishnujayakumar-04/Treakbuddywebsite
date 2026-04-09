@@ -111,6 +111,11 @@ const buildTripUserPrompt = (
 
 export async function generateItinerary(draft: TripDraft): Promise<TripItinerary> {
     try {
+        if (!process.env.GROQ_API_KEY) {
+            console.error("[Planner] GROQ_API_KEY is not set in environment variables");
+            throw new Error("AI service not configured. Contact admin.");
+        }
+
         const startDate = new Date(draft.startDate);
         const endDate = new Date(draft.endDate);
         const diffTime = Math.abs(endDate.getTime() - startDate.getTime());
@@ -140,28 +145,41 @@ export async function generateItinerary(draft: TripDraft): Promise<TripItinerary
 
             return parsedItinerary;
         } catch (error) {
-            console.error("[Planner] JSON Parse Error:", error);
-            console.error("[Planner] Raw Text:", text);
+            console.error("=== TRIP GENERATION JSON PARSE FAILED ===");
+            console.error("Message:", (error as Error).message);
+            console.error("Raw Text Starts With:", jsonString.slice(0, 300));
+            console.error("=========================================");
             throw new Error("AI returned invalid data format. Please try again.");
         }
 
-    } catch (error) {
-        console.error("[Planner] AI Generation Error:", error);
-        throw new Error((error as Error).message || "Failed to generate itinerary. Please try again.");
+    } catch (error: unknown) {
+        const message = error instanceof Error ? error.message : String(error);
+        const stack = error instanceof Error ? error.stack : undefined;
+        
+        console.error("=== TRIP GENERATION FAILED ===");
+        console.error("Message:", message);
+        console.error("Stack:", stack);
+        console.error("==============================");
+        
+        throw new Error(message || "Failed to generate itinerary. Please try again.");
     }
 }
 
-function extractJson(text: string): string {
-    // Remove markdown code blocks
-    let cleaned = text.replace(/```json\s*/gi, '').replace(/```\s*/g, '');
+function extractJson(raw: string): string {
+    // Remove markdown code fences if present
+    let cleaned = raw.trim();
+    cleaned = cleaned.replace(/^```json\s*/i, "").replace(/\s*```$/, "");
+    cleaned = cleaned.replace(/^```\s*/i, "").replace(/\s*```$/, "");
 
-    // Find JSON object boundaries (since the prompt now expects a JSON object, not an array natively root)
-    const startObj = cleaned.indexOf('{');
-    const endObj = cleaned.lastIndexOf('}');
+    // Find the first { and last } to extract pure JSON
+    const firstBrace = cleaned.indexOf("{");
+    const lastBrace = cleaned.lastIndexOf("}");
 
-    if (startObj !== -1 && endObj !== -1 && endObj > startObj) {
-        return cleaned.substring(startObj, endObj + 1);
+    if (firstBrace === -1 || lastBrace === -1) {
+        throw new Error(
+            `No valid JSON object found in response. Raw: ${raw.slice(0, 200)}`
+        );
     }
 
-    return cleaned.trim();
+    return cleaned.slice(firstBrace, lastBrace + 1);
 }
