@@ -30,7 +30,7 @@ export function useFavorites() {
                     const data = snapshot.docs.map(doc => doc.data() as SavedPlace);
                     setFavorites(data);
                 }, (error) => {
-                    console.error("Error fetching favorites:", error);
+                    void 0; // console.("Error fetching favorites:", error);
                     // toast.error("Failed to sync favorites"); // Suppressed per user request
                 });
             }
@@ -91,7 +91,7 @@ export function useFavorites() {
                     toast.success('Saved to favorites');
                 }
             } catch (error) {
-                console.error("Error updating favorite:", error);
+                void 0; // console.("Error updating favorite:", error);
                 toast.error("Failed to update favorite");
             }
         } else {

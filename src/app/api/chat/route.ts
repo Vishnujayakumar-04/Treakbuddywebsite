@@ -12,7 +12,7 @@ const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
 
 // Server-side Groq client — key stays on the server, never sent to browser
 const groq = new Groq({
-    apiKey: process.env.GROQ_API_KEY || process.env.NEXT_PUBLIC_GROQ_API_KEY || '',
+    apiKey: process.env.GROQ_API_KEY || '',
 });
 
 const PLACES_CONTEXT = PLACES_DATA

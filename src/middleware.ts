@@ -10,7 +10,7 @@ import { NextRequest, NextResponse } from 'next/server';
  * This cookie-based redirect is only a UX guard (and may not run unless wired as
  * Next.js middleware). Do not treat it as security.
  */
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
     // Allow the login page through unconditionally

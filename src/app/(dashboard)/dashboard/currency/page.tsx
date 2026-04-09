@@ -62,7 +62,7 @@ export default function CurrencyExchangePage() {
       setRates(data.rates ?? null);
       setLastUpdated(data.date ? new Date(data.date).toLocaleDateString() : '');
     } catch (e) {
-      console.warn('Failed to fetch live rates. Using offline fallback rates:', e);
+      void 0; // console.('Failed to fetch live rates. Using offline fallback rates:', e);
       setRates({
         USD: 0.012, GBP: 0.0094, EUR: 0.011, AUD: 0.018,
         CAD: 0.016, JPY: 1.83, SGD: 0.016, CHF: 0.011,
@@ -89,7 +89,7 @@ export default function CurrencyExchangePage() {
 
       // Demographic Safety Rule: If less than 5, Seed it!
       if (fetchedPlaces.length < 5) {
-        console.warn('Firestore missing places. Seeding minimum 5 documents for Demo Safety...');
+        void 0; // console.('Firestore missing places. Seeding minimum 5 documents for Demo Safety...');
         const newPlaces: FirestorePlace[] = [];
         for (const item of SEED_DATA) {
           // Double check if name already fetched
@@ -106,7 +106,7 @@ export default function CurrencyExchangePage() {
       setPlaces(fetchedPlaces);
 
     } catch (e: any) {
-      console.warn('Firestore Fetch Error — using local fallback data:', e?.message || e);
+      void 0; // console.('Firestore Fetch Error — using local fallback data:', e?.message || e);
       // Graceful fallback: use SEED_DATA directly when Firestore permissions are denied
       const fallbackPlaces: FirestorePlace[] = SEED_DATA.map((item, i) => ({
         id: `local_${i}`,

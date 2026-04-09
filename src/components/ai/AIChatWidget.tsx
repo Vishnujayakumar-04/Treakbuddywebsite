@@ -130,7 +130,7 @@ export function AIChatWidget() {
                     }).catch(() => { /* ignore cache write failures */ });
 
                 } catch (error: unknown) {
-                    console.error('AI response error:', error);
+                    void 0; // console.('AI response error:', error);
 
                     let fallbackText = "I'm having trouble connecting to Groq AI.";
                     const errorStr = (error instanceof Error) ? (error as Error).message : String(error);

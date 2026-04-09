@@ -1,75 +1,144 @@
 'use server';
 
-import { TripDraft, DailyItinerary } from '@/types/planner';
+import { TripDraft, TripItinerary, TripDay } from '@/types/planner';
 import { PLACES_DATA } from '@/services/data/places';
 import { groqService } from '@/lib/groq';
 
-export async function generateItinerary(draft: TripDraft): Promise<DailyItinerary[]> {
+const TRIP_SYSTEM_PROMPT = `
+You are TrekBuddy AI — an expert Puducherry travel planner.
+Your job is to generate a COMPLETE, DETAILED, DAY-BY-DAY trip itinerary
+for Puducherry, India.
+
+CRITICAL RULES:
+1. Every single day MUST follow the EXACT structure below — no exceptions.
+2. Every day must have EXACTLY 10–12 activity slots as shown.
+3. Never return fewer than 10 slots per day.
+4. All times must be realistic and in 12-hour format (e.g., 06:00 AM).
+5. Activities must be REAL places, restaurants, or experiences in Puducherry.
+6. Meals must be at real Puducherry restaurants or food streets.
+7. Always return valid JSON — no extra text, no markdown, no explanation.
+
+MANDATORY DAILY STRUCTURE (follow this order every day):
+
+Slot 1  — 05:30 AM - 06:30 AM  → SUNRISE (beach or viewpoint)
+Slot 2  — 07:00 AM - 08:30 AM  → BREAKFAST (restaurant name + dish recommendation)
+Slot 3  — 09:00 AM - 11:00 AM  → MORNING PLACE (main attraction)
+Slot 4  — 11:30 AM - 01:00 PM  → LATE MORNING PLACE (second attraction)
+Slot 5  — 01:00 PM - 02:00 PM  → LUNCH (restaurant name + dish recommendation)
+Slot 6  — 02:30 PM - 04:30 PM  → AFTERNOON PLACE (third attraction)
+Slot 7  — 04:30 PM - 05:00 PM  → EVENING SNACK (café or street food spot)
+Slot 8  — 05:00 PM - 06:30 PM  → SUNSET (beach or promenade)
+Slot 9  — 07:00 PM - 08:30 PM  → DINNER (restaurant name + dish recommendation)
+Slot 10 — 09:00 PM - 10:00 PM  → NIGHT ACTIVITY (beach walk, night market, or rooftop)
+Slot 11 — 10:00 PM             → HOTEL CHECK-IN / RETURN TO STAY
+
+For Day 1 ONLY — add this as the VERY FIRST slot before sunrise:
+Slot 0  — HOTEL CHECK-IN (upon arrival, before itinerary begins)
+
+SLOT TYPE VALUES (use exactly these strings):
+"hotel_checkin" | "sunrise" | "breakfast" | "place" | "lunch" |
+"snack" | "sunset" | "dinner" | "night_activity" | "hotel_return"
+
+RETURN FORMAT — respond ONLY with this JSON structure, nothing else:
+
+{
+  "tripTitle": "string — creative trip name",
+  "tripSummary": "string — 2 sentence overview of the full trip",
+  "totalDays": number,
+  "tripType": "Solo" | "Friends" | "Family" | "Couple",
+  "budget": "string",
+  "accommodation": "string — recommended hotel or stay type in Puducherry",
+  "days": [
+    {
+      "dayNumber": 1,
+      "date": "YYYY-MM-DD",
+      "dayTheme": "string — e.g. Beaches & Colonial Heritage",
+      "estimatedCommute": "string — e.g. 45 minutes total",
+      "slots": [
+        {
+          "slotNumber": 1,
+          "type": "hotel_checkin",
+          "title": "Hotel Check-In",
+          "location": "string — hotel name or area in Puducherry",
+          "startTime": "02:00 PM",
+          "endTime": "03:00 PM",
+          "description": "string — what to do, what to expect",
+          "tip": "string — practical tip for this slot",
+          "travelToNext": "string — how to get to next slot, e.g. 10 min walk"
+        }
+      ],
+      "daySummary": "string — 1 sentence summary of the day"
+    }
+  ],
+  "packingTips": ["tip1", "tip2", "tip3"],
+  "budgetBreakdown": {
+    "accommodation": "string — estimated cost per night",
+    "food": "string — estimated daily food cost",
+    "transport": "string — estimated daily transport cost",
+    "activities": "string — estimated activity costs",
+    "total": "string — estimated total trip cost"
+  }
+}
+`;
+
+const buildTripUserPrompt = (
+    tripType: string,
+    days: number,
+    travelers: number,
+    budget: string,
+    interests: string[],
+    startDate: string
+  ) => `
+  Generate a complete ${days}-day Puducherry trip itinerary with the following details:
+  
+  - Trip Type: ${tripType}
+  - Number of Travelers: ${travelers}
+  - Total Budget: ₹${budget}
+  - Start Date: ${startDate}
+  - Interests: ${interests.join(", ")}
+  
+  REQUIREMENTS:
+  - Every day must follow the MANDATORY DAILY STRUCTURE exactly (10–12 slots per day)
+  - Day 1 must include Hotel Check-In as the first slot
+  - Every day must have: Sunrise → Breakfast → Morning Place → Late Morning Place → Lunch → Afternoon Place → Evening Snack → Sunset → Dinner → Night Activity → Hotel Return
+  - Use REAL Puducherry locations for every slot
+  - Meals must be at real Puducherry restaurants (e.g., Le Café, Surguru, Satsanga, Baker Street, Café des Arts, Villa Shanti, Surguru, Hot Breads)
+  - Sunrise and Sunset must be at real Puducherry spots (Promenade Beach, Paradise Beach, Serenity Beach, Chunnambar Boat House)
+  - Vary the places across days — do not repeat the same location on multiple days
+  - Budget the itinerary within ₹${budget} total
+  - Return ONLY the JSON object — no extra text, no markdown code blocks
+`;
+
+export async function generateItinerary(draft: TripDraft): Promise<TripItinerary> {
     try {
         const startDate = new Date(draft.startDate);
         const endDate = new Date(draft.endDate);
         const diffTime = Math.abs(endDate.getTime() - startDate.getTime());
-        const days = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
+        const daysCount = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
 
-        // Context: Filter places to user interests & limit to 25 to stay under token limits
-        const interestCategories = draft.interests.map(i => i.toLowerCase());
-        const relevantPlaces = PLACES_DATA
-            .filter(p => {
-                const cat = (p.category || '').toLowerCase();
-                return interestCategories.some(ic => cat.includes(ic) || ic.includes(cat));
-            })
-            .slice(0, 20);
-        // Add a few more top-rated ones if we have room
-        const extraPlaces = PLACES_DATA
-            .filter(p => !relevantPlaces.find(r => r.name === p.name))
-            .sort((a, b) => (b.rating || 0) - (a.rating || 0))
-            .slice(0, 5);
-        const selectedPlaces = [...relevantPlaces, ...extraPlaces];
+        const userPrompt = buildTripUserPrompt(
+            draft.type,
+            daysCount,
+            draft.travelers,
+            draft.budgetAmount.toString(),
+            draft.interests,
+            draft.startDate
+        );
 
-        const placesContext = selectedPlaces.map(p => {
-            const desc = (p.description || '').substring(0, 40);
-            return `- ${p.name} (${p.category})`;
-        }).join('\n');
-
-        const prompt = `
-You are an expert Puducherry travel planner. Create a ${days}-day itinerary.
-
-TRIP: ${draft.type}, ${draft.travelers} travelers, ₹${draft.budgetAmount} ${draft.budgetType}, ${draft.pace} pace
-DATES: ${draft.startDate} to ${draft.endDate}
-INTERESTS: ${draft.interests.join(', ')}
-TRANSPORT: ${draft.transport} | STAY: ${draft.stayArea}
-KIDS: ${draft.travelingWithKids ? 'Yes' : 'No'} | ELDERLY: ${draft.travelingWithElderly ? 'Yes' : 'No'}
-
-AVAILABLE PLACES:
-${placesContext}
-
-OUTPUT: Valid JSON object only. No markdown. The output MUST be a JSON object containing a single key "itinerary" which is an array of days. Schema:
-{"itinerary": [{"dayNumber":1,"date":"YYYY-MM-DD","activities":[{"timeSlot":"Morning","timeRange":"06:00 AM - 08:00 AM","placeName":"Name","description":"Short desc","travelTime":"10 mins","tips":"Tip"}],"totalTravelTime":"1 hour","notes":"Summary"}]}
-        `;
-
-        // Use Groq Service
         // We use generateJSON which forces the model to output valid JSON
-        const text = await groqService.generateJSON(prompt, "You are a helpful travel assistant. You MUST output a valid JSON object only. No markdown ticking block, no preamble.");
+        const text = await groqService.generateJSON(userPrompt, TRIP_SYSTEM_PROMPT);
 
         // Clean up markdown code blocks if present
         const jsonString = extractJson(text);
 
         try {
-            const rawParsed = JSON.parse(jsonString);
-            const itinerary: DailyItinerary[] = rawParsed.itinerary || rawParsed;
+            const parsedItinerary = JSON.parse(jsonString) as TripItinerary;
 
-            if (!Array.isArray(itinerary)) {
-                throw new Error("AI returned invalid structure (not an array inside 'itinerary' key)");
+            if (!parsedItinerary || !parsedItinerary.days || !Array.isArray(parsedItinerary.days)) {
+                throw new Error("AI returned invalid structure (missing 'days' array)");
             }
 
-            // Validate each day has required fields
-            for (const day of itinerary) {
-                if (!day.dayNumber || !day.activities || !Array.isArray(day.activities)) {
-                    throw new Error("Invalid itinerary structure");
-                }
-            }
-
-            return itinerary;
+            return parsedItinerary;
         } catch (error) {
             console.error("[Planner] JSON Parse Error:", error);
             console.error("[Planner] Raw Text:", text);
@@ -86,12 +155,12 @@ function extractJson(text: string): string {
     // Remove markdown code blocks
     let cleaned = text.replace(/```json\s*/gi, '').replace(/```\s*/g, '');
 
-    // Find JSON array
-    const start = cleaned.indexOf('[');
-    const end = cleaned.lastIndexOf(']');
+    // Find JSON object boundaries (since the prompt now expects a JSON object, not an array natively root)
+    const startObj = cleaned.indexOf('{');
+    const endObj = cleaned.lastIndexOf('}');
 
-    if (start !== -1 && end !== -1 && end > start) {
-        return cleaned.substring(start, end + 1);
+    if (startObj !== -1 && endObj !== -1 && endObj > startObj) {
+        return cleaned.substring(startObj, endObj + 1);
     }
 
     return cleaned.trim();

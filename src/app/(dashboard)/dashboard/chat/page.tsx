@@ -81,7 +81,7 @@ export default function AIChatPage() {
                 ));
             }
         } catch (error) {
-            console.error("Chat error:", error);
+            void 0; // console.("Chat error:", error);
             const errorMessage: Message = {
                 id: (Date.now() + 1).toString(),
                 text: "Sorry, I encountered a connection error. Please try again.",

@@ -36,7 +36,7 @@ export default function CabsPage({ embedded = false }: { embedded?: boolean }) {
                 setTransitData(data);
                 setError(null);
             } catch (err: unknown) {
-                console.error("Failed to load cab services:", err);
+                void 0; // console.("Failed to load cab services:", err);
                 setError((err instanceof Error) ? (err as Error).message : String(err));
             } finally {
                 setLoading(false);

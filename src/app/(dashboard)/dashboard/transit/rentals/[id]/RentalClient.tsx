@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, Phone, MapPin, Clock, Star, Car, Shield, CheckCircle2, ExternalLink } from 'lucide-react';
-import { getTransitItems, seedTransitData } from '@/services/transitService';
+import { getTransitItems } from '@/services/transitService';
 import { TransitItem } from '@/utils/seedTransitData';
 
 interface RentalClientProps {
@@ -18,7 +18,6 @@ export default function RentalClient({ id }: RentalClientProps) {
     const [rental, setRental] = useState<TransitItem | null>(null);
     const [similarRentals, setSimilarRentals] = useState<TransitItem[]>([]);
     const [loading, setLoading] = useState(true);
-    const [seeding, setSeeding] = useState(false);
 
     useEffect(() => {
         async function loadData() {
@@ -35,7 +34,7 @@ export default function RentalClient({ id }: RentalClientProps) {
                     setSimilarRentals(similar);
                 }
             } catch (error) {
-                console.error('Error loading rental:', error);
+                void 0; // console.('Error loading rental:', error);
             } finally {
                 setLoading(false);
             }
@@ -43,18 +42,7 @@ export default function RentalClient({ id }: RentalClientProps) {
         loadData();
     }, [id]);
 
-    const handleRepairData = async () => {
-        setSeeding(true);
-        try {
-            await seedTransitData();
-            window.location.reload();
-        } catch (error) {
-            console.error("Failed to repair data:", error);
-            alert("Failed to update data. Please try refreshing manually.");
-        } finally {
-            setSeeding(false);
-        }
-    };
+
 
     if (loading) {
         return (
@@ -73,9 +61,7 @@ export default function RentalClient({ id }: RentalClientProps) {
                 </p>
                 <div className="flex gap-4">
                     <Button onClick={() => router.back()} variant="outline">Go Back</Button>
-                    <Button onClick={handleRepairData} disabled={seeding}>
-                        {seeding ? 'Updating...' : 'Check & Update Data'}
-                    </Button>
+                    <Button onClick={() => router.push('/dashboard/transit')}>View All Rentals</Button>
                 </div>
             </div>
         );

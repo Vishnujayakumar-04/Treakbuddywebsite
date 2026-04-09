@@ -73,7 +73,7 @@ export default function RoutePlannerPage() {
                     setDetectingLocation(false);
                 },
                 (error) => {
-                    console.error('Error detecting location:', error);
+                    void 0; // console.('Error detecting location:', error);
                     setFromLocation('Current Location');
                     setDetectingLocation(false);
                 }

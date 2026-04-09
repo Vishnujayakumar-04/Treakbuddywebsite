@@ -58,7 +58,7 @@ export default function TrainPage({ embedded = false }: { embedded?: boolean }) 
                     setError(null);
                 }
             } catch (err: unknown) {
-                console.error("Failed to load train schedules:", err);
+                void 0; // console.("Failed to load train schedules:", err);
                 if (isMounted) {
                     setError((err instanceof Error) ? (err as Error).message : String(err));
                 }
@@ -142,7 +142,7 @@ export default function TrainPage({ embedded = false }: { embedded?: boolean }) 
                     setFromFilter(nearest.name);
                 }
             }, (error) => {
-                console.error("Geolocation error:", error);
+                void 0; // console.("Geolocation error:", error);
                 alert("Could not get your location. Please ensure location services are enabled.");
             });
         } else {

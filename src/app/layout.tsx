@@ -16,7 +16,7 @@ import { AuthProvider } from "@/context/AuthContext";
 import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('http://localhost:3000'),
+  metadataBase: new URL('https://vishnudevops.site'),
   title: {
     default: "TrekBuddy - Your Ultimate Guide to Puducherry Tourism",
     template: "%s | TrekBuddy Puducherry"

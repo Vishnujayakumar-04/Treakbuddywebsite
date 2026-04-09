@@ -44,7 +44,7 @@ export default function BusPage({ embedded = false }: { embedded?: boolean }) {
             } catch (err: unknown) {
                 if (mounted) {
                     setError((err instanceof Error) ? (err as Error).message : String(err));
-                    console.error("Failed to load bus schedules:", err);
+                    void 0; // console.("Failed to load bus schedules:", err);
                 }
             } finally {
                 if (mounted) {

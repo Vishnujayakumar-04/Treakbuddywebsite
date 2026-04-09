@@ -4,7 +4,7 @@ import { useEffect, useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
-import { GeneratedTrip, DayActivity } from '@/types/planner';
+import { GeneratedTrip, TripSlot } from '@/types/planner';
 import { DashboardHeader } from '@/components/layout/DashboardHeader';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -14,6 +14,88 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Dialog, DialogContent, DialogTitle, DialogDescription, DialogHeader, DialogClose } from '@/components/ui/dialog';
 
+const SLOT_CONFIG = {
+  hotel_checkin: {
+    icon: "🏨",
+    label: "Hotel Check-In",
+    bgColor: "bg-blue-50",
+    borderColor: "border-blue-200",
+    textColor: "text-blue-700",
+    badgeColor: "bg-blue-100"
+  },
+  sunrise: {
+    icon: "🌅",
+    label: "Sunrise",
+    bgColor: "bg-orange-50",
+    borderColor: "border-orange-200",
+    textColor: "text-orange-700",
+    badgeColor: "bg-orange-100"
+  },
+  breakfast: {
+    icon: "☕",
+    label: "Breakfast",
+    bgColor: "bg-yellow-50",
+    borderColor: "border-yellow-200",
+    textColor: "text-yellow-700",
+    badgeColor: "bg-yellow-100"
+  },
+  place: {
+    icon: "📍",
+    label: "Place",
+    bgColor: "bg-white",
+    borderColor: "border-gray-200",
+    textColor: "text-gray-700",
+    badgeColor: "bg-gray-100"
+  },
+  lunch: {
+    icon: "🍛",
+    label: "Lunch",
+    bgColor: "bg-green-50",
+    borderColor: "border-green-200",
+    textColor: "text-green-700",
+    badgeColor: "bg-green-100"
+  },
+  snack: {
+    icon: "🥐",
+    label: "Evening Snack",
+    bgColor: "bg-amber-50",
+    borderColor: "border-amber-200",
+    textColor: "text-amber-700",
+    badgeColor: "bg-amber-100"
+  },
+  sunset: {
+    icon: "🌇",
+    label: "Sunset",
+    bgColor: "bg-rose-50",
+    borderColor: "border-rose-200",
+    textColor: "text-rose-700",
+    badgeColor: "bg-rose-100"
+  },
+  dinner: {
+    icon: "🍽️",
+    label: "Dinner",
+    bgColor: "bg-purple-50",
+    borderColor: "border-purple-200",
+    textColor: "text-purple-700",
+    badgeColor: "bg-purple-100"
+  },
+  night_activity: {
+    icon: "🌙",
+    label: "Night Activity",
+    bgColor: "bg-indigo-50",
+    borderColor: "border-indigo-200",
+    textColor: "text-indigo-700",
+    badgeColor: "bg-indigo-100"
+  },
+  hotel_return: {
+    icon: "🛌",
+    label: "Return to Stay",
+    bgColor: "bg-slate-50",
+    borderColor: "border-slate-200",
+    textColor: "text-slate-700",
+    badgeColor: "bg-slate-100"
+  }
+} as const;
 // Data Lookup
 import { PLACES_DATA, Place } from '@/services/data/places';
 
@@ -27,7 +109,7 @@ export default function TripClient({ id }: TripClientProps) {
     const [loading, setLoading] = useState(true);
 
     // Modal State
-    const [selectedActivity, setSelectedActivity] = useState<DayActivity | null>(null);
+    const [selectedActivity, setSelectedActivity] = useState<TripSlot | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
@@ -40,7 +122,7 @@ export default function TripClient({ id }: TripClientProps) {
                     setTrip({ id: docSnap.id, ...docSnap.data() } as GeneratedTrip);
                 }
             } catch (error) {
-                console.error("Error fetching trip:", error);
+                void 0; // console.("Error fetching trip:", error);
             } finally {
                 setLoading(false);
             }
@@ -48,7 +130,7 @@ export default function TripClient({ id }: TripClientProps) {
         fetchTrip();
     }, [id]);
 
-    const handleActivityClick = (activity: DayActivity) => {
+    const handleActivityClick = (activity: TripSlot) => {
         setSelectedActivity(activity);
         setIsModalOpen(true);
     };
@@ -57,7 +139,7 @@ export default function TripClient({ id }: TripClientProps) {
     const matchedPlaceData = useMemo<Place | null>(() => {
         if (!selectedActivity) return null;
         
-        const target = selectedActivity.placeName.toLowerCase().trim();
+        const target = selectedActivity.title.toLowerCase().trim();
         const found = PLACES_DATA.find(p => {
             const name = p.name.toLowerCase().trim();
             return name === target || target.includes(name) || name.includes(target);
@@ -68,10 +150,10 @@ export default function TripClient({ id }: TripClientProps) {
 
     // Resolve the first destination image for the Hero background
     const heroBackgroundImage = useMemo(() => {
-        if (!trip || !trip.itinerary || !trip.itinerary[0]?.activities) return 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1600&q=80';
+        if (!trip || !trip.itinerary || !trip.itinerary[0]?.slots) return 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1600&q=80';
         
         // Find the first valid activity placeName
-        const firstPlace = trip.itinerary[0].activities[0]?.placeName.toLowerCase().trim();
+        const firstPlace = trip.itinerary[0].slots[0]?.title.toLowerCase().trim();
         const found = PLACES_DATA.find(p => {
             const n = p.name.toLowerCase().trim();
             return n === firstPlace || firstPlace.includes(n);
@@ -149,58 +231,66 @@ export default function TripClient({ id }: TripClientProps) {
                                     <p className="text-sm text-slate-500 font-medium">Mapped on {day.date}</p>
                                 </div>
                                 <div className="text-xs font-bold px-3 py-1.5 bg-white dark:bg-slate-800 shadow-sm rounded-full border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">
-                                    {day.totalTravelTime} Estimated Commute
+                                    {day.estimatedCommute} Estimated Commute
                                 </div>
                             </div>
 
                             {/* Activities Timeline */}
                             <div className="p-4 sm:p-6 ml-2 sm:ml-4">
-                                <ol className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-3 space-y-10 py-2">
-                                    {(day.activities || []).map((activity, i) => (
-                                        <li key={i} className="mb-4 ml-8 group relative">
-                                            <span className={cn(
-                                                "absolute flex items-center justify-center w-8 h-8 rounded-full -left-[45px] ring-4 ring-white dark:ring-slate-900 border z-10",
-                                                activity.timeSlot === 'Morning' ? "bg-amber-100 border-amber-500 text-amber-600" :
-                                                    activity.timeSlot === 'Afternoon' ? "bg-orange-100 border-orange-500 text-orange-600" :
-                                                        "bg-indigo-100 border-indigo-500 text-indigo-600"
-                                            )}>
-                                                {activity.timeSlot === 'Morning' ? <Sun className="w-4 h-4" /> :
-                                                    activity.timeSlot === 'Afternoon' ? <Sun className="w-4 h-4" /> :
-                                                        <Moon className="w-4 h-4" />}
+                                {(day.slots || []).map((slot) => {
+                                  const config = SLOT_CONFIG[slot.type] ?? SLOT_CONFIG["place"];
+                                  return (
+                                    <div
+                                      key={slot.slotNumber}
+                                      onClick={() => handleActivityClick(slot)}
+                                      className={`rounded-xl border p-4 mb-3 ${config.bgColor} ${config.borderColor} cursor-pointer hover:shadow-md transition-shadow`}
+                                    >
+                                      {/* Header row */}
+                                      <div className="flex items-center justify-between mb-2">
+                                        <div className="flex items-center gap-2">
+                                          <span className="text-xl">{config.icon}</span>
+                                          <div>
+                                            <span className={`text-xs font-semibold uppercase tracking-wide ${config.textColor}`}>
+                                              {config.label}
                                             </span>
+                                            <h4 className="font-semibold text-gray-900 dark:text-gray-900 text-sm leading-tight">
+                                              {slot.title}
+                                            </h4>
+                                          </div>
+                                        </div>
+                                        <div className="text-right">
+                                          <span className={`text-xs px-2 py-1 rounded-full font-medium ${config.badgeColor} ${config.textColor}`}>
+                                            {slot.startTime} – {slot.endTime}
+                                          </span>
+                                        </div>
+                                      </div>
 
-                                            {/* Interactive Activity Card with fixed margins */}
-                                            <div 
-                                              onClick={() => handleActivityClick(activity)}
-                                              className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-4 cursor-pointer bg-white dark:bg-slate-950 hover:bg-slate-50 dark:hover:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 hover:border-cyan-200 dark:hover:border-cyan-900/50 transition-all duration-300 block -mt-1"
-                                            >
-                                                <div className="flex-1 min-w-0 pr-4">
-                                                    <h3 className="flex items-center mb-1 text-lg font-semibold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
-                                                        <span className="truncate block max-w-full">{activity.placeName}</span>
-                                                        <span className="bg-slate-100 text-slate-800 text-[10px] sm:text-xs font-medium mr-2 px-2.5 py-0.5 rounded ml-3 dark:bg-slate-700 dark:text-slate-300 shrink-0">
-                                                            {activity.timeRange}
-                                                        </span>
-                                                    </h3>
-                                                    <p className="block mb-2 text-sm font-normal leading-relaxed text-slate-500 dark:text-slate-400 line-clamp-2 pr-2">
-                                                        {activity.description}
-                                                    </p>
-                                                    {activity.tips && (
-                                                        <div className="flex items-center gap-2 text-xs text-cyan-700 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-900/20 px-2.5 py-1.5 rounded w-fit mt-3 font-medium">
-                                                            <Sparkles className="w-3 h-3 shrink-0" />
-                                                            <span className="truncate max-w-[200px] sm:max-w-xs">{activity.tips}</span>
-                                                        </div>
-                                                    )}
-                                                </div>
-                                                <div className="flex items-center text-xs font-bold text-slate-500 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-lg shrink-0 sm:mt-0 mt-2">
-                                                    <Clock className="w-3 h-3 mr-1.5" />
-                                                    {activity.travelTime}
-                                                </div>
-                                            </div>
-                                        </li>
-                                    ))}
-                                </ol>
+                                      {/* Location */}
+                                      <p className="text-xs text-gray-500 mb-1 flex items-center gap-1">
+                                        <span>📌</span> {slot.location}
+                                      </p>
 
-                                {(!day.activities || day.activities.length === 0) && (
+                                      {/* Description */}
+                                      <p className="text-sm text-gray-700 block mb-2 line-clamp-2 pr-2">{slot.description}</p>
+
+                                      {/* Tip */}
+                                      {slot.tip && (
+                                        <p className="text-xs text-teal-700 bg-teal-50 rounded-lg px-3 py-2 flex items-start gap-1">
+                                          <span>💡</span> {slot.tip}
+                                        </p>
+                                      )}
+
+                                      {/* Travel to next */}
+                                      {slot.travelToNext && (
+                                        <p className="text-xs text-gray-400 mt-2 flex items-center gap-1">
+                                          <span>🚶</span> {slot.travelToNext}
+                                        </p>
+                                      )}
+                                    </div>
+                                  );
+                                })}
+
+                                {(!day.slots || day.slots.length === 0) && (
                                     <div className="text-center py-8 text-slate-400 italic">
                                         Free day for leisure and exploration.
                                     </div>
@@ -208,10 +298,10 @@ export default function TripClient({ id }: TripClientProps) {
                             </div>
 
                             {/* Daily Note Footer */}
-                            {day.notes && (
+                            {day.daySummary && (
                                 <div className="px-6 py-3 bg-slate-50 dark:bg-slate-950/30 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 flex items-center gap-2">
                                     <Coffee className="w-3.5 h-3.5 shrink-0" />
-                                    {day.notes}
+                                    {day.daySummary}
                                 </div>
                             )}
                         </motion.div>
@@ -250,7 +340,7 @@ export default function TripClient({ id }: TripClientProps) {
                         ) : (
                             <div className="p-6 pb-2 border-b border-slate-100 dark:border-slate-800">
                                 <h2 className="text-2xl font-black text-slate-900 dark:text-white leading-tight">
-                                    {selectedActivity?.placeName}
+                                    {selectedActivity?.title}
                                 </h2>
                             </div>
                         )}
@@ -272,14 +362,14 @@ export default function TripClient({ id }: TripClientProps) {
                                 <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Time Block</div>
                                 <div className="font-semibold text-slate-900 dark:text-white flex items-center gap-2">
                                     <Clock className="w-4 h-4 text-emerald-500" />
-                                    {selectedActivity.timeRange}
+                                    {selectedActivity.startTime} - {selectedActivity.endTime}
                                 </div>
                             </div>
                             <div className="bg-slate-50 dark:bg-slate-900 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
-                                <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Commute Time</div>
+                                <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Commute To Next</div>
                                 <div className="font-semibold text-slate-900 dark:text-white flex items-center gap-2">
                                     <Navigation className="w-4 h-4 text-emerald-500" />
-                                    {selectedActivity.travelTime}
+                                    {selectedActivity.travelToNext || 'N/A'}
                                 </div>
                             </div>
                         </div>
@@ -309,10 +399,10 @@ export default function TripClient({ id }: TripClientProps) {
                             )}
 
                             {/* Trip Planner Dynamic Tip */}
-                            {selectedActivity?.tips && (
+                            {selectedActivity?.tip && (
                             <div className="mt-4 p-4 rounded-xl bg-cyan-50 dark:bg-cyan-900/10 border border-cyan-100 dark:border-cyan-900/30 text-cyan-800 dark:text-cyan-300 text-sm font-medium">
                                 <span className="font-bold uppercase tracking-widest text-[10px] block mb-1">Planner Tip</span>
-                                {selectedActivity.tips}
+                                {selectedActivity.tip}
                             </div>
                             )}
                         </div>

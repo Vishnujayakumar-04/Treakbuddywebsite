@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Bike, Car, Bus, Train, ArrowLeft } from 'lucide-react';
-import { seedTransitData } from '@/services/transitService';
+
 
 // Import sub-page components
 import RentalsPage from './rentals/page';

@@ -19,10 +19,10 @@ const TIMELINE = [
 ];
 
 const CULTURE = [
-    { title: 'French Architecture', desc: 'Yellow colonial houses, tree-lined boulevards, and the enchanting White Town quarter.', icon: Landmark, image: '/images/culture-arch.jpg', color: 'from-amber-400 to-orange-500' },
-    { title: 'Spiritual Heritage', desc: "Home to Sri Aurobindo Ashram and Auroville — the city of dawn.", icon: BookOpen, image: '/images/culture-spirit.jpg', color: 'from-violet-400 to-purple-500' },
-    { title: 'Vibrant Festivals', desc: 'Bastille Day, Pongal, and the iconic International Yoga Festival.', icon: Music, image: '/images/culture-fest.jpg', color: 'from-rose-400 to-pink-500' },
-    { title: 'Coastal Living', desc: 'An easy-going lifestyle with fisherman villages and gorgeous sunrise spots.', icon: Users, image: '/images/culture-life.jpg', color: 'from-cyan-400 to-blue-500' },
+    { title: 'French Architecture', desc: 'Yellow colonial houses, tree-lined boulevards, and the enchanting White Town quarter.', icon: Landmark, image: '/assets/heritage/white-town-tales/photo-1.jpg', color: 'from-amber-400 to-orange-500' },
+    { title: 'Spiritual Heritage', desc: "Home to Sri Aurobindo Ashram and Auroville — the city of dawn.", icon: BookOpen, image: '/assets/heritage/aayi-mandapam/photo-1.jpg', color: 'from-violet-400 to-purple-500' },
+    { title: 'Vibrant Festivals', desc: 'Bastille Day, Pongal, and the iconic International Yoga Festival.', icon: Music, image: '/assets/culture/arts-crafts/photo-1.jpg', color: 'from-rose-400 to-pink-500' },
+    { title: 'Coastal Living', desc: 'An easy-going lifestyle with fisherman villages and gorgeous sunrise spots.', icon: Users, image: '/assets/beaches/promenade-beach/photo-1.jpg', color: 'from-cyan-400 to-blue-500' },
 ];
 
 const FOOD = [
@@ -51,7 +51,7 @@ export default function AboutPage() {
             <section ref={heroRef} className="relative h-[85vh] flex items-center justify-center overflow-hidden">
                 <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
                     <div className="absolute inset-0 bg-slate-900" />
-                    <Image src="/images/about-hero.jpg" alt="Puducherry Promenade Beach" fill className="object-cover object-center" priority />
+                    <Image src="/assets/heritage/white-town-tales/photo-2.jpg" alt="Puducherry Promenade Beach" fill className="object-cover object-center" priority />
                 </motion.div>
 
                 <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-slate-950/20 to-slate-950/80 z-[1]" />

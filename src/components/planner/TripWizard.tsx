@@ -96,18 +96,19 @@ export function TripWizard({ onCancel }: { onCancel: () => void }) {
 
         try {
             // 1. Call AI Service
-            const itinerary = await generateItinerary(draft);
+            const fullItinerary = await generateItinerary(draft);
 
             // 2. Prepare Firestore Document
             const tripData: Omit<GeneratedTrip, 'id'> = {
                 ...draft,
                 userId: user.uid,
                 createdAt: serverTimestamp(),
-                itinerary: itinerary,
+                itinerary: fullItinerary.days,
+                fullItinerary: fullItinerary,
                 status: 'confirmed',
                 totalCostEstimate: `₹${draft.budgetAmount} ${draft.budgetType}`,
-                places: itinerary.reduce((acc, day) => acc + day.activities.length, 0),
-                image: "/images/trip-placeholder.jpg"
+                places: fullItinerary.days.reduce((acc, day) => acc + day.slots.length, 0),
+                image: "/assets/adventures/promenade-beach-cycling/photo-2.jpg"
             };
 
             // 3. Save to Firestore
@@ -121,7 +122,7 @@ export function TripWizard({ onCancel }: { onCancel: () => void }) {
             // router.push(`/dashboard/planner/${docRef.id}`);
 
         } catch (err) {
-            console.error(err);
+            void 0; // console.(err);
             setError((err as Error).message || "Something went wrong. Please try again.");
             toast.error("Failed to generate itinerary.");
         } finally {

@@ -8,7 +8,7 @@ import { Phone, MapPin, Loader2, Star, ArrowUpRight, Filter, Sparkles, Car, Bike
 import Image from 'next/image';
 import { DashboardHeader } from '@/components/layout/DashboardHeader';
 import { getTransitItems, clearTransitCache } from '@/services/transitService';
-import { seedTransitData, TransitItem } from '@/utils/seedTransitData';
+import { TransitItem } from '@/utils/seedTransitData';
 
 
 const VEHICLE_CATEGORIES = [
@@ -38,8 +38,6 @@ export default function RentalsPage({ embedded = false }: { embedded?: boolean }
     const [error, setError] = useState<string | null>(null);
     const [filter, setFilter] = useState('All');
 
-    const [seeding, setSeeding] = useState(false);
-
     const VALID_RENTAL_IDS = ['r1', 'r2', 'r3', 'r4', 'r5', 'rc1'];
 
     async function loadData() {
@@ -49,7 +47,7 @@ export default function RentalsPage({ embedded = false }: { embedded?: boolean }
             setProviders(data);
             setError(null);
         } catch (err: unknown) {
-            console.error("Failed to load rentals:", err);
+            void 0; // console.("Failed to load rentals:", err);
             setError("Failed to load rentals. Please try again later.");
         } finally {
             setLoading(false);
@@ -61,17 +59,7 @@ export default function RentalsPage({ embedded = false }: { embedded?: boolean }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const handleManualRefresh = async () => {
-        setSeeding(true);
-        try {
-            await seedTransitData();
-            // Clear local cache by reloading
-            window.location.reload();
-        } catch {
-            alert('Failed to refresh. Please try again.');
-            setSeeding(false);
-        }
-    };
+
 
     const filteredProviders = filter === 'All'
         ? providers
@@ -103,10 +91,6 @@ export default function RentalsPage({ embedded = false }: { embedded?: boolean }
                     </p>
                 </div>
                 <div className="flex items-center gap-3">
-                    <button onClick={handleManualRefresh} disabled={seeding} className="flex items-center gap-2 text-sm text-amber-600 bg-amber-50 dark:bg-amber-900/20 px-3 py-1 rounded-full hover:bg-amber-100 dark:hover:bg-amber-900/40 transition disabled:opacity-50">
-                        <Sparkles className={`w-3.5 h-3.5 ${seeding ? "animate-spin" : ""}`} /> 
-                        <span className="hidden sm:inline">{seeding ? "Syncing DB..." : "Sync Data"}</span>
-                    </button>
                     <div className="flex items-center gap-2 text-sm text-slate-500 font-medium bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full">
                         <Filter className="w-3.5 h-3.5" />
                         <span>{filteredProviders.length} options</span>

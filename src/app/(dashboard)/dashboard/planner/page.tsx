@@ -112,7 +112,7 @@ export default function TripPlannerPage() {
             setTrips(sortedTrips);
             setIsLoading(false);
         }, (error) => {
-            console.error("Error fetching trips:", error);
+            void 0; // console.("Error fetching trips:", error);
             // If index error, show specific message? No, just fallback safe.
             toast.error("Could not load trips. Please check console.");
             setIsLoading(false);

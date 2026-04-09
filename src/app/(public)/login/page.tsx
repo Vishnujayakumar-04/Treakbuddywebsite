@@ -42,7 +42,7 @@ function LoginForm() {
 
                 if (!docSnap.exists()) {
                     // Profile doesn't exist yet — create it now (e.g. user signed up before Firestore was set up)
-                    console.warn(`User ${user.uid} has no Firestore profile, creating one now.`);
+
                     await setDoc(docRef, {
                         uid: user.uid,
                         userId: user.uid,
@@ -57,14 +57,14 @@ function LoginForm() {
                 }
             } catch (firestoreError) {
                 // Don't block login — Firestore rules may not be deployed yet
-                console.warn("Firestore profile check skipped (permissions issue):", firestoreError);
+
             }
 
             toast.success('Logged in successfully!');
             router.replace(redirectUrl || '/dashboard/planner?welcome=true');
 
         } catch (error) {
-            console.error(error);
+
             let message = 'Failed to login';
             if (error.code) {
                 switch (error.code) {
@@ -88,7 +88,7 @@ function LoginForm() {
             {/* Left — Visual Panel */}
             <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
                 <div className="absolute inset-0 bg-slate-900" />
-                <Image src="/images/hero-bg.jpg" alt="Puducherry" fill className="object-cover opacity-60" priority />
+                <Image src="/assets/heritage/white-town-tales/photo-1.jpg" alt="Puducherry" fill className="object-cover opacity-60" priority />
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-950/80 via-slate-950/60 to-violet-950/80" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(6,182,212,0.15),transparent_60%)]" />
 

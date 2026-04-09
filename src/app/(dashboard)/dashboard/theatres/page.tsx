@@ -53,7 +53,7 @@ export default function TheatresPage() {
             data.sort((a, b) => (b.rating || 0) - (a.rating || 0));
             setTheatres(data);
         } catch (error) {
-            console.error("Error fetching theatres:", error);
+            void 0; // console.("Error fetching theatres:", error);
             toast.error("Failed to load theatres.");
         } finally {
             setIsLoading(false);
@@ -82,7 +82,7 @@ export default function TheatresPage() {
             await fetchData();
         } catch(e) {
             toast.error("You don't have permission to write to this database natively.", { id: loadingToast });
-            console.error(e);
+            void 0; // console.(e);
             setIsLoading(false);
         }
     };

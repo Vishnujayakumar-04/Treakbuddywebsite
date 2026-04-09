@@ -58,14 +58,14 @@ export default function SignupPage() {
                     visitedPlaces: []
                 });
             } catch (firestoreError) {
-                console.warn("Firestore profile creation skipped (permissions issue):", firestoreError);
+
                 // Don't throw — account is created, profile will be set up on next login
             }
 
             toast.success('Account created successfully!');
             router.push('/dashboard/planner?welcome=true');
         } catch (error) {
-            console.error("Signup Error:", error);
+
             let errorMessage = 'Failed to create account';
             if (error.code) {
                 switch (error.code) {
@@ -87,7 +87,7 @@ export default function SignupPage() {
             {/* Left — Visual Panel */}
             <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
                 <div className="absolute inset-0 bg-slate-900" />
-                <Image src="/images/about-hero.jpg" alt="Puducherry" fill className="object-cover opacity-60" priority />
+                <Image src="/assets/heritage/white-town-tales/photo-1.jpg" alt="Puducherry" fill className="object-cover opacity-60" priority />
                 <div className="absolute inset-0 bg-gradient-to-br from-violet-950/80 via-slate-950/60 to-cyan-950/80" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(139,92,246,0.15),transparent_60%)]" />
 

@@ -186,7 +186,7 @@ function FamousPlacesContent() {
                 <Tabs value={activeCategory} onValueChange={handleTabChange} className="space-y-8">
                     {/* Sticky Category Navigation */}
                     <div className="sticky top-20 z-30 px-2 pb-4 bg-gradient-to-b from-slate-50 via-slate-50 to-transparent dark:from-slate-950 dark:via-slate-950 pt-2">
-                        <TabsList className="h-auto bg-transparent dark:bg-transparent border-0 shadow-none p-0 w-full flex flex-wrap justify-center gap-2 sm:gap-3">
+                        <TabsList className="h-auto bg-transparent dark:bg-transparent border-0 shadow-none p-0 w-full flex flex-nowrap overflow-x-auto hide-scrollbar justify-start md:justify-center gap-2 sm:gap-3 py-1 px-1">
                             {CATEGORIES.map((cat) => {
                                 const Icon = cat.icon;
                                 return (
