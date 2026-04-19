@@ -1,0 +1,78 @@
+[
+    {
+        "id": "theatre-1",
+        "name": "PVR Providence Mall",
+        "nameTamil": "PVR சினிமாஸ்",
+        "location": "Cuddalore Road",
+        "address": "Providence Mall, Cuddalore Road",
+        "mapsUrl": "https://maps.google.com/?q=PVR+Providence+Mall+Puducherry",
+        "images": [
+            "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800"
+        ],
+        "openingTimeWeekdays": "10:00 AM",
+        "closingTimeWeekdays": "11:30 PM",
+        "openingTimeWeekends": "9:30 AM",
+        "closingTimeWeekends": "11:30 PM",
+        "description": {
+            "specialFeatures": "Modern multiplex with 5 screens.",
+            "facilities": [
+                "Dolby Atmos",
+                "Recliners",
+                "Food Counter"
+            ],
+            "screenCount": 5
+        },
+        "entryFee": "₹150 - ₹300",
+        "phoneNumber": "0413 222 2222",
+        "crowdLevel": "High",
+        "rating": 4.6
+    },
+    {
+        "id": "theatre-2",
+        "name": "Raja Theatre",
+        "nameTamil": "ராஜா தியேட்டர்",
+        "location": "Anna Salai",
+        "address": "Anna Salai, Heritage Town",
+        "mapsUrl": "https://maps.google.com/?q=Raja+Theatre+Puducherry",
+        "images": [
+            "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=800"
+        ],
+        "openingTimeWeekdays": "10:30 AM",
+        "closingTimeWeekdays": "10:30 PM",
+        "description": {
+            "specialFeatures": "Classic single screen theatre playing latest regional movies.",
+            "facilities": [
+                "AC",
+                "Snacks bar"
+            ],
+            "screenCount": 1
+        },
+        "entryFee": "₹100 - ₹150",
+        "crowdLevel": "Medium",
+        "rating": 4.1
+    },
+    {
+        "id": "theatre-3",
+        "name": "Jeeva Rukmani Theatre",
+        "nameTamil": "ஜீவா ருக்மணி தியேட்டர்",
+        "location": "Kamaraj Salai",
+        "address": "Kamaraj Salai, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Jeeva+Rukmani+Theatre+Puducherry",
+        "images": [
+            "https://images.unsplash.com/photo-1503095396549-807759245b35?w=800"
+        ],
+        "openingTimeWeekdays": "10:00 AM",
+        "closingTimeWeekdays": "10:30 PM",
+        "description": {
+            "specialFeatures": "Twin screens with recently upgraded sound systems.",
+            "facilities": [
+                "AC",
+                "Car Parking"
+            ],
+            "screenCount": 2
+        },
+        "entryFee": "₹120 - ₹180",
+        "crowdLevel": "High",
+        "rating": 4.3
+    }
+]

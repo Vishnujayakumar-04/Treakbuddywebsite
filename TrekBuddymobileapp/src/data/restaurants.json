@@ -1,0 +1,367 @@
+[
+    {
+        "id": "rest-001",
+        "name": "Villa Shanti",
+        "category": "Restaurant",
+        "menuType": "A la carte",
+        "diningCategory": "Casual Dining",
+        "cuisine": "Continental",
+        "vegNonVeg": "Both",
+        "location": "White Town",
+        "mapsUrl": "https://maps.google.com/?q=Villa+Shanti+Puducherry",
+        "contact": "0413 420 0028",
+        "openTime": "12:00 PM",
+        "closeTime": "10:30 PM",
+        "weekendTiming": "Same",
+        "priceRange": "₹800–1500",
+        "rating": 4.5,
+        "popularDishes": [
+            "Pasta",
+            "Seafood"
+        ],
+        "description": "Heritage restaurant in White Town offering continental cuisine in an elegant setting.",
+        "tags": [
+            "Heritage",
+            "Continental"
+        ],
+        "features": {
+            "rooftop": false,
+            "cafe": true,
+            "bar": true,
+            "familyFriendly": true,
+            "seafood": true,
+            "romantic": true,
+            "luxury": true,
+            "budgetFriendly": false,
+            "liveMusic": false,
+            "gardenSeating": false,
+            "beachView": false,
+            "quickBites": false,
+            "buffet": false,
+            "parking": true,
+            "ac": true,
+            "petFriendly": false,
+            "kidsFriendly": true
+        }
+    },
+    {
+        "id": "rest-002",
+        "name": "Theevu Plage",
+        "category": "Restaurant",
+        "menuType": "A la carte",
+        "diningCategory": "Fine Dining",
+        "cuisine": "Seafood",
+        "vegNonVeg": "Non-Veg",
+        "location": "Kottakuppam",
+        "mapsUrl": "https://maps.google.com/?q=Theevu+Plage",
+        "contact": "9600777038",
+        "openTime": "12:30 PM",
+        "closeTime": "10:00 PM",
+        "weekendTiming": "Extended",
+        "priceRange": "₹1200–2000",
+        "rating": 4.4,
+        "popularDishes": [
+            "Grilled Fish"
+        ],
+        "description": "Stunning beachside fine dining offering the freshest seafood with a sea view.",
+        "tags": [
+            "Beach",
+            "Seafood"
+        ],
+        "features": {
+            "rooftop": true,
+            "cafe": false,
+            "bar": true,
+            "familyFriendly": true,
+            "seafood": true,
+            "romantic": true,
+            "luxury": true,
+            "budgetFriendly": false,
+            "liveMusic": false,
+            "gardenSeating": false,
+            "beachView": true,
+            "quickBites": false,
+            "buffet": false,
+            "parking": true,
+            "ac": true,
+            "petFriendly": false,
+            "kidsFriendly": true
+        }
+    },
+    {
+        "id": "rest-003",
+        "name": "Coromandel Cafe",
+        "category": "Restaurant",
+        "menuType": "Buffet",
+        "diningCategory": "Hotel Dining",
+        "cuisine": "Multi-cuisine",
+        "vegNonVeg": "Both",
+        "location": "White Town",
+        "mapsUrl": "https://maps.google.com/?q=Coromandel+Cafe+Puducherry",
+        "contact": "9489214332",
+        "openTime": "7:00 AM",
+        "closeTime": "10:30 PM",
+        "weekendTiming": "Same",
+        "priceRange": "₹900–1800",
+        "rating": 4.3,
+        "popularDishes": [
+            "Buffet Spread"
+        ],
+        "description": "All-day hotel restaurant offering a wide buffet spread of multi-cuisine dishes.",
+        "tags": [
+            "Buffet",
+            "Hotel"
+        ],
+        "features": {
+            "rooftop": false,
+            "cafe": true,
+            "bar": true,
+            "familyFriendly": true,
+            "seafood": true,
+            "romantic": false,
+            "luxury": true,
+            "budgetFriendly": false,
+            "liveMusic": false,
+            "gardenSeating": false,
+            "beachView": false,
+            "quickBites": true,
+            "buffet": true,
+            "parking": true,
+            "ac": true,
+            "petFriendly": false,
+            "kidsFriendly": true
+        }
+    },
+    {
+        "id": "cafe-001",
+        "name": "Cafe des Arts",
+        "category": "Cafe",
+        "cuisine": "French",
+        "location": "White Town",
+        "mapsUrl": "https://maps.google.com/?q=Cafe+des+Arts",
+        "contact": "81221 30066",
+        "openTime": "8:30 AM",
+        "closeTime": "10:00 PM",
+        "priceRange": "₹300–700",
+        "mustTry": [
+            "Croissants"
+        ],
+        "tags": [
+            "Heritage",
+            "Cafe"
+        ],
+        "description": "Artistic French café in a heritage building — ideal for a slow breakfast.",
+        "image": "https://maps.app.goo.gl/h6NaA6yYzmnfcztLA",
+        "rating": 4.4
+    },
+    {
+        "id": "cafe-002",
+        "name": "Bread & Chocolate",
+        "category": "Cafe",
+        "cuisine": "Bakery Cafe",
+        "location": "MG Road",
+        "mapsUrl": "https://maps.google.com/?q=Bread+and+Chocolate",
+        "contact": "8940058500",
+        "openTime": "9:00 AM",
+        "closeTime": "9:00 PM",
+        "priceRange": "₹250–600",
+        "mustTry": [
+            "Chocolate Tart"
+        ],
+        "tags": [
+            "Cafe",
+            "Bakery"
+        ],
+        "description": "Cozy café on MG Road known for its chocolate desserts and fresh pastries.",
+        "image": "https://maps.app.goo.gl/7shg2zJBvYYxcptW9",
+        "rating": 4.5
+    },
+    {
+        "id": "cafe-003",
+        "name": "Zuka Choco-la",
+        "category": "Cafe",
+        "cuisine": "Dessert Cafe",
+        "location": "White Town",
+        "mapsUrl": "https://maps.google.com/?q=Zuka+Chocolates",
+        "contact": "0413 222 1191",
+        "openTime": "10:00 AM",
+        "closeTime": "9:00 PM",
+        "priceRange": "₹300–800",
+        "mustTry": [
+            "Hot Chocolate"
+        ],
+        "tags": [
+            "Desserts",
+            "Cafe"
+        ],
+        "description": "Chocolate specialty café in White Town — must visit for dessert lovers.",
+        "image": "https://maps.app.goo.gl/A3pSvmbAEYJ4KUHY7",
+        "rating": 4.6
+    },
+    {
+        "id": "bakery-001",
+        "name": "Hot Breads",
+        "category": "Bakery",
+        "location": "MG Road",
+        "mapsUrl": "https://maps.google.com/?q=Hot+Breads+Puducherry",
+        "contact": "9566079526",
+        "mustTry": [
+            "Pastries"
+        ],
+        "priceRange": "₹50–200",
+        "tags": [
+            "Bakery"
+        ],
+        "description": "Popular bakery chain offering fresh pastries, cakes and breads.",
+        "image": "https://maps.app.goo.gl/Tderr2grrR4fPACn7",
+        "rating": 4.2,
+        "seating": true
+    },
+    {
+        "id": "bakery-002",
+        "name": "Baker Street",
+        "category": "Bakery",
+        "location": "MG Road",
+        "mapsUrl": "https://maps.google.com/?q=Baker+Street+Puducherry",
+        "contact": "9944850001",
+        "mustTry": [
+            "Brownies"
+        ],
+        "priceRange": "₹80–250",
+        "tags": [
+            "Bakery",
+            "Cafe"
+        ],
+        "description": "French-inspired bakery offering artisanal brownies and bakes.",
+        "image": "https://maps.app.goo.gl/uAwXTS1GnyyCLsCz5",
+        "rating": 4.4,
+        "seating": true
+    },
+    {
+        "id": "bakery-003",
+        "name": "Bread & Chocolate (Auroville)",
+        "category": "Bakery",
+        "location": "Auroville Rd, Kuilapalayam",
+        "mapsUrl": "https://maps.app.goo.gl/vx7JkU8CSGg2yavn7",
+        "contact": "0413 262 3778",
+        "mustTry": [
+            "Hot Chocolate"
+        ],
+        "priceRange": "₹300–800",
+        "tags": [
+            "Desserts",
+            "Cafe"
+        ],
+        "description": "Auroville's beloved chocolate café, famous for its rich hot chocolate.",
+        "image": "https://maps.app.goo.gl/ASWRZ1FSfNYyBweV9",
+        "rating": 4.8,
+        "seating": true
+    },
+    {
+        "id": "chaat-001",
+        "name": "Ashok Chaat",
+        "category": "Chaat",
+        "location": "Mission Street",
+        "mapsUrl": "https://maps.google.com/?q=Ashok+Chaat",
+        "mustTry": [
+            "Pani Puri"
+        ],
+        "hygieneLevel": "Medium",
+        "openTime": "4:00 PM",
+        "crowdLevel": "High",
+        "priceRange": "₹20–60",
+        "description": "Famous chaat stall on Mission Street with a long line of loyal customers.",
+        "rating": 4.1
+    },
+    {
+        "id": "chaat-002",
+        "name": "Balaji Chaat",
+        "category": "Chaat",
+        "location": "Lawspet",
+        "mapsUrl": "https://maps.google.com/?q=Balaji+Chaat+Puducherry",
+        "mustTry": [
+            "Dahi Puri"
+        ],
+        "hygieneLevel": "High",
+        "openTime": "5:00 PM",
+        "crowdLevel": "Medium",
+        "priceRange": "₹20–60",
+        "description": "Local favourite chaat stall in Lawspet known for its hygienic preparations.",
+        "rating": 4.0
+    },
+    {
+        "id": "chaat-003",
+        "name": "Gupta Chaat",
+        "category": "Chaat",
+        "location": "MG Road",
+        "mapsUrl": "https://maps.google.com/?q=Gupta+Chaat+Puducherry",
+        "mustTry": [
+            "Bhel Puri"
+        ],
+        "hygieneLevel": "Medium",
+        "openTime": "4:30 PM",
+        "crowdLevel": "Medium",
+        "priceRange": "₹20–60",
+        "description": "Budget chaat stall on MG Road with a variety of North Indian street snacks.",
+        "rating": 3.9
+    },
+    {
+        "id": "street-001",
+        "name": "Rock Beach Stalls",
+        "category": "Street Food",
+        "foodType": "Snacks",
+        "location": "Promenade Beach",
+        "mapsUrl": "https://maps.google.com/?q=Rock+Beach+Puducherry",
+        "mustTry": [
+            "Bajji",
+            "Corn"
+        ],
+        "bestTime": "Evening",
+        "hygieneLevel": "Medium",
+        "priceRange": "₹20–80",
+        "crowdLevel": "High",
+        "vegNonVeg": "Veg",
+        "seating": false,
+        "nearbyLandmark": "Gandhi Statue",
+        "description": "Evening food hub along the promenade with bajji, corn and local snacks."
+    },
+    {
+        "id": "street-002",
+        "name": "Sunday Market Food",
+        "category": "Street Food",
+        "foodType": "Mixed",
+        "location": "Heritage Town",
+        "mapsUrl": "https://maps.google.com/?q=Sunday+Market+Puducherry",
+        "mustTry": [
+            "Fried Rice"
+        ],
+        "bestTime": "Evening",
+        "hygieneLevel": "Medium",
+        "priceRange": "₹50–120",
+        "crowdLevel": "High",
+        "vegNonVeg": "Both",
+        "seating": false,
+        "nearbyLandmark": "Sunday Market",
+        "description": "Weekend evening food stalls at the Heritage Town Sunday Market."
+    },
+    {
+        "id": "street-003",
+        "name": "Lawspet Evening Stalls",
+        "category": "Street Food",
+        "foodType": "Snacks",
+        "location": "Lawspet",
+        "mapsUrl": "https://maps.google.com/?q=Lawspet+Street+Food",
+        "mustTry": [
+            "Vada",
+            "Bajji"
+        ],
+        "bestTime": "Evening",
+        "hygieneLevel": "High",
+        "priceRange": "₹20–60",
+        "crowdLevel": "Medium",
+        "vegNonVeg": "Veg",
+        "seating": false,
+        "nearbyLandmark": "Lawspet Signal",
+        "description": "Local snack stalls in Lawspet with fresh vada and bajji made to order."
+    }
+]

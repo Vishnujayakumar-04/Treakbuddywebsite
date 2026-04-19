@@ -1,0 +1,135 @@
+{
+  "urban_routes": [
+    {
+      "id": "U1",
+      "routeName": "Heritage City Loop",
+      "start": "Pondicherry New Bus Stand",
+      "end": "Pondicherry New Bus Stand",
+      "via": ["Mission Street", "Beach Road", "Bharathi Park", "Grand Bazaar"],
+      "distance_km": 8,
+      "fare_min": 10,
+      "fare_max": 20,
+      "frequency": "10-15 mins",
+      "operation_time": "5:00 AM - 10:00 PM",
+      "type": "Urban/Town"
+    },
+    {
+      "id": "U2",
+      "routeName": "Lawspet - Airport Loop",
+      "start": "Pondicherry New Bus Stand",
+      "end": "Pondicherry New Bus Stand",
+      "via": ["Anna Salai", "Lawspet Signal", "Pondy Airport", "Murungapakkam"],
+      "distance_km": 10,
+      "fare_min": 12,
+      "fare_max": 22,
+      "frequency": "12 mins",
+      "operation_time": "5:30 AM - 10:30 PM",
+      "type": "Urban/Town"
+    },
+    {
+      "id": "U3",
+      "routeName": "Muthialpet North Loop",
+      "start": "Pondicherry New Bus Stand",
+      "end": "Pondicherry New Bus Stand",
+      "via": ["IG Square", "Reddiarpalayam", "Muthialpet", "Govt Hospital"],
+      "distance_km": 11,
+      "fare_min": 12,
+      "fare_max": 25,
+      "frequency": "10 mins",
+      "operation_time": "5:30 AM - 10 PM",
+      "type": "Urban/Town"
+    },
+    {
+      "id": "U4",
+      "routeName": "Industrial Thattanchavady Loop",
+      "start": "Pondicherry New Bus Stand",
+      "end": "Pondicherry New Bus Stand",
+      "via": ["Saram", "Moolakulam", "Thattanchavady", "Murungapakkam"],
+      "distance_km": 13,
+      "fare_min": 10,
+      "fare_max": 24,
+      "frequency": "8-12 mins",
+      "operation_time": "5:15 AM - 10 PM",
+      "type": "Urban/Town"
+    },
+    {
+      "id": "U5",
+      "routeName": "Tourism - Chunnambar Loop",
+      "start": "Pondicherry New Bus Stand",
+      "end": "Pondicherry New Bus Stand",
+      "via": ["Ariyankuppam", "Chunnambar", "Tollgate", "ECR Road"],
+      "distance_km": 15,
+      "fare_min": 12,
+      "fare_max": 30,
+      "frequency": "15 mins",
+      "operation_time": "5 AM - 9 PM",
+      "type": "Urban/Tourist"
+    },
+    {
+      "id": "U6",
+      "routeName": "Villianur Inner Loop",
+      "start": "Pondicherry New Bus Stand",
+      "end": "Pondicherry New Bus Stand",
+      "via": ["Villianur Road", "Villianur Temple", "Natesan Nagar"],
+      "distance_km": 14,
+      "fare_min": 12,
+      "fare_max": 26,
+      "frequency": "15 mins",
+      "operation_time": "6 AM - 9:30 PM",
+      "type": "Urban/Town"
+    },
+    {
+      "id": "U7",
+      "routeName": "Medical Belt Loop",
+      "start": "Pondicherry New Bus Stand",
+      "end": "Pondicherry New Bus Stand",
+      "via": ["Kurumbapet", "Rainbow Nagar", "Nellithope", "Govt Hospital"],
+      "distance_km": 8,
+      "fare_min": 10,
+      "fare_max": 18,
+      "frequency": "8 mins",
+      "operation_time": "5:30 AM - 10 PM",
+      "type": "Urban/Medical"
+    },
+    {
+      "id": "U8",
+      "routeName": "Coastal Village Loop",
+      "start": "Pondicherry New Bus Stand",
+      "end": "Pondicherry New Bus Stand",
+      "via": ["Mudaliarpet", "Murungapakkam", "Veerampattinam", "Boat House"],
+      "distance_km": 16,
+      "fare_min": 12,
+      "fare_max": 28,
+      "frequency": "15 mins",
+      "operation_time": "5 AM - 9 PM",
+      "type": "Urban/Coastal"
+    },
+    {
+      "id": "U9",
+      "routeName": "White Town Heritage Loop",
+      "start": "Pondicherry New Bus Stand",
+      "end": "Pondicherry New Bus Stand",
+      "via": ["Aurobindo Ashram", "Rock Beach", "White Town", "French Quarter"],
+      "distance_km": 9,
+      "fare_min": 10,
+      "fare_max": 20,
+      "frequency": "10 mins",
+      "operation_time": "6 AM - 10 PM",
+      "type": "Urban/Tourist Heritage"
+    },
+    {
+      "id": "U10",
+      "routeName": "University Education Loop",
+      "start": "Pondicherry New Bus Stand",
+      "end": "Pondicherry New Bus Stand",
+      "via": ["JIPMER", "Kalapet", "Auroville Road (Campus Limit)"],
+      "distance_km": 18,
+      "fare_min": 15,
+      "fare_max": 32,
+      "frequency": "12-18 mins",
+      "operation_time": "6 AM - 9 PM",
+      "type": "Urban/Education"
+    }
+  ]
+}
+

@@ -1,0 +1,314 @@
+[
+    {
+        "id": "hotel-001",
+        "name": "Hotel Annamalai International",
+        "category": "Hotel",
+        "roomTypes": [
+            "Deluxe",
+            "Suite"
+        ],
+        "priceRange": "₹3500–6000",
+        "checkIn": "12:00 PM",
+        "checkOut": "11:00 AM",
+        "location": "Saram",
+        "address": "Saram, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Hotel+Annamalai+International+Puducherry",
+        "rating": 4.2,
+        "contact": "0413 224 7001",
+        "image": "https://share.google/SyQ34GLUVbgNRaU5n",
+        "description": "Well-established hotel offering deluxe rooms and suites in the Saram area."
+    },
+    {
+        "id": "hotel-002",
+        "name": "Hotel Atithi",
+        "category": "Hotel",
+        "roomTypes": [
+            "AC",
+            "Non-AC"
+        ],
+        "priceRange": "₹2500–4500",
+        "checkIn": "12:00 PM",
+        "checkOut": "11:00 AM",
+        "location": "Heritage Town",
+        "address": "Heritage Town, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Hotel+Atithi+Puducherry",
+        "rating": 4.0,
+        "contact": "0413 220 7500",
+        "image": "https://share.google/zXmdhlGf9bY7KpHx7",
+        "description": "Comfortable hotel in the heart of Heritage Town with AC and Non-AC options."
+    },
+    {
+        "id": "hotel-003",
+        "name": "Le Pondy",
+        "category": "Hotel",
+        "roomTypes": [
+            "Cottages",
+            "Villas"
+        ],
+        "priceRange": "₹7000–12000",
+        "checkIn": "2:00 PM",
+        "checkOut": "12:00 PM",
+        "location": "Pudukuppam",
+        "address": "Pudukuppam, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Le+Pondy+Resort",
+        "rating": 4.5,
+        "contact": "0471 350 5303",
+        "image": "https://share.google/12Sf2lnuUBZLj1V6G",
+        "description": "Premium cottages and villas set in a serene coastal location."
+    },
+    {
+        "id": "hotel-004",
+        "name": "Ginger Pondicherry",
+        "category": "Hotel",
+        "roomTypes": [
+            "Standard Rooms"
+        ],
+        "priceRange": "₹2800–4000",
+        "checkIn": "2:00 PM",
+        "checkOut": "12:00 PM",
+        "location": "Karuvadikuppam Main Rd",
+        "address": "Karuvadikuppam Main Rd, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Ginger+Hotel+Pondicherry",
+        "rating": 4.1,
+        "contact": "0413 666 3333",
+        "image": "https://share.google/URHjdODJ8qCWukPcQ",
+        "description": "Budget-friendly business hotel chain with comfortable standard rooms."
+    },
+    {
+        "id": "hotel-005",
+        "name": "Accord Puducherry",
+        "category": "Hotel",
+        "roomTypes": [
+            "Executive",
+            "Suite"
+        ],
+        "priceRange": "₹5000–8000",
+        "checkIn": "2:00 PM",
+        "checkOut": "12:00 PM",
+        "location": "Ellaipillaichavady",
+        "address": "Ellaipillaichavady, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Accord+Hotel+Pondicherry",
+        "rating": 4.6,
+        "contact": "0413 229 9000",
+        "image": "https://share.google/t06yPZNlvx2gc7aGT",
+        "description": "Upscale hotel with executive rooms and suites, known for excellent hospitality."
+    },
+    {
+        "id": "resort-001",
+        "name": "Le Pondy Resort",
+        "category": "Resort",
+        "roomTypes": [
+            "Villas",
+            "Cottages"
+        ],
+        "priceRange": "₹8000–15000",
+        "checkIn": "2:00 PM",
+        "checkOut": "12:00 PM",
+        "location": "Pudukuppam",
+        "address": "Pudukuppam, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Le+Pondy+Resort",
+        "rating": 4.5,
+        "contact": "0471 350 5303",
+        "image": "https://share.google/9ia9Nl6bPUiaaQtYb",
+        "description": "Luxury beach resort featuring private villas and cottages with sea views."
+    },
+    {
+        "id": "resort-002",
+        "name": "The Windflower",
+        "category": "Resort",
+        "roomTypes": [
+            "Luxury Rooms"
+        ],
+        "priceRange": "₹9000–14000",
+        "checkIn": "2:00 PM",
+        "checkOut": "12:00 PM",
+        "location": "Manavely Revenue Village",
+        "address": "Manavely Revenue Village, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Windflower+Pondicherry",
+        "rating": 4.4,
+        "contact": "080 6221 0104",
+        "image": "https://share.google/llCoTQClNfmscmQpj",
+        "description": "Premium resort with luxury rooms in a tranquil coastal setting."
+    },
+    {
+        "id": "resort-003",
+        "name": "Ocean Spray",
+        "category": "Resort",
+        "roomTypes": [
+            "Villas"
+        ],
+        "priceRange": "₹7000–13000",
+        "checkIn": "2:00 PM",
+        "checkOut": "11:00 AM",
+        "location": "Manjakuppam",
+        "address": "Manjakuppam, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Ocean+Spray+Resort",
+        "rating": 4.3,
+        "contact": "090039 45678",
+        "image": "https://share.google/258V5VbDn89N2uccO",
+        "description": "Beachside villas with adventure activities including zipline and rope courses."
+    },
+    {
+        "id": "resort-004",
+        "name": "Paradise Lagoon",
+        "category": "Resort",
+        "roomTypes": [
+            "Cottages"
+        ],
+        "priceRange": "₹6000–10000",
+        "checkIn": "1:00 PM",
+        "checkOut": "11:00 AM",
+        "location": "Pooranankuppam",
+        "address": "Pooranankuppam, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Paradise+Lagoon+Resort",
+        "rating": 4.1,
+        "contact": "091505 99901",
+        "image": "https://share.google/FcEcSDZ50iEFUGkXI",
+        "description": "Cozy lagoon-side cottages offering a peaceful retreat."
+    },
+    {
+        "id": "pg-001",
+        "name": "Sri Balaji PG",
+        "category": "PG",
+        "roomTypes": [
+            "Single",
+            "Shared"
+        ],
+        "priceRange": "₹4500–7000",
+        "checkIn": "Flexible",
+        "checkOut": "Flexible",
+        "location": "T.C Kootroad",
+        "address": "T.C Kootroad, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Balaji+PG+Puducherry",
+        "rating": 4.0,
+        "contact": "063698 40004",
+        "image": "https://share.google/Q5f0Ox93ZqduUAVvm",
+        "description": "Affordable PG accommodation with single and shared room options."
+    },
+    {
+        "id": "pg-002",
+        "name": "Green Homes PG",
+        "category": "PG",
+        "roomTypes": [
+            "Shared"
+        ],
+        "priceRange": "₹5000–6500",
+        "checkIn": "Flexible",
+        "checkOut": "Flexible",
+        "location": "Edayanchavadi",
+        "address": "Edayanchavadi, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Green+Homes+PG+Puducherry",
+        "rating": 3.9,
+        "contact": "094886 69650",
+        "image": "https://share.google/zhk3fXGC2yNUmZqcf",
+        "description": "Shared PG accommodation in a green and peaceful neighbourhood."
+    },
+    {
+        "id": "pg-003",
+        "name": "Auro PG Stay",
+        "category": "PG",
+        "roomTypes": [
+            "Single"
+        ],
+        "priceRange": "₹6000–8000",
+        "checkIn": "Flexible",
+        "checkOut": "Flexible",
+        "location": "Auroville",
+        "address": "Auroville, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Auro+PG",
+        "rating": 4.2,
+        "contact": "91 81228 95011",
+        "image": "https://share.google/pnF2w4mNyQXe1U9Bn",
+        "description": "Single-room PG near Auroville, ideal for spiritual seekers and students."
+    },
+    {
+        "id": "pg-004",
+        "name": "Student Nest",
+        "category": "PG",
+        "roomTypes": [
+            "Shared"
+        ],
+        "priceRange": "₹4000–6000",
+        "checkIn": "Flexible",
+        "checkOut": "Flexible",
+        "location": "Puducherry",
+        "address": "Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Student+Nest+PG",
+        "rating": 3.8,
+        "contact": "079047 71438",
+        "image": "https://share.google/CtI0lJbP1kSTqzI5r",
+        "description": "Budget-friendly shared PG accommodation popular with students."
+    },
+    {
+        "id": "stay-001",
+        "name": "Villa Shanti",
+        "category": "Stay",
+        "roomTypes": [
+            "Deluxe Rooms"
+        ],
+        "priceRange": "₹5500–7500",
+        "checkIn": "2:00 PM",
+        "checkOut": "11:00 AM",
+        "location": "White Town",
+        "address": "White Town, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Villa+Shanti+Pondicherry",
+        "rating": 4.6,
+        "contact": "0413 420 0028",
+        "image": "https://share.google/u7uqJ3l5Y4zTq88lu",
+        "description": "Heritage boutique stay in the heart of White Town with elegant deluxe rooms."
+    },
+    {
+        "id": "stay-002",
+        "name": "La Maison Charu",
+        "category": "Stay",
+        "roomTypes": [
+            "Heritage Rooms"
+        ],
+        "priceRange": "₹4500–6500",
+        "checkIn": "1:00 PM",
+        "checkOut": "11:00 AM",
+        "location": "Heritage Town",
+        "address": "Heritage Town, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=La+Maison+Charu",
+        "rating": 4.4,
+        "contact": "099441 36186",
+        "image": "https://share.google/9pNuqmBN4CBLP4CHE",
+        "description": "Charming heritage homestay with tastefully decorated rooms and French ambiance."
+    },
+    {
+        "id": "stay-003",
+        "name": "Anandha Inn",
+        "category": "Stay",
+        "roomTypes": [
+            "Budget Rooms"
+        ],
+        "priceRange": "₹1800–3000",
+        "checkIn": "12:00 PM",
+        "checkOut": "11:00 AM",
+        "location": "Puducherry",
+        "address": "Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Anandha+Inn+Pondicherry",
+        "rating": 3.9,
+        "contact": "079 6921 9991",
+        "image": "https://share.google/IYfxIdFCXvAgGqdsK",
+        "description": "Budget-friendly inn offering clean and comfortable rooms at affordable prices."
+    },
+    {
+        "id": "stay-004",
+        "name": "Coramandel Stay",
+        "category": "Stay",
+        "roomTypes": [
+            "Service Apartments"
+        ],
+        "priceRange": "₹4000–6000",
+        "checkIn": "2:00 PM",
+        "checkOut": "12:00 PM",
+        "location": "MG Road",
+        "address": "MG Road, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Coramandel+Stay",
+        "rating": 4.1,
+        "contact": "093454 52373",
+        "image": "https://share.google/H5kG91zBeIj6WhC2x",
+        "description": "Well-equipped service apartments on MG Road, ideal for extended stays."
+    }
+]

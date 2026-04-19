@@ -1,0 +1,52 @@
+[
+    {
+        "id": "event-1",
+        "name": "Pondicherry Heritage Festival",
+        "category": "Festivals",
+        "location": "White Town",
+        "date": "Feb 15 - Feb 20, 2025",
+        "time": "10:00 AM - 8:00 PM",
+        "image": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800",
+        "description": "Annual festival celebrating the rich architectural and cultural heritage of Puducherry with guided walks, exhibitions, and performances."
+    },
+    {
+        "id": "event-2",
+        "name": "Auroville International Music Festival",
+        "category": "Music & Concerts",
+        "location": "Auroville",
+        "date": "Nov 10 - Nov 12, 2024",
+        "time": "6:00 PM onwards",
+        "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800",
+        "description": "A vibrant celebration of global music featuring international and local artists."
+    },
+    {
+        "id": "event-3",
+        "name": "Weekend Yoga Retreat",
+        "category": "Health & Wellness",
+        "location": "Serenity Beach",
+        "date": "Every Weekend",
+        "time": "6:00 AM - 9:00 AM",
+        "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800",
+        "description": "Rejuvenating sunrise yoga sessions by the beach for all skill levels."
+    },
+    {
+        "id": "event-4",
+        "name": "Classical Dance Evening",
+        "category": "Dance & Theatre",
+        "location": "Bharathiar Palkalaikoodam",
+        "date": "Last Saturday of the Month",
+        "time": "6:30 PM",
+        "image": "https://images.unsplash.com/photo-1543790114-1e56b4f7ceec?w=800",
+        "description": "Experience traditional Bharatanatyam and other classical dances."
+    },
+    {
+        "id": "event-5",
+        "name": "Surfing Competition",
+        "category": "Adventure",
+        "location": "Serenity Beach",
+        "date": "August 15, 2025",
+        "time": "8:00 AM",
+        "image": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=800",
+        "description": "Local surfing contest with participants from all over India."
+    }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "id": "jain-001",
+    "name": "Jain Derasar",
+    "nameTamil": "ஜைன் தேராசர்",
+    "religion": "Jain",
+    "subType": "Jain Derasar",
+    "mainDeity": "Lord Mahavir",
+    "location": "M.G. Road, Puducherry",
+    "address": "M.G. Road, Puducherry 605001",
+    "mapsUrl": "https://maps.google.com/?q=11.9360,79.8340",
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "8:00 PM",
+    "openingTimeWeekends": "5:30 AM",
+    "closingTimeWeekends": "8:30 PM",
+    "description": "A beautiful Jain temple (Derasar) dedicated to Lord Mahavir, the 24th Tirthankara. The temple serves the Jain community in Puducherry. The temple follows Jain principles of non-violence (Ahimsa) and peace. Daily prayers and meditation sessions are conducted. The temple has beautiful architecture with intricate carvings depicting Jain teachings.",
+    "descriptionTamil": "24வது தீர்த்தங்கரரான மகாவீரருக்கு அர்ப்பணிக்கப்பட்ட அழகான ஜைன் கோவில் (தேராசர்). கோவில் புதுச்சேரியில் உள்ள ஜைன் சமூகத்திற்கு சேவை செய்கிறது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Jain_Derasar_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Modest attire required. Clean and simple clothing preferred.",
+    "phoneNumber": "+91 413 222 3456",
+    "crowdLevel": "Low to Medium",
+    "famousMonths": "Mahavir Jayanti (மகாவீர் ஜயந்தி), Paryushan Parva",
+    "specialOccasions": "Mahavir Jayanti is celebrated with special prayers and processions. Paryushan Parva (8-day festival) with fasting, prayers, and meditation. Diwali (Jain New Year) celebrations. Special prayers for peace and non-violence. Community gatherings and spiritual discourses.",
+    "rating": 4.5,
+    "coordinates": {
+      "lat": 11.9360,
+      "lng": 79.8340
+    }
+  },
+  {
+    "id": "jain-002",
+    "name": "Jain Temple",
+    "nameTamil": "ஜைன் கோவில்",
+    "religion": "Jain",
+    "subType": "Jain Temples",
+    "mainDeity": "Lord Adinath (Rishabhdev)",
+    "location": "White Town, Puducherry",
+    "address": "White Town, Puducherry 605001",
+    "mapsUrl": "https://maps.google.com/?q=11.9370,79.8350",
+    "openingTimeWeekdays": "6:30 AM",
+    "closingTimeWeekdays": "8:00 PM",
+    "openingTimeWeekends": "6:00 AM",
+    "closingTimeWeekends": "8:30 PM",
+    "description": "A peaceful Jain temple dedicated to Lord Adinath (Rishabhdev), the first Tirthankara. The temple promotes Jain philosophy of peace, non-violence, and spiritual purity. Daily prayers and meditation. The temple has a serene atmosphere perfect for contemplation. The temple follows strict Jain principles.",
+    "descriptionTamil": "முதல் தீர்த்தங்கரரான ஆதிநாதருக்கு (ரிஷப்தேவ்) அர்ப்பணிக்கப்பட்ட அமைதியான ஜைன் கோவில். கோவில் அமைதி, அஹிம்சை மற்றும் ஆன்மீக தூய்மை ஆகிய ஜைன் தத்துவத்தை ஊக்குவிக்கிறது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Jain_Temple_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Modest attire required",
+    "phoneNumber": "+91 413 223 4567",
+    "crowdLevel": "Low",
+    "famousMonths": "Mahavir Jayanti (மகாவீர் ஜயந்தி), Paryushan Parva",
+    "specialOccasions": "Mahavir Jayanti celebrations. Paryushan Parva with special prayers and fasting. Diwali (Jain New Year). Meditation sessions and spiritual discourses. Community prayers for peace.",
+    "rating": 4.4,
+    "coordinates": {
+      "lat": 11.9370,
+      "lng": 79.8350
+    }
+  }
+]

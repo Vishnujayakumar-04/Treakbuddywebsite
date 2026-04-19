@@ -1,0 +1,75 @@
+[
+    {
+        "id": "photo-1",
+        "name": "French Quarter Streets",
+        "nameTamil": "பிரெஞ்சு காலனி தெருக்கள்",
+        "category": "White Town Streets",
+        "location": "White Town",
+        "address": "White Town, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=White+Town+Puducherry",
+        "openingTimeWeekdays": "24 Hours",
+        "closingTimeWeekdays": "24 Hours",
+        "openingTimeWeekends": "24 Hours",
+        "closingTimeWeekends": "24 Hours",
+        "description": {
+            "specialFeatures": "Colorful heritage buildings with yellow walls, bougainvillea flowers, and clean streets.",
+            "bestTimeForPhotography": "Early morning or late afternoon",
+            "photographyTips": [
+                "Use wide-angle lens",
+                "Capture the vintage doors and windows"
+            ]
+        },
+        "images": [
+            "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=800"
+        ],
+        "crowdLevel": "Medium",
+        "rating": 4.9
+    },
+    {
+        "id": "photo-2",
+        "name": "Matrimandir Viewpoint",
+        "nameTamil": "மாத்ரிமந்திர்",
+        "category": "Auroville",
+        "location": "Auroville",
+        "address": "Auroville, Tamil Nadu",
+        "mapsUrl": "https://maps.google.com/?q=Matrimandir+Auroville",
+        "openingTimeWeekdays": "9:00 AM",
+        "closingTimeWeekdays": "4:00 PM",
+        "description": {
+            "specialFeatures": "Golden spherical structure surrounded by manicured gardens.",
+            "bestTimeForPhotography": "Morning hours",
+            "photographyTips": [
+                "Tripods are not usually allowed inside",
+                "Zoom lens works best from the viewing point"
+            ]
+        },
+        "images": [
+            "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800"
+        ],
+        "crowdLevel": "High",
+        "rating": 4.8
+    },
+    {
+        "id": "photo-3",
+        "name": "Rock Beach Promenade",
+        "nameTamil": "பாறை கடற்கரை",
+        "category": "Beachside Locations",
+        "location": "White Town",
+        "address": "Goubert Avenue, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Rock+Beach+Puducherry",
+        "openingTimeWeekdays": "24 Hours",
+        "closingTimeWeekdays": "24 Hours",
+        "description": {
+            "specialFeatures": "A massive stretch of rocks alongside the Bay of Bengal. Fantastic for portraits.",
+            "bestTimeForPhotography": "Sunrise (5:30 AM - 7:00 AM)",
+            "photographyTips": [
+                "Capture the splash of waves against the rocks"
+            ]
+        },
+        "images": [
+            "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+        ],
+        "crowdLevel": "Low in morning, High in evening",
+        "rating": 4.7
+    }
+]

@@ -1,0 +1,1057 @@
+[
+  {
+    "id": "beach-001",
+    "name": "Promenade Beach (Rock Beach)",
+    "nameTamil": "புரொமெனேட் கடற்கரை (பாறை கடற்கரை)",
+    "type": "Urban Beach",
+    "location": "White Town, Goubert Avenue, Puducherry",
+    "address": "Goubert Avenue, White Town, Puducherry, 605001",
+    "mapsUrl": "https://maps.google.com/?q=Promenade+Beach+Pondicherry",
+    "coordinates": {
+      "lat": 11.9344,
+      "lng": 79.8298
+    },
+    "openingTimeWeekdays": "Open 24 Hours",
+    "closingTimeWeekdays": "Open 24 Hours",
+    "openingTimeWeekends": "Open 24 Hours",
+    "closingTimeWeekends": "Open 24 Hours",
+    "vehicleRestriction": "Vehicles restricted 5:00 PM - 11:00 PM",
+    "description": {
+      "nameOrigin": "Named 'Promenade' due to the 1.5 km paved walkway along the sea. Also called 'Rock Beach' because of the rocky shoreline.",
+      "historicalImportance": "Colonial-era beachfront developed during French rule. Features major landmarks including Gandhi Statue, War Memorial, and Old Lighthouse.",
+      "naturalFeatures": "Famous for rocky shoreline (not sandy). Waves crash against rocks and tetrapods.",
+      "maintenance": "Maintained by Puducherry Tourism & Municipality.",
+      "facilities": [
+        "1.5 km paved promenade walkway",
+        "Gandhi Statue",
+        "War Memorial",
+        "Old Lighthouse",
+        "Street lighting",
+        "Public benches"
+      ],
+      "nearbyShops": [
+        "No commercial vendors directly on shore (clean zone)",
+        "Cafes and restaurants on Beach Road",
+        "Le Cafe nearby"
+      ],
+      "specialFeatures": "Ideal for walking, photography, sunrise views. Clean zone with no vendors on beach."
+    },
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/7/7a/Rock_Beach_Pondicherry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/1c/Promenade_Beach_Puducherry.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Casual / Comfortable wear preferred",
+    "phoneNumber": "112",
+    "emergencyContact": "112",
+    "policeHelpline": "112",
+    "lifeguardAvailable": false,
+    "crowdLevel": "Very High",
+    "peakTime": "Evenings & Weekends",
+    "famousThings": [
+      "Sunrise views",
+      "Heritage walk",
+      "Evening strolls",
+      "Photography",
+      "Gandhi Statue",
+      "War Memorial"
+    ],
+    "famousMonths": "October to February (Tourist Season)",
+    "famousMonthsTamil": "அக்டோபர் முதல் பிப்ரவரி வரை",
+    "whatHappensDuringFamousTimes": {
+      "weekends": "Very crowded with tourists and locals",
+      "holidays": "Special decorations during Pongal, Diwali, Christmas, New Year",
+      "festivalSeasons": "Cultural events and celebrations",
+      "touristSeason": "Peak crowd from October to February"
+    },
+    "safetyAndActivities": {
+      "swimmingAllowed": false,
+      "swimmingNote": "Swimming NOT allowed due to strong waves and rocks",
+      "waveIntensity": "Strong",
+      "lifeguardAvailability": "No lifeguards - swimming prohibited",
+      "activitiesAllowed": [
+        "Walking",
+        "Jogging",
+        "Photography",
+        "Sunrise viewing",
+        "Heritage walk"
+      ],
+      "safetyWarnings": [
+        "Do not enter water - strong currents and rocks",
+        "Slippery rocks near water edge",
+        "Watch belongings in crowded areas"
+      ]
+    },
+    "bestTimeToVisit": "Early morning for sunrise, Evening for walk",
+    "rating": 4.5
+  },
+  {
+    "id": "beach-002",
+    "name": "Paradise Beach (Chunnambar Beach)",
+    "nameTamil": "பாரடைஸ் கடற்கரை (சுண்ணாம்பார் கடற்கரை)",
+    "type": "Island Beach",
+    "location": "Chunnambar Boat House, 8 km from city",
+    "address": "Chunnambar Boat House, Puducherry, 605007",
+    "mapsUrl": "https://maps.google.com/?q=Paradise+Beach+Pondicherry",
+    "coordinates": {
+      "lat": 11.8891,
+      "lng": 79.8165
+    },
+    "openingTimeWeekdays": "9:00 AM",
+    "closingTimeWeekdays": "5:00 PM",
+    "openingTimeWeekends": "9:00 AM",
+    "closingTimeWeekends": "6:00 PM",
+    "description": {
+      "nameOrigin": "Called 'Paradise Beach' due to its pristine golden sand and secluded island location.",
+      "historicalImportance": "Developed as a tourist destination by Puducherry Tourism Department.",
+      "naturalFeatures": "Clean sandy beach reached only by boat via backwaters.",
+      "maintenance": "Maintained by Puducherry Tourism.",
+      "facilities": [
+        "Beach huts",
+        "Restrooms",
+        "Food vendors",
+        "Boat jetty"
+      ],
+      "nearbyShops": [
+        "Food and snack vendors on beach",
+        "Coconut water sellers",
+        "Souvenir shops"
+      ],
+      "specialFeatures": "Famous for boating experience through backwaters. Clean sandy beach with huts and vendors."
+    },
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/6b/Paradise_Beach_Puducherry.jpg"
+    ],
+    "entryFee": "Rs. 200-300 (Boat charges)",
+    "dressCode": "Beachwear allowed",
+    "phoneNumber": "112",
+    "emergencyContact": "112",
+    "policeHelpline": "112",
+    "lifeguardAvailable": true,
+    "crowdLevel": "High",
+    "peakTime": "10:00 AM - 3:00 PM",
+    "famousThings": [
+      "Boat ride through backwaters",
+      "Beach huts",
+      "Swimming",
+      "Beach games"
+    ],
+    "famousMonths": "October to March",
+    "famousMonthsTamil": "அக்டோபர் முதல் மார்ச் வரை",
+    "whatHappensDuringFamousTimes": {
+      "weekends": "High crowd with families and tourists",
+      "holidays": "Very crowded, longer boat wait times",
+      "festivalSeasons": "Special packages during Pongal and Christmas",
+      "touristSeason": "Peak activity October to March"
+    },
+    "safetyAndActivities": {
+      "swimmingAllowed": true,
+      "swimmingNote": "Swimming allowed in marked zones only",
+      "waveIntensity": "Calm to Moderate",
+      "lifeguardAvailability": "Available during operational hours",
+      "activitiesAllowed": [
+        "Swimming (marked zones)",
+        "Boat ride",
+        "Beach games",
+        "Photography",
+        "Relaxing in beach huts"
+      ],
+      "safetyWarnings": [
+        "Swim only in marked zones",
+        "Return before last boat timing",
+        "Follow lifeguard instructions"
+      ]
+    },
+    "bestTimeToVisit": "Morning 9-11 AM for fewer crowds",
+    "rating": 4.6
+  },
+  {
+    "id": "beach-003",
+    "name": "Serenity Beach",
+    "nameTamil": "செரினிட்டி கடற்கரை",
+    "type": "Surfing Beach",
+    "location": "Kottakuppam, 6 km from White Town",
+    "address": "Serenity Beach Road, Kottakuppam, Puducherry, 605101",
+    "mapsUrl": "https://maps.google.com/?q=Serenity+Beach+Pondicherry",
+    "coordinates": {
+      "lat": 11.9672,
+      "lng": 79.8421
+    },
+    "openingTimeWeekdays": "Open 24 Hours",
+    "closingTimeWeekdays": "Open 24 Hours",
+    "openingTimeWeekends": "Open 24 Hours",
+    "closingTimeWeekends": "Open 24 Hours",
+    "description": {
+      "nameOrigin": "Named 'Serenity' for its peaceful and calm atmosphere.",
+      "historicalImportance": "Traditional fishing village beach that became popular for surfing.",
+      "naturalFeatures": "Quiet alternative to Rock Beach with golden sand and good waves for surfing.",
+      "maintenance": "Community maintained.",
+      "facilities": [
+        "Surf schools nearby",
+        "Cafes",
+        "Parking"
+      ],
+      "nearbyShops": [
+        "Cafes nearby",
+        "Surf equipment rentals",
+        "Local food stalls"
+      ],
+      "specialFeatures": "Popular among surfers. Quiet alternative to Rock Beach."
+    },
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/4b/Serenity_Beach_Puducherry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/22/Serenity_Beach_Sunrise.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Comfortable beachwear preferred",
+    "phoneNumber": "112",
+    "emergencyContact": "112",
+    "policeHelpline": "112",
+    "lifeguardAvailable": false,
+    "crowdLevel": "Medium",
+    "peakTime": "Morning and Evening",
+    "famousThings": [
+      "Surfing",
+      "Cafes",
+      "Peaceful atmosphere",
+      "Photography"
+    ],
+    "famousMonths": "November to March (Surfing season)",
+    "famousMonthsTamil": "நவம்பர் முதல் மார்ச் வரை",
+    "whatHappensDuringFamousTimes": {
+      "weekends": "Moderate crowd with surfers and tourists",
+      "holidays": "More visitors seeking peaceful beach",
+      "festivalSeasons": "Local events",
+      "touristSeason": "Popular with surfers November to March"
+    },
+    "safetyAndActivities": {
+      "swimmingAllowed": true,
+      "swimmingNote": "Swimming with caution",
+      "waveIntensity": "Moderate (good for surfing)",
+      "lifeguardAvailability": "No formal lifeguards",
+      "activitiesAllowed": [
+        "Surfing",
+        "Swimming (with caution)",
+        "Photography",
+        "Beach walking",
+        "Cafe hopping"
+      ],
+      "safetyWarnings": [
+        "Swim with caution",
+        "Watch for waves",
+        "No lifeguards on duty"
+      ]
+    },
+    "bestTimeToVisit": "Morning for surfing, Evening for sunset",
+    "rating": 4.5
+  },
+  {
+    "id": "beach-004",
+    "name": "Auroville Beach (Auro Beach)",
+    "nameTamil": "ஆரோவில் கடற்கரை",
+    "type": "Quiet Beach",
+    "location": "Auroville area",
+    "address": "Auroville Beach Road, Bommayapalayam, Tamil Nadu, 605101",
+    "mapsUrl": "https://maps.google.com/?q=Auroville+Beach",
+    "coordinates": {
+      "lat": 12.0011,
+      "lng": 79.8523
+    },
+    "openingTimeWeekdays": "Open 24 Hours",
+    "closingTimeWeekdays": "Open 24 Hours",
+    "openingTimeWeekends": "Open 24 Hours",
+    "closingTimeWeekends": "Open 24 Hours",
+    "description": {
+      "nameOrigin": "Named after the nearby Auroville international township.",
+      "historicalImportance": "Located near Auroville, the experimental universal township.",
+      "naturalFeatures": "Calm waters with peaceful atmosphere.",
+      "maintenance": "Community maintained by Auroville.",
+      "facilities": [
+        "Natural beach setting",
+        "Limited facilities"
+      ],
+      "nearbyShops": [
+        "Auroville cafes nearby",
+        "Organic food stores in Auroville"
+      ],
+      "specialFeatures": "Popular with foreigners and yoga groups. Calm and peaceful atmosphere."
+    },
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/91/Auroville_Beach_Puducherry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Auro_Beach_Coromandel.jpg/800px-Auro_Beach_Coromandel.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Comfortable beachwear preferred",
+    "phoneNumber": "112",
+    "emergencyContact": "112",
+    "policeHelpline": "112",
+    "lifeguardAvailable": false,
+    "crowdLevel": "Low to Medium",
+    "peakTime": "Morning for yoga, Evening for sunset",
+    "famousThings": [
+      "Calm waters",
+      "Yoga and meditation",
+      "Peaceful atmosphere",
+      "Popular with foreigners"
+    ],
+    "famousMonths": "October to March",
+    "famousMonthsTamil": "அக்டோபர் முதல் மார்ச் வரை",
+    "whatHappensDuringFamousTimes": {
+      "weekends": "Slightly more visitors",
+      "holidays": "Moderate crowd",
+      "festivalSeasons": "Auroville events",
+      "touristSeason": "International visitors October to March"
+    },
+    "safetyAndActivities": {
+      "swimmingAllowed": true,
+      "swimmingNote": "Generally safe, moderate waves",
+      "waveIntensity": "Moderate",
+      "lifeguardAvailability": "No lifeguards",
+      "activitiesAllowed": [
+        "Swimming",
+        "Yoga",
+        "Meditation",
+        "Beach walking",
+        "Photography"
+      ],
+      "safetyWarnings": [
+        "No lifeguards on duty",
+        "Swim at your own risk"
+      ]
+    },
+    "bestTimeToVisit": "Morning for yoga, Evening for sunset",
+    "rating": 4.3
+  },
+  {
+    "id": "beach-005",
+    "name": "Eden Beach (Blue Flag Beach)",
+    "nameTamil": "ஈடன் கடற்கரை (நீலக் கொடி கடற்கரை)",
+    "type": "Blue Flag Beach",
+    "location": "Chinna Veerampattinam",
+    "address": "Eden Beach, Chinna Veerampattinam, Puducherry, 605007",
+    "mapsUrl": "https://maps.google.com/?q=Eden+Beach+Puducherry",
+    "coordinates": {
+      "lat": 11.8752,
+      "lng": 79.8119
+    },
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "6:00 PM",
+    "openingTimeWeekends": "6:00 AM",
+    "closingTimeWeekends": "6:00 PM",
+    "description": {
+      "nameOrigin": "Named 'Eden' to represent paradise. Earned Blue Flag certification for international standards.",
+      "historicalImportance": "India's Blue Flag certified beach in Puducherry.",
+      "naturalFeatures": "Cleanest and safest beach with designated swimming zone.",
+      "maintenance": "Government maintained to Blue Flag standards.",
+      "facilities": [
+        "Lifeguards on duty",
+        "Restrooms",
+        "Changing rooms",
+        "Children's play area",
+        "Open-air gym",
+        "First aid station",
+        "Wheelchair accessible"
+      ],
+      "nearbyShops": [
+        "Snack stalls",
+        "Cold drinks"
+      ],
+      "specialFeatures": "India's Blue Flag certified beach. Cleanest and safest. Government maintained."
+    },
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/67/Eden_Beach_Puducherry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Blue_Flag_Beach_Puducherry.jpg/800px-Blue_Flag_Beach_Puducherry.jpg"
+    ],
+    "entryFee": "Rs. 20-30",
+    "dressCode": "Comfortable beachwear, Swimwear allowed",
+    "phoneNumber": "112",
+    "emergencyContact": "112",
+    "policeHelpline": "112",
+    "lifeguardAvailable": true,
+    "crowdLevel": "Medium",
+    "peakTime": "7:00 AM - 10:00 AM and 4:00 PM - 6:00 PM",
+    "famousThings": [
+      "Blue Flag certification",
+      "Cleanest beach",
+      "Lifeguards",
+      "Safe swimming",
+      "Children's play area",
+      "Open-air gym"
+    ],
+    "famousMonths": "October to March",
+    "famousMonthsTamil": "அக்டோபர் முதல் மார்ச் வரை",
+    "whatHappensDuringFamousTimes": {
+      "weekends": "Popular with families",
+      "holidays": "Moderate crowd",
+      "festivalSeasons": "Beach clean-up drives",
+      "touristSeason": "Steady visitors October to March"
+    },
+    "safetyAndActivities": {
+      "swimmingAllowed": true,
+      "swimmingNote": "Very safe, lifeguards available",
+      "waveIntensity": "Calm to Moderate",
+      "lifeguardAvailability": "Available during operational hours (6 AM - 6 PM)",
+      "activitiesAllowed": [
+        "Swimming (designated zone)",
+        "Beach walking",
+        "Children's play area",
+        "Open-air gym",
+        "Photography"
+      ],
+      "safetyWarnings": [
+        "Swim only in designated zone",
+        "Follow lifeguard instructions",
+        "Beach closes at 6 PM"
+      ]
+    },
+    "bestTimeToVisit": "Morning 6-10 AM or Evening 4-6 PM",
+    "rating": 4.7
+  },
+  {
+    "id": "beach-006",
+    "name": "Quiet Healing Beach",
+    "nameTamil": "அமைதி சிகிச்சை கடற்கரை",
+    "type": "Private Beach",
+    "location": "Near Auroville",
+    "address": "Quiet Healing Centre, Auroville, Tamil Nadu, 605101",
+    "mapsUrl": "https://maps.google.com/?q=Quiet+Healing+Beach",
+    "coordinates": {
+      "lat": 12.0089,
+      "lng": 79.8612
+    },
+    "openingTimeWeekdays": "Open 24 Hours",
+    "closingTimeWeekdays": "Open 24 Hours",
+    "openingTimeWeekends": "Open 24 Hours",
+    "closingTimeWeekends": "Open 24 Hours",
+    "description": {
+      "nameOrigin": "Named after the Quiet Healing Centre nearby.",
+      "historicalImportance": "Part of Auroville's coastal stretch.",
+      "naturalFeatures": "Peaceful and serene environment for meditation.",
+      "maintenance": "Maintained by Auroville community.",
+      "facilities": [
+        "Natural beach setting",
+        "Meditation spaces"
+      ],
+      "nearbyShops": [
+        "Quiet Healing Centre cafe"
+      ],
+      "specialFeatures": "Meditation and peaceful environment. Very quiet and secluded."
+    },
+    "images": [],
+    "entryFee": "Free",
+    "dressCode": "Modest beachwear preferred",
+    "phoneNumber": "112",
+    "emergencyContact": "112",
+    "policeHelpline": "112",
+    "lifeguardAvailable": false,
+    "crowdLevel": "Low",
+    "peakTime": "Morning for meditation",
+    "famousThings": [
+      "Meditation",
+      "Peaceful atmosphere",
+      "Healing retreats"
+    ],
+    "famousMonths": "October to March",
+    "famousMonthsTamil": "அக்டோபர் முதல் மார்ச் வரை",
+    "whatHappensDuringFamousTimes": {
+      "weekends": "Quiet and peaceful",
+      "holidays": "Wellness seekers visit",
+      "festivalSeasons": "Special healing workshops",
+      "touristSeason": "International wellness visitors"
+    },
+    "safetyAndActivities": {
+      "swimmingAllowed": true,
+      "swimmingNote": "Swim at own risk",
+      "waveIntensity": "Calm",
+      "lifeguardAvailability": "No lifeguards",
+      "activitiesAllowed": [
+        "Meditation",
+        "Yoga",
+        "Swimming",
+        "Walking"
+      ],
+      "safetyWarnings": [
+        "No lifeguards",
+        "Secluded area - visit with company"
+      ]
+    },
+    "bestTimeToVisit": "Morning for meditation",
+    "rating": 4.2
+  },
+  {
+    "id": "beach-007",
+    "name": "Reppo Beach",
+    "nameTamil": "ரெப்போ கடற்கரை",
+    "type": "Secluded Beach",
+    "location": "Near Kottakuppam",
+    "address": "Reppo Beach, Vaithikuppam, Puducherry, 605101",
+    "mapsUrl": "https://maps.google.com/?q=Reppo+Beach+Pondicherry",
+    "coordinates": {
+      "lat": 11.9847,
+      "lng": 79.8389
+    },
+    "openingTimeWeekdays": "Open 24 Hours",
+    "closingTimeWeekdays": "Open 24 Hours",
+    "openingTimeWeekends": "Open 24 Hours",
+    "closingTimeWeekends": "Open 24 Hours",
+    "description": {
+      "nameOrigin": "Named after Reppo area.",
+      "historicalImportance": "Traditional fishing area.",
+      "naturalFeatures": "Hidden and less explored beach.",
+      "maintenance": "Minimal maintenance.",
+      "facilities": [
+        "Natural beach setting"
+      ],
+      "nearbyShops": [
+        "Limited - carry own supplies"
+      ],
+      "specialFeatures": "Hidden gem. Less explored and very peaceful."
+    },
+    "images": [],
+    "entryFee": "Free",
+    "dressCode": "Comfortable casual wear",
+    "phoneNumber": "112",
+    "emergencyContact": "112",
+    "policeHelpline": "112",
+    "lifeguardAvailable": false,
+    "crowdLevel": "Very Low",
+    "peakTime": "Sunset time",
+    "famousThings": [
+      "Hidden gem",
+      "Solitude",
+      "Sunset views"
+    ],
+    "famousMonths": "October to March",
+    "famousMonthsTamil": "அக்டோபர் முதல் மார்ச் வரை",
+    "whatHappensDuringFamousTimes": {
+      "weekends": "Few visitors",
+      "holidays": "Still quiet",
+      "festivalSeasons": "Local activities",
+      "touristSeason": "Occasional tourists"
+    },
+    "safetyAndActivities": {
+      "swimmingAllowed": false,
+      "swimmingNote": "Not recommended - no lifeguards",
+      "waveIntensity": "Moderate",
+      "lifeguardAvailability": "No lifeguards",
+      "activitiesAllowed": [
+        "Walking",
+        "Photography",
+        "Sunset viewing"
+      ],
+      "safetyWarnings": [
+        "No lifeguards",
+        "Secluded - visit in groups",
+        "Avoid after dark"
+      ]
+    },
+    "bestTimeToVisit": "Late afternoon for sunset",
+    "rating": 3.9
+  },
+  {
+    "id": "beach-008",
+    "name": "Bodhi Beach",
+    "nameTamil": "போதி கடற்கரை",
+    "type": "Quiet Beach",
+    "location": "Auroville zone",
+    "address": "Bodhi Beach, Kottakuppam, Puducherry, 605101",
+    "mapsUrl": "https://maps.google.com/?q=Bodhi+Beach+Pondicherry",
+    "coordinates": {
+      "lat": 11.9695,
+      "lng": 79.8435
+    },
+    "openingTimeWeekdays": "Open 24 Hours",
+    "closingTimeWeekdays": "Open 24 Hours",
+    "openingTimeWeekends": "Open 24 Hours",
+    "closingTimeWeekends": "Open 24 Hours",
+    "description": {
+      "nameOrigin": "Named 'Bodhi' referring to enlightenment in Buddhist tradition.",
+      "historicalImportance": "Part of the Auroville coastal stretch.",
+      "naturalFeatures": "Spiritual and calm atmosphere.",
+      "maintenance": "Community maintained.",
+      "facilities": [
+        "Natural beach setting",
+        "Nearby cafes"
+      ],
+      "nearbyShops": [
+        "Seafood restaurants nearby"
+      ],
+      "specialFeatures": "Spiritual and calm atmosphere. Near Auroville."
+    },
+    "images": [],
+    "entryFee": "Free",
+    "dressCode": "Comfortable beachwear",
+    "phoneNumber": "112",
+    "emergencyContact": "112",
+    "policeHelpline": "112",
+    "lifeguardAvailable": false,
+    "crowdLevel": "Low",
+    "peakTime": "Morning and Evening",
+    "famousThings": [
+      "Spiritual atmosphere",
+      "Calm environment",
+      "Photography"
+    ],
+    "famousMonths": "October to March",
+    "famousMonthsTamil": "அக்டோபர் முதல் மார்ச் வரை",
+    "whatHappensDuringFamousTimes": {
+      "weekends": "Moderate visitors",
+      "holidays": "Peaceful",
+      "festivalSeasons": "Auroville events",
+      "touristSeason": "Spiritual seekers visit"
+    },
+    "safetyAndActivities": {
+      "swimmingAllowed": true,
+      "swimmingNote": "Swim with caution",
+      "waveIntensity": "Moderate",
+      "lifeguardAvailability": "No lifeguards",
+      "activitiesAllowed": [
+        "Swimming (with caution)",
+        "Meditation",
+        "Walking",
+        "Photography"
+      ],
+      "safetyWarnings": [
+        "No lifeguards",
+        "Swim at own risk"
+      ]
+    },
+    "bestTimeToVisit": "Morning for meditation, Evening for sunset",
+    "rating": 4.0
+  },
+  {
+    "id": "beach-009",
+    "name": "Kottakuppam Beach",
+    "nameTamil": "கொட்டக்குப்பம் கடற்கரை",
+    "type": "Fishing Village Beach",
+    "location": "Near TN border",
+    "address": "Kottakuppam Beach, Kottakuppam, Puducherry, 605101",
+    "mapsUrl": "https://maps.google.com/?q=Kottakuppam+Beach",
+    "coordinates": {
+      "lat": 11.9665,
+      "lng": 79.8418
+    },
+    "openingTimeWeekdays": "Open 24 Hours",
+    "closingTimeWeekdays": "Open 24 Hours",
+    "openingTimeWeekends": "Open 24 Hours",
+    "closingTimeWeekends": "Open 24 Hours",
+    "description": {
+      "nameOrigin": "Named after Kottakuppam fishing village.",
+      "historicalImportance": "Traditional fishing village.",
+      "naturalFeatures": "Fishing village beach with colorful boats.",
+      "maintenance": "Community maintained.",
+      "facilities": [
+        "Fishing village atmosphere"
+      ],
+      "nearbyShops": [
+        "Fresh fish available",
+        "Local eateries"
+      ],
+      "specialFeatures": "Authentic fishing village experience."
+    },
+    "images": [],
+    "entryFee": "Free",
+    "dressCode": "Modest attire preferred",
+    "phoneNumber": "112",
+    "emergencyContact": "112",
+    "policeHelpline": "112",
+    "lifeguardAvailable": false,
+    "crowdLevel": "Low",
+    "peakTime": "Early morning for fishing activity",
+    "famousThings": [
+      "Fishing village",
+      "Fresh fish",
+      "Local culture"
+    ],
+    "famousMonths": "October to May",
+    "famousMonthsTamil": "அக்டோபர் முதல் மே வரை",
+    "whatHappensDuringFamousTimes": {
+      "weekends": "Fishing activity",
+      "holidays": "Local celebrations",
+      "festivalSeasons": "Fishing festivals",
+      "touristSeason": "Cultural visitors"
+    },
+    "safetyAndActivities": {
+      "swimmingAllowed": true,
+      "swimmingNote": "Swim with caution",
+      "waveIntensity": "Moderate",
+      "lifeguardAvailability": "No lifeguards",
+      "activitiesAllowed": [
+        "Watching fishing activity",
+        "Photography",
+        "Swimming (with caution)"
+      ],
+      "safetyWarnings": [
+        "Watch for fishing boats",
+        "No lifeguards"
+      ]
+    },
+    "bestTimeToVisit": "Early morning for fishing experience",
+    "rating": 4.1
+  },
+  {
+    "id": "beach-010",
+    "name": "Chunnambar Backwaters",
+    "nameTamil": "சுண்ணாம்பார் உப்பங்கழி",
+    "type": "Backwater",
+    "location": "Chunnambar",
+    "address": "Chunnambar Boat House, Chunnambar, Puducherry, 605007",
+    "mapsUrl": "https://maps.google.com/?q=Chunnambar+Backwaters",
+    "coordinates": {
+      "lat": 11.8923,
+      "lng": 79.8088
+    },
+    "openingTimeWeekdays": "9:00 AM",
+    "closingTimeWeekdays": "6:00 PM",
+    "openingTimeWeekends": "9:00 AM",
+    "closingTimeWeekends": "6:00 PM",
+    "description": {
+      "nameOrigin": "Named after Chunnambar village.",
+      "historicalImportance": "Natural backwater ecosystem.",
+      "naturalFeatures": "Calm backwater channels with mangroves.",
+      "maintenance": "Managed by Puducherry Tourism.",
+      "facilities": [
+        "Boat house",
+        "Kayaking",
+        "Pedal boats",
+        "Parking",
+        "Restrooms"
+      ],
+      "nearbyShops": [
+        "Snack stalls",
+        "Cold drinks"
+      ],
+      "specialFeatures": "Famous for boating and kayaking. Gateway to Paradise Beach."
+    },
+    "images": [],
+    "entryFee": "Rs. 15-25 entry, Boating extra",
+    "dressCode": "Comfortable casual wear",
+    "phoneNumber": "0413 260 2444",
+    "emergencyContact": "112",
+    "policeHelpline": "112",
+    "lifeguardAvailable": true,
+    "crowdLevel": "Medium to High",
+    "peakTime": "10:00 AM - 4:00 PM",
+    "famousThings": [
+      "Boating",
+      "Kayaking",
+      "Pedal boats",
+      "Backwater views",
+      "Bird watching"
+    ],
+    "famousMonths": "October to March",
+    "famousMonthsTamil": "அக்டோபர் முதல் மார்ச் வரை",
+    "whatHappensDuringFamousTimes": {
+      "weekends": "Very crowded, long queues",
+      "holidays": "Extremely busy",
+      "festivalSeasons": "Special packages",
+      "touristSeason": "Peak activity"
+    },
+    "safetyAndActivities": {
+      "swimmingAllowed": false,
+      "swimmingNote": "Swimming NOT allowed in backwaters",
+      "waveIntensity": "Calm (no waves)",
+      "lifeguardAvailability": "Life jackets mandatory for boating",
+      "activitiesAllowed": [
+        "Boating",
+        "Kayaking",
+        "Pedal boating",
+        "Bird watching",
+        "Photography"
+      ],
+      "safetyWarnings": [
+        "Wear life jacket",
+        "Last boat at 4 PM",
+        "Do not jump into water"
+      ]
+    },
+    "bestTimeToVisit": "Morning 9-11 AM for fewer crowds",
+    "rating": 4.4
+  },
+  {
+    "id": "beach-011",
+    "name": "Veerampattinam Beach",
+    "nameTamil": "வீரம்பட்டினம் கடற்கரை",
+    "type": "Fishing Village Beach",
+    "location": "Veerampattinam Village",
+    "address": "Veerampattinam Beach, Veerampattinam, Puducherry, 605007",
+    "mapsUrl": "https://maps.google.com/?q=Veerampattinam+Beach",
+    "coordinates": {
+      "lat": 11.8698,
+      "lng": 79.8132
+    },
+    "openingTimeWeekdays": "Open 24 Hours",
+    "closingTimeWeekdays": "Open 24 Hours",
+    "openingTimeWeekends": "Open 24 Hours",
+    "closingTimeWeekends": "Open 24 Hours",
+    "description": {
+      "nameOrigin": "Named after Veerampattinam village.",
+      "historicalImportance": "One of the largest fishing villages in Puducherry.",
+      "naturalFeatures": "Long sandy shoreline with fishing boats.",
+      "maintenance": "Village community maintained.",
+      "facilities": [
+        "Fishing village atmosphere",
+        "Temple nearby"
+      ],
+      "nearbyShops": [
+        "Fresh fish",
+        "Local eateries"
+      ],
+      "specialFeatures": "Famous for fishing village experience and local festivals."
+    },
+    "images": [],
+    "entryFee": "Free",
+    "dressCode": "Modest attire recommended",
+    "phoneNumber": "112",
+    "emergencyContact": "112",
+    "policeHelpline": "112",
+    "lifeguardAvailable": false,
+    "crowdLevel": "Low",
+    "peakTime": "Early morning, Festival times",
+    "famousThings": [
+      "Fishing village",
+      "Local festivals",
+      "Temple Car Festival (August)"
+    ],
+    "famousMonths": "August (Temple Car Festival)",
+    "famousMonthsTamil": "ஆகஸ்ட் (தேர் திருவிழா)",
+    "whatHappensDuringFamousTimes": {
+      "weekends": "Fishing activity",
+      "holidays": "Local celebrations",
+      "festivalSeasons": "Temple Car Festival draws thousands",
+      "touristSeason": "Cultural visitors"
+    },
+    "safetyAndActivities": {
+      "swimmingAllowed": true,
+      "swimmingNote": "Swim with caution",
+      "waveIntensity": "Moderate",
+      "lifeguardAvailability": "No lifeguards",
+      "activitiesAllowed": [
+        "Swimming (shallow areas)",
+        "Fishing village tour",
+        "Photography",
+        "Festival attendance"
+      ],
+      "safetyWarnings": [
+        "No lifeguards",
+        "Respect village customs"
+      ]
+    },
+    "bestTimeToVisit": "August for Temple Car Festival",
+    "rating": 4.0
+  },
+  {
+    "id": "beach-012",
+    "name": "Thengaithittu Beach",
+    "nameTamil": "தெங்கைதிட்டு கடற்கரை",
+    "type": "Fishing Harbor Beach",
+    "location": "Thengaithittu",
+    "address": "Thengaithittu Beach, Thengaithittu, Puducherry, 605004",
+    "mapsUrl": "https://maps.google.com/?q=Thengaithittu+Beach",
+    "coordinates": {
+      "lat": 11.9158,
+      "lng": 79.8242
+    },
+    "openingTimeWeekdays": "Open 24 Hours",
+    "closingTimeWeekdays": "Open 24 Hours",
+    "openingTimeWeekends": "Open 24 Hours",
+    "closingTimeWeekends": "Open 24 Hours",
+    "description": {
+      "nameOrigin": "Thengai means coconut in Tamil.",
+      "historicalImportance": "Home to Puducherry Fishing Harbour.",
+      "naturalFeatures": "Fishing harbour with coconut trees.",
+      "maintenance": "Fisheries Department maintained.",
+      "facilities": [
+        "Fishing harbour",
+        "Fish market"
+      ],
+      "nearbyShops": [
+        "Fresh fish market",
+        "Local stalls"
+      ],
+      "specialFeatures": "Major fishing harbour. Fresh fish auctions in morning."
+    },
+    "images": [],
+    "entryFee": "Free",
+    "dressCode": "Casual wear",
+    "phoneNumber": "112",
+    "emergencyContact": "112",
+    "policeHelpline": "112",
+    "lifeguardAvailable": false,
+    "crowdLevel": "Low",
+    "peakTime": "Early morning for fish auction",
+    "famousThings": [
+      "Fishing harbour",
+      "Fresh fish market",
+      "Coconut groves"
+    ],
+    "famousMonths": "October to May",
+    "famousMonthsTamil": "அக்டோபர் முதல் மே வரை",
+    "whatHappensDuringFamousTimes": {
+      "weekends": "Fishing activity",
+      "holidays": "Fish market busy",
+      "festivalSeasons": "Fishing festivals",
+      "touristSeason": "Some visitors"
+    },
+    "safetyAndActivities": {
+      "swimmingAllowed": false,
+      "swimmingNote": "Not recommended - harbour area",
+      "waveIntensity": "Varies",
+      "lifeguardAvailability": "No lifeguards",
+      "activitiesAllowed": [
+        "Fish market visit",
+        "Photography",
+        "Harbour tour"
+      ],
+      "safetyWarnings": [
+        "Active harbour area",
+        "Watch for boats"
+      ]
+    },
+    "bestTimeToVisit": "Early morning for fish auction",
+    "rating": 3.8
+  },
+  {
+    "id": "beach-013",
+    "name": "Puthukuppam Beach",
+    "nameTamil": "புதுக்குப்பம் கடற்கரை",
+    "type": "Secluded Beach",
+    "location": "Puthukuppam Village",
+    "address": "Puthukuppam Beach, Puthukuppam, Puducherry, 605007",
+    "mapsUrl": "https://maps.google.com/?q=Puthukuppam+Beach",
+    "coordinates": {
+      "lat": 11.8656,
+      "lng": 79.8095
+    },
+    "openingTimeWeekdays": "Open 24 Hours",
+    "closingTimeWeekdays": "Open 24 Hours",
+    "openingTimeWeekends": "Open 24 Hours",
+    "closingTimeWeekends": "Open 24 Hours",
+    "description": {
+      "nameOrigin": "Puthu means new in Tamil.",
+      "historicalImportance": "Traditional fishing village.",
+      "naturalFeatures": "Secluded sandy beach.",
+      "maintenance": "Village community.",
+      "facilities": [
+        "Natural beach setting"
+      ],
+      "nearbyShops": [
+        "Village shops"
+      ],
+      "specialFeatures": "Secluded and peaceful beach."
+    },
+    "images": [],
+    "entryFee": "Free",
+    "dressCode": "Comfortable casual wear",
+    "phoneNumber": "112",
+    "emergencyContact": "112",
+    "policeHelpline": "112",
+    "lifeguardAvailable": false,
+    "crowdLevel": "Very Low",
+    "peakTime": "Sunset",
+    "famousThings": [
+      "Secluded beach",
+      "Sunset views",
+      "Peace and quiet"
+    ],
+    "famousMonths": "October to March",
+    "famousMonthsTamil": "அக்டோபர் முதல் மார்ச் வரை",
+    "whatHappensDuringFamousTimes": {
+      "weekends": "Few visitors",
+      "holidays": "Quiet",
+      "festivalSeasons": "Village events",
+      "touristSeason": "Occasional visitors"
+    },
+    "safetyAndActivities": {
+      "swimmingAllowed": false,
+      "swimmingNote": "Not recommended",
+      "waveIntensity": "Moderate",
+      "lifeguardAvailability": "No lifeguards",
+      "activitiesAllowed": [
+        "Walking",
+        "Photography",
+        "Sunset viewing"
+      ],
+      "safetyWarnings": [
+        "No lifeguards",
+        "Secluded - visit in groups",
+        "Avoid after dark"
+      ]
+    },
+    "bestTimeToVisit": "Late afternoon for sunset",
+    "rating": 3.7
+  },
+  {
+    "id": "beach-014",
+    "name": "Kuruchikuppam Beach",
+    "nameTamil": "குருச்சிக்குப்பம் கடற்கரை",
+    "type": "Urban Beach",
+    "location": "Kuruchikuppam",
+    "address": "Kuruchikuppam Beach, White Town, Puducherry, 605001",
+    "mapsUrl": "https://maps.google.com/?q=Kuruchikuppam+Beach",
+    "coordinates": {
+      "lat": 11.9352,
+      "lng": 79.8295
+    },
+    "openingTimeWeekdays": "Open 24 Hours",
+    "closingTimeWeekdays": "Open 24 Hours",
+    "openingTimeWeekends": "Open 24 Hours",
+    "closingTimeWeekends": "Open 24 Hours",
+    "description": {
+      "nameOrigin": "Named after Kuruchikuppam neighborhood.",
+      "historicalImportance": "Historic fishing quarter in French Town.",
+      "naturalFeatures": "Rocky shoreline near White Town.",
+      "maintenance": "Municipality maintained.",
+      "facilities": [
+        "Near Le Cafe",
+        "Heritage homestays nearby"
+      ],
+      "nearbyShops": [
+        "Le Cafe (24/7)",
+        "Cafes and restaurants"
+      ],
+      "specialFeatures": "Located in historic White Town. Near iconic Le Cafe."
+    },
+    "images": [],
+    "entryFee": "Free",
+    "dressCode": "Comfortable casual wear",
+    "phoneNumber": "112",
+    "emergencyContact": "112",
+    "policeHelpline": "112",
+    "lifeguardAvailable": false,
+    "crowdLevel": "Medium",
+    "peakTime": "Sunrise and Evening",
+    "famousThings": [
+      "Le Cafe nearby",
+      "White Town heritage",
+      "Sunrise views",
+      "French colonial charm"
+    ],
+    "famousMonths": "October to March",
+    "famousMonthsTamil": "அக்டோபர் முதல் மார்ச் வரை",
+    "whatHappensDuringFamousTimes": {
+      "weekends": "Busy with tourists",
+      "holidays": "Very crowded",
+      "festivalSeasons": "Bastille Day, Christmas, New Year",
+      "touristSeason": "Peak activity"
+    },
+    "safetyAndActivities": {
+      "swimmingAllowed": false,
+      "swimmingNote": "Not allowed - rocky shore",
+      "waveIntensity": "Moderate",
+      "lifeguardAvailability": "No lifeguards",
+      "activitiesAllowed": [
+        "Walking",
+        "Photography",
+        "Sunrise viewing",
+        "Cafe hopping"
+      ],
+      "safetyWarnings": [
+        "Rocky shore - no swimming",
+        "Slippery rocks"
+      ]
+    },
+    "bestTimeToVisit": "Early morning for sunrise, Evening for cafe",
+    "rating": 4.3
+  }
+]

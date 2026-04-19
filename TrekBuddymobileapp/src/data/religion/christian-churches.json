@@ -1,0 +1,251 @@
+[
+  {
+    "id": "christian-001",
+    "name": "Immaculate Conception Cathedral",
+    "nameTamil": "இம்மாகுலேட் கன்செப்ஷன் கதீட்ரல்",
+    "religion": "Christian",
+    "subType": "Cathedrals",
+    "mainDeity": "Virgin Mary (Immaculate Conception)",
+    "location": "Mission Street, White Town",
+    "address": "Mission Street, White Town, Puducherry 605001",
+    "mapsUrl": "https://maps.google.com/?q=11.9345,79.8315",
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "7:00 PM",
+    "openingTimeWeekends": "5:30 AM",
+    "closingTimeWeekends": "8:00 PM",
+    "description": "The most famous and oldest church in Puducherry, built in 1791. This beautiful white cathedral is a major landmark in White Town. The church has stunning architecture with French colonial influence. Daily masses are conducted in Tamil, English, and French. The church is known for its peaceful atmosphere and beautiful stained glass windows.",
+    "descriptionTamil": "புதுச்சேரியின் மிகவும் பிரபலமான மற்றும் பழமையான தேவாலயம், 1791 இல் கட்டப்பட்டது. இந்த அழகான வெள்ளை கதீட்ரல் வைட் டவுனில் ஒரு முக்கிய மைல்கல்லாகும்.",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Immaculate_Conception_Cathedral_Pondicherry.jpg/800px-Immaculate_Conception_Cathedral_Pondicherry.jpg",
+      "https://www.trawell.in/admin/images/upload/065201201Immaculate_Conception_Cathedral_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Modest attire required. Shoulders and knees should be covered.",
+    "phoneNumber": "+91 413 222 1234",
+    "crowdLevel": "High",
+    "famousMonths": "December (Christmas), August (Feast of Assumption)",
+    "specialOccasions": "Christmas midnight mass is world-famous with thousands of devotees. Feast of Immaculate Conception on December 8th. Easter celebrations with special masses. Beautiful decorations during Christmas season. Choir performances and carol singing.",
+    "rating": 4.8,
+    "coordinates": {
+      "lat": 11.9345,
+      "lng": 79.8315
+    }
+  },
+  {
+    "id": "christian-002",
+    "name": "Sacred Heart of Jesus Church",
+    "nameTamil": "இயேசுவின் புனித இதய தேவாலயம்",
+    "religion": "Christian",
+    "subType": "Churches",
+    "mainDeity": "Sacred Heart of Jesus",
+    "location": "South Boulevard, Puducherry",
+    "address": "South Boulevard, Puducherry 605001",
+    "mapsUrl": "https://maps.google.com/?q=11.9300,79.8350",
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "7:30 PM",
+    "openingTimeWeekends": "5:30 AM",
+    "closingTimeWeekends": "8:00 PM",
+    "description": "A beautiful church dedicated to the Sacred Heart of Jesus. The church has a peaceful atmosphere and is known for its spiritual services. Daily masses in Tamil and English. The church has a large congregation and active community services. Beautiful architecture with modern and traditional elements.",
+    "descriptionTamil": "இயேசுவின் புனித இதயத்திற்கு அர்ப்பணிக்கப்பட்ட அழகான தேவாலயம். கோவிலுக்கு அமைதியான சூழ்நிலை உள்ளது மற்றும் ஆன்மீக சேவைகளுக்கு பெயர் பெற்றது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Sacred_Heart_Church_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Modest attire required",
+    "phoneNumber": "+91 413 223 2345",
+    "crowdLevel": "Medium to High",
+    "famousMonths": "June (Sacred Heart Feast), December (Christmas)",
+    "specialOccasions": "Sacred Heart Feast in June with special masses and processions. Christmas celebrations with midnight mass. Easter services. Community prayers and adoration services.",
+    "rating": 4.6,
+    "coordinates": {
+      "lat": 11.9300,
+      "lng": 79.8350
+    }
+  },
+  {
+    "id": "christian-003",
+    "name": "Our Lady of Angels Church",
+    "nameTamil": "தேவதூதர்களின் அன்னை தேவாலயம்",
+    "religion": "Christian",
+    "subType": "Churches",
+    "mainDeity": "Our Lady of Angels (Mary)",
+    "location": "Kuruchikuppam, Puducherry",
+    "address": "Kuruchikuppam, Puducherry 605008",
+    "mapsUrl": "https://maps.google.com/?q=11.9450,79.8450",
+    "openingTimeWeekdays": "6:30 AM",
+    "closingTimeWeekdays": "7:00 PM",
+    "openingTimeWeekends": "6:00 AM",
+    "closingTimeWeekends": "7:30 PM",
+    "description": "A beautiful church dedicated to Our Lady of Angels. The church serves the local Christian community in Kuruchikuppam area. Daily masses and special prayers. The church has a warm and welcoming atmosphere. Active youth and community programs.",
+    "descriptionTamil": "தேவதூதர்களின் அன்னைக்கு அர்ப்பணிக்கப்பட்ட அழகான தேவாலயம். கோவில் குருச்சிக்குப்பம் பகுதியில் உள்ள உள்ளூர் கிறிஸ்தவ சமூகத்திற்கு சேவை செய்கிறது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Our_Lady_of_Angels_Church_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Modest attire required",
+    "phoneNumber": "+91 413 224 3456",
+    "crowdLevel": "Medium",
+    "famousMonths": "August (Feast of Assumption), December (Christmas)",
+    "specialOccasions": "Feast of Our Lady of Angels with special masses. Christmas and Easter celebrations. Community feast and cultural programs. Youth activities and retreats.",
+    "rating": 4.4,
+    "coordinates": {
+      "lat": 11.9450,
+      "lng": 79.8450
+    }
+  },
+  {
+    "id": "christian-004",
+    "name": "St. Peter's Church",
+    "nameTamil": "செயின்ட் பீட்டர்ஸ் தேவாலயம்",
+    "religion": "Christian",
+    "subType": "Churches",
+    "mainDeity": "St. Peter",
+    "location": "Muthialpet, Puducherry",
+    "address": "Muthialpet, Puducherry 605003",
+    "mapsUrl": "https://maps.google.com/?q=11.9400,79.8400",
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "7:00 PM",
+    "openingTimeWeekends": "5:30 AM",
+    "closingTimeWeekends": "7:30 PM",
+    "description": "A historic church dedicated to St. Peter, one of the apostles. The church has been serving the Christian community in Muthialpet for many decades. Daily masses in Tamil. The church has a traditional architecture and peaceful atmosphere.",
+    "descriptionTamil": "திருத்தூதர்களில் ஒருவரான செயின்ட் பீட்டருக்கு அர்ப்பணிக்கப்பட்ட வரலாற்று தேவாலயம். கோவில் பல தசாப்தங்களாக முத்தியால்பேட்டையில் உள்ள கிறிஸ்தவ சமூகத்திற்கு சேவை செய்து வருகிறது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201St_Peters_Church_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Modest attire required",
+    "phoneNumber": "+91 413 225 4567",
+    "crowdLevel": "Medium",
+    "famousMonths": "June (St. Peter's Feast), December (Christmas)",
+    "specialOccasions": "St. Peter's Feast Day with special masses and processions. Christmas midnight mass. Easter celebrations. Community prayers and fellowship.",
+    "rating": 4.3,
+    "coordinates": {
+      "lat": 11.9400,
+      "lng": 79.8400
+    }
+  },
+  {
+    "id": "christian-005",
+    "name": "St. Paul's Church",
+    "nameTamil": "செயின்ட் பால் தேவாலயம்",
+    "religion": "Christian",
+    "subType": "Churches",
+    "mainDeity": "St. Paul",
+    "location": "Ariyankuppam, Puducherry",
+    "address": "Ariyankuppam, Puducherry 605007",
+    "mapsUrl": "https://maps.google.com/?q=11.9100,79.8200",
+    "openingTimeWeekdays": "6:30 AM",
+    "closingTimeWeekdays": "7:00 PM",
+    "openingTimeWeekends": "6:00 AM",
+    "closingTimeWeekends": "7:30 PM",
+    "description": "A beautiful church dedicated to St. Paul in Ariyankuppam area. The church serves the local Christian community with regular masses and spiritual services. The church has a welcoming atmosphere and active community participation.",
+    "descriptionTamil": "அரியன்குப்பம் பகுதியில் செயின்ட் பாலுக்கு அர்ப்பணிக்கப்பட்ட அழகான தேவாலயம். கோவில் தினசரி வழிபாடுகள் மற்றும் ஆன்மீக சேவைகளுடன் உள்ளூர் கிறிஸ்தவ சமூகத்திற்கு சேவை செய்கிறது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201St_Pauls_Church_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Modest attire required",
+    "phoneNumber": "+91 413 226 5678",
+    "crowdLevel": "Medium",
+    "famousMonths": "January (Conversion of St. Paul), December (Christmas)",
+    "specialOccasions": "Feast of St. Paul with special masses. Christmas and Easter celebrations. Community gatherings and cultural programs.",
+    "rating": 4.4,
+    "coordinates": {
+      "lat": 11.9100,
+      "lng": 79.8200
+    }
+  },
+  {
+    "id": "christian-006",
+    "name": "Our Lady of Lourdes Shrine",
+    "nameTamil": "லூர்ட்ஸின் அன்னை திருத்தலம்",
+    "religion": "Christian",
+    "subType": "Shrines",
+    "mainDeity": "Our Lady of Lourdes (Mary)",
+    "location": "Villianur, Puducherry",
+    "address": "Villianur, Puducherry 605110",
+    "mapsUrl": "https://maps.google.com/?q=11.9000,79.8000",
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "7:00 PM",
+    "openingTimeWeekends": "5:30 AM",
+    "closingTimeWeekends": "7:30 PM",
+    "description": "A beautiful shrine dedicated to Our Lady of Lourdes. The shrine is known for healing prayers and miracles. Many devotees visit this shrine seeking blessings and healing. The shrine has a grotto similar to Lourdes in France. Special prayers and novenas are conducted.",
+    "descriptionTamil": "லூர்ட்ஸின் அன்னைக்கு அர்ப்பணிக்கப்பட்ட அழகான திருத்தலம். சுகாதார பிரார்த்தனைகள் மற்றும் அற்புதங்களுக்கு இந்த திருத்தலம் பெயர் பெற்றது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Our_Lady_of_Lourdes_Shrine_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Modest attire required",
+    "phoneNumber": "+91 413 227 6789",
+    "crowdLevel": "Medium to High",
+    "famousMonths": "February (Lourdes Feast), August (Assumption)",
+    "specialOccasions": "Feast of Our Lady of Lourdes in February with special masses and processions. Novena prayers for 9 days. Healing services and special blessings. Candlelight processions.",
+    "rating": 4.5,
+    "coordinates": {
+      "lat": 11.9000,
+      "lng": 79.8000
+    }
+  },
+  {
+    "id": "christian-007",
+    "name": "St. Joseph's Church",
+    "nameTamil": "செயின்ட் ஜோசப் தேவாலயம்",
+    "religion": "Christian",
+    "subType": "Churches",
+    "mainDeity": "St. Joseph",
+    "location": "Lawspet, Puducherry",
+    "address": "Lawspet, Puducherry 605008",
+    "mapsUrl": "https://maps.google.com/?q=11.9500,79.8500",
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "7:00 PM",
+    "openingTimeWeekends": "5:30 AM",
+    "closingTimeWeekends": "7:30 PM",
+    "description": "A church dedicated to St. Joseph, the foster father of Jesus. The church serves the Christian community in Lawspet area. Daily masses and special prayers. The church has a peaceful atmosphere and active community services.",
+    "descriptionTamil": "இயேசுவின் வளர்ப்புத் தந்தையான செயின்ட் ஜோசப்புக்கு அர்ப்பணிக்கப்பட்ட தேவாலயம். கோவில் லாஸ்பேட்டில் உள்ள கிறிஸ்தவ சமூகத்திற்கு சேவை செய்கிறது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201St_Josephs_Church_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Modest attire required",
+    "phoneNumber": "+91 413 228 7890",
+    "crowdLevel": "Medium",
+    "famousMonths": "March (St. Joseph's Feast), December (Christmas)",
+    "specialOccasions": "St. Joseph's Feast Day with special masses. Christmas and Easter celebrations. Family prayers and community gatherings.",
+    "rating": 4.3,
+    "coordinates": {
+      "lat": 11.9500,
+      "lng": 79.8500
+    }
+  },
+  {
+    "id": "christian-008",
+    "name": "St. Francis Xavier Church",
+    "nameTamil": "செயின்ட் பிரான்சிஸ் சேவியர் தேவாலயம்",
+    "religion": "Christian",
+    "subType": "Churches",
+    "mainDeity": "St. Francis Xavier",
+    "location": "Reddiarpalayam, Puducherry",
+    "address": "Reddiarpalayam, Puducherry 605010",
+    "mapsUrl": "https://maps.google.com/?q=11.9200,79.8300",
+    "openingTimeWeekdays": "6:30 AM",
+    "closingTimeWeekdays": "7:00 PM",
+    "openingTimeWeekends": "6:00 AM",
+    "closingTimeWeekends": "7:30 PM",
+    "description": "A church dedicated to St. Francis Xavier, the patron saint of missions. The church serves the Christian community in Reddiarpalayam. Daily masses in Tamil. The church promotes missionary work and community service.",
+    "descriptionTamil": "மிஷன்களின் பாதுகாவலர் செயின்ட் பிரான்சிஸ் சேவியருக்கு அர்ப்பணிக்கப்பட்ட தேவாலயம். கோவில் ரெட்டியார்பாளையத்தில் உள்ள கிறிஸ்தவ சமூகத்திற்கு சேவை செய்கிறது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201St_Francis_Xavier_Church_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Modest attire required",
+    "phoneNumber": "+91 413 229 8901",
+    "crowdLevel": "Medium",
+    "famousMonths": "December (St. Francis Xavier Feast, Christmas)",
+    "specialOccasions": "Feast of St. Francis Xavier in December with special masses. Christmas celebrations. Missionary activities and community service programs.",
+    "rating": 4.4,
+    "coordinates": {
+      "lat": 11.9200,
+      "lng": 79.8300
+    }
+  }
+]

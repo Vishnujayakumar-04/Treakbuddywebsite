@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "TrekBuddy",
+    "slug": "trekbuddy",
+    "version": "1.0.0",
+    "updates": {
+      "enabled": false
+    },
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0E7C86"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.trekbuddy.app"
+    },
+    "android": {
+      "package": "com.trekbuddy.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0E7C86"
+      }
+    },
+    "extra": {
+      "googleApiKey": "AIzaSyABoZ79QGASXwLm5EDVz19ZRjXJIsIIc4k",
+      "firebase": {
+        "apiKey": "AIzaSyCRVuHFtiY8h4269v1a-T4nHMKLhsC-t_0",
+        "authDomain": "trekbuddy-72b01.firebaseapp.com",
+        "projectId": "trekbuddy-72b01",
+        "storageBucket": "trekbuddy-72b01.appspot.com",
+        "messagingSenderId": "512827597054",
+        "appId": "1:512827597054:web:a01e3ff2f07534446c85af",
+        "measurementId": "G-ZJQ3YQ287N"
+      },
+      "eas": {
+        "projectId": "b3de3377-c21e-4fb1-a4cc-172333163838"
+      }
+    },
+    "plugins": [
+      "expo-web-browser"
+    ],
+    "owner": "trekbuddy"
+  }
+}

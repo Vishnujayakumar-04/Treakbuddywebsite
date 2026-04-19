@@ -1,0 +1,191 @@
+[
+  {
+    "id": "nature-001",
+    "name": "Puducherry Botanical Garden",
+    "nameTamil": "புதுச்சேரி தாவரவியல் பூங்கா",
+    "category": "Garden",
+    "location": "Marimalai Adigal Salai, Central Puducherry - 605001",
+    "address": "Puducherry Botanical Garden, Marimalai Adigal Salai, Near New Bus Stand, Puducherry, 605001",
+    "mapsUrl": "https://maps.google.com/?q=Puducherry+Botanical+Garden",
+    "coordinates": {
+      "lat": 11.9200,
+      "lng": 79.8150
+    },
+    "openingTimeWeekdays": "9:00 AM",
+    "closingTimeWeekdays": "5:30 PM",
+    "openingTimeWeekends": "9:00 AM",
+    "closingTimeWeekends": "5:30 PM",
+    "closedOn": "Government holidays (occasionally)",
+    "description": {
+      "whenFormed": "Established in 1826 during the French colonial period.",
+      "whoNamed": "Named as Puducherry Botanical Garden by the French administration.",
+      "whyCreated": "Created for scientific study, conservation, and public education.",
+      "maintenance": "Maintained by the Department of Agriculture & Farmers Welfare, Government of Puducherry.",
+      "typeOfPlace": "Botanical Garden - spread across a large green area with thousands of plant species.",
+      "whatCanBeSeen": [
+        "Ornamental plants",
+        "Medicinal plants",
+        "Palm varieties",
+        "Tree-lined walkways",
+        "Toy Train (seasonal)",
+        "Mini Zoo (small animals & birds)",
+        "Children's play area",
+        "Ponds and water features"
+      ],
+      "visitorPurpose": "Family outings, educational visits, nature walks, relaxation inside the city.",
+      "specialFeatures": "One of the oldest botanical gardens in South India. Houses French-era garden layout with wide variety of plant species and calm green environment inside city."
+    },
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/4b/Puducherry_Botanical_Garden.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/7a/Botanical_Garden_Puducherry_Entrance.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/1d/Puducherry_Botanical_Garden_Toy_Train.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/6f/Botanical_Garden_Puducherry_Inside.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/3c/Puducherry_Botanical_Garden_Pond.jpg"
+    ],
+    "entryFee": "Adults: Rs. 10, Children: Rs. 5, Camera charges: Extra (if applicable)",
+    "dressCode": "Decent / Comfortable clothing preferred",
+    "phoneNumber": "0413-2221198",
+    "emergencyContact": "0413-2221198",
+    "policeHelpline": "112",
+    "crowdLevel": "Low to Medium (Weekdays), Medium to High (Weekends & Holidays), High (School vacation)",
+    "famousThings": [
+      "French-era garden layout",
+      "Toy Train ride",
+      "Mini Zoo",
+      "Wide variety of plant species",
+      "Calm green environment inside city"
+    ],
+    "famousMonths": "October - February (Best weather, lush greenery)",
+    "famousMonthsTamil": "அக்டோபர் - பிப்ரவரி",
+    "whatHappensDuringFamousTimes": {
+      "peakSeason": "October - February: Best weather, lush greenery",
+      "migratoryBirds": "Not applicable",
+      "monsoonWaterflow": "Monsoon: Plants & ponds look fuller and greener",
+      "festivals": "Not applicable",
+      "specialEvents": "School holidays: Heavy family & student visits"
+    },
+    "activitiesAndSafety": {
+      "activitiesAllowed": [
+        "Walking & relaxation",
+        "Photography",
+        "Educational learning",
+        "Children's recreation",
+        "Toy Train ride (seasonal)",
+        "Mini Zoo visit"
+      ],
+      "activitiesNotAllowed": [
+        "Plucking plants",
+        "Feeding animals",
+        "Littering"
+      ],
+      "safetyRules": [
+        "Children should be supervised",
+        "Toy train availability is seasonal",
+        "Follow garden rules to protect plants"
+      ],
+      "environmentalProtection": [
+        "Do not pluck flowers or plants",
+        "Do not litter",
+        "Respect the natural environment",
+        "Follow designated pathways"
+      ]
+    },
+    "rating": 4.4
+  },
+  {
+    "id": "nature-002",
+    "name": "Bharathi Park",
+    "nameTamil": "பாரதி பூங்கா",
+    "category": "City Park",
+    "location": "White Town",
+    "address": "Bharathi Park, White Town, Puducherry",
+    "mapsUrl": "https://maps.google.com/?q=Bharathi+Park+Puducherry",
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "8:00 PM",
+    "openingTimeWeekends": "6:00 AM",
+    "closingTimeWeekends": "8:00 PM",
+    "entryFee": "Free",
+    "facilities": [
+      "Seating",
+      "Lighting"
+    ],
+    "bestTime": "Evening",
+    "description": "French-era landscaped park in the heart of White Town. Ideal for jogging and relaxation. Near Aayi Mandapam.",
+    "activities": [
+      "Jogging",
+      "Relaxation",
+      "Photography"
+    ],
+    "restrictions": "No pets allowed",
+    "crowdLevel": "Medium",
+    "nearbyLandmark": "Aayi Mandapam",
+    "images": [
+      "https://share.google/aHt2oqvucZBzPd3ZK"
+    ],
+    "rating": 4.3
+  },
+  {
+    "id": "nature-003",
+    "name": "Garuda Park (Aviary & Mini Zoo)",
+    "nameTamil": "கருட பூங்கா (பறவைகள் பூங்கா)",
+    "category": "Zoo",
+    "location": "Pathukannu",
+    "address": "Pathukannu, Puducherry",
+    "mapsUrl": "https://maps.google.com/?q=Garuda+Park+Puducherry",
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "6:30 PM",
+    "openingTimeWeekends": "6:00 AM",
+    "closingTimeWeekends": "6:30 PM",
+    "entryFee": "₹300",
+    "area": "4 Acres",
+    "mainAttractions": [
+      "Aviary",
+      "Peacocks",
+      "Deer enclosure",
+      "Birds section"
+    ],
+    "facilities": [
+      "Walking paths",
+      "Seating",
+      "Lighting"
+    ],
+    "rules": [
+      "No feeding animals",
+      "Maintain silence",
+      "No littering"
+    ],
+    "description": "Small public park with aviary and animal enclosures for recreation and wildlife awareness.",
+    "contact": "9791370716",
+    "nearbyLandmark": "Ousteri Lake",
+    "images": [
+      "https://share.google/O8g7iqCzXoPY4w8CV"
+    ],
+    "rating": 4.1
+  },
+  {
+    "id": "nature-004",
+    "name": "Ousteri Lake (Ossudu Lake)",
+    "nameTamil": "உஸ்தேரி ஏரி",
+    "category": "Lake",
+    "type": "Freshwater Wetland",
+    "location": "Ousteri",
+    "address": "Ousteri, Puducherry",
+    "mapsUrl": "https://maps.google.com/?q=Ousteri+Lake",
+    "entryFee": "Free",
+    "activities": [
+      "Bird watching",
+      "Photography",
+      "Nature walks"
+    ],
+    "bestTime": "October – February",
+    "sunsetView": true,
+    "waterQuality": "Moderate",
+    "description": "Large freshwater wetland and bird sanctuary — home to over 150 migratory species. Best visited in winter months.",
+    "crowdLevel": "Medium",
+    "nearbyLandmark": "Ousteri Village",
+    "images": [
+      "https://share.google/uMsauGK5sQ6eHN14R"
+    ],
+    "rating": 4.3
+  }
+]

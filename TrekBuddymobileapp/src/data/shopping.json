@@ -1,0 +1,114 @@
+[
+    {
+        "id": "shop-1",
+        "name": "Nehru Street Market",
+        "nameTamil": "நேரு வீதி சந்தை",
+        "category": "Nehru Street",
+        "location": "White Town",
+        "address": "Jawaharlal Nehru Street, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Nehru+Street+Puducherry",
+        "openingTimeWeekdays": "10:00 AM",
+        "closingTimeWeekdays": "9:00 PM",
+        "openingTimeWeekends": "10:00 AM",
+        "closingTimeWeekends": "10:00 PM",
+        "description": {
+            "specialFeatures": "Puducherry's busiest commercial street.",
+            "whatToBuy": [
+                "Clothes",
+                "Souvenirs",
+                "Handicrafts",
+                "Footwear"
+            ],
+            "visitorPurpose": "General shopping and street food"
+        },
+        "images": [
+            "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800"
+        ],
+        "crowdLevel": "High",
+        "rating": 4.5
+    },
+    {
+        "id": "shop-2",
+        "name": "Sunday Market",
+        "nameTamil": "ஞாயிறு சந்தை",
+        "category": "Local Street Markets",
+        "location": "MG Road",
+        "address": "Mahatma Gandhi Road, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Sunday+Market+Puducherry",
+        "openingTimeWeekdays": "Closed",
+        "closingTimeWeekdays": "Closed",
+        "openingTimeWeekends": "8:00 AM",
+        "closingTimeWeekends": "10:00 PM",
+        "description": {
+            "specialFeatures": "A traditional weekly street market offering cheap goods.",
+            "whatToBuy": [
+                "Antiques",
+                "Clothes",
+                "Books",
+                "Household items"
+            ],
+            "visitorPurpose": "Bargain shopping"
+        },
+        "images": [
+            "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800"
+        ],
+        "crowdLevel": "Very High",
+        "rating": 4.2
+    },
+    {
+        "id": "shop-3",
+        "name": "Providence Mall",
+        "nameTamil": "ப்ராவிடன்ஸ் மால்",
+        "category": "Malls",
+        "location": "Cuddalore Road",
+        "address": "Cuddalore Road, Puducherry",
+        "mapsUrl": "https://maps.google.com/?q=Providence+Mall+Puducherry",
+        "openingTimeWeekdays": "10:00 AM",
+        "closingTimeWeekdays": "10:00 PM",
+        "openingTimeWeekends": "10:00 AM",
+        "closingTimeWeekends": "11:00 PM",
+        "description": {
+            "specialFeatures": "The biggest modern shopping mall in Puducherry.",
+            "facilities": [
+                "Food Court",
+                "Cinemas",
+                "Parking",
+                "Restrooms"
+            ],
+            "visitorPurpose": "Shopping, dining, and entertainment"
+        },
+        "images": [
+            "https://images.unsplash.com/photo-1519999482648-25049ddd37b1?w=800"
+        ],
+        "crowdLevel": "Medium",
+        "rating": 4.6
+    },
+    {
+        "id": "shop-4",
+        "name": "Casablanca",
+        "nameTamil": "காசாபிளாங்கா",
+        "category": "Handicraft Stores",
+        "location": "Mission Street",
+        "address": "Mission Street, Heritage Town",
+        "mapsUrl": "https://maps.google.com/?q=Casablanca+Puducherry",
+        "openingTimeWeekdays": "10:00 AM",
+        "closingTimeWeekdays": "9:30 PM",
+        "openingTimeWeekends": "10:00 AM",
+        "closingTimeWeekends": "10:00 PM",
+        "description": {
+            "specialFeatures": "A famous multi-brand boutique store.",
+            "whatToBuy": [
+                "Designer Clothes",
+                "Pottery",
+                "Leather goods",
+                "Perfumes"
+            ],
+            "visitorPurpose": "Premium shopping"
+        },
+        "images": [
+            "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800"
+        ],
+        "crowdLevel": "Medium",
+        "rating": 4.7
+    }
+]

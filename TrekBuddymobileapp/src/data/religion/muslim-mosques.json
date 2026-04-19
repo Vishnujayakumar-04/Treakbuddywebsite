@@ -1,0 +1,157 @@
+[
+  {
+    "id": "muslim-001",
+    "name": "Kuthba Mosque",
+    "nameTamil": "குத்பா பள்ளிவாசல்",
+    "religion": "Muslim",
+    "subType": "Mosques",
+    "mainDeity": "Allah",
+    "location": "M.G. Road, Puducherry",
+    "address": "M.G. Road, Puducherry 605001",
+    "mapsUrl": "https://maps.google.com/?q=11.9350,79.8330",
+    "openingTimeWeekdays": "5:00 AM",
+    "closingTimeWeekdays": "9:00 PM",
+    "openingTimeWeekends": "5:00 AM",
+    "closingTimeWeekends": "9:00 PM",
+    "description": "One of the oldest and most important mosques in Puducherry. The mosque has a rich history and serves the Muslim community in the city. Daily prayers (Salah) are conducted five times a day. The mosque has beautiful architecture with traditional Islamic design. Friday prayers (Jummah) attract large congregations.",
+    "descriptionTamil": "புதுச்சேரியின் பழமையான மற்றும் மிக முக்கியமான பள்ளிவாசல்களில் ஒன்று. பள்ளிவாசலுக்கு வளமான வரலாறு உள்ளது மற்றும் நகரில் உள்ள முஸ்லிம் சமூகத்திற்கு சேவை செய்கிறது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Kuthba_Mosque_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Modest attire required. Women should cover head, arms, and legs. Men should wear full-length pants.",
+    "phoneNumber": "+91 413 222 2345",
+    "crowdLevel": "High",
+    "famousMonths": "Ramadan (ரமழான்), Muharram (முஹர்ரம்)",
+    "specialOccasions": "Ramadan prayers (Taraweeh) are conducted every night during the holy month. Eid-ul-Fitr and Eid-ul-Adha are celebrated with special prayers and community gatherings. Friday prayers (Jummah) have large congregations. Special prayers during Islamic festivals.",
+    "rating": 4.6,
+    "coordinates": {
+      "lat": 11.9350,
+      "lng": 79.8330
+    }
+  },
+  {
+    "id": "muslim-002",
+    "name": "Jama Masjid",
+    "nameTamil": "ஜமா மஸ்ஜித்",
+    "religion": "Muslim",
+    "subType": "Mosques",
+    "mainDeity": "Allah",
+    "location": "Muthialpet, Puducherry",
+    "address": "Muthialpet, Puducherry 605003",
+    "mapsUrl": "https://maps.google.com/?q=11.9410,79.8410",
+    "openingTimeWeekdays": "5:00 AM",
+    "closingTimeWeekdays": "9:00 PM",
+    "openingTimeWeekends": "5:00 AM",
+    "closingTimeWeekends": "9:00 PM",
+    "description": "A prominent mosque in Muthialpet area serving the local Muslim community. The mosque conducts daily prayers and special prayers during Islamic festivals. The mosque has a peaceful atmosphere and promotes community harmony. Friday prayers are well-attended.",
+    "descriptionTamil": "முத்தியால்பேட்டை பகுதியில் உள்ள முக்கிய பள்ளிவாசல், உள்ளூர் முஸ்லிம் சமூகத்திற்கு சேவை செய்கிறது. பள்ளிவாசல் தினசரி வழிபாடுகள் மற்றும் இஸ்லாமிய திருவிழாக்களின் போது சிறப்பு வழிபாடுகளை நடத்துகிறது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Jama_Masjid_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Modest attire required",
+    "phoneNumber": "+91 413 223 3456",
+    "crowdLevel": "Medium to High",
+    "famousMonths": "Ramadan (ரமழான்), Muharram (முஹர்ரம்)",
+    "specialOccasions": "Ramadan Taraweeh prayers. Eid celebrations with special prayers and community feasts. Friday Jummah prayers. Islamic festival prayers and community gatherings.",
+    "rating": 4.5,
+    "coordinates": {
+      "lat": 11.9410,
+      "lng": 79.8410
+    }
+  },
+  {
+    "id": "muslim-003",
+    "name": "Hazrat Syed Shahul Hameed Dargah",
+    "nameTamil": "ஹஜ்ரத் சையத் ஷாஹுல் ஹமீத் தர்கா",
+    "religion": "Muslim",
+    "subType": "Dargahs",
+    "mainDeity": "Sufi Saint Hazrat Syed Shahul Hameed",
+    "location": "Ariyankuppam, Puducherry",
+    "address": "Ariyankuppam, Puducherry 605007",
+    "mapsUrl": "https://maps.google.com/?q=11.9110,79.8210",
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "8:00 PM",
+    "openingTimeWeekends": "5:30 AM",
+    "closingTimeWeekends": "8:30 PM",
+    "description": "A famous dargah (Sufi shrine) dedicated to Hazrat Syed Shahul Hameed, a revered Sufi saint. The dargah is visited by people of all faiths seeking blessings. The shrine is known for spiritual healing and granting wishes. Special prayers and qawwali sessions are conducted. The dargah has a peaceful and spiritual atmosphere.",
+    "descriptionTamil": "புனிதமான சூஃபி ஸெயின்ட் ஹஜ்ரத் சையத் ஷாஹுல் ஹமீத்திற்கு அர்ப்பணிக்கப்பட்ட பிரபலமான தர்கா (சூஃபி திருத்தலம்). ஆசீர்வாதம் பெற அனைத்து மதங்களின் மக்களும் இந்த தர்காவுக்கு வருகிறார்கள்.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Hazrat_Syed_Shahul_Hameed_Dargah_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Modest attire required. Head covering for women.",
+    "phoneNumber": "+91 413 224 4567",
+    "crowdLevel": "Medium to High",
+    "famousMonths": "Urs festival month, Ramadan (ரமழான்)",
+    "specialOccasions": "Urs festival (death anniversary of the saint) is celebrated with great devotion. Special prayers, qawwali sessions, and community feasts. Devotees offer chadars (cloth sheets) and flowers. Spiritual healing prayers and special blessings.",
+    "rating": 4.7,
+    "coordinates": {
+      "lat": 11.9110,
+      "lng": 79.8210
+    }
+  },
+  {
+    "id": "muslim-004",
+    "name": "Masjid-e-Noor",
+    "nameTamil": "மஸ்ஜித்-எ-நூர்",
+    "religion": "Muslim",
+    "subType": "Mosques",
+    "mainDeity": "Allah",
+    "location": "Lawspet, Puducherry",
+    "address": "Lawspet, Puducherry 605008",
+    "mapsUrl": "https://maps.google.com/?q=11.9510,79.8510",
+    "openingTimeWeekdays": "5:00 AM",
+    "closingTimeWeekdays": "9:00 PM",
+    "openingTimeWeekends": "5:00 AM",
+    "closingTimeWeekends": "9:00 PM",
+    "description": "A modern mosque in Lawspet area serving the Muslim community. The mosque conducts daily prayers and Islamic education programs. The mosque has a clean and peaceful atmosphere. Friday prayers and special Islamic programs are conducted regularly.",
+    "descriptionTamil": "லாஸ்பேட்டில் உள்ள நவீன பள்ளிவாசல், முஸ்லிம் சமூகத்திற்கு சேவை செய்கிறது. பள்ளிவாசல் தினசரி வழிபாடுகள் மற்றும் இஸ்லாமிய கல்வி திட்டங்களை நடத்துகிறது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Masjid_e_Noor_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Modest attire required",
+    "phoneNumber": "+91 413 225 5678",
+    "crowdLevel": "Medium",
+    "famousMonths": "Ramadan (ரமழான்), Muharram (முஹர்ரம்)",
+    "specialOccasions": "Ramadan Taraweeh prayers. Eid celebrations. Friday Jummah prayers. Islamic education classes and community programs.",
+    "rating": 4.4,
+    "coordinates": {
+      "lat": 11.9510,
+      "lng": 79.8510
+    }
+  },
+  {
+    "id": "muslim-005",
+    "name": "Al-Madina Mosque",
+    "nameTamil": "அல்-மதீனா பள்ளிவாசல்",
+    "religion": "Muslim",
+    "subType": "Mosques",
+    "mainDeity": "Allah",
+    "location": "Reddiarpalayam, Puducherry",
+    "address": "Reddiarpalayam, Puducherry 605010",
+    "mapsUrl": "https://maps.google.com/?q=11.9210,79.8310",
+    "openingTimeWeekdays": "5:00 AM",
+    "closingTimeWeekdays": "9:00 PM",
+    "openingTimeWeekends": "5:00 AM",
+    "closingTimeWeekends": "9:00 PM",
+    "description": "A community mosque in Reddiarpalayam area. The mosque serves the local Muslim community with daily prayers and religious services. The mosque promotes Islamic teachings and community welfare. Regular prayers and Islamic programs are conducted.",
+    "descriptionTamil": "ரெட்டியார்பாளையத்தில் உள்ள சமூக பள்ளிவாசல். பள்ளிவாசல் தினசரி வழிபாடுகள் மற்றும் மத சேவைகளுடன் உள்ளூர் முஸ்லிம் சமூகத்திற்கு சேவை செய்கிறது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Al_Madina_Mosque_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Modest attire required",
+    "phoneNumber": "+91 413 226 6789",
+    "crowdLevel": "Medium",
+    "famousMonths": "Ramadan (ரமழான்), Muharram (முஹர்ரம்)",
+    "specialOccasions": "Ramadan prayers and Iftar gatherings. Eid celebrations with community feasts. Friday prayers. Islamic community programs and welfare activities.",
+    "rating": 4.3,
+    "coordinates": {
+      "lat": 11.9210,
+      "lng": 79.8310
+    }
+  }
+]

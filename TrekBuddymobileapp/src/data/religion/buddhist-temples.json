@@ -1,0 +1,64 @@
+[
+  {
+    "id": "buddhist-001",
+    "name": "Buddha Vihara",
+    "nameTamil": "புத்த விகாரை",
+    "religion": "Buddhist",
+    "subType": "Buddhist Temples",
+    "mainDeity": "Lord Buddha",
+    "location": "Lawspet, Puducherry",
+    "address": "Lawspet, Puducherry 605008",
+    "mapsUrl": "https://maps.google.com/?q=11.9520,79.8520",
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "7:00 PM",
+    "openingTimeWeekends": "5:30 AM",
+    "closingTimeWeekends": "7:30 PM",
+    "description": "A peaceful Buddhist temple (Vihara) dedicated to Lord Buddha. The temple promotes Buddhist teachings of peace, compassion, and mindfulness. Daily meditation sessions and prayers are conducted. The temple has a serene atmosphere perfect for meditation and spiritual practice. The temple follows Theravada Buddhist tradition.",
+    "descriptionTamil": "புத்தருக்கு அர்ப்பணிக்கப்பட்ட அமைதியான பௌத்த கோவில் (விகாரை). கோவில் அமைதி, இரக்கம் மற்றும் மனநிறைவு ஆகிய பௌத்த போதனைகளை ஊக்குவிக்கிறது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Buddha_Vihara_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Modest attire required. Simple and clean clothing preferred.",
+    "phoneNumber": "+91 413 224 5678",
+    "crowdLevel": "Low",
+    "famousMonths": "Vesak (வேசாக்), Buddha Purnima",
+    "specialOccasions": "Vesak (Buddha Purnima) is celebrated with special prayers and meditation sessions. Full moon day prayers. Meditation retreats and spiritual discourses. Community prayers for peace and compassion. Special teachings on Buddhist philosophy.",
+    "rating": 4.4,
+    "coordinates": {
+      "lat": 11.9520,
+      "lng": 79.8520
+    }
+  },
+  {
+    "id": "buddhist-002",
+    "name": "Buddhist Meditation Centre",
+    "nameTamil": "பௌத்த தியான மையம்",
+    "religion": "Buddhist",
+    "subType": "Meditation Centres",
+    "mainDeity": "Lord Buddha",
+    "location": "Auroville Road, Puducherry",
+    "address": "Auroville Road, Puducherry 605101",
+    "mapsUrl": "https://maps.google.com/?q=11.9700,79.8700",
+    "openingTimeWeekdays": "7:00 AM",
+    "closingTimeWeekdays": "6:00 PM",
+    "openingTimeWeekends": "6:30 AM",
+    "closingTimeWeekends": "6:30 PM",
+    "description": "A meditation centre following Buddhist principles. The centre offers meditation sessions, teachings on Buddhist philosophy, and spiritual guidance. The centre promotes mindfulness, compassion, and inner peace. Regular meditation classes and retreats are conducted. Open to people of all backgrounds seeking spiritual growth.",
+    "descriptionTamil": "பௌத்த கொள்கைகளை பின்பற்றும் தியான மையம். மையம் தியான அமர்வுகள், பௌத்த தத்துவத்தின் போதனைகள் மற்றும் ஆன்மீக வழிகாட்டுதலை வழங்குகிறது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Buddhist_Meditation_Centre_Main.jpg"
+    ],
+    "entryFee": "Free (Donations welcome)",
+    "dressCode": "Comfortable, modest attire for meditation",
+    "phoneNumber": "+91 413 225 6789",
+    "crowdLevel": "Low",
+    "famousMonths": "Vesak (வேசாக்), Full moon days",
+    "specialOccasions": "Vesak celebrations with special meditation sessions. Full moon day group meditations. Meditation retreats and workshops. Spiritual discourses on Buddhist teachings. Community gatherings for peace and mindfulness.",
+    "rating": 4.5,
+    "coordinates": {
+      "lat": 11.9700,
+      "lng": 79.8700
+    }
+  }
+]

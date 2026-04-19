@@ -1,0 +1,559 @@
+[
+  {
+    "id": "park-001",
+    "name": "Bharathi Park",
+    "nameTamil": "பாரதி பூங்கா",
+    "type": "Heritage Park",
+    "location": "White Town, Puducherry - 605001",
+    "address": "Bharathi Park, White Town, Central heritage zone, Puducherry, 605001",
+    "mapsUrl": "https://maps.google.com/?q=Bharathi+Park+Puducherry",
+    "coordinates": {
+      "lat": 11.9338,
+      "lng": 79.8300
+    },
+    "openingTimeWeekdays": "5:00 AM",
+    "closingTimeWeekdays": "8:00 PM",
+    "openingTimeWeekends": "5:00 AM",
+    "closingTimeWeekends": "8:30 PM",
+    "description": {
+      "nameOrigin": "Originally named Place du Gouvernement during French colonial period. Renamed Bharathi Park after Indian independence in honour of Subramania Bharathi, the famous Tamil poet, freedom fighter, and journalist who lived in Puducherry.",
+      "historicalImportance": "Bharathi Park was originally developed during the French colonial period. The park is centrally located in White Town, surrounded by historic buildings like Raj Nivas (Governor's House), Puducherry Museum, and French Government buildings.",
+      "naturalFeatures": "Heritage park with French-style layout, greenery, and the famous Aayi Mandapam monument.",
+      "maintenance": "Maintained by the Puducherry Municipal Administration & Public Works Department.",
+      "facilities": [
+        "Aayi Mandapam monument",
+        "Seating benches",
+        "Heritage walk paths",
+        "Greenery and landscaping"
+      ],
+      "nearbyShops": [
+        "Heritage buildings nearby",
+        "Museums and cultural centers"
+      ],
+      "specialFeatures": "The park is specifically known for heritage walks, calm seating space in the city center, photography and architectural appreciation. Inside the park stands the famous Aayi Mandapam, a Greco-Roman style monument built in remembrance of Aayi, a woman who sacrificed her house to build a water reservoir for the city."
+    },
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/5/52/Bharathi_Park_Puducherry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/8/8e/Aayi_Mandapam_Puducherry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/12/Bharathi_Park_Monument.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/6d/Bharathi_Park_Greenery.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/9b/Bharathi_Park_White_Town.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Decent / Comfortable clothing preferred",
+    "phoneNumber": "0413-2222921",
+    "emergencyContact": "0413-2222921",
+    "policeHelpline": "112",
+    "crowdLevel": "Low to Medium (Weekdays), Medium to High (Weekends & Evenings), High (Festival days / tourist season)",
+    "peakTime": "Evenings (5:30-7:00 PM), Weekends",
+    "famousThings": [
+      "Aayi Mandapam monument",
+      "French-style park layout",
+      "Heritage surroundings",
+      "Peaceful seating benches",
+      "Photography & heritage walk spot"
+    ],
+    "famousMonths": "October - March (Pleasant weather)",
+    "famousMonthsTamil": "அக்டோபர் - மார்ச்",
+    "activitiesAndSuitability": {
+      "activitiesAvailable": [
+        "Walking & relaxation",
+        "Sitting & leisure",
+        "Photography",
+        "Heritage learning"
+      ],
+      "suitableFor": {
+        "families": true,
+        "elderly": true,
+        "tourists": true,
+        "couples": true,
+        "children": false,
+        "note": "Children (no play equipment)"
+      },
+      "restrictions": [
+        "No loud activities",
+        "No sports games",
+        "No vendors inside park"
+      ]
+    },
+    "bestTimeToVisit": "Early morning (5:30-7:30 AM), Evening (5:30-7:00 PM)",
+    "seasonalNotes": "Evening lighting enhances monument beauty. Ideal stop during White Town heritage walk.",
+    "rating": 4.5
+  },
+  {
+    "id": "park-002",
+    "name": "Rajiv Gandhi Children's Park",
+    "nameTamil": "ராஜீவ் காந்தி குழந்தைகள் பூங்கா",
+    "type": "Children's Park",
+    "location": "Beach Road, White Town, Puducherry - 605001",
+    "address": "Rajiv Gandhi Children's Park, Goubert Avenue (Beach Road), White Town, Puducherry, 605001",
+    "mapsUrl": "https://maps.google.com/?q=Rajiv+Gandhi+Children's+Park+Puducherry",
+    "coordinates": {
+      "lat": 11.9340,
+      "lng": 79.8295
+    },
+    "openingTimeWeekdays": "10:00 AM",
+    "closingTimeWeekdays": "8:00 PM",
+    "openingTimeWeekends": "10:00 AM",
+    "closingTimeWeekends": "8:30 PM",
+    "description": {
+      "nameOrigin": "The park is named after Rajiv Gandhi, former Prime Minister of India.",
+      "historicalImportance": "Rajiv Gandhi Children's Park was developed as a dedicated recreational park for children. It is located along Goubert Avenue (Beach Road), making it a popular stop for families visiting the promenade.",
+      "naturalFeatures": "Children's play area with slides, swings, and play equipment. Shaded seating for parents.",
+      "maintenance": "Maintained by the Puducherry Municipal Administration.",
+      "facilities": [
+        "Slides & swings",
+        "Play equipment for kids",
+        "Shaded seating for parents",
+        "Safe play space"
+      ],
+      "nearbyShops": [
+        "Close proximity to beach & promenade",
+        "Cafes and restaurants nearby"
+      ],
+      "specialFeatures": "The park was created to provide safe play space for children and relaxation area for parents. It is specifically known as a kids-only attraction rather than a heritage or walking park."
+    },
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/9f/Rajiv_Gandhi_Children_Park_Puducherry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/5/5b/Children_Park_Puducherry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/1a/Rajiv_Gandhi_Park_Puducherry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/6c/Children_Play_Park_Puducherry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/34/Children_Park_Beach_Road.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Decent / Comfortable clothing preferred (Kids-friendly casual wear recommended)",
+    "phoneNumber": "0413-2222921",
+    "emergencyContact": "0413-2222921",
+    "policeHelpline": "112",
+    "crowdLevel": "Medium (Weekdays), High (Weekends & Evenings), Very High (School holidays)",
+    "peakTime": "Evening (4:30 - 7:30 PM), Weekends",
+    "famousThings": [
+      "Slides & swings",
+      "Play equipment for kids",
+      "Shaded seating for parents",
+      "Close proximity to beach & promenade"
+    ],
+    "famousMonths": "October - March",
+    "famousMonthsTamil": "அக்டோபர் - மார்ச்",
+    "activitiesAndSuitability": {
+      "activitiesAvailable": [
+        "Children's play",
+        "Light recreation",
+        "Family relaxation"
+      ],
+      "suitableFor": {
+        "families": true,
+        "children": true,
+        "elderly": false,
+        "note": "Elderly people (limited seating)",
+        "couples": false,
+        "note2": "Couples (not primary target)"
+      },
+      "restrictions": [
+        "Adults without children may be restricted",
+        "No sports activities",
+        "No pets allowed"
+      ]
+    },
+    "bestTimeToVisit": "Evening (4:30 - 7:30 PM)",
+    "seasonalNotes": "Very crowded during weekends. Ideal after Promenade Beach walk.",
+    "rating": 4.3
+  },
+  {
+    "id": "park-003",
+    "name": "Indira Gandhi Park",
+    "nameTamil": "இந்திரா காந்தி பூங்கா",
+    "type": "Public Recreation Park",
+    "location": "Indira Gandhi Square, Central Puducherry - 605001",
+    "address": "Indira Gandhi Park, Indira Gandhi Square, Central Puducherry, 605001",
+    "mapsUrl": "https://maps.google.com/?q=Indira+Gandhi+Park+Puducherry",
+    "coordinates": {
+      "lat": 11.9300,
+      "lng": 79.8300
+    },
+    "openingTimeWeekdays": "5:00 AM",
+    "closingTimeWeekdays": "8:00 PM",
+    "openingTimeWeekends": "5:00 AM",
+    "closingTimeWeekends": "8:30 PM",
+    "description": {
+      "nameOrigin": "The park is named in honour of Indira Gandhi, former Prime Minister of India.",
+      "historicalImportance": "Indira Gandhi Park is a public urban park developed for everyday recreation. It is located at Indira Gandhi Square, one of the busy junctions in central Puducherry.",
+      "naturalFeatures": "Small landscaped green area with seating benches and Indira Gandhi statue.",
+      "maintenance": "Maintained by the Puducherry Municipal Administration.",
+      "facilities": [
+        "Indira Gandhi statue",
+        "Seating benches",
+        "Small landscaped green area"
+      ],
+      "nearbyShops": [
+        "Central junction area",
+        "Nearby shops and offices"
+      ],
+      "specialFeatures": "The park was created to provide green relief in a traffic-heavy area and seating and relaxation space for locals. It serves mainly as a neighbourhood park and a short-rest stop for commuters. It is not a children-only or heritage park, but a general public park."
+    },
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/2/24/Indira_Gandhi_Park_Puducherry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/70/Indira_Gandhi_Square_Puducherry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/5/5a/Indira_Gandhi_Park_Statue.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/1d/Indira_Gandhi_Park_Greenery.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/9c/Indira_Gandhi_Park_Evening.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Decent / Comfortable clothing preferred",
+    "phoneNumber": "0413-2222921",
+    "emergencyContact": "0413-2222921",
+    "policeHelpline": "112",
+    "crowdLevel": "Low to Medium (Weekdays), Medium (Weekends & Evenings), Medium (Peak hours - traffic time)",
+    "peakTime": "Early morning, Evening hours",
+    "famousThings": [
+      "Indira Gandhi statue",
+      "Central location",
+      "Seating benches",
+      "Small landscaped green area"
+    ],
+    "famousMonths": "October - March",
+    "famousMonthsTamil": "அக்டோபர் - மார்ச்",
+    "activitiesAndSuitability": {
+      "activitiesAvailable": [
+        "Sitting & resting",
+        "Light walking",
+        "Short breaks during travel"
+      ],
+      "suitableFor": {
+        "locals": true,
+        "elderly": true,
+        "officeCommuters": true,
+        "tourists": false,
+        "note": "Tourists (short stop only)",
+        "children": false,
+        "note2": "Children (no play equipment)"
+      },
+      "restrictions": [
+        "No sports or games",
+        "No vendors inside park"
+      ]
+    },
+    "bestTimeToVisit": "Early morning, Evening hours",
+    "seasonalNotes": "More peaceful during mornings. Acts as a green pause in busy traffic zone.",
+    "rating": 3.8
+  },
+  {
+    "id": "park-004",
+    "name": "Jawahar Bal Bhavan Children's Park",
+    "nameTamil": "ஜவஹர் பால் பவன் குழந்தைகள் பூங்கா",
+    "type": "Children's Cultural Park",
+    "location": "Jawahar Bal Bhavan Complex, Central Puducherry - 605001",
+    "address": "Jawahar Bal Bhavan Children's Park, Jawahar Bal Bhavan Complex, Central Puducherry, 605001",
+    "mapsUrl": "https://maps.google.com/?q=Jawahar+Bal+Bhavan+Puducherry",
+    "coordinates": {
+      "lat": 11.9280,
+      "lng": 79.8280
+    },
+    "openingTimeWeekdays": "10:00 AM",
+    "closingTimeWeekdays": "7:30 PM",
+    "openingTimeWeekends": "10:00 AM",
+    "closingTimeWeekends": "8:00 PM",
+    "description": {
+      "nameOrigin": "Named after Jawaharlal Nehru, India's first Prime Minister, who strongly supported children's education and creativity.",
+      "historicalImportance": "Jawahar Bal Bhavan was established as a children-focused cultural and recreational centre. The park functions as part of the Bal Bhavan complex, not just a standalone park.",
+      "naturalFeatures": "Children's play area with open ground for activities and cultural program space.",
+      "maintenance": "Maintained by the Department of Art & Culture, Government of Puducherry.",
+      "facilities": [
+        "Children's play area",
+        "Open ground for activities",
+        "Cultural program space",
+        "Educational events & workshops area"
+      ],
+      "nearbyShops": [
+        "Near government offices & cultural centres",
+        "Easy public transport access"
+      ],
+      "specialFeatures": "Developed to promote children's creativity, physical activity, and cultural learning. The park is specific for children's recreation, school programs, and cultural and educational activities. Unlike beachside children parks, this park has a learning + play combination."
+    },
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/49/Jawahar_Bal_Bhavan_Puducherry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/6f/Bal_Bhavan_Puducherry_Playground.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/3e/Jawahar_Bal_Bhavan_Children_Park.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/9a/Bal_Bhavan_Puducherry_Entrance.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/1c/Bal_Bhavan_Puducherry_Ground.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Decent / Comfortable clothing preferred (Children-friendly attire recommended)",
+    "phoneNumber": "0413-2336209",
+    "emergencyContact": "0413-2336209",
+    "policeHelpline": "112",
+    "crowdLevel": "Low to Medium (Weekdays), Medium to High (Weekends & Evenings), High (School holidays)",
+    "peakTime": "Evening (4:30 - 7:00 PM)",
+    "famousThings": [
+      "Children's play area",
+      "Open ground for activities",
+      "Cultural program space",
+      "Educational events & workshops"
+    ],
+    "famousMonths": "October - March",
+    "famousMonthsTamil": "அக்டோபர் - மார்ச்",
+    "activitiesAndSuitability": {
+      "activitiesAvailable": [
+        "Children's play",
+        "Cultural programs",
+        "Drawing, drama & activity events (occasionally)"
+      ],
+      "suitableFor": {
+        "children": true,
+        "families": true,
+        "schoolGroups": true,
+        "elderly": false,
+        "note": "Elderly (limited seating)",
+        "couples": false,
+        "note2": "Couples (not primary audience)"
+      },
+      "restrictions": [
+        "Adults without children may have limited access",
+        "No sports training activities"
+      ]
+    },
+    "bestTimeToVisit": "Evening (4:30 - 7:00 PM)",
+    "seasonalNotes": "Cultural events attract crowds. Good educational environment for kids.",
+    "rating": 4.2
+  },
+  {
+    "id": "park-005",
+    "name": "Subramania Bharathi Park",
+    "nameTamil": "சுப்பிரமணிய பாரதி பூங்கா",
+    "type": "Community Park",
+    "location": "Muthialpet, Puducherry - 605003",
+    "address": "Subramania Bharathi Park, Muthialpet, Dense residential area, Puducherry, 605003",
+    "mapsUrl": "https://maps.google.com/?q=Subramania+Bharathi+Park+Muthialpet+Puducherry",
+    "coordinates": {
+      "lat": 11.9250,
+      "lng": 79.8250
+    },
+    "openingTimeWeekdays": "5:00 AM",
+    "closingTimeWeekdays": "8:00 PM",
+    "openingTimeWeekends": "5:00 AM",
+    "closingTimeWeekends": "8:30 PM",
+    "description": {
+      "nameOrigin": "The park is named after Subramania Bharathi, the renowned Tamil poet, freedom fighter, and social reformer who lived and worked in Puducherry.",
+      "historicalImportance": "Subramania Bharathi Park is a local neighbourhood public park serving the Muthialpet area. The park was developed to provide green space within a crowded residential locality and a safe walking and resting area for residents.",
+      "naturalFeatures": "Green shaded walking paths, seating benches, calm environment away from traffic.",
+      "maintenance": "Maintained by the Puducherry Municipal Administration.",
+      "facilities": [
+        "Green shaded walking paths",
+        "Seating benches",
+        "Calm environment"
+      ],
+      "nearbyShops": [
+        "Dense residential area",
+        "Local shops nearby"
+      ],
+      "specialFeatures": "The park functions primarily as a community park and daily-use recreation space for locals. It is specific for morning walks, evening relaxation, and senior citizens' meetups. Unlike Bharathi Park (White Town), this park is not a heritage site, but a functional local park."
+    },
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/0/0a/Subramania_Bharathi_Park_Muthialpet.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/34/Muthialpet_Park_Puducherry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/6e/Subramania_Bharathi_Park_Greenery.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/2c/Bharathi_Park_Muthialpet_Entrance.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/9d/Muthialpet_Local_Park.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Decent / Comfortable clothing preferred",
+    "phoneNumber": "0413-2222921",
+    "emergencyContact": "0413-2222921",
+    "policeHelpline": "112",
+    "crowdLevel": "Low (Weekdays), Medium (Weekends & Evenings), Medium (Festival days)",
+    "peakTime": "Early morning (5:30-7:30 AM), Evening (5:30-7:30 PM)",
+    "famousThings": [
+      "Green shaded walking paths",
+      "Seating benches",
+      "Calm environment away from traffic",
+      "Local community gathering point"
+    ],
+    "famousMonths": "October - March",
+    "famousMonthsTamil": "அக்டோபர் - மார்ச்",
+    "activitiesAndSuitability": {
+      "activitiesAvailable": [
+        "Morning & evening walks",
+        "Sitting & relaxation",
+        "Light stretching / yoga (informal)"
+      ],
+      "suitableFor": {
+        "localResidents": true,
+        "seniorCitizens": true,
+        "families": true,
+        "children": false,
+        "note": "Children (limited play equipment)",
+        "tourists": false,
+        "note2": "Tourists (local-use park)"
+      },
+      "restrictions": [
+        "No sports games",
+        "No vendors inside park",
+        "No loud activities"
+      ]
+    },
+    "bestTimeToVisit": "Early morning (5:30-7:30 AM), Evening (5:30-7:30 PM)",
+    "seasonalNotes": "Pleasant shade during summer evenings.",
+    "rating": 3.9
+  },
+  {
+    "id": "park-006",
+    "name": "Anna Thidal / Anna Park",
+    "nameTamil": "அண்ணா திடல் / அண்ணா பூங்கா",
+    "type": "Memorial Park / Open Ground",
+    "location": "Near New Bus Stand area (Anna Salai side), Central Puducherry - 605001",
+    "address": "Anna Thidal, Anna Salai, Near New Bus Stand, Central Puducherry, 605001",
+    "mapsUrl": "https://maps.google.com/?q=Anna+Thidal+Puducherry",
+    "coordinates": {
+      "lat": 11.9200,
+      "lng": 79.8200
+    },
+    "openingTimeWeekdays": "5:00 AM",
+    "closingTimeWeekdays": "8:00 PM",
+    "openingTimeWeekends": "5:00 AM",
+    "closingTimeWeekends": "8:30 PM",
+    "description": {
+      "nameOrigin": "Named after C. N. Annadurai (Anna), former Chief Minister of Tamil Nadu and a prominent Dravidian leader.",
+      "historicalImportance": "Anna Thidal is a public memorial park / open ground developed for gatherings and daily recreation. The park was created to serve as a community open space, memorial spot, and small recreation area in a busy transport zone.",
+      "naturalFeatures": "Open ground space with seating areas and memorial association.",
+      "maintenance": "Maintained by the Puducherry Municipal Administration.",
+      "facilities": [
+        "Open ground space",
+        "Seating areas",
+        "Memorial association"
+      ],
+      "nearbyShops": [
+        "Near New Bus Stand",
+        "Well connected by buses & autos"
+      ],
+      "specialFeatures": "The park is mainly used for public gatherings (occasionally), short rest breaks for commuters, and evening walks for nearby residents. It is functional rather than ornamental—not a children's park or heritage park."
+    },
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/2/21/Anna_Thidal_Puducherry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/5/56/Anna_Park_Puducherry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/73/Anna_Thidal_Entrance.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/8/8c/Anna_Thidal_Ground.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/1e/Anna_Thidal_Evening.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Decent / Comfortable clothing preferred",
+    "phoneNumber": "0413-2222921",
+    "emergencyContact": "0413-2222921",
+    "policeHelpline": "112",
+    "crowdLevel": "Low (Weekdays), Medium (Weekends & Evenings), Medium to High (Event days)",
+    "peakTime": "Morning & Evening",
+    "famousThings": [
+      "Open ground space",
+      "Memorial association (Anna)",
+      "Seating areas",
+      "Central city access"
+    ],
+    "famousMonths": "October - March",
+    "famousMonthsTamil": "அக்டோபர் - மார்ச்",
+    "activitiesAndSuitability": {
+      "activitiesAvailable": [
+        "Walking",
+        "Sitting & resting",
+        "Informal gatherings"
+      ],
+      "suitableFor": {
+        "localResidents": true,
+        "officeCommuters": true,
+        "elderly": true,
+        "children": false,
+        "note": "Children (no play equipment)",
+        "tourists": false,
+        "note2": "Tourists (short stop)"
+      },
+      "restrictions": [
+        "No sports training",
+        "No vendors inside park",
+        "Loud events only with permission"
+      ]
+    },
+    "bestTimeToVisit": "Morning & Evening",
+    "seasonalNotes": "Useful rest stop near bus stand. Quiet during mornings, active evenings.",
+    "rating": 3.7
+  },
+  {
+    "id": "park-007",
+    "name": "Auroville Youth Centre Playground & Green Space",
+    "nameTamil": "ஆரோவில் இளைஞர் மையம் விளையாட்டு மைதானம் & பசுமை இடம்",
+    "type": "Community Recreation Park",
+    "location": "Auroville (near Town Hall / Youth Centre zone), Puducherry - 605101",
+    "address": "Auroville Youth Centre Playground, Auroville, near Town Hall, Puducherry, 605101",
+    "mapsUrl": "https://maps.google.com/?q=Auroville+Youth+Centre+Playground",
+    "coordinates": {
+      "lat": 12.0050,
+      "lng": 79.8100
+    },
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "7:00 PM",
+    "openingTimeWeekends": "6:00 AM",
+    "closingTimeWeekends": "7:30 PM",
+    "description": {
+      "nameOrigin": "Developed as part of Auroville Youth Centre to encourage sports, fitness, and youth engagement.",
+      "historicalImportance": "The Auroville Youth Centre Playground is a community recreation park within Auroville township. Developed to encourage sports, fitness, and youth engagement in line with Auroville's ideals of holistic development.",
+      "naturalFeatures": "Open playground with green shaded areas and calm, pollution-free environment.",
+      "maintenance": "Maintained by Auroville community bodies / maintenance services.",
+      "facilities": [
+        "Open playground",
+        "Green shaded areas",
+        "Community sports space",
+        "Fitness area"
+      ],
+      "nearbyShops": [
+        "Auroville Town Hall nearby",
+        "Auroville cafes and shops"
+      ],
+      "specialFeatures": "The area functions as a playground, open green space, and community gathering zone. The park is not a botanical garden or restricted spiritual area; it is open for public use (respecting Auroville rules). It is specific for youth sports activities, fitness routines, and community events. Tourists can visit, but locals and Auroville residents are the primary users."
+    },
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/6b/Auroville_Youth_Centre_Playground.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/2f/Auroville_Youth_Centre_Ground.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/8/8c/Auroville_Youth_Centre_Green_Space.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/12/Auroville_Youth_Centre_Outdoor.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/9a/Auroville_Youth_Centre_Sports.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Decent / Comfortable clothing preferred (Sportswear recommended for activities)",
+    "phoneNumber": "0413-2622136",
+    "emergencyContact": "0413-2622136",
+    "policeHelpline": "112",
+    "crowdLevel": "Low to Medium (Weekdays), Medium (Weekends & Evenings), Medium to High (During sports events)",
+    "peakTime": "Early morning & Evening",
+    "famousThings": [
+      "Open playground",
+      "Green shaded areas",
+      "Community sports space",
+      "Calm, pollution-free environment"
+    ],
+    "famousMonths": "October - March",
+    "famousMonthsTamil": "அக்டோபர் - மார்ச்",
+    "activitiesAndSuitability": {
+      "activitiesAvailable": [
+        "Running & jogging",
+        "Football / informal sports",
+        "Yoga & stretching",
+        "Community fitness activities"
+      ],
+      "suitableFor": {
+        "youth": true,
+        "students": true,
+        "families": true,
+        "fitnessEnthusiasts": true,
+        "elderly": false,
+        "note": "Elderly (limited seating)",
+        "tourists": true,
+        "note2": "Tourists (respectful behaviour expected)"
+      },
+      "restrictions": [
+        "Organized events require permission",
+        "Loud music not allowed",
+        "Alcohol & smoking prohibited"
+      ]
+    },
+    "bestTimeToVisit": "Early morning & Evening",
+    "seasonalNotes": "Pleasant climate due to greenery. Quiet and disciplined atmosphere.",
+    "rating": 4.1
+  }
+]

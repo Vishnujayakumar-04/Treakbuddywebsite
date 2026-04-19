@@ -45,6 +45,7 @@ export function AIWidget() {
                     </motion.button>
                 </SheetTrigger>
                 <SheetContent side="right" className="w-[100vw] sm:w-[400px] p-0 border-l border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 flex flex-col shadow-2xl">
+                    <SheetTitle className="sr-only">TrekBuddy AI Assistant</SheetTitle>
 
                     {/* Header */}
                     <div className="flex-none p-4 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-between">

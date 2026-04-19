@@ -1,0 +1,313 @@
+[
+  {
+    "id": "hindu-001",
+    "name": "Sri Manakula Vinayagar Temple",
+    "nameTamil": "ஸ்ரீ மணகுல விநாயகர் கோவில்",
+    "religion": "Hindu",
+    "subType": "Ganesh Temples",
+    "mainDeity": "Lord Ganesh",
+    "location": "Manakula Vinayagar Koil Street, White Town",
+    "address": "Manakula Vinayagar Koil Street, White Town, Puducherry 605001",
+    "mapsUrl": "https://maps.google.com/?q=11.9336,79.8300",
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "9:00 PM",
+    "openingTimeWeekends": "6:00 AM",
+    "closingTimeWeekends": "9:30 PM",
+    "description": "One of the oldest and most famous temples in Puducherry, dedicated to Lord Ganesh. The temple is believed to be over 500 years old and is a major pilgrimage site. The deity is made of a single stone and is considered very powerful. Daily abhishekam and poojas are performed. The temple has a beautiful architecture with intricate carvings and a large gopuram.",
+    "descriptionTamil": "புதுச்சேரியின் பழமையான மற்றும் பிரபலமான கோவில்களில் ஒன்று, விநாயகர் கடவுளுக்கு அர்ப்பணிக்கப்பட்டது. இந்த கோவில் 500 ஆண்டுகளுக்கு மேலாக பழமையானது மற்றும் முக்கிய யாத்திரை தளமாகும். தெய்வம் ஒரு கல்லால் செய்யப்பட்டது மற்றும் மிகவும் சக்திவாய்ந்ததாக கருதப்படுகிறது. தினசரி அபிஷேகம் மற்றும் பூஜைகள் நடத்தப்படுகின்றன.",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Manakula_Vinayagar_Temple.jpg/800px-Manakula_Vinayagar_Temple.jpg",
+      "https://www.trawell.in/admin/images/upload/065201201Manakula_Vinayagar_Temple_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Traditional attire preferred. Men should remove shirts inside sanctum.",
+    "phoneNumber": "+91 413 233 1234",
+    "crowdLevel": "High",
+    "famousMonths": "Aadi (ஆடி), Margazhi (மார்கழி), Vinayaka Chaturthi month",
+    "specialOccasions": "Vinayaka Chaturthi is celebrated with grand processions, special abhishekam, and alankaram. Thousands of devotees visit during this time. Special prasadam distribution on festival days. Temple car procession during major festivals.",
+    "rating": 4.7,
+    "coordinates": {
+      "lat": 11.9336,
+      "lng": 79.8300
+    }
+  },
+  {
+    "id": "hindu-002",
+    "name": "Varadaraja Perumal Temple",
+    "nameTamil": "வரதராஜ பெருமாள் கோவில்",
+    "religion": "Hindu",
+    "subType": "Perumal / Vishnu Temples",
+    "mainDeity": "Lord Vishnu (Varadaraja Perumal)",
+    "location": "M.G. Road, Puducherry",
+    "address": "M.G. Road, Puducherry 605001",
+    "mapsUrl": "https://maps.google.com/?q=11.9340,79.8320",
+    "openingTimeWeekdays": "6:30 AM",
+    "closingTimeWeekdays": "12:30 PM",
+    "openingTimeWeekends": "6:30 AM",
+    "closingTimeWeekends": "1:00 PM",
+    "description": "A beautiful Vaishnavite temple dedicated to Lord Vishnu as Varadaraja Perumal. The temple has a rich history and is known for its peaceful atmosphere. Daily poojas include Suprabhatam, Thiruvaradhanam, and evening poojas. The temple architecture reflects Dravidian style with beautiful sculptures.",
+    "descriptionTamil": "விஷ்ணுவுக்கு வரதராஜ பெருமாளாக அர்ப்பணிக்கப்பட்ட அழகான வைஷ்ணவ கோவில். கோவிலுக்கு வளமான வரலாறு உள்ளது மற்றும் அமைதியான சூழ்நிலைக்கு பெயர் பெற்றது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Varadaraja_Perumal_Temple_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Traditional attire preferred",
+    "phoneNumber": "+91 413 222 5678",
+    "crowdLevel": "Medium",
+    "famousMonths": "Purattasi (புரட்டாசி), Margazhi (மார்கழி)",
+    "specialOccasions": "Vaikunta Ekadashi is celebrated with great devotion. Special alankaram and processions during Brahmotsavam. Garuda Sevai during festivals.",
+    "rating": 4.5,
+    "coordinates": {
+      "lat": 11.9340,
+      "lng": 79.8320
+    }
+  },
+  {
+    "id": "hindu-003",
+    "name": "Kamatchi Amman Temple",
+    "nameTamil": "காமாட்சி அம்மன் கோவில்",
+    "religion": "Hindu",
+    "subType": "Amman Temples",
+    "mainDeity": "Goddess Kamatchi Amman",
+    "location": "Villianur, Puducherry",
+    "address": "Villianur, Puducherry 605110",
+    "mapsUrl": "https://maps.google.com/?q=11.9000,79.8000",
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "8:00 PM",
+    "openingTimeWeekends": "5:30 AM",
+    "closingTimeWeekends": "8:30 PM",
+    "description": "A powerful temple dedicated to Goddess Kamatchi Amman, located in Villianur. The temple is known for fulfilling wishes of devotees. The goddess is believed to be very powerful and grants boons to sincere devotees. Daily abhishekam with milk, honey, and other sacred items is performed.",
+    "descriptionTamil": "வில்லியனூரில் அமைந்துள்ள காமாட்சி அம்மனுக்கு அர்ப்பணிக்கப்பட்ட சக்திவாய்ந்த கோவில். பக்தர்களின் ஆசைகளை நிறைவேற்றுவதற்கு இந்த கோவில் பெயர் பெற்றது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Kamatchi_Amman_Temple_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Traditional attire mandatory. Women should wear saree or salwar kameez.",
+    "phoneNumber": "+91 413 234 5678",
+    "crowdLevel": "High",
+    "famousMonths": "Aadi (ஆடி), Thai (தை), Panguni (பங்குனி)",
+    "specialOccasions": "Aadi Pooram and Thai Poosam are major festivals with grand celebrations. Special abhishekam, alankaram, and processions. Fire walking ceremony during festivals. Annadhanam (free food) for devotees on festival days.",
+    "rating": 4.6,
+    "coordinates": {
+      "lat": 11.9000,
+      "lng": 79.8000
+    }
+  },
+  {
+    "id": "hindu-004",
+    "name": "Sithanathaswamy Temple",
+    "nameTamil": "சிதானாதசுவாமி கோவில்",
+    "religion": "Hindu",
+    "subType": "Shiva Temples",
+    "mainDeity": "Lord Shiva",
+    "location": "Thiruvandarkoil, Puducherry",
+    "address": "Thiruvandarkoil, Puducherry 605007",
+    "mapsUrl": "https://maps.google.com/?q=11.9200,79.8100",
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "12:00 PM",
+    "openingTimeWeekends": "6:00 AM",
+    "closingTimeWeekends": "12:30 PM",
+    "description": "An ancient Shiva temple located in Thiruvandarkoil. The temple has historical significance and is known for its spiritual atmosphere. The main deity is Lord Shiva in the form of Sithanathaswamy. Daily poojas and abhishekam are performed. The temple has a beautiful architecture with traditional Dravidian style.",
+    "descriptionTamil": "திருவண்டார்கோயிலில் அமைந்துள்ள பழமையான சிவன் கோவில். கோவிலுக்கு வரலாற்று முக்கியத்துவம் உள்ளது மற்றும் ஆன்மீக சூழ்நிலைக்கு பெயர் பெற்றது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Sithanathaswamy_Temple_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Traditional attire preferred",
+    "phoneNumber": "+91 413 223 4567",
+    "crowdLevel": "Medium",
+    "famousMonths": "Sivarathri (சிவராத்திரி), Aadi (ஆடி)",
+    "specialOccasions": "Maha Sivarathri is celebrated with night-long prayers and abhishekam. Special poojas and processions during Aadi month. Rudrabhishekam on special days.",
+    "rating": 4.4,
+    "coordinates": {
+      "lat": 11.9200,
+      "lng": 79.8100
+    }
+  },
+  {
+    "id": "hindu-005",
+    "name": "Murugan Temple, Thiruvandarkoil",
+    "nameTamil": "முருகன் கோவில், திருவண்டார்கோயில்",
+    "religion": "Hindu",
+    "subType": "Murugan Temples",
+    "mainDeity": "Lord Murugan",
+    "location": "Thiruvandarkoil, Puducherry",
+    "address": "Thiruvandarkoil, Puducherry 605007",
+    "mapsUrl": "https://maps.google.com/?q=11.9210,79.8110",
+    "openingTimeWeekdays": "6:30 AM",
+    "closingTimeWeekdays": "12:00 PM",
+    "openingTimeWeekends": "6:00 AM",
+    "closingTimeWeekends": "12:30 PM",
+    "description": "A beautiful temple dedicated to Lord Murugan (Kartikeya), the son of Lord Shiva. The temple is known for its peaceful atmosphere and is a popular place for prayers. Devotees visit this temple especially on Tuesdays and during Skanda Sashti. The deity is beautifully decorated with vel (spear).",
+    "descriptionTamil": "சிவனின் மகனான முருகனுக்கு (கார்த்திகேயன்) அர்ப்பணிக்கப்பட்ட அழகான கோவில். அமைதியான சூழ்நிலைக்கு இந்த கோவில் பெயர் பெற்றது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Murugan_Temple_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Traditional attire preferred",
+    "phoneNumber": "+91 413 224 5678",
+    "crowdLevel": "Medium",
+    "famousMonths": "Thai (தை), Skanda Sashti month",
+    "specialOccasions": "Thai Poosam and Skanda Sashti are major festivals. Special abhishekam with panchamirtham. Kavadi procession during Thai Poosam. Vel (spear) decoration and special alankaram.",
+    "rating": 4.5,
+    "coordinates": {
+      "lat": 11.9210,
+      "lng": 79.8110
+    }
+  },
+  {
+    "id": "hindu-006",
+    "name": "Kanniga Parameswari Temple",
+    "nameTamil": "கன்னிகா பரமேஸ்வரி கோவில்",
+    "religion": "Hindu",
+    "subType": "Amman Temples",
+    "mainDeity": "Goddess Kanniga Parameswari",
+    "location": "Muthialpet, Puducherry",
+    "address": "Muthialpet, Puducherry 605003",
+    "mapsUrl": "https://maps.google.com/?q=11.9400,79.8400",
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "8:00 PM",
+    "openingTimeWeekends": "5:30 AM",
+    "closingTimeWeekends": "8:30 PM",
+    "description": "A powerful Amman temple in Muthialpet area. The goddess is believed to protect the devotees and grant their wishes. The temple has a strong local following and is known for its spiritual energy. Daily poojas and special abhishekam are performed.",
+    "descriptionTamil": "முத்தியால்பேட்டை பகுதியில் அமைந்துள்ள சக்திவாய்ந்த அம்மன் கோவில். தெய்வம் பக்தர்களை பாதுகாக்கிறது மற்றும் அவர்களின் ஆசைகளை நிறைவேற்றுகிறது என்று நம்பப்படுகிறது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Kanniga_Parameswari_Temple_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Traditional attire preferred",
+    "phoneNumber": "+91 413 225 6789",
+    "crowdLevel": "Medium",
+    "famousMonths": "Aadi (ஆடி), Navaratri (நவராத்திரி)",
+    "specialOccasions": "Navaratri is celebrated with 9 days of special poojas. Aadi Pooram has grand celebrations. Special abhishekam and alankaram. Fire walking ceremony during festivals.",
+    "rating": 4.3,
+    "coordinates": {
+      "lat": 11.9400,
+      "lng": 79.8400
+    }
+  },
+  {
+    "id": "hindu-007",
+    "name": "Ayyanar Temple",
+    "nameTamil": "ஐயனார் கோவில்",
+    "religion": "Hindu",
+    "subType": "Ayyanar / Village Guardian Deities",
+    "mainDeity": "Lord Ayyanar",
+    "location": "Villages around Puducherry",
+    "address": "Various village locations, Puducherry",
+    "mapsUrl": "https://maps.google.com/?q=11.9000,79.8000",
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "7:00 PM",
+    "openingTimeWeekends": "6:00 AM",
+    "closingTimeWeekends": "7:00 PM",
+    "description": "Ayyanar temples are village guardian deities found in various villages around Puducherry. These temples protect the villages and are worshipped by local communities. The deity is usually seen with a horse and weapons, symbolizing protection. These are traditional village temples with strong local customs.",
+    "descriptionTamil": "ஐயனார் கோவில்கள் புதுச்சேரியைச் சுற்றியுள்ள பல்வேறு கிராமங்களில் காணப்படும் கிராம பாதுகாவலர் தெய்வங்கள். இந்த கோவில்கள் கிராமங்களை பாதுகாக்கின்றன.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Ayyanar_Temple_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Traditional attire preferred",
+    "phoneNumber": "Not officially specified",
+    "crowdLevel": "Low to Medium",
+    "famousMonths": "Aadi (ஆடி), Thai (தை)",
+    "specialOccasions": "Village festivals during Aadi and Thai months. Special poojas and offerings. Traditional rituals and customs. Horse processions during festivals.",
+    "rating": 4.0,
+    "coordinates": {
+      "lat": 11.9000,
+      "lng": 79.8000
+    }
+  },
+  {
+    "id": "hindu-008",
+    "name": "Sai Baba Temple",
+    "nameTamil": "சாய் பாபா கோவில்",
+    "religion": "Hindu",
+    "subType": "Saibaba Temples",
+    "mainDeity": "Shirdi Sai Baba",
+    "location": "Lawspet, Puducherry",
+    "address": "Lawspet, Puducherry 605008",
+    "mapsUrl": "https://maps.google.com/?q=11.9500,79.8500",
+    "openingTimeWeekdays": "5:30 AM",
+    "closingTimeWeekdays": "9:00 PM",
+    "openingTimeWeekends": "5:00 AM",
+    "closingTimeWeekends": "9:30 PM",
+    "description": "A peaceful temple dedicated to Shirdi Sai Baba. The temple has a serene atmosphere and is visited by devotees of all faiths. Daily aarti, bhajans, and prasadam distribution. The temple follows the teachings of Sai Baba and promotes universal love and peace.",
+    "descriptionTamil": "ஷிர்டி சாய் பாபாவுக்கு அர்ப்பணிக்கப்பட்ட அமைதியான கோவில். கோவிலுக்கு அமைதியான சூழ்நிலை உள்ளது மற்றும் அனைத்து மதங்களின் பக்தர்களும் வருகிறார்கள்.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Sai_Baba_Temple_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Modest attire preferred",
+    "phoneNumber": "+91 413 226 7890",
+    "crowdLevel": "Medium to High",
+    "famousMonths": "Guru Purnima, Ram Navami, Vijayadashami",
+    "specialOccasions": "Guru Purnima is celebrated with special poojas and bhajans. Thursday prayers are special. Free prasadam (vada, sweet) distribution. Special aarti and bhajan sessions.",
+    "rating": 4.6,
+    "coordinates": {
+      "lat": 11.9500,
+      "lng": 79.8500
+    }
+  },
+  {
+    "id": "hindu-009",
+    "name": "Navagraha Temple",
+    "nameTamil": "நவகிரக கோவில்",
+    "religion": "Hindu",
+    "subType": "Navagraha Temples",
+    "mainDeity": "Nine Planets (Navagrahas)",
+    "location": "Villupuram Road, Puducherry",
+    "address": "Villupuram Road, Puducherry 605013",
+    "mapsUrl": "https://maps.google.com/?q=11.9600,79.8600",
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "8:00 PM",
+    "openingTimeWeekends": "5:30 AM",
+    "closingTimeWeekends": "8:30 PM",
+    "description": "A unique temple dedicated to the nine planets (Navagrahas) - Surya, Chandra, Mangal, Budha, Guru, Shukra, Shani, Rahu, and Ketu. Devotees visit this temple to worship the planets and seek relief from planetary doshas. Each planet has a separate shrine. Special poojas are performed for each graha.",
+    "descriptionTamil": "ஒன்பது கிரகங்களுக்கு (நவகிரகங்கள்) அர்ப்பணிக்கப்பட்ட தனித்துவமான கோவில். கிரக தோஷங்களிலிருந்து விடுபட பக்தர்கள் இந்த கோவிலுக்கு வருகிறார்கள்.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Navagraha_Temple_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Traditional attire preferred",
+    "phoneNumber": "+91 413 227 8901",
+    "crowdLevel": "Medium",
+    "famousMonths": "All months, especially during Rahu Kalam and Shani periods",
+    "specialOccasions": "Special poojas for each planet on their respective days. Navagraha homam and abhishekam. Special prayers during eclipses. Graha Shanti poojas for planetary peace.",
+    "rating": 4.4,
+    "coordinates": {
+      "lat": 11.9600,
+      "lng": 79.8600
+    }
+  },
+  {
+    "id": "hindu-010",
+    "name": "Veerampattinam Murugan Temple",
+    "nameTamil": "வீரம்பட்டினம் முருகன் கோவில்",
+    "religion": "Hindu",
+    "subType": "Murugan Temples",
+    "mainDeity": "Lord Murugan",
+    "location": "Veerampattinam, Puducherry",
+    "address": "Veerampattinam, Puducherry 605007",
+    "mapsUrl": "https://maps.google.com/?q=11.8800,79.7900",
+    "openingTimeWeekdays": "6:00 AM",
+    "closingTimeWeekdays": "12:00 PM",
+    "openingTimeWeekends": "5:30 AM",
+    "closingTimeWeekends": "12:30 PM",
+    "description": "A beautiful Murugan temple located in the coastal village of Veerampattinam. The temple is near the beach and has a peaceful atmosphere. The deity is known for granting wishes related to education and career. Many students visit this temple before exams.",
+    "descriptionTamil": "கடற்கரை கிராமமான வீரம்பட்டினத்தில் அமைந்துள்ள அழகான முருகன் கோவில். கோவில் கடற்கரைக்கு அருகில் உள்ளது மற்றும் அமைதியான சூழ்நிலை உள்ளது.",
+    "images": [
+      "https://www.trawell.in/admin/images/upload/065201201Veerampattinam_Murugan_Temple_Main.jpg"
+    ],
+    "entryFee": "Free",
+    "dressCode": "Traditional attire preferred",
+    "phoneNumber": "+91 413 228 9012",
+    "crowdLevel": "Medium",
+    "famousMonths": "Thai (தை), Skanda Sashti month",
+    "specialOccasions": "Thai Poosam and Skanda Sashti are major festivals. Special abhishekam with panchamirtham. Kavadi procession. Students visit during exam times for blessings.",
+    "rating": 4.5,
+    "coordinates": {
+      "lat": 11.8800,
+      "lng": 79.7900
+    }
+  }
+]
