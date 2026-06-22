@@ -347,11 +347,24 @@ function PharmacyCard({ name, address, phone, tags }: any) {
                 ))}
             </div>
 
-            <Button variant="outline" className="w-full border-emerald-200 text-emerald-700 hover:bg-emerald-50 dark:border-emerald-800 dark:text-emerald-400 dark:hover:bg-emerald-900/20 font-semibold" asChild disabled={!phone}>
-                <a href={phone ? `tel:${phone}` : '#'}>
-                    <Phone className="w-4 h-4 mr-2" /> {phone || 'Store Walk-in Only'}
-                </a>
-            </Button>
+            <div className="grid grid-cols-2 gap-3 mt-auto">
+                {phone ? (
+                    <Button className="bg-red-500 hover:bg-red-600 text-white font-bold w-full" asChild>
+                        <a href={`tel:${phone}`}>
+                            <Phone className="w-4 h-4 mr-2" /> Call
+                        </a>
+                    </Button>
+                ) : (
+                    <Button className="bg-slate-300 dark:bg-slate-700 text-slate-500 dark:text-slate-400 font-bold w-full" disabled>
+                        <Phone className="w-4 h-4 mr-2" /> Walk-in
+                    </Button>
+                )}
+                <Button variant="outline" className="w-full border-slate-200 dark:border-slate-700" asChild>
+                    <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${name} ${address} Puducherry`)}`} target="_blank" rel="noopener noreferrer">
+                        <Navigation className="w-4 h-4 mr-2" /> Map
+                    </a>
+                </Button>
+            </div>
         </div>
     );
 }

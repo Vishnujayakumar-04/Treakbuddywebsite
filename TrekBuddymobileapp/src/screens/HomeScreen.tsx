@@ -167,11 +167,11 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#0f172a" />
+      <StatusBar barStyle="light-content" backgroundColor="#020617" />
 
       {/* Modern Header with Gradient */}
       <LinearGradient
-        colors={['#0f172a', '#1e293b', '#334155']}
+        colors={['#020617', '#0f172a', '#1e293b']}
         style={styles.header}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
@@ -275,6 +275,26 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
             </View>
           </LinearGradient>
         </TouchableOpacity>
+
+        {/* Utilities Section */}
+        <View style={{ paddingHorizontal: spacing.lg, marginBottom: spacing.lg, flexDirection: 'row', gap: spacing.md }}>
+          <TouchableOpacity
+            activeOpacity={0.9}
+            style={{ flex: 1 }}
+            onPress={() => navigation?.navigate('Currency')}
+          >
+            <LinearGradient
+              colors={['#10b981', '#059669']}
+              style={{ borderRadius: radius.xl, padding: spacing.md, shadowColor: '#10b981', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.2, shadowRadius: 8, elevation: 4 }}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+            >
+              <Text style={{ fontSize: 24, marginBottom: 8 }}>💱</Text>
+              <Text style={{ color: '#FFF', fontSize: 15, fontWeight: '800', marginBottom: 2 }}>Currency Tools</Text>
+              <Text style={{ color: 'rgba(255,255,255,0.8)', fontSize: 11, fontWeight: '500' }}>Live Rates & Local Forex</Text>
+            </LinearGradient>
+          </TouchableOpacity>
+        </View>
 
         {/* Categories Section */}
         <View style={styles.categoriesSection}>
@@ -386,7 +406,7 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0f172a',
+    backgroundColor: '#020617',
   },
   header: {
     paddingTop: STATUSBAR_HEIGHT + spacing.lg,

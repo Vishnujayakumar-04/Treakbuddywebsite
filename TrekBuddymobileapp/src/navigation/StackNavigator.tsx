@@ -39,6 +39,8 @@ import { useAuth } from "../context/AuthContext";
 import FAQScreen from "../screens/FAQScreen";
 import PrivacyPolicyScreen from "../screens/PrivacyPolicyScreen";
 import AboutScreen from "../screens/AboutScreen";
+import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
+import CurrencyScreen from "../screens/CurrencyScreen";
 
 const Stack = createStackNavigator();
 
@@ -106,6 +108,10 @@ export default function StackNavigator() {
           <Stack.Screen
             name="Signup"
             component={SignupScreen}
+          />
+          <Stack.Screen
+            name="ForgotPassword"
+            component={ForgotPasswordScreen}
           />
         </>
       ) : (
@@ -383,6 +389,7 @@ export default function StackNavigator() {
           <Stack.Screen name="FAQ" component={FAQScreen} />
           <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicyScreen} />
           <Stack.Screen name="About" component={AboutScreen} />
+          <Stack.Screen name="Currency" component={CurrencyScreen} />
         </>
       )}
     </Stack.Navigator>

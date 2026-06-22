@@ -61,7 +61,7 @@ export class GroqService {
                 messages: messages,
                 model: this.model,
                 temperature: 0.2, // Lower temperature for more deterministic JSON
-                max_tokens: 8000, // Higher token limit for long JSON (full day structure)
+                max_tokens: 2500, // Reduced further to allow for 2 generations per minute without hitting 6000 TPM limit
                 response_format: { type: "json_object" }
             });
 
